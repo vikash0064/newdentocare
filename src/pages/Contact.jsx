@@ -63,27 +63,27 @@ const Contact = () => {
         {
             icon: Phone,
             title: "Phone",
-            details: "+91 74053 59271",
-            sub: "Mon-Sat 9am to 6pm",
-            link: "tel:+917405359271",
+            details: "+91 63525 34650",
+            sub: "Mon-Sat 10am to 8pm",
+            link: "tel:+916352534650",
             color: "text-blue-400",
             bg: "bg-blue-500/10"
         },
         // Email contact removed as per request
         {
             icon: MapPin,
-            title: "Palanpur Branch",
-            details: "Raj Point",
-            sub: "Palanpur Patia Rd, Surat",
+            title: "Branch 1 (Palanpur Road)",
+            details: "Tirupati Shopping Center",
+            sub: "Simanagar-2, Mashal Circle, Palanpur Road, Surat",
             link: "https://maps.google.com",
             color: "text-purple-400",
             bg: "bg-purple-500/10"
         },
         {
             icon: MapPin,
-            title: "Gaurav Path Branch",
-            details: "Palanpur Crossing",
-            sub: "Gaurav Path, Surat",
+            title: "Branch 2 (Gaurav Path)",
+            details: "Eden Square",
+            sub: "Opp. Fire Station, Gaurav Path Road, Surat",
             link: "https://maps.google.com",
             color: "text-pink-400",
             bg: "bg-pink-500/10"
@@ -94,7 +94,7 @@ const Contact = () => {
         <main className="bg-[#0B1120] min-h-screen relative overflow-hidden text-white">
             <SEO
                 title="Contact Us & Clinical Locations"
-                description="Get in touch with Dent O Care Surat. Visit our Palanpur Patia or Gaurav Path branches for expert dental care."
+                description="Get in touch with Dent O Care Surat. Visit our Palanpur (Simanagar) or Gaurav Path branches for expert dental care."
             />
             <Toaster position="top-right" />
 

@@ -24,15 +24,15 @@ const Footer = () => {
                             {/* Branch 1: Palanpur */}
                             <div className="bg-white/5 p-2.5 rounded-xl border border-white/10 space-y-1.5 relative group hover:border-blue-500/30 transition-all">
                                 <h5 className="text-blue-400 font-bold text-[10px] sm:text-xs uppercase tracking-wide flex items-center justify-between">
-                                    Palanpur Branch
+                                    Branch 1 (Palanpur Road)
                                     <MapPin size={12} className="text-blue-500" />
                                 </h5>
-                                <p className="text-gray-300 text-[10px] leading-tight font-medium">Shop 113, Raj Point, Palanpur Patia Rd, beside McDonald's, TP-10, Palanpur, Surat, Gujarat 395009</p>
+                                <p className="text-gray-300 text-[10px] leading-tight font-medium">2nd Floor, Tirupati Shopping Center, Beside Tapteshwar Mahadev Temple, Simanagar-2, Mashal Circle, Palanpur Road, Surat</p>
 
                                 <div className="space-y-1 pt-1.5 border-t border-white/5 text-[10px] text-gray-400">
                                     <div className="flex items-center justify-between">
                                         <span className="font-semibold text-white/40">Ph:</span>
-                                        <a href="tel:+917405359271" className="hover:text-blue-400 transition-colors">+91 74053 59271</a>
+                                        <a href="tel:+916352534650" className="hover:text-blue-400 transition-colors">+91 63525 34650</a>
                                     </div>
                                     <div className="flex items-start justify-between">
                                         <span className="font-semibold text-white/40 mt-0.5">Time:</span>
@@ -56,15 +56,15 @@ const Footer = () => {
                             {/* Branch 2: Gaurav Path */}
                             <div className="bg-white/5 p-2.5 rounded-xl border border-white/10 space-y-1.5 relative group hover:border-emerald-500/30 transition-all">
                                 <h5 className="text-emerald-400 font-bold text-[10px] sm:text-xs uppercase tracking-wide flex items-center justify-between">
-                                    Gaurav Path Branch
+                                    Branch 2 (Gaurav Path)
                                     <MapPin size={12} className="text-emerald-500" />
                                 </h5>
-                                <p className="text-gray-300 text-[10px] leading-tight font-medium">Shop 103, Palanpur Crossing, Gaurav Path, beside McDonald's, TP-10, Palanpur, Surat, Gujarat 395009</p>
+                                <p className="text-gray-300 text-[10px] leading-tight font-medium">122, First Floor, Eden Square, Gaurav Path Road, Opp. Fire Station, Palanpur, Surat</p>
 
                                 <div className="space-y-1 pt-1.5 border-t border-white/5 text-[10px] text-gray-400">
                                     <div className="flex items-center justify-between">
                                         <span className="font-semibold text-white/40">Ph:</span>
-                                        <a href="tel:+917405359271" className="hover:text-emerald-400 transition-colors">+91 74053 59271</a>
+                                        <a href="tel:+918849220932" className="hover:text-emerald-400 transition-colors">+91 88492 20932</a>
                                     </div>
                                     <div className="flex items-start justify-between">
                                         <span className="font-semibold text-white/40 mt-0.5">Time:</span>

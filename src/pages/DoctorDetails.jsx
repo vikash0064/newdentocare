@@ -24,7 +24,7 @@ const DoctorDetails = () => {
             );
     }, []);
 
-    const whatsappNumber = "917405359271";
+    const whatsappNumber = "916352534650";
     const whatsappMessage = "Hi Dent O Care, I have a query regarding dental treatments.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
@@ -208,14 +208,14 @@ const DoctorDetails = () => {
                                         <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400 h-fit"><Phone size={16} /></div>
                                         <div>
                                             <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Direct Line</p>
-                                            <p className="text-lg font-black text-white tracking-tight">+91 74053 59271</p>
+                                            <p className="text-lg font-black text-white tracking-tight">+91 63525 34650</p>
                                         </div>
                                     </div>
                                     <div className="flex gap-4">
                                         <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400 h-fit"><Clock size={16} /></div>
                                         <div>
                                             <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Working Log</p>
-                                            <p className="text-sm font-bold text-white tracking-tight">Mon - Sat: 9 AM - 9 PM</p>
+                                            <p className="text-sm font-bold text-white tracking-tight">Mon - Sat: 10:00 AM - 1:30 PM | 4:30 PM - 8:00 PM</p>
                                             <p className="text-[10px] text-gray-500 font-semibold mt-1 tracking-wide">Sunday By Appointment</p>
                                         </div>
                                     </div>

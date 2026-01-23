@@ -1,5 +1,4 @@
-import React, { useRef, useEffect } from 'react';
-import { MapPin, Phone, Clock, Navigation, ArrowRight } from 'lucide-react';
+import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -7,17 +6,25 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ClinicPresence = () => {
     const sectionRef = useRef(null);
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    // Auto flip every 4 seconds
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsFlipped(prev => !prev);
+        }, 4000);
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            gsap.fromTo(".clinic-card",
-                { y: 30, opacity: 0 },
+            gsap.fromTo(".business-card-container",
+                { y: 50, opacity: 0 },
                 {
                     y: 0,
                     opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power2.out",
+                    duration: 1,
+                    ease: "power3.out",
                     scrollTrigger: {
                         trigger: sectionRef.current,
                         start: "top 90%",
@@ -29,83 +36,102 @@ const ClinicPresence = () => {
         return () => ctx.revert();
     }, []);
 
-    const clinics = [
-        {
-            id: 1,
-            name: "Palanpur Patia Branch",
-            address: "Shop 113, Raj Point, Palanpur Patia Rd, beside McDonald's, TP-10, Palanpur, Surat, Gujarat 395009",
-            phone: "+91 74053 59271",
-            mapLink: "https://www.google.com/maps/place/Dent+O+Care+Advance+Multi-speciality+Implant+Center/@21.2110523,72.7875791,17z/data=!3m1!4b1!4m9!1m2!10m1!1e1!3m5!1s0x3be04dc957518685:0xdc2a64e62685a25c!8m2!3d21.2110523!4d72.790154!16s%2Fg%2F11vwgw6r6p?entry=ttu",
-            iframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.565437890535!2d72.78465431533235!3d21.209356985901115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e59411d1563%3A0xfe4558290938b81e!2sPalanpur%20Patia%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1675158654231!5m2!1sen!2sin",
-            color: "blue"
-        },
-        {
-            id: 2,
-            name: "Gaurav Path Branch",
-            address: "Shop 103, Palanpur Crossing, Gaurav Path, beside McDonald's, TP-10, Palanpur, Surat, Gujarat 395009",
-            phone: "+91 74053 59271",
-            mapLink: "https://www.google.com/maps/place/Dent+O+Care+Advance+Multi-speciality+Implant+Center/@21.2032023,72.7479348,15z/data=!4m10!1m2!2m1!1sDent+O+Care++Multi-speciality+Implant+Center!3m6!1s0x3be04d8a130a9c2f:0x7c07a48d5a66bf6e!8m2!3d21.2032023!4d72.7669892!15sCixEZW50IE8gQ2FyZSAgTXVsdGktc3BlY2lhbGl0eSBJbXBsYW50IENlbnRlclotIitkZW50IG8gY2FyZSBtdWx0aSBzcGVjaWFsaXR5IGltcGxhbnQgY2VudGVykgEHZGVudGlzdJoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQydEdiVmR0Vmt4VU1XaGhUbmt4V0ZnelZscFJiV016VDFkYVNWb3lZeEFC4AEA-gEECAAQLQ!16s%2Fg%2F11yn3xzfz5?entry=ttu",
-            iframe: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.082536894567!2d72.779654115332!3d21.192134585906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04c2c5c645739%3A0xc3b9d62d0571d70!2sAdajan%2C%20Surat%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1675158654231!5m2!1sen!2sin",
-            color: "emerald"
-        }
-    ];
-
     return (
-        <section ref={sectionRef} className="py-8 sm:py-10 bg-[#0B1120] relative border-t border-white/5 overflow-hidden">
-            {/* Minimal Background */}
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none"></div>
+        <section ref={sectionRef} className="py-10 sm:py-16 bg-[#0B1120] relative border-t border-white/5 overflow-hidden">
+            {/* Background Elements */}
+            <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-teal-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-blue-500/5 rounded-full blur-[80px] pointer-events-none"></div>
 
             <div className="container mx-auto px-4 relative z-10">
-                {/* Compact Header */}
-                <div className="text-center mb-6 z-10">
-                    <h2 className="text-2xl font-black text-white tracking-tight flex items-center justify-center gap-2">
-                        <MapPin size={20} className="text-blue-500" /> Visit Us
+                {/* Header */}
+                <div className="text-center mb-8">
+                    <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                        Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">Clinic</span>
                     </h2>
+                    <p className="text-gray-400 text-sm mt-2">Tap to flip the card</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                    {clinics.map((clinic) => (
-                        <div key={clinic.id} className="clinic-card flex bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:border-blue-500/30 transition-all p-1.5 min-h-[130px] h-auto">
-
-                            {/* Map Thumbnail (Left side) */}
-                            <div className="relative w-[120px] h-full rounded-lg overflow-hidden shrink-0">
-                                <iframe
-                                    src={clinic.iframe}
-                                    className="w-full h-full grayscale-[0.8] group-hover:grayscale-0 opacity-80"
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                    title={clinic.name}
-                                ></iframe>
+                {/* Flip Card Container */}
+                <div className="business-card-container flex justify-center">
+                    <div
+                        className="relative w-full max-w-[600px] aspect-[3/2] cursor-pointer perspective-1000"
+                        onClick={() => setIsFlipped(prev => !prev)}
+                    >
+                        {/* Card Inner - handles the flip */}
+                        <div
+                            className="relative w-full h-full transition-transform duration-700 ease-in-out"
+                            style={{
+                                transformStyle: 'preserve-3d',
+                                transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                            }}
+                        >
+                            {/* Front Card - Business Card 1 (Dr. Nimisha Modi) */}
+                            <div
+                                className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] border border-white/10"
+                                style={{ backfaceVisibility: 'hidden' }}
+                            >
+                                <img
+                                    src="/business-card-1.jpg"
+                                    alt="Dent O Care - Dr. Nimisha Modi Business Card"
+                                    className="w-full h-full object-cover"
+                                />
+                                {/* Subtle overlay for better integration */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                             </div>
 
-                            {/* Content (Right side) */}
-                            <div className="pl-3 py-1 flex flex-col justify-between flex-grow min-w-0">
-                                <div>
-                                    <h3 className="text-sm font-bold text-white leading-tight truncate">{clinic.name}</h3>
-                                    <p className="text-[10px] text-gray-400 leading-tight mt-1 line-clamp-2">{clinic.address}</p>
-                                </div>
-
-                                <div className="flex gap-2 mt-2">
-                                    <a
-                                        href={clinic.mapLink}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 bg-blue-600/20 hover:bg-blue-600/30 text-blue-400 border border-blue-500/20 text-[10px] font-bold rounded py-1.5 flex items-center justify-center gap-1 transition-all"
-                                    >
-                                        <Navigation size={10} /> Directions
-                                    </a>
-                                    <a
-                                        href={`tel:${clinic.phone}`}
-                                        className="flex-1 bg-white/5 hover:bg-white/10 text-white border border-white/10 text-[10px] font-bold rounded py-1.5 flex items-center justify-center gap-1 transition-all"
-                                    >
-                                        <Phone size={10} /> Call
-                                    </a>
-                                </div>
+                            {/* Back Card - Business Card 2 (Branch Details) */}
+                            <div
+                                className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5)] border border-white/10"
+                                style={{
+                                    backfaceVisibility: 'hidden',
+                                    transform: 'rotateY(180deg)'
+                                }}
+                            >
+                                <img
+                                    src="/business-card-2.jpg"
+                                    alt="Dent O Care - Branch Locations and Timings"
+                                    className="w-full h-full object-cover"
+                                />
+                                {/* Subtle overlay for better integration */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
                             </div>
                         </div>
-                    ))}
+
+                        {/* Flip indicator */}
+                        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2">
+                            <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${!isFlipped ? 'bg-teal-500' : 'bg-white/30'}`}></span>
+                            <span className={`w-2 h-2 rounded-full transition-colors duration-300 ${isFlipped ? 'bg-teal-500' : 'bg-white/30'}`}></span>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Quick Contact Buttons */}
+                <div className="flex flex-wrap justify-center gap-3 mt-14">
+                    <a
+                        href="tel:+916352534650"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-teal-600/20 hover:bg-teal-600/30 text-teal-400 border border-teal-500/30 rounded-full text-sm font-bold transition-all hover:scale-105"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Call Now
+                    </a>
+                    <a
+                        href="https://www.google.com/maps/place/Dent+O+Care+Advance+Multi-speciality+Implant+Center/@21.2110523,72.7875791,17z"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full text-sm font-bold transition-all hover:scale-105"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+                        Get Directions
+                    </a>
                 </div>
             </div>
+
+            {/* CSS for perspective */}
+            <style jsx>{`
+                .perspective-1000 {
+                    perspective: 1000px;
+                }
+            `}</style>
         </section>
     );
 };

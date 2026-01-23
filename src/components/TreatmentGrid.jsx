@@ -178,7 +178,7 @@ const TreatmentGrid = () => {
                                 <ArrowRight size={13} className="sm:w-[14px] sm:h-[14px]" />
                                 Contact Us
                             </Link>
-                            <a href="tel:+917405359271" className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-4 sm:px-5 py-2.5 rounded-lg sm:rounded-xl font-bold text-[11px] sm:text-[12px] tracking-wide transition-all flex items-center justify-center gap-2 active:scale-95 backdrop-blur-md">
+                            <a href="tel:+916352534650" className="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-4 sm:px-5 py-2.5 rounded-lg sm:rounded-xl font-bold text-[11px] sm:text-[12px] tracking-wide transition-all flex items-center justify-center gap-2 active:scale-95 backdrop-blur-md">
                                 <Phone size={13} className="sm:w-[14px] sm:h-[14px]" />
                                 Call Now
                             </a>

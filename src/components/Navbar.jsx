@@ -8,7 +8,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const location = useLocation();
 
-    const whatsappNumber = "917405359271";
+    const whatsappNumber = "916352534650";
     const whatsappMessage = "Hi Dent O Care, I have a query regarding dental treatments.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 

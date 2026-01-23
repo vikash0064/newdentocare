@@ -37,7 +37,7 @@ const HomeSEO = () => {
                         <p className="text-[11px] sm:text-xs lg:text-sm text-gray-400/60 leading-relaxed mx-auto lg:mx-0">
                             Dent O Care, led by <strong>Dr. Nimisha Modi</strong>, is recognized as the <strong>best dental clinic in Surat</strong>.
                             With 366+ 5-star reviews, we provide ethical, high-tech, and <strong>painless dental treatments</strong>
-                            at our Palanpur Patia and Gaurav Path branches.
+                            at our Simanagar (Palanpur Road) and Gaurav Path branches.
                         </p>
                     </div>
                     <div className="flex gap-3 sm:gap-4 justify-center lg:justify-end shrink-0">
@@ -67,7 +67,7 @@ const HomeSEO = () => {
                             </div>
                             <div className="group">
                                 <h4 className="text-[11px] sm:text-xs font-bold text-gray-300 mb-1 group-hover:text-blue-400 transition-colors">Root Canal Treatment (RCT)</h4>
-                                <p className="text-[10px] sm:text-[11px] text-gray-500 leading-snug">Painless rotary endodontics to save natural teeth near Palanpur Patia and Adajan area.</p>
+                                <p className="text-[10px] sm:text-[11px] text-gray-500 leading-snug">Painless rotary endodontics to save natural teeth near Simanagar and Adajan area.</p>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@ const HomeSEO = () => {
                             />
                             <FAQItem
                                 question="Where are your branches?"
-                                answer="We are at Raj Point (Palanpur Patia) and Palanpur Crossing (Gaurav Path), both conveniently located near McDonald's."
+                                answer="We are at Tirupati Shopping Center (Simanagar) and Eden Square (Gaurav Path), both conveniently located for your dental needs."
                             />
                             <FAQItem
                                 question="Do you treat children?"
