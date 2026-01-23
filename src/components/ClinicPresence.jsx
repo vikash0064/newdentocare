@@ -65,7 +65,7 @@ const ClinicPresence = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
                     {clinics.map((clinic) => (
-                        <div key={clinic.id} className="clinic-card flex bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:border-blue-500/30 transition-all p-1.5 h-[120px]">
+                        <div key={clinic.id} className="clinic-card flex bg-[#0f172a]/80 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden hover:border-blue-500/30 transition-all p-1.5 min-h-[130px] h-auto">
 
                             {/* Map Thumbnail (Left side) */}
                             <div className="relative w-[120px] h-full rounded-lg overflow-hidden shrink-0">

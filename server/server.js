@@ -59,11 +59,49 @@ if (!fs.existsSync(uploadDir)) {
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
-// MongoDB Connection
+// MongoDB Connection - Start server only after DB is ready
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/dentocare';
-mongoose.connect(MONGO_URI)
-    .then(() => console.log('✅ MongoDB Connected'))
-    .catch(err => console.log('❌ MongoDB Error:', err.message));
+
+const startServer = async () => {
+    try {
+        // Wait for MongoDB connection
+        await mongoose.connect(MONGO_URI);
+        console.log('✅ MongoDB Connected');
+
+        // Only start server after DB is ready
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`🚀 Server running on port ${PORT}`);
+            console.log(`📊 Admin Panel: http://localhost:5173/admin/testimonials`);
+            pingSelf();
+        });
+    } catch (err) {
+        console.error('❌ MongoDB Connection Failed:', err.message);
+        process.exit(1);
+    }
+};
+
+// MongoDB Event Listeners
+mongoose.connection.on('connected', () => {
+    console.log('🔗 Mongoose connected to MongoDB');
+});
+
+mongoose.connection.on('error', (err) => {
+    console.error('❌ Mongoose connection error:', err);
+});
+
+mongoose.connection.on('disconnected', () => {
+    console.log('⚠️  Mongoose disconnected from MongoDB');
+});
+
+// Graceful shutdown
+process.on('SIGINT', async () => {
+    await mongoose.connection.close();
+    console.log('MongoDB connection closed');
+    process.exit(0);
+});
+
+// Initialize
+startServer();
 
 // ========================================
 // ROUTES
@@ -188,6 +226,7 @@ app.get('/api/videos', async (req, res) => {
         const videos = await VideoItem.find().sort({ createdAt: -1 }).lean();
         res.json(videos);
     } catch (err) {
+        console.error('SERVER ERROR (GET /api/videos):', err);
         res.status(500).json({ error: err.message });
     }
 });
@@ -251,13 +290,4 @@ app.get('/api/health', (req, res) => {
         mongodb: mongoose.connection.readyState === 1 ? 'Connected' : 'Disconnected',
         timestamp: new Date().toISOString()
     });
-});
-
-// Start Server
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📊 Admin Panel: http://localhost:5173/admin/testimonials`);
-
-    // Start self-pinging to prevent sleep
-    pingSelf();
 });

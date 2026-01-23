@@ -43,8 +43,11 @@ const AppContent = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#0B1120]">
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <Navbar />
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />

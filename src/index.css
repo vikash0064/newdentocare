@@ -31,6 +31,14 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  .skip-link {
+    @apply absolute left-[-9999px] top-auto h-1 w-1 overflow-hidden z-[9999];
+  }
+
+  .skip-link:focus {
+    @apply left-4 top-24 h-auto w-auto px-6 py-3 bg-blue-600 text-white font-black rounded-xl border-2 border-white shadow-2xl overflow-visible;
+  }
 }
 
 @keyframes scroll-images {
@@ -55,6 +63,8 @@ body {
   background-size: 40px 40px;
   color: #94a3b8;
   font-family: var(--font-sans);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 img {

@@ -101,7 +101,7 @@ const TreatmentGrid = () => {
                         <Link
                             key={i}
                             to={t.link}
-                            className="group relative p-3 sm:p-5 rounded-[1rem] sm:rounded-[1.5rem] bg-[#1e293b]/20 backdrop-blur-xl border border-white/5 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl h-[180px] sm:h-[220px] flex flex-col"
+                            className="group relative p-3 sm:p-5 rounded-[1rem] sm:rounded-[1.5rem] bg-[#1e293b]/20 backdrop-blur-xl border border-white/5 overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl min-h-[180px] sm:h-[220px] flex flex-col"
                         >
                             {/* Shiny Effect Overlay */}
                             <div className="absolute inset-0 z-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">

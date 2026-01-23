@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/Hero';
 import StatsStrip from '../components/StatsStrip';
 import TreatmentGrid from '../components/TreatmentGrid';
+import SEO from '../components/SEO';
 const ClinicPresence = React.lazy(() => import('../components/ClinicPresence'));
 const HomeSEO = React.lazy(() => import('../components/HomeSEO'));
 const WhyChoose = React.lazy(() => import('../components/WhyChoose'));
@@ -20,6 +21,10 @@ const LoadingSection = () => (
 const Home = () => {
     return (
         <main className="bg-[#0B1120] text-white">
+            <SEO
+                title="Best Dental Clinic in Surat | Dr Nimisha Modi"
+                description="Expert dental care in Surat by Dr. Nimisha Modi. Specialized in Implants, Root Canal, Cosmetic Dentistry and Pain-free treatments. 5-Star rated clinic."
+            />
             <Hero />
 
             {/* Scrolling Stats Strip */}

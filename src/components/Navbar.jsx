@@ -53,10 +53,10 @@ const Navbar = () => {
 
                         {/* 1. Logo Section */}
                         <div className="flex-shrink-0 z-20">
-                            <Link to="/" className="flex items-center group">
+                            <Link to="/" className="flex items-center group" aria-label="Dent O Care Home">
                                 <img
                                     src={IMAGES.logo}
-                                    alt="Dent O Care"
+                                    alt="Dent O Care - Advanced Multi-speciality Implant Center Logo"
                                     className="h-7 sm:h-9 md:h-10 lg:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                 />
                             </Link>
@@ -111,6 +111,7 @@ const Navbar = () => {
 
                             <button
                                 onClick={toggleMenu}
+                                aria-label={isMenuOpen ? "Close main navigation menu" : "Open main navigation menu"}
                                 className="lg:hidden relative p-2 sm:p-2.5 bg-blue-600 text-white rounded-xl active:scale-90 transition-all shadow-lg shadow-blue-500/20 z-50"
                             >
                                 <div className="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-white rounded-full animate-ping"></div>

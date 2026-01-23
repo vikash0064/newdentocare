@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Check, Shield, Award, Stethoscope } from 'lucide-react';
 import { IMAGES } from '../constants';
+import SEO from '../components/SEO';
 
 const treatmentsList = [
     {
@@ -86,6 +87,10 @@ const Treatments = () => {
 
     return (
         <main className="bg-[#0B1120] min-h-screen text-white relative overflow-x-hidden">
+            <SEO
+                title="Specialized Dental Treatments"
+                description="Explore our range of advanced dental treatments in Surat: Dental Implants, RCT, Orthodontics, Smile Design, and Oral Surgery by Dr. Nimisha Modi."
+            />
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -z-0 pointer-events-none opacity-50"></div>
             <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[120px] -z-0 pointer-events-none opacity-50"></div>

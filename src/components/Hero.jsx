@@ -88,12 +88,12 @@ const Hero = () => {
                         </div>
 
                         <div ref={headingRef} className="mb-6 md:mb-8">
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter relative inline-block">
+                            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter relative inline-block">
                                 World Class
                                 <div className="absolute -bottom-1 md:-bottom-2 left-0 w-[70%] h-[4px] md:h-[6px] bg-gradient-to-r from-blue-600 via-blue-400 to-transparent rounded-full shadow-[0_4px_12px_-2px_rgba(37,99,235,0.5)]"></div>
                                 <div className="absolute -bottom-1 md:-bottom-2 left-0 w-[40%] h-[2px] md:h-[3px] bg-white/40 rounded-full blur-[1px]"></div>
                             </h1>
-                            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.1] tracking-tighter mt-1 md:mt-2">
+                            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.1] tracking-tighter mt-1 md:mt-2">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
                                     Dental Care
                                 </span>
@@ -107,11 +107,11 @@ const Hero = () => {
                             </p>
                         </div>
 
-                        <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-10">
-                            <Link to="/gallery" className="w-full sm:w-auto bg-[#2563eb] hover:bg-blue-700 text-white px-6 py-3.5 rounded-full font-black text-[11px] sm:text-xs tracking-widest shadow-[0_15px_30px_-10px_rgba(37,99,235,0.4)] transition-all flex items-center justify-center gap-2.5 active:scale-95 group">
-                                <Video size={14} className="text-blue-200" /> View Results & Gallery
+                        <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-10 w-full px-2 sm:px-0">
+                            <Link to="/gallery" aria-label="Open clinical results and photo gallery" className="w-full sm:w-auto bg-[#2563eb] hover:bg-blue-700 text-white px-6 py-4 rounded-full font-black text-[10px] sm:text-xs tracking-widest shadow-[0_15px_30px_-10px_rgba(37,99,235,0.4)] transition-all flex items-center justify-center gap-2.5 active:scale-95 group">
+                                <Video size={14} className="text-blue-200" /> View Gallery
                             </Link>
-                            <Link to="/treatments" className="w-full sm:w-auto bg-[#1e293b]/50 hover:bg-[#1e293b] text-white border border-white/10 px-6 py-3.5 rounded-full font-black text-[11px] sm:text-xs tracking-widest transition-all flex items-center justify-center gap-2.5 active:scale-95 hover:border-white/30 group">
+                            <Link to="/treatments" aria-label="Explore dental treatments and services" className="w-full sm:w-auto bg-[#1e293b]/50 hover:bg-[#1e293b] text-white border border-white/10 px-6 py-4 rounded-full font-black text-[10px] sm:text-xs tracking-widest transition-all flex items-center justify-center gap-2.5 active:scale-95 hover:border-white/30 group">
                                 Explore Services <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
                             </Link>
                         </div>
@@ -146,12 +146,12 @@ const Hero = () => {
 
                                 {/* Arrows */}
                                 <div className="absolute top-1/2 -translate-y-1/2 left-6">
-                                    <button onClick={prevImage} className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
+                                    <button onClick={prevImage} aria-label="Previous clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
                                         <ChevronLeft size={24} />
                                     </button>
                                 </div>
                                 <div className="absolute top-1/2 -translate-y-1/2 right-6">
-                                    <button onClick={nextImage} className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
+                                    <button onClick={nextImage} aria-label="Next clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
                                         <ChevronRight size={24} />
                                     </button>
                                 </div>

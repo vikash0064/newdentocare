@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Youtube, X, Heart } from 'lucide-react';
 import gsap from 'gsap';
+import SEO from '../components/SEO';
 
 const VideoCard = ({ reel, onPlay }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -158,6 +159,10 @@ const Videos = () => {
 
     return (
         <main className="bg-[#050811] h-screen w-full flex flex-col relative overflow-hidden">
+            <SEO
+                title="Patient Stories & Dental Reels"
+                description="Watch our latest dental transformations, patient testimonials, and clinical highlights in our video gallery."
+            />
             {/* Solid Fixed Background */}
             <div className="absolute inset-0 bg-[#050811] -z-20"></div>
 

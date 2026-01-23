@@ -4,6 +4,8 @@ import { IMAGES } from '../constants';
 import gsap from 'gsap';
 import { useData } from '../context/DataContext';
 
+import SEO from '../components/SEO';
+
 const galleryImages = import.meta.glob('../assets/gallery/*.(png|jpe?g|svg|webp|avif)', { eager: true, as: 'url' });
 const localImages = Object.values(galleryImages);
 
@@ -53,6 +55,10 @@ const ClinicGallery = () => {
 
     return (
         <main ref={containerRef} className="pt-24 md:pt-36 pb-24 bg-[#0B1120] min-h-screen text-white overflow-hidden relative selection:bg-blue-500">
+            <SEO
+                title="Clinical Gallery & Case Studies"
+                description="Explore our clinical cases, surgical protocols, and real patient stories through high-fidelity visual documentation at Dent O Care Surat."
+            />
             {/* Background Glows */}
             <div className="absolute top-0 inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.08),transparent_50%)]"></div>
 
@@ -88,7 +94,7 @@ const ClinicGallery = () => {
                 </div>
 
                 {/* Masonry Grid */}
-                <div className="columns-2 md:columns-2 lg:columns-3 gap-3 md:gap-8 space-y-3 md:space-y-8">
+                <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 sm:gap-6 md:gap-8 space-y-4 sm:space-y-6 md:space-y-8">
                     {filteredImages.slice(0, visibleCount).map((img, index) => (
                         <div
                             key={index}

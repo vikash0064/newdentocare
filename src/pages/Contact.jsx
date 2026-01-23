@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MessageSquare, MapPin, Phone, Clock, Send, CheckCircle2, Loader2, ArrowRight, ChevronDown } from 'lucide-react';
 import { toast, Toaster } from 'react-hot-toast';
 import confetti from 'canvas-confetti';
+import SEO from '../components/SEO';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -91,6 +92,10 @@ const Contact = () => {
 
     return (
         <main className="bg-[#0B1120] min-h-screen relative overflow-hidden text-white">
+            <SEO
+                title="Contact Us & Clinical Locations"
+                description="Get in touch with Dent O Care Surat. Visit our Palanpur Patia or Gaurav Path branches for expert dental care."
+            />
             <Toaster position="top-right" />
 
             {/* Background Gradients */}

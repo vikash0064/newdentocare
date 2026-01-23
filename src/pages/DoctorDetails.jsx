@@ -3,6 +3,7 @@ import { IMAGES } from '../constants';
 import { MapPin, Clock, Star, Award, Stethoscope, ChevronRight, CheckCircle2, Phone, Calendar, Users, Trophy, Shield, Heart, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import SEO from '../components/SEO';
 
 const DoctorDetails = () => {
     const heroRef = useRef(null);
@@ -29,6 +30,10 @@ const DoctorDetails = () => {
 
     return (
         <main className="bg-[#0B1120] text-white selection:bg-blue-500 selection:text-white">
+            <SEO
+                title="Meet Dr. Nimisha Modi | Clinical Director"
+                description="Dr. Nimisha Modi is a smile architect with 15+ years of clinical excellence in complex implantology and aesthetic design in Surat."
+            />
             {/* Profile Hero - Enhanced & Mobile Optimized */}
             <section ref={heroRef} className="relative pt-24 sm:pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden">
                 {/* Subtle Background Glows */}
@@ -61,7 +66,7 @@ const DoctorDetails = () => {
                                 {/* Experience Badge (Responsive) */}
                                 <div className="absolute -top-4 -left-4 md:-top-6 md:-left-6 bg-emerald-600 p-3 md:p-4 rounded-2xl shadow-2xl z-20 border border-white/10">
                                     <div className="text-center">
-                                        <span className="block font-black text-white text-lg md:text-xl">15+</span>
+                                        <span className="block font-black text-white text-lg md:text-xl">12+</span>
                                         <span className="text-[10px] md:text-xs text-white/90 font-semibold tracking-wide">Years Exp</span>
                                     </div>
                                 </div>
@@ -101,7 +106,7 @@ const DoctorDetails = () => {
                             </div>
 
                             <p className="text-gray-400 leading-relaxed text-sm md:text-lg font-medium max-w-2xl mx-auto lg:mx-0 opacity-90">
-                                With over 15 years of surgical excellence, Dr. Nimisha Modi combines precision dentistry with a patient-first philosophy to create transformative dental experiences in Gujarat.
+                                With over 12 years of surgical excellence, Dr. Nimisha Modi combines precision dentistry with a patient-first philosophy to create transformative dental experiences in Gujarat.
                             </p>
 
                             {/* Stats Grid - 2x2 on Mobile */}
@@ -185,7 +190,7 @@ const DoctorDetails = () => {
                                     <h2 className="text-2xl font-black text-white tracking-tight">Expert Narrative</h2>
                                 </div>
                                 <div className="space-y-4 text-gray-400 font-medium leading-relaxed text-sm md:text-base">
-                                    <p>Dr. Nimisha Modi is a smile architect with 15+ years of clinical excellence in complex implantology and aesthetic design.</p>
+                                    <p>Dr. Nimisha Modi is a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design.</p>
                                     <p>Strictly adhering to international protocols, she ensures every surgery is executed with robotic precision and deep patient empathy.</p>
                                 </div>
                             </div>
