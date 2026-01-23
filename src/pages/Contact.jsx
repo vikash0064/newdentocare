@@ -207,9 +207,9 @@ const Contact = () => {
                                             className="w-full bg-[#0B1120] border border-gray-700/50 rounded-lg px-3 py-2.5 text-white placeholder-gray-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-xs sm:text-sm appearance-none cursor-pointer"
                                         >
                                             <option value="" disabled>Select a Topic</option>
-                                            <option value="appointment">Book Appointment</option>
                                             <option value="consultation">General Consultation</option>
                                             <option value="emergency">Emergency Care</option>
+                                            <option value="support">Help & Support</option>
                                             <option value="other">Other Inquiry</option>
                                         </select>
                                         <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
