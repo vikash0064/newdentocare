@@ -4,6 +4,8 @@ import { MapPin, Clock, Star, Award, Stethoscope, ChevronRight, CheckCircle2, Ph
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import SEO from '../components/SEO';
+import DoctorTeam from '../components/DoctorTeam';
+import TeamSlider from '../components/TeamSlider';
 
 const DoctorDetails = () => {
     const heroRef = useRef(null);
@@ -148,6 +150,12 @@ const DoctorDetails = () => {
                 </div>
             </section>
 
+            {/* Doctor Team Section */}
+            <DoctorTeam />
+
+            {/* Full Team Slider Section */}
+            <TeamSlider />
+
             {/* Detailed Info Grid */}
             <section ref={contentRef} className="py-12 md:py-20 bg-transparent">
                 <div className="container mx-auto px-6 relative z-10">
@@ -157,12 +165,12 @@ const DoctorDetails = () => {
                         <div className="lg:col-span-2 space-y-8 md:space-y-12">
 
                             {/* Treatments */}
-                            <div className="bg-[#111827]/60 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 border border-white/5 shadow-2xl">
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="p-3 bg-blue-500/10 rounded-xl text-blue-400"><Stethoscope size={24} /></div>
-                                    <h2 className="text-2xl font-black text-white tracking-tight">Specialized Treatments</h2>
+                            <div className="bg-[#111827]/60 backdrop-blur-xl rounded-3xl md:rounded-[2.5rem] p-6 md:p-12 border border-white/5 shadow-2xl">
+                                <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                                    <div className="p-2 md:p-3 bg-blue-500/10 rounded-xl text-blue-400"><Stethoscope size={20} className="md:w-6 md:h-6" /></div>
+                                    <h2 className="text-xl md:text-2xl font-black text-white tracking-tight">Specialized Treatments</h2>
                                 </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 md:gap-3">
                                     {[
                                         { name: "Maxillofacial Prosthetics", icon: "🎭" },
                                         { name: "Discolored Tooth Restoration", icon: "✨" },
@@ -175,21 +183,21 @@ const DoctorDetails = () => {
                                         { name: "Smile Makeovers", icon: "⭐" },
                                         { name: "Kids Dentistry", icon: "🧒" }
                                     ].map((service, i) => (
-                                        <div key={i} className="flex items-center gap-4 p-4 bg-white/[0.02] rounded-2xl border border-white/5 hover:border-blue-500/20 transition-all cursor-default group">
-                                            <span className="text-xl group-hover:scale-110 transition-transform">{service.icon}</span>
-                                            <span className="text-gray-400 font-bold text-sm group-hover:text-white transition-colors">{service.name}</span>
+                                        <div key={i} className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-white/[0.02] rounded-xl md:rounded-2xl border border-white/5 hover:border-blue-500/20 transition-all cursor-default group">
+                                            <span className="text-lg md:text-xl group-hover:scale-110 transition-transform shrink-0">{service.icon}</span>
+                                            <span className="text-gray-400 font-bold text-xs md:text-sm group-hover:text-white transition-colors leading-tight">{service.name}</span>
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
                             {/* Narrative */}
-                            <div className="bg-[#111827]/60 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 border border-white/5 shadow-2xl">
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="p-3 bg-emerald-500/10 rounded-xl text-emerald-400"><Award size={24} /></div>
-                                    <h2 className="text-2xl font-black text-white tracking-tight">Expert Narrative</h2>
+                            <div className="bg-[#111827]/60 backdrop-blur-xl rounded-3xl md:rounded-[2.5rem] p-6 md:p-12 border border-white/5 shadow-2xl">
+                                <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
+                                    <div className="p-2 md:p-3 bg-emerald-500/10 rounded-xl text-emerald-400"><Award size={20} className="md:w-6 md:h-6" /></div>
+                                    <h2 className="text-xl md:text-2xl font-black text-white tracking-tight">Expert Narrative</h2>
                                 </div>
-                                <div className="space-y-4 text-gray-400 font-medium leading-relaxed text-sm md:text-base">
+                                <div className="space-y-3 md:space-y-4 text-gray-400 font-medium leading-relaxed text-xs md:text-base">
                                     <p>Dr. Nimisha Modi is a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design.</p>
                                     <p>Strictly adhering to international protocols, she ensures every surgery is executed with robotic precision and deep patient empathy.</p>
                                 </div>
@@ -198,29 +206,29 @@ const DoctorDetails = () => {
 
                         {/* Right Column: Contact info */}
                         <div className="space-y-6 md:space-y-8">
-                            <div className="bg-gradient-to-b from-[#1e293b] to-[#0f172a] p-8 md:p-10 rounded-[3rem] border border-white/10 shadow-3xl sticky top-28">
-                                <h3 className="text-xl font-black text-white mb-8 flex items-center gap-2">
-                                    <MapPin size={20} className="text-blue-400" /> Clinic Hub
+                            <div className="bg-gradient-to-b from-[#1e293b] to-[#0f172a] p-6 md:p-10 rounded-3xl md:rounded-[3rem] border border-white/10 shadow-3xl sticky top-28">
+                                <h3 className="text-lg md:text-xl font-black text-white mb-6 md:mb-8 flex items-center gap-2">
+                                    <MapPin size={18} className="md:w-5 md:h-5 text-blue-400" /> Clinic Hub
                                 </h3>
 
-                                <div className="space-y-8">
-                                    <div className="flex gap-4">
-                                        <div className="p-2 bg-blue-500/10 rounded-lg text-blue-400 h-fit"><Phone size={16} /></div>
+                                <div className="space-y-6 md:space-y-8">
+                                    <div className="flex gap-3 md:gap-4">
+                                        <div className="p-1.5 md:p-2 bg-blue-500/10 rounded-lg text-blue-400 h-fit"><Phone size={14} className="md:w-4 md:h-4" /></div>
                                         <div>
-                                            <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Direct Line</p>
-                                            <p className="text-lg font-black text-white tracking-tight">+91 63525 34650</p>
+                                            <p className="text-[10px] md:text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Direct Line</p>
+                                            <p className="text-base md:text-lg font-black text-white tracking-tight">+91 63525 34650</p>
                                         </div>
                                     </div>
-                                    <div className="flex gap-4">
-                                        <div className="p-2 bg-emerald-500/10 rounded-lg text-emerald-400 h-fit"><Clock size={16} /></div>
+                                    <div className="flex gap-3 md:gap-4">
+                                        <div className="p-1.5 md:p-2 bg-emerald-500/10 rounded-lg text-emerald-400 h-fit"><Clock size={14} className="md:w-4 md:h-4" /></div>
                                         <div>
-                                            <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Working Log</p>
-                                            <p className="text-sm font-bold text-white tracking-tight">Mon - Sat: 10:00 AM - 1:30 PM | 4:30 PM - 8:00 PM</p>
-                                            <p className="text-[10px] text-gray-500 font-semibold mt-1 tracking-wide">Sunday By Appointment</p>
+                                            <p className="text-[10px] md:text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-1">Working Log</p>
+                                            <p className="text-xs md:text-sm font-bold text-white tracking-tight leading-snug">Mon - Sat: 10:00 AM - 1:30 PM | 4:30 PM - 8:00 PM</p>
+                                            <p className="text-[9px] md:text-[10px] text-gray-500 font-semibold mt-1 tracking-wide">Sunday By Appointment</p>
                                         </div>
                                     </div>
-                                    <div className="pt-4">
-                                        <Link to="/contact" className="block w-full bg-white/5 hover:bg-white/10 text-white text-center py-4 rounded-xl font-semibold text-[11px] uppercase tracking-wide border border-white/5 transition-all">
+                                    <div className="pt-3 md:pt-4">
+                                        <Link to="/contact" className="block w-full bg-white/5 hover:bg-white/10 text-white text-center py-3 md:py-4 rounded-xl font-semibold text-[10px] md:text-[11px] uppercase tracking-wide border border-white/5 transition-all">
                                             Visit Clinic
                                         </Link>
                                     </div>

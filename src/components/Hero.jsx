@@ -132,9 +132,13 @@ const Hero = () => {
                             {/* Main Frame */}
                             <div className="relative rounded-[3rem] sm:rounded-[4rem] overflow-hidden border-[12px] border-[#1e293b] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] bg-[#1e293b] aspect-[4/5] sm:aspect-auto sm:h-[650px]">
                                 {galleryImages.map((img, idx) => (
-                                    <div key={idx} className={`absolute inset-0 transition-all duration-1000 ${idx === currentImageIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-110'}`}>
-                                        <img src={img.src} alt={img.label} className="w-full h-full object-cover" />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                                    <div key={idx} className={`absolute inset-0 transition-all duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}>
+                                        <img
+                                            src={img.src}
+                                            alt={img.label}
+                                            className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
 
                                         {/* Bottom Label */}
                                         <div className="absolute bottom-10 left-10 right-10">
