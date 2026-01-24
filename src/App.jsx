@@ -14,6 +14,7 @@ const DoctorDetails = lazy(() => import('./pages/DoctorDetails'));
 const Treatments = lazy(() => import('./pages/Treatments'));
 const Videos = lazy(() => import('./pages/Videos'));
 const Admin = lazy(() => import('./pages/Admin'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -34,11 +35,6 @@ const AppContent = () => {
 
     // Always start at top on first load
     window.scrollTo(0, 0);
-
-    // Force home page on first load/refresh EXCEPT for admin
-    if (window.location.pathname !== '/' && !window.location.pathname.startsWith('/admin')) {
-      navigate('/', { replace: true });
-    }
   }, []);
 
   return (
@@ -57,7 +53,7 @@ const AppContent = () => {
             <Route path="/doctors" element={<DoctorDetails />} />
             <Route path="/treatments" element={<Treatments />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="*" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </main>

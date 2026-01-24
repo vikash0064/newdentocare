@@ -16,6 +16,7 @@
 
   --color-secondary: #00a8cc;
   --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
 }
 
 @layer utilities {

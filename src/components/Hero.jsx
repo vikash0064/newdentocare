@@ -87,7 +87,7 @@ const Hero = () => {
                             <span className="text-[9px] font-black uppercase tracking-[0.2em] text-emerald-400">Advanced & Painless</span>
                         </div>
 
-                        <div ref={headingRef} className="mb-6 md:mb-8">
+                        <div ref={headingRef} className="mb-6 md:mb-8 font-outfit" style={{ fontFamily: 'var(--font-outfit)' }}>
                             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter relative inline-block">
                                 World Class
                                 <div className="absolute -bottom-1 md:-bottom-2 left-0 w-[70%] h-[4px] md:h-[6px] bg-gradient-to-r from-blue-600 via-blue-400 to-transparent rounded-full shadow-[0_4px_12px_-2px_rgba(37,99,235,0.5)]"></div>
@@ -108,11 +108,11 @@ const Hero = () => {
                         </div>
 
                         <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-10 w-full px-2 sm:px-0">
-                            <Link to="/gallery" aria-label="Open clinical results and photo gallery" className="w-full sm:w-auto bg-[#2563eb] hover:bg-blue-700 text-white px-6 py-4 rounded-full font-black text-[10px] sm:text-xs tracking-widest shadow-[0_15px_30px_-10px_rgba(37,99,235,0.4)] transition-all flex items-center justify-center gap-2.5 active:scale-95 group">
-                                <Video size={14} className="text-blue-200" /> View Gallery
+                            <Link to="/gallery" aria-label="Open clinical results and photo gallery" className="w-full sm:w-auto bg-[#2563eb] hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide shadow-[0_15px_30px_-10px_rgba(37,99,235,0.4)] transition-all flex items-center justify-center gap-2.5 active:scale-95 group" style={{ fontFamily: 'var(--font-outfit)' }}>
+                                <Video size={16} className="text-blue-200" /> View Gallery
                             </Link>
-                            <Link to="/treatments" aria-label="Explore dental treatments and services" className="w-full sm:w-auto bg-[#1e293b]/50 hover:bg-[#1e293b] text-white border border-white/10 px-6 py-4 rounded-full font-black text-[10px] sm:text-xs tracking-widest transition-all flex items-center justify-center gap-2.5 active:scale-95 hover:border-white/30 group">
-                                Explore Services <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
+                            <Link to="/treatments" aria-label="Explore dental treatments and services" className="w-full sm:w-auto bg-[#1e293b]/50 hover:bg-[#1e293b] text-white border border-white/10 px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all flex items-center justify-center gap-2.5 active:scale-95 hover:border-white/30 group" style={{ fontFamily: 'var(--font-outfit)' }}>
+                                Explore Services <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
                             </Link>
                         </div>
 
