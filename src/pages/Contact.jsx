@@ -87,36 +87,19 @@ const Contact = () => {
                                         title={`${branch.name} Location`}
                                     ></iframe>
 
-                                    {/* Circular Waves Effect */}
+
+                                    {/* Location Ping Effect */}
                                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                                        {/* Multiple circular waves */}
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-16 h-16 rounded-full border-2 border-red-500/40 animate-circular-wave"></div>
-                                        </div>
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-16 h-16 rounded-full border-2 border-red-500/35 animate-circular-wave animation-delay-400"></div>
-                                        </div>
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-16 h-16 rounded-full border-2 border-red-500/30 animate-circular-wave animation-delay-800"></div>
-                                        </div>
-                                        <div className="absolute inset-0 flex items-center justify-center">
-                                            <div className="w-16 h-16 rounded-full border-2 border-red-500/25 animate-circular-wave animation-delay-1200"></div>
-                                        </div>
-                                        {/* Center dot */}
-                                        <div className="relative flex items-center justify-center">
-                                            <div className="w-4 h-4 rounded-full bg-red-500 shadow-lg"></div>
-                                        </div>
+                                        {/* Ping wave */}
+                                        <span className="absolute inline-flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
+                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-40"></span>
+                                        </span>
+                                        {/* Center marker dot */}
+                                        <span className="relative inline-flex rounded-full h-5 w-5 bg-red-600 border-2 border-white shadow-lg"></span>
                                     </div>
 
                                     {/* Gradient Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/60 via-transparent to-transparent pointer-events-none"></div>
-
-                                    {/* Branch Badge */}
-                                    <div className="absolute top-4 left-4">
-                                        <div className={`bg-gradient-to-r ${branch.gradient} px-3 py-1.5 rounded-lg shadow-lg border border-white/10`}>
-                                            <span className="text-white font-black text-xs uppercase tracking-wider">Branch {branch.id}</span>
-                                        </div>
-                                    </div>
                                 </div>
 
                                 {/* Branch Info */}
@@ -205,30 +188,6 @@ const Contact = () => {
                 </div>
             </div>
 
-            <style jsx>{`
-                @keyframes circular-wave {
-                    0% {
-                        transform: scale(0.5);
-                        opacity: 0.8;
-                    }
-                    100% {
-                        transform: scale(2.5);
-                        opacity: 0;
-                    }
-                }
-                .animate-circular-wave {
-                    animation: circular-wave 3s ease-out infinite;
-                }
-                .animation-delay-400 {
-                    animation-delay: 0.4s;
-                }
-                .animation-delay-800 {
-                    animation-delay: 0.8s;
-                }
-                .animation-delay-1200 {
-                    animation-delay: 1.2s;
-                }
-            `}</style>
         </main>
     );
 };
