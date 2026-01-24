@@ -32,6 +32,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Videos / Patient Stories -->
+  <url>
+    <loc>https://plusdentocare.in/videos</loc>
+    <lastmod>2026-01-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Contact Page (Critical) -->
   <url>
     <loc>https://plusdentocare.in/contact</loc>
