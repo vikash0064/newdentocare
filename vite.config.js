@@ -5,6 +5,7 @@ import compression from 'vite-plugin-compression'
 
 // https://vite.dev/config/
 export default defineConfig({
+  publicDir: 'public',
   plugins: [
     react(),
     tailwindcss(),

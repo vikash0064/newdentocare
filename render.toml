@@ -1,0 +1,8 @@
+[staticSites]
+name = "newdentocare-frontend"
+buildCommand = "npm run build"
+publish = "dist"
+
+[[staticSites.routes]]
+source = "/*"
+destination = "/index.html"
