@@ -5,7 +5,7 @@ const SEO = ({
     title,
     description,
     keywords,
-    image = "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732052/logo_cgdtgo.png",
+    image = "https://plusdentocare.in/favicon.jpg",
     type = "website",
     author = "Dr. Nimisha Modi"
 }) => {
@@ -13,11 +13,11 @@ const SEO = ({
     const siteUrl = "https://plusdentocare.in";
     const fullUrl = `${siteUrl}${location.pathname}`;
 
-    const defaultTitle = "Best Dental Clinic in Surat | Dr Nimisha Modi – Dent O Care";
-    const defaultDescription = "Dent O Care is a trusted dental clinic in Surat led by Dr Nimisha Modi with 366+ 5-star reviews. Specializing in Implants, RCT, braces & cosmetic dentistry at Palanpur Road & Gaurav Path branches.";
+    const defaultTitle = "Best Dental Clinic in Surat | Dr Nimisha Modi – Plus Dento Care";
+    const defaultDescription = "Plus Dento Care is a trusted dental clinic in Surat led by Dr Nimisha Modi with 366+ 5-star reviews. Specializing in Implants, RCT, braces & cosmetic dentistry at Palanpur Road & Gaurav Path branches.";
     const defaultKeywords = "dental clinic surat, best dentist surat, dr nimisha modi, dental implants surat, root canal treatment surat, teeth whitening surat, braces surat, cosmetic dentistry surat, painless dentistry, kids dentist surat, emergency dental care surat";
 
-    const pageTitle = title ? `${title} | Dent O Care` : defaultTitle;
+    const pageTitle = title ? `${title} | Plus Dento Care` : defaultTitle;
     const pageDescription = description || defaultDescription;
     const pageKeywords = keywords || defaultKeywords;
 
@@ -60,7 +60,7 @@ const SEO = ({
         setMetaTag('property', 'og:image', image);
         setMetaTag('property', 'og:image:width', '1200');
         setMetaTag('property', 'og:image:height', '630');
-        setMetaTag('property', 'og:site_name', 'Dent O Care');
+        setMetaTag('property', 'og:site_name', 'Plus Dento Care');
         setMetaTag('property', 'og:locale', 'en_IN');
 
         // Twitter Card Tags
@@ -68,8 +68,8 @@ const SEO = ({
         setMetaTag('name', 'twitter:title', pageTitle);
         setMetaTag('name', 'twitter:description', pageDescription);
         setMetaTag('name', 'twitter:image', image);
-        setMetaTag('name', 'twitter:site', '@dentocare');
-        setMetaTag('name', 'twitter:creator', '@dentocare');
+        setMetaTag('name', 'twitter:site', '@plusdentocare');
+        setMetaTag('name', 'twitter:creator', '@plusdentocare');
 
         // Geo Location Tags for Local SEO
         setMetaTag('name', 'geo.region', 'IN-GJ');
@@ -108,7 +108,7 @@ const SEO = ({
         const organizationSchema = {
             "@context": "https://schema.org",
             "@type": "Dentist",
-            "name": "Dent O Care",
+            "name": "Plus Dento Care",
             "image": image,
             "url": siteUrl,
             "telephone": "+91-6352534650",
@@ -176,9 +176,9 @@ const SEO = ({
                 "jobTitle": "Chief Dentist & Implantologist"
             },
             "sameAs": [
-                "https://www.facebook.com/dentocare",
-                "https://www.instagram.com/dentocare",
-                "https://www.youtube.com/@dentocare"
+                "https://www.facebook.com/plusdentocare",
+                "https://www.instagram.com/plusdentocare",
+                "https://www.youtube.com/@plusdentocare"
             ],
             "areaServed": {
                 "@type": "City",
@@ -197,7 +197,7 @@ const SEO = ({
         const websiteSchema = {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "Dent O Care",
+            "name": "Plus Dento Care",
             "url": siteUrl,
             "potentialAction": {
                 "@type": "SearchAction",
