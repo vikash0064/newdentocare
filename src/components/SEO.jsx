@@ -5,7 +5,7 @@ const SEO = ({
     title,
     description,
     keywords,
-    image = "https://plusdentocare.in/favicon.jpg",
+    image = "https://www.plusdentocare.in/favicon-512x512.png",
     type = "website",
     author = "Dr. Nimisha Modi"
 }) => {
