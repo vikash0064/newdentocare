@@ -10,7 +10,7 @@ const SEO = ({
     author = "Dr. Nimisha Modi"
 }) => {
     const location = useLocation();
-    const siteUrl = "https://plusdentocare.in";
+    const siteUrl = "https://www.plusdentocare.in";
     const fullUrl = `${siteUrl}${location.pathname}`;
 
     const defaultTitle = "Best Dental Clinic in Surat | Dr Nimisha Modi – Plus Dento Care";
