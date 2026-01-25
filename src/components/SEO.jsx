@@ -198,6 +198,7 @@ const SEO = ({
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Plus Dento Care",
+            "alternateName": ["Plus Dento Care Surat", "PlusDentoCare"],
             "url": siteUrl,
             "potentialAction": {
                 "@type": "SearchAction",
