@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.plusdentocare.in/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- Treatments -->
   <url>
     <loc>https://www.plusdentocare.in/treatments</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -19,7 +19,7 @@
   <!-- Doctors Bio -->
   <url>
     <loc>https://www.plusdentocare.in/doctors</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,7 +27,7 @@
   <!-- Gallery -->
   <url>
     <loc>https://www.plusdentocare.in/gallery</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -35,7 +35,7 @@
   <!-- Videos / Patient Stories -->
   <url>
     <loc>https://www.plusdentocare.in/videos</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,7 +43,7 @@
   <!-- Contact Page (Critical) -->
   <url>
     <loc>https://www.plusdentocare.in/contact</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-02-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

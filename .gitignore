@@ -35,6 +35,7 @@ build
 # Test and debug files
 *.txt
 !README.txt
+!public/robots.txt
 **/test_*.json
 **/response.json
 **/check_*.js
