@@ -347,7 +347,7 @@ const AdminPanel = () => {
                                     videoList.map((vid) => (
                                         <div key={vid._id} className="flex gap-4 p-4 bg-white/5 border border-white/5 rounded-2xl group active:scale-[0.98] transition-all">
                                             <div className="w-24 h-16 bg-black rounded-lg overflow-hidden shrink-0">
-                                                <img src={vid.thumbnail} alt="" className="w-full h-full object-cover" />
+                                                <img src={vid.thumbnail} alt={vid.title || "Video Thumbnail"} className="w-full h-full object-cover" />
                                             </div>
                                             <div className="flex-1 min-w-0 flex flex-col justify-center">
                                                 <h4 className="text-sm font-bold text-white truncate">{vid.title}</h4>

@@ -88,14 +88,14 @@ const Hero = () => {
                         </div>
 
                         <div ref={headingRef} className="mb-6 md:mb-8 font-outfit" style={{ fontFamily: 'var(--font-outfit)' }}>
-                            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.1] tracking-tighter relative inline-block">
-                                World Class
-                                <div className="absolute -bottom-1 md:-bottom-2 left-0 w-[70%] h-[4px] md:h-[6px] bg-gradient-to-r from-blue-600 via-blue-400 to-transparent rounded-full shadow-[0_4px_12px_-2px_rgba(37,99,235,0.5)]"></div>
-                                <div className="absolute -bottom-1 md:-bottom-2 left-0 w-[40%] h-[2px] md:h-[3px] bg-white/40 rounded-full blur-[1px]"></div>
-                            </h1>
-                            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black leading-[1.1] tracking-tighter mt-1 md:mt-2">
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                                    Dental Care
+                            <h1 className="font-black text-white leading-[1.1] tracking-tighter relative inline-block">
+                                <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] relative">
+                                    Best Dental Clinic
+                                    <span className="absolute -bottom-1 md:-bottom-2 left-0 w-[70%] h-[4px] md:h-[6px] bg-gradient-to-r from-blue-600 via-blue-400 to-transparent rounded-full shadow-[0_4px_12px_-2px_rgba(37,99,235,0.5)]"></span>
+                                    <span className="absolute -bottom-1 md:-bottom-2 left-0 w-[40%] h-[2px] md:h-[3px] bg-white/40 rounded-full blur-[1px]"></span>
+                                </span>
+                                <span className="block text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] mt-1 md:mt-2 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                                    in Surat
                                 </span>
                             </h1>
                         </div>
@@ -135,7 +135,7 @@ const Hero = () => {
                                     <div key={idx} className={`absolute inset-0 transition-all duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}>
                                         <img
                                             src={img.src}
-                                            alt={img.label}
+                                            alt={`${img.label} - Best Dental Clinic in Surat`}
                                             className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>

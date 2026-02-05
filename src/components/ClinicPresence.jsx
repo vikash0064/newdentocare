@@ -71,8 +71,8 @@ const ClinicPresence = () => {
                                 style={{ backfaceVisibility: 'hidden' }}
                             >
                                 <img
-                                    src="/business-card-1.jpg"
-                                    alt="Dent O Care - Dr. Nimisha Modi Business Card"
+                                    src="/business-card-1.jpeg"
+                                    alt="Dr. Nimisha Modi - Best Dentist in Surat Business Card"
                                     className="w-full h-full object-cover"
                                 />
                                 {/* Subtle overlay for better integration */}
@@ -89,7 +89,7 @@ const ClinicPresence = () => {
                             >
                                 <img
                                     src="/business-card-2.jpg"
-                                    alt="Dent O Care - Branch Locations and Timings"
+                                    alt="Dent O Care - Best Dental Clinic in Surat Locations and Timings"
                                     className="w-full h-full object-cover"
                                 />
                                 {/* Subtle overlay for better integration */}

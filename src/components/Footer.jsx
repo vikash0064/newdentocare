@@ -90,7 +90,7 @@ const Footer = () => {
                     {/* Column 1: Brand (Order 2, Full Width on Mobile) */}
                     <div className="order-2 col-span-2 lg:col-span-1 lg:order-1 space-y-4">
                         <div className="flex items-center gap-2 group">
-                            <img src={IMAGES.logo} alt="Dent O Care - Advanced Multi-speciality Implant Center" className="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
+                            <img src={IMAGES.logo} alt="Dent O Care - Best Dental Clinic in Surat Logo" className="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
                         </div>
                         <p className="leading-relaxed text-gray-400 text-xs sm:text-sm font-medium max-w-sm">
                             Revolutionary dental care with Surat's finest clinical excellence and personalized journeys.
@@ -99,7 +99,7 @@ const Footer = () => {
                         {/* Social Links */}
                         <div className="flex gap-2.5">
                             {[
-                                { Icon: Facebook, label: "Facebook Page", href: "https://www.facebook.com/share/1BsZrPAESC/", color: "hover:bg-blue-600 hover:border-blue-500" },
+                                { Icon: Facebook, label: "Facebook Page", href: "https://www.facebook.com/modi.nimisha.5", color: "hover:bg-blue-600 hover:border-blue-500" },
                                 { Icon: Instagram, label: "Instagram Profile", href: "https://www.instagram.com/dentocare_dental", color: "hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 hover:border-pink-500" },
                                 { Icon: Youtube, label: "Youtube Channel", href: "https://www.youtube.com/@dentocare_dental", color: "hover:bg-red-600 hover:border-red-500" }
                             ].map((social, i) => (

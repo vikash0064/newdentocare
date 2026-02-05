@@ -103,7 +103,7 @@ const ClinicGallery = () => {
                         >
                             <img
                                 src={img.url}
-                                alt={`Gallery ${index}`}
+                                alt={`Dent O Care Gallery - ${img.category} - ${index + 1} - Best Dental Clinic in Surat`}
                                 loading="lazy"
                                 className="w-full h-auto transform group-hover:scale-110 transition-all duration-[1.5s] ease-out"
                             />
@@ -143,7 +143,7 @@ const ClinicGallery = () => {
                         <ChevronRight size={24} className="md:w-10 md:h-10" />
                     </button>
                     <div className="relative max-w-[95vw] md:max-w-[90vw] max-h-[85vh]" onClick={(e) => e.stopPropagation()}>
-                        <img src={filteredImages[selectedImageIndex].url} alt="Full View" className="max-w-full max-h-[85vh] object-contain rounded-xl md:rounded-[2rem] shadow-3xl border border-white/10" />
+                        <img src={filteredImages[selectedImageIndex].url} alt={`Full View - ${filteredImages[selectedImageIndex].category}`} className="max-w-full max-h-[85vh] object-contain rounded-xl md:rounded-[2rem] shadow-3xl border border-white/10" />
                     </div>
                 </div>
             )}

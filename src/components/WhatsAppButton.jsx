@@ -50,7 +50,7 @@ const WhatsAppButton = () => {
             icon: Facebook,
             label: 'Facebook',
             color: 'bg-[#1877F2]',
-            href: 'https://facebook.com/',
+            href: 'https://www.facebook.com/modi.nimisha.5',
             delay: 0.1
         }
     ];

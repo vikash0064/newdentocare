@@ -32,12 +32,12 @@ const HomeSEO = () => {
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
                     <div className="max-w-2xl text-center lg:text-left">
                         <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3 sm:mb-4 tracking-tight">
-                            Clinical Excellence in <span className="text-blue-500">Surat</span>
+                            Best Dental Clinic <span className="text-blue-500">in Surat</span>
                         </h2>
                         <p className="text-[11px] sm:text-xs lg:text-sm text-gray-400/60 leading-relaxed mx-auto lg:mx-0">
-                            Dent O Care, led by <strong>Dr. Nimisha Modi</strong>, is recognized as the <strong>best dental clinic in Surat</strong>.
-                            With 366+ 5-star reviews, we provide ethical, high-tech, and <strong>painless dental treatments</strong>
-                            at our Simanagar (Palanpur Road) and Gaurav Path branches.
+                            Looking for the <strong>top dentist in Surat</strong>? Dent O Care, led by <strong>Dr. Nimisha Modi</strong>, is your trusted partner for a healthy smile.
+                            Rated as the <strong>best dental hospital in Surat</strong> for our ethical approach, we specialize in high-tech, <strong>painless dental treatments</strong>,
+                            Root Canals, and Implants at Simanagar (Palanpur Road) and Gaurav Path.
                         </p>
                     </div>
                     <div className="flex gap-3 sm:gap-4 justify-center lg:justify-end shrink-0">

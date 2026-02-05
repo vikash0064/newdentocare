@@ -176,9 +176,9 @@ const SEO = ({
                 "jobTitle": "Chief Dentist & Implantologist"
             },
             "sameAs": [
-                "https://www.facebook.com/plusdentocare",
-                "https://www.instagram.com/plusdentocare",
-                "https://www.youtube.com/@plusdentocare"
+                "https://www.facebook.com/modi.nimisha.5",
+                "https://www.instagram.com/dentocare_dental",
+                "https://www.youtube.com/@dentocare_dental"
             ],
             "areaServed": {
                 "@type": "City",
