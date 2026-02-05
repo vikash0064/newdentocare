@@ -14,7 +14,7 @@ const SEO = ({
     const fullUrl = `${siteUrl}${location.pathname}`;
 
     const defaultTitle = "Best Dental Clinic in Surat | Dr Nimisha Modi – Plus Dento Care";
-    const defaultDescription = "Plus Dento Care is a trusted dental clinic in Surat led by Dr Nimisha Modi with 366+ 5-star reviews. Specializing in Implants, RCT, braces & cosmetic dentistry at Palanpur Road & Gaurav Path branches.";
+    const defaultDescription = "Plus Dento Care: Best Dental Clinic in Surat by Dr. Nimisha Modi. Specializing in Implants, RCT, Braces & Cosmetic Dentistry. 366+ 5-star reviews.";
     const defaultKeywords = "dental clinic surat, best dentist surat, dr nimisha modi, dental implants surat, root canal treatment surat, teeth whitening surat, braces surat, cosmetic dentistry surat, painless dentistry, kids dentist surat, emergency dental care surat";
 
     const pageTitle = title ? `${title} | Plus Dento Care` : defaultTitle;
