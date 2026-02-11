@@ -13,6 +13,7 @@ const Testimonial = require('./models/Testimonial');
 const User = require('./models/User');
 const GalleryImage = require('./models/GalleryImage');
 const VideoItem = require('./models/VideoItem');
+const Blog = require('./models/Blog');
 const cloudinary = require('./services/cloudinaryConfig');
 
 const app = express();
@@ -102,6 +103,7 @@ process.on('SIGINT', async () => {
 
 // Initialize
 startServer();
+// Server config updated
 
 // ========================================
 // ROUTES
@@ -245,6 +247,62 @@ app.delete('/api/videos/:id', async (req, res) => {
     try {
         await VideoItem.findByIdAndDelete(req.params.id);
         res.json({ message: 'Video deleted' });
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+// --- BLOGS ---
+app.get('/api/blogs', async (req, res) => {
+    try {
+        const blogs = await Blog.find().sort({ date: -1 }).lean();
+        res.json(blogs);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.post('/api/blogs', upload.single('image'), async (req, res) => {
+    try {
+        const { title, content, author, slug, category } = req.body;
+        let imageUrl = '';
+
+        if (req.file) {
+            const result = await new Promise((resolve, reject) => {
+                const uploadStream = cloudinary.uploader.upload_stream(
+                    { folder: 'dentocare_blogs' },
+                    (error, result) => {
+                        if (error) reject(error);
+                        else resolve(result);
+                    }
+                );
+                uploadStream.end(req.file.buffer);
+            });
+            imageUrl = result.secure_url;
+        }
+
+        const newBlog = new Blog({
+            title,
+            content,
+            image: imageUrl,
+            category: category || 'Dental Health',
+            author: author || 'Dr. Vikash',
+            slug: slug || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''),
+            date: new Date()
+        });
+
+        await newBlog.save();
+        res.status(201).json(newBlog);
+    } catch (err) {
+        console.error('Blog Upload Error:', err);
+        res.status(500).json({ error: err.message });
+    }
+});
+
+app.delete('/api/blogs/:id', async (req, res) => {
+    try {
+        await Blog.findByIdAndDelete(req.params.id);
+        res.json({ message: 'Blog deleted' });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }

@@ -9,6 +9,7 @@ const WhyChoose = React.lazy(() => import('../components/WhyChoose'));
 const DentalReels = React.lazy(() => import('../components/DentalReels'));
 const PatientSpeaks = React.lazy(() => import('../components/PatientSpeaks'));
 const MeetTheDoctor = React.lazy(() => import('../components/MeetTheDoctor'));
+const LatestBlog = React.lazy(() => import('../components/LatestBlog'));
 
 import { Link } from 'react-router-dom';
 
@@ -38,6 +39,7 @@ const Home = () => {
                 <WhyChoose />
                 <DentalReels />
                 <ClinicPresence />
+                <LatestBlog />
                 <HomeSEO />
                 <PatientSpeaks />
             </React.Suspense>

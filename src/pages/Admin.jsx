@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useData } from '../context/DataContext';
-import { Upload, Video, Image as ImageIcon, Trash2, Link, Check, AlertCircle, Lock, Eye, EyeOff, Loader2 } from 'lucide-react';
+import { Upload, Video, Image as ImageIcon, Trash2, Link, Check, AlertCircle, Lock, Eye, EyeOff, Loader2, FileText, PenTool } from 'lucide-react';
 import API_URL from '../config/api';
 
 const AdminPanel = () => {
-    const { addGalleryImage, addVideoItem, galleryImages, videoList, removeGalleryImage, removeVideoItem, loading } = useData();
-    const [activeTab, setActiveTab] = useState('gallery'); // 'gallery' | 'videos'
+    const { addGalleryImage, addVideoItem, addBlogItem, galleryImages, videoList, blogList, removeGalleryImage, removeVideoItem, removeBlogItem, loading } = useData();
+    const [activeTab, setActiveTab] = useState('gallery'); // 'gallery' | 'videos' | 'blogs'
 
     // Authentication States
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -16,9 +16,17 @@ const AdminPanel = () => {
     // Admin Password (Hardcoded for simplicity as requested, but should ideally come from backend)
     const ADMIN_PASSWORD = 'dentocare@2026';
 
-    // Form States
+    // Video Form States
     const [videoUrl, setVideoUrl] = useState('');
     const [videoTitle, setVideoTitle] = useState('');
+
+    // Blog Form States
+    const [blogTitle, setBlogTitle] = useState('');
+    const [blogContent, setBlogContent] = useState('');
+    const [blogAuthor, setBlogAuthor] = useState('Dr. Nimisha Modi');
+    const [blogCategory, setBlogCategory] = useState('Dental Health');
+    const [blogImage, setBlogImage] = useState(null);
+
     const [notification, setNotification] = useState(null);
     const [isUploading, setIsUploading] = useState(false);
 
@@ -124,6 +132,45 @@ const AdminPanel = () => {
         setIsUploading(false);
     };
 
+    const handleBlogSubmit = async (e) => {
+        e.preventDefault();
+        setIsUploading(true);
+
+        const formData = new FormData();
+        formData.append('title', blogTitle);
+        formData.append('content', blogContent);
+        formData.append('author', blogAuthor);
+        formData.append('category', blogCategory);
+        if (blogImage) {
+            formData.append('image', blogImage);
+        }
+
+        try {
+            const response = await fetch(`${API_URL}/api/blogs`, {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+
+            if (response.ok) {
+                addBlogItem(data);
+                setBlogTitle('');
+                setBlogContent('');
+                setBlogCategory('Dental Health');
+                setBlogImage(null);
+                // Reset file input
+                document.getElementById('blog-img-upload').value = '';
+                showNotification('Blog published successfully!', 'success');
+            } else {
+                showNotification(data.error || 'Failed to publish blog', 'error');
+            }
+        } catch (err) {
+            showNotification('Server error', 'error');
+        } finally {
+            setIsUploading(false);
+        }
+    };
+
     const showNotification = (msg, type) => {
         setNotification({ msg, type });
         setTimeout(() => setNotification(null), 3000);
@@ -212,6 +259,13 @@ const AdminPanel = () => {
                         Video Manager
                         {activeTab === 'videos' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-red-500"></span>}
                     </button>
+                    <button
+                        onClick={() => setActiveTab('blogs')}
+                        className={`pb-4 px-4 text-sm font-bold uppercase tracking-wider transition-all relative ${activeTab === 'blogs' ? 'text-purple-400' : 'text-gray-500 hover:text-white'}`}
+                    >
+                        Blog Posts
+                        {activeTab === 'blogs' && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-purple-500"></span>}
+                    </button>
                 </div>
 
                 {/* Content Area */}
@@ -255,7 +309,7 @@ const AdminPanel = () => {
                                     </label>
                                 </div>
                             </div>
-                        ) : (
+                        ) : activeTab === 'videos' ? (
                             <div className="space-y-6">
                                 <div>
                                     <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
@@ -301,6 +355,74 @@ const AdminPanel = () => {
                                     </button>
                                 </form>
                             </div>
+                        ) : (
+                            <div className="space-y-6">
+                                <div>
+                                    <h3 className="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                        <PenTool size={20} className="text-purple-500" /> Write Article
+                                    </h3>
+                                    <p className="text-xs text-gray-500 leading-relaxed mb-6">
+                                        Share insights and updates with your patients.
+                                    </p>
+                                </div>
+
+                                <form onSubmit={handleBlogSubmit} className="space-y-4">
+                                    <div>
+                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Article Title</label>
+                                        <input
+                                            type="text"
+                                            value={blogTitle}
+                                            onChange={(e) => setBlogTitle(e.target.value)}
+                                            placeholder="e.g. Benefits of Dental Implants"
+                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500/50"
+                                            required
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Category</label>
+                                        <select
+                                            value={blogCategory}
+                                            onChange={(e) => setBlogCategory(e.target.value)}
+                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-300 focus:outline-none focus:border-purple-500/50"
+                                        >
+                                            <option value="Dental Health">Dental Health</option>
+                                            <option value="Cosmetic Dentistry">Cosmetic Dentistry</option>
+                                            <option value="Dental Implants">Dental Implants</option>
+                                            <option value="Oral Hygiene">Oral Hygiene</option>
+                                            <option value="Teeth Whitening">Teeth Whitening</option>
+                                            <option value="Pediatric Dentistry">Pediatric Dentistry</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Cover Image</label>
+                                        <input
+                                            type="file"
+                                            accept="image/*"
+                                            id="blog-img-upload"
+                                            onChange={(e) => setBlogImage(e.target.files[0])}
+                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-gray-400 focus:outline-none focus:border-purple-500/50"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Content</label>
+                                        <textarea
+                                            value={blogContent}
+                                            onChange={(e) => setBlogContent(e.target.value)}
+                                            placeholder="Write your article here..."
+                                            rows="8"
+                                            className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-purple-500/50 resize-none"
+                                            required
+                                        ></textarea>
+                                    </div>
+                                    <button
+                                        type="submit"
+                                        disabled={isUploading}
+                                        className="w-full py-4 bg-purple-600 hover:bg-purple-700 text-white font-bold uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-2"
+                                    >
+                                        {isUploading ? <Loader2 size={18} className="animate-spin" /> : 'Publish Article'}
+                                    </button>
+                                </form>
+                            </div>
                         )}
                     </div>
 
@@ -309,7 +431,7 @@ const AdminPanel = () => {
                         <div className="flex items-center justify-between">
                             <h3 className="text-lg font-bold text-white">Database Records</h3>
                             <span className="text-[10px] sm:text-[11px] font-black px-3 py-1 bg-white/5 rounded-full text-blue-400">
-                                {activeTab === 'gallery' ? `${galleryImages.length} IMAGES` : `${videoList.length} VIDEOS`}
+                                {activeTab === 'gallery' ? `${galleryImages.length} IMAGES` : activeTab === 'videos' ? `${videoList.length} VIDEOS` : `${blogList.length} POSTS`}
                             </span>
                         </div>
 
@@ -337,7 +459,7 @@ const AdminPanel = () => {
                                     ))
                                 )}
                             </div>
-                        ) : (
+                        ) : activeTab === 'videos' ? (
                             <div className="space-y-3">
                                 {videoList.length === 0 ? (
                                     <div className="py-12 text-center border border-dashed border-white/10 rounded-2xl opacity-50">
@@ -355,6 +477,38 @@ const AdminPanel = () => {
                                             </div>
                                             <button
                                                 onClick={() => removeVideoItem(vid._id)}
+                                                className="p-3 text-gray-500 hover:text-red-500 transition-colors"
+                                            >
+                                                <Trash2 size={18} />
+                                            </button>
+                                        </div>
+                                    ))
+                                )}
+                            </div>
+                        ) : (
+                            <div className="space-y-3">
+                                {blogList.length === 0 ? (
+                                    <div className="py-12 text-center border border-dashed border-white/10 rounded-2xl opacity-50">
+                                        <p className="text-gray-500 text-sm italic">No articles published</p>
+                                    </div>
+                                ) : (
+                                    blogList.map((blog) => (
+                                        <div key={blog._id} className="flex gap-4 p-4 bg-white/5 border border-white/5 rounded-2xl group active:scale-[0.98] transition-all">
+                                            <div className="w-16 h-16 bg-black rounded-lg overflow-hidden shrink-0">
+                                                {blog.image ? (
+                                                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
+                                                ) : (
+                                                    <div className="w-full h-full flex items-center justify-center bg-gray-800 text-gray-600">
+                                                        <FileText size={24} />
+                                                    </div>
+                                                )}
+                                            </div>
+                                            <div className="flex-1 min-w-0 flex flex-col justify-center">
+                                                <h4 className="text-sm font-bold text-white truncate">{blog.title}</h4>
+                                                <p className="text-[10px] text-gray-500 uppercase font-bold truncate">{blog.date ? new Date(blog.date).toLocaleDateString() : 'Just now'}</p>
+                                            </div>
+                                            <button
+                                                onClick={() => removeBlogItem(blog._id)}
                                                 className="p-3 text-gray-500 hover:text-red-500 transition-colors"
                                             >
                                                 <Trash2 size={18} />
