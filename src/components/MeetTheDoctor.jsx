@@ -46,7 +46,7 @@ const MeetTheDoctor = () => {
                     {/* Left: Content */}
                     <div ref={contentRef} className="lg:w-1/2">
                         <div className="inline-flex items-center gap-2 bg-[#1e293b] text-blue-400 px-3 py-1.5 rounded-lg text-[11px] font-semibold tracking-wide uppercase mb-6 border border-gray-800 shadow-xl">
-                            <Award size={14} /> Meet Our Lead Specialist
+                            <Award size={14} /> Meet Our Lead Specialist at Dentocare
                         </div>
 
                         {/* Updated Name to Single Line */}

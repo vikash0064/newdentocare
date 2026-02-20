@@ -57,7 +57,7 @@ const Navbar = () => {
                             <Link to="/" className="flex items-center group" aria-label="Dent O Care Home">
                                 <img
                                     src={IMAGES.logo}
-                                    alt="Plus Dento Care - Advanced Multi-speciality Implant Center in Surat Logo"
+                                    alt="Plus Dento Care (Dentocare) - Dr. Nimisha Modi - Best Dental Clinic in Surat Logo"
                                     className="h-7 sm:h-9 md:h-10 lg:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                                     loading="eager"
                                     decoding="async"

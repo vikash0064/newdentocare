@@ -92,7 +92,7 @@ const Footer = () => {
                         <div className="flex items-center gap-2 group">
                             <img
                                 src={IMAGES.logo}
-                                alt="Plus Dento Care - Best Dental Clinic in Surat Logo"
+                                alt="Plus Dento Care (Dentocare) - Dr. Nimisha Modi - Best Dental Clinic in Surat Logo"
                                 className="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
                                 loading="lazy"
                                 decoding="async"

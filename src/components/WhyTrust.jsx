@@ -37,7 +37,7 @@ const WhyTrust = () => {
                         Trusted by 10,000+ Families
                     </span>
                     <h2 className="text-3xl md:text-5xl font-black mb-2 text-white tracking-tight leading-tight">
-                        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Dent O Care?</span>
+                        Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Dentocare?</span>
                     </h2>
                     <p className="text-gray-400 text-sm font-medium max-w-4xl mx-auto leading-relaxed">
                         Experience expert dental care and clinical excellence. We are Surat's trusted choice for a healthy, beautiful smile.
@@ -52,7 +52,7 @@ const WhyTrust = () => {
                                 <img
                                     key={index}
                                     src={img}
-                                    alt={`Plus Dento Care Clinic Environment ${index + 1} Surat - Expert Dental Care by Dr. Nimisha Modi`}
+                                    alt={`Plus Dento Care (Dentocare) Clinic Environment ${index + 1} Surat - Expert Dental Care by Dr. Nimisha Modi`}
                                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                                         }`}
                                     loading="lazy"

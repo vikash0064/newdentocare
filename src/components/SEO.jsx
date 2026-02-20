@@ -14,11 +14,11 @@ const SEO = ({
     const siteUrl = "https://www.plusdentocare.in";
     const fullUrl = `${siteUrl}${location.pathname}`;
 
-    const defaultTitle = "Plus Dento Care | Best Dentist in Surat | Dental Clinic Near Me";
-    const defaultDescription = "Plus Dento Care - Top-rated dental clinic in Surat. Expert dentists for dental implants, root canal, teeth whitening, braces & more. Book your appointment today! Painless treatment, affordable prices, 5-star facilities.";
-    const defaultKeywords = "dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces Surat, kids dentist Surat, emergency dentist Surat, affordable dental care, best dentist near me";
+    const defaultTitle = "Plus Dento Care | Dr. Nimisha Modi | Best Dentist in Surat | Dental Clinic Near Me";
+    const defaultDescription = "Plus Dento Care (Dentocare) - Top-rated dental clinic in Surat by Dr. Nimisha Modi. Expert dentist for dental implants, root canal, teeth whitening, braces & more. Book your appointment today! Painless treatment, affordable prices, 5-star facilities.";
+    const defaultKeywords = "dentocare, Plus Dento Care Surat, Dr. Nimisha Modi, dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces Surat, kids dentist Surat, emergency dentist Surat, affordable dental care, best dentist near me";
 
-    const pageTitle = title ? `${title} | Plus Dento Care` : defaultTitle;
+    const pageTitle = title ? `${title} | Dr. Nimisha Modi | Plus Dento Care` : defaultTitle;
     const pageDescription = description || defaultDescription;
     const pageKeywords = keywords || defaultKeywords;
 
@@ -210,7 +210,7 @@ const SEO = ({
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Plus Dento Care",
-            "alternateName": ["Plus Dento Care Surat", "PlusDentoCare"],
+            "alternateName": ["Plus Dento Care Surat", "PlusDentoCare", "Dentocare", "Dento Care"],
             "url": siteUrl,
             "potentialAction": {
                 "@type": "SearchAction",

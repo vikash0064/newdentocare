@@ -23,8 +23,8 @@ const Home = () => {
     return (
         <main className="bg-[#0B1120] text-white">
             <SEO
-                title="Plus Dento Care | Best Dentist in Surat | Dental Clinic Near Me"
-                description="Plus Dento Care - Top-rated dental clinic in Surat. Expert dentists for dental implants, root canal, teeth whitening, braces & more. Book your appointment today! Painless treatment, affordable prices, 5-star facilities."
+                title="Plus Dento Care | Dr. Nimisha Modi | Best Dentist in Surat"
+                description="Plus Dento Care (Dentocare) - Top-rated dental clinic in Surat by Dr. Nimisha Modi. Expert dentist for dental implants, root canal, teeth whitening, braces & more. Book your appointment today! Painless treatment, affordable prices, 5-star facilities."
                 faqData={[
                     {
                         question: "How much do dental implants cost in Surat?",
