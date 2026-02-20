@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /cgi-bin/
 
-# Sitemap
 Sitemap: https://www.plusdentocare.in/sitemap.xml
