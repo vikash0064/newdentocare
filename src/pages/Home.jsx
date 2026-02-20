@@ -23,8 +23,34 @@ const Home = () => {
     return (
         <main className="bg-[#0B1120] text-white">
             <SEO
-                title="Best Dental Clinic in Surat | Dr Nimisha Modi"
-                description="Expert dental care in Surat by Dr. Nimisha Modi. Specialized in Implants, Root Canal, Cosmetic Dentistry and Pain-free treatments. 5-Star rated clinic."
+                title="Plus Dento Care | Best Dentist in Surat | Dental Clinic Near Me"
+                description="Plus Dento Care - Top-rated dental clinic in Surat. Expert dentists for dental implants, root canal, teeth whitening, braces & more. Book your appointment today! Painless treatment, affordable prices, 5-star facilities."
+                faqData={[
+                    {
+                        question: "How much do dental implants cost in Surat?",
+                        answer: "Dental implants at Plus Dento Care start from ₹18,000. The final cost depends on individual requirements and the type of implant chosen. Book a free consultation for accurate pricing."
+                    },
+                    {
+                        question: "Is root canal treatment painful?",
+                        answer: "No! Root canal treatment at Plus Dento Care is completely painless. We use advanced anesthesia and modern rotary techniques to ensure your complete comfort."
+                    },
+                    {
+                        question: "What are your clinic timings?",
+                        answer: "We are open Monday to Saturday from 9:00 AM to 8:00 PM. We also offer emergency dental services for patients in pain."
+                    },
+                    {
+                        question: "Do you offer dental implants for seniors?",
+                        answer: "Yes! We provide dental implants for patients of all ages, including seniors. Our experienced team assesses each patient's bone density and health before proceeding."
+                    },
+                    {
+                        question: "How long does teeth whitening last?",
+                        answer: "Teeth whitening results can last 1-3 years with proper care. Avoiding smoking, coffee, and colored foods will help maintain the brightness longer."
+                    },
+                    {
+                        question: "Do you provide free consultation?",
+                        answer: "Yes! We offer free consultation for all major dental treatments. Book your appointment today!"
+                    }
+                ]}
             />
             <Hero />
 

@@ -52,9 +52,11 @@ const WhyTrust = () => {
                                 <img
                                     key={index}
                                     src={img}
-                                    alt={`Clinic Environment ${index + 1}`}
+                                    alt={`Plus Dento Care Clinic Environment ${index + 1} Surat - Expert Dental Care by Dr. Nimisha Modi`}
                                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                                         }`}
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                             ))}
 

@@ -9,7 +9,13 @@ const DoctorProfile = () => {
                 <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
                     <div className="md:w-1/2 relative">
                         <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/5">
-                            <img src={IMAGES.doctor} alt="Dr. Nimisha Modi" className="w-full h-auto object-cover" />
+                            <img
+                                src={IMAGES.doctor}
+                                alt="Dr. Nimisha Modi - Chief Dentist and Implantologist at Plus Dento Care Surat"
+                                className="w-full h-auto object-cover"
+                                loading="lazy"
+                                decoding="async"
+                            />
                         </div>
                         {/* Decorative pattern */}
                         <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 translate-x-1/2">

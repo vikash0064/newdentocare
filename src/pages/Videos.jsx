@@ -160,8 +160,8 @@ const Videos = () => {
     return (
         <main className="bg-[#050811] h-screen w-full flex flex-col relative overflow-hidden">
             <SEO
-                title="Patient Stories & Dental Reels"
-                description="Watch our latest dental transformations, patient testimonials, and clinical highlights in our video gallery."
+                title="Patient Stories & Dental Reels | Plus Dento Care Surat"
+                description="Watch our latest dental transformations, patient testimonials, and clinical highlights by Dr. Nimisha Modi in our video gallery at Plus Dento Care Surat."
             />
             {/* Solid Fixed Background */}
             <div className="absolute inset-0 bg-[#050811] -z-20"></div>
@@ -180,7 +180,7 @@ const Videos = () => {
                         </div>
 
                         <h1 className="header-anim text-2xl sm:text-5xl font-black text-white leading-none tracking-tight uppercase">
-                            Patient <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Stories</span>
+                            Patient Stories & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Dental Results in Surat</span>
                         </h1>
                     </div>
                 </div>

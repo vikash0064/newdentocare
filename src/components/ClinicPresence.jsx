@@ -72,8 +72,10 @@ const ClinicPresence = () => {
                             >
                                 <img
                                     src="/business-card-1.jpeg"
-                                    alt="Dr. Nimisha Modi - Best Dentist in Surat Business Card"
+                                    alt="Dr. Nimisha Modi - Best Dentist in Surat Business Card at Plus Dento Care"
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 {/* Subtle overlay for better integration */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
@@ -89,8 +91,10 @@ const ClinicPresence = () => {
                             >
                                 <img
                                     src="/business-card-2.jpg"
-                                    alt="Dent O Care - Best Dental Clinic in Surat Locations and Timings"
+                                    alt="Plus Dento Care - Best Dental Clinic in Surat Branch Details and Timings"
                                     className="w-full h-full object-cover"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 {/* Subtle overlay for better integration */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>

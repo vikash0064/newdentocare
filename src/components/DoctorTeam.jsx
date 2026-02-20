@@ -74,7 +74,9 @@ const DoctorTeam = () => {
                                     <div className="relative aspect-[4/5] md:aspect-[4.5/6] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl z-10 transition-transform duration-500 group-hover/card:scale-[1.03]">
                                         <img
                                             src={doc.image}
-                                            alt={doc.name}
+                                            alt={`${doc.name} - ${doc.role} at Plus Dento Care Surat | Best Dental Clinic in Surat`}
+                                            loading="lazy"
+                                            decoding="async"
                                             className="w-full h-full object-cover transition-all duration-1000 grayscale-[20%] group-hover/card:grayscale-0"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/80 via-transparent to-transparent"></div>

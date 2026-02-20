@@ -73,7 +73,9 @@ const LatestBlog = () => {
                             <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-blue-600/0 transition-colors z-10"></div>
                             <img
                                 src={latestBlog.image || "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"}
-                                alt={latestBlog.title}
+                                alt={`${latestBlog.title} - Dental Health Article by Plus Dento Care Surat`}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                             />
 

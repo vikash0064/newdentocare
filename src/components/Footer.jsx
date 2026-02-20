@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IMAGES } from '../constants';
-import { ShieldCheck, Calendar, Phone, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Heart } from 'lucide-react';
+import { ShieldCheck, Calendar, Phone, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Heart, Lock } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -90,7 +90,13 @@ const Footer = () => {
                     {/* Column 1: Brand (Order 2, Full Width on Mobile) */}
                     <div className="order-2 col-span-2 lg:col-span-1 lg:order-1 space-y-4">
                         <div className="flex items-center gap-2 group">
-                            <img src={IMAGES.logo} alt="Dent O Care - Best Dental Clinic in Surat Logo" className="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110" />
+                            <img
+                                src={IMAGES.logo}
+                                alt="Plus Dento Care - Best Dental Clinic in Surat Logo"
+                                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                                loading="lazy"
+                                decoding="async"
+                            />
                         </div>
                         <p className="leading-relaxed text-gray-400 text-xs sm:text-sm font-medium max-w-sm">
                             Revolutionary dental care with Surat's finest clinical excellence and personalized journeys.
@@ -160,18 +166,45 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-white/10 pt-3 sm:pt-4">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-4">
-                        <p className="text-[9px] sm:text-[10px] text-gray-500 font-medium flex items-center gap-1.5">
-                            © {new Date().getFullYear()} Dent O Care. <Heart size={10} className="text-red-500 fill-current" />
-                        </p>
-                        <div className="flex gap-3 sm:gap-5 text-[9px] sm:text-[10px]">
-                            <Link to="#" className="text-gray-500 hover:text-blue-400 transition-colors">Privacy</Link>
-                            <Link to="#" className="text-gray-500 hover:text-blue-400 transition-colors">Terms</Link>
-                            <Link to="#" className="text-gray-500 hover:text-blue-400 transition-colors">Emergency</Link>
-                            <span className="text-gray-700">•</span>
-                            <Link to="/admin" className="text-gray-600 hover:text-blue-400 transition-colors font-semibold">Admin</Link>
+                {/* Bottom Bar - Enhanced & Centered Credits */}
+                <div className="border-t border-white/10 pt-8 mt-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
+                        {/* Copyright - Left on Desktop */}
+                        <div className="text-center lg:text-left order-2 lg:order-1">
+                            <p className="text-[10px] text-gray-500 font-medium flex items-center justify-center lg:justify-start gap-1.5 uppercase tracking-widest">
+                                © {new Date().getFullYear()} Dent O Care SURAT. <Heart size={10} className="text-red-500 fill-current" />
+                            </p>
+                        </div>
+
+                        {/* Centered & Eye-Catching Credit - Center */}
+                        <div className="flex justify-center order-1 lg:order-2">
+                            <a
+                                href="https://webnginx.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group relative"
+                            >
+                                {/* Glowing Background Effect */}
+                                <div className="absolute inset-0 bg-blue-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-full"></div>
+
+                                <div className="relative bg-[#0B1120]/80 backdrop-blur-xl border border-white/10 px-8 py-2.5 rounded-full flex items-center gap-4 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]">
+                                    <span className="text-[8px] font-black text-gray-500 uppercase tracking-[0.4em] mb-0.5">Designed By</span>
+                                    <div className="h-4 w-[1px] bg-white/10 group-hover:bg-blue-500/30 transition-colors"></div>
+                                    <span className="text-xs font-black bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent uppercase tracking-tight group-hover:tracking-widest transition-all duration-700">
+                                        webnginx
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        {/* Secondary Links - Right on Desktop */}
+                        <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-600 order-3 lg:order-3">
+                            <Link to="#" className="hover:text-blue-400 transition-colors">Privacy</Link>
+                            <Link to="#" className="hover:text-blue-400 transition-colors">Emergency</Link>
+                            <Link to="/admin" className="text-blue-500/60 hover:text-blue-400 transition-colors flex items-center gap-1 group/admin">
+                                <Lock size={10} className="group-hover/admin:scale-110 transition-transform" />
+                                Admin
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -88,8 +88,8 @@ const Treatments = () => {
     return (
         <main className="bg-[#0B1120] min-h-screen text-white relative overflow-x-hidden">
             <SEO
-                title="Specialized Dental Treatments"
-                description="Explore our range of advanced dental treatments in Surat: Dental Implants, RCT, Orthodontics, Smile Design, and Oral Surgery by Dr. Nimisha Modi."
+                title="Dental Treatments in Surat | Plus Dento Care | Dr. Nimisha Modi"
+                description="Expert dental treatments in Surat: Dental Implants, RCT, Orthodontics, Smile Design, and Oral Surgery by Dr. Nimisha Modi at Plus Dento Care."
             />
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -z-0 pointer-events-none opacity-50"></div>
@@ -104,7 +104,7 @@ const Treatments = () => {
                     </div>
                     <h1 className="text-3xl md:text-7xl font-black mb-4 tracking-tight leading-tight md:leading-none">
                         Specialized <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Oral Protocols</span>
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Dental Treatments in Surat</span>
                     </h1>
                     <p className="text-gray-500 font-medium max-w-xl mx-auto tracking-wide text-[10px] md:text-sm leading-relaxed opacity-70">
                         Engineering advanced dental solutions with robotic precision and surgical excellence.
@@ -125,8 +125,9 @@ const Treatments = () => {
                             <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-gray-800 transform transition-transform duration-700 hover:scale-[1.02]">
                                 <img
                                     src={treatment.image}
-                                    alt={treatment.title}
+                                    alt={`${treatment.title} Treatment at Plus Dento Care Surat | Best Dental Clinic in Surat`}
                                     loading="lazy"
+                                    decoding="async"
                                     className="w-full h-[200px] md:h-[500px] object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-2"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60"></div>

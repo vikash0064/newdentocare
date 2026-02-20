@@ -121,9 +121,9 @@ const DentalReels = () => {
                             ) : (
                                 <img
                                     src={reel.thumbnail}
-                                    alt={reel.title}
+                                    alt={`${reel.title} - Patient Transformation at Plus Dento Care Surat`}
                                     loading="lazy"
-                                    decodings="async"
+                                    decoding="async"
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                                     onError={(e) => {
                                         e.target.onerror = null;

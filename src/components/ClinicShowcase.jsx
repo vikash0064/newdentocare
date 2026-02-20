@@ -46,8 +46,9 @@ const ClinicShowcase = () => {
                         <div key={i} className="w-[300px] md:w-[450px] h-[250px] md:h-[300px] rounded-[2.5rem] overflow-hidden shrink-0 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.6)] border border-gray-800 group relative">
                             <img
                                 src={img}
-                                alt={`Clinic Interior View ${i + 1} - Best Dental Clinic in Surat`}
+                                alt={`Plus Dento Care Clinic Interior View ${i + 1} - Best Dental Clinic in Surat Dr. Nimisha Modi`}
                                 loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>

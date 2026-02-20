@@ -71,7 +71,13 @@ const Testimonials = () => {
                         {[...testimonials, ...testimonials].map((t, index) => (
                             <div key={index} className="min-w-[280px] flex-shrink-0 bg-blue-800/50 backdrop-blur-md p-6 rounded-2xl border border-blue-700 hover:bg-blue-800 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300">
                                 <div className="flex items-center space-x-3 mb-4">
-                                    <img src={t.avatar} alt={t.name} className="w-12 h-12 rounded-full border-2 border-primary object-cover" />
+                                    <img
+                                        src={t.avatar}
+                                        alt={`${t.name} - Plus Dento Care Patient in Surat`}
+                                        className="w-12 h-12 rounded-full border-2 border-primary object-cover"
+                                        loading="lazy"
+                                        decoding="async"
+                                    />
                                     <div>
                                         <h4 className="font-bold text-base">{t.name}</h4>
                                         <p className="text-blue-300 text-xs">{t.location}</p>
@@ -93,7 +99,13 @@ const Testimonials = () => {
                     {testimonials.map((t) => (
                         <div key={t.id} className="bg-blue-800/50 backdrop-blur-md p-8 rounded-2xl border border-blue-700 hover:bg-blue-800 hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 cursor-pointer">
                             <div className="flex items-center space-x-4 mb-6">
-                                <img src={t.avatar} alt={t.name} className="w-14 h-14 rounded-full border-2 border-primary object-cover hover:scale-110 transition-transform duration-300" />
+                                <img
+                                    src={t.avatar}
+                                    alt={`${t.name} - Plus Dento Care Patient in Surat Review`}
+                                    className="w-14 h-14 rounded-full border-2 border-primary object-cover hover:scale-110 transition-transform duration-300"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                                 <div>
                                     <h4 className="font-bold text-lg">{t.name}</h4>
                                     <p className="text-blue-300 text-sm">{t.location}</p>

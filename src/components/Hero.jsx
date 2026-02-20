@@ -135,8 +135,10 @@ const Hero = () => {
                                     <div key={idx} className={`absolute inset-0 transition-all duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}>
                                         <img
                                             src={img.src}
-                                            alt={`${img.label} - Best Dental Clinic in Surat`}
+                                            alt={`${img.label} at Plus Dento Care - Best Dental Clinic in Surat`}
                                             className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
+                                            loading={idx === 0 ? "eager" : "lazy"}
+                                            decoding="async"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
 

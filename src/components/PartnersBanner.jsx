@@ -12,8 +12,10 @@ const PartnersBanner = () => {
                 <div className="relative rounded-2xl overflow-hidden shadow-sm">
                     <img
                         src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2000&auto=format&fit=crop"
-                        alt="Dental Products"
+                        alt="Advanced Dental Products and Equipment at Plus Dento Care Surat - Dr. Nimisha Modi"
                         className="w-full h-64 md:h-96 object-cover"
+                        loading="lazy"
+                        decoding="async"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary-50/90 via-transparent to-transparent flex items-center">
                         <div className="p-8 md:p-16 max-w-lg">

@@ -39,8 +39,8 @@ const Contact = () => {
     return (
         <main className="bg-[#0B1120] min-h-screen relative overflow-hidden text-white">
             <SEO
-                title="Our Locations | Dent O Care Surat"
-                description="Visit Dent O Care at our Palanpur Road (Simanagar) or Gaurav Path branches in Surat for expert dental care."
+                title="Contact Us | Best Dentist in Surat | Dr. Nimisha Modi"
+                description="Visit Plus Dento Care at our Palanpur Road (Simanagar) or Gaurav Path branches in Surat. Contact Dr. Nimisha Modi for expert dental care."
             />
 
             {/* Background Elements */}
@@ -56,7 +56,7 @@ const Contact = () => {
                     </div>
 
                     <h1 className="text-2xl md:text-4xl lg:text-5xl font-black mb-3 tracking-tight">
-                        Visit Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Clinics</span>
+                        Contact Plus Dento Care | <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Dental Clinic in Surat</span>
                     </h1>
 
                     <p className="text-gray-400 text-xs md:text-sm max-w-xl mx-auto">

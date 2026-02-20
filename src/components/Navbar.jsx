@@ -57,8 +57,10 @@ const Navbar = () => {
                             <Link to="/" className="flex items-center group" aria-label="Dent O Care Home">
                                 <img
                                     src={IMAGES.logo}
-                                    alt="Dent O Care - Advanced Multi-speciality Implant Center Logo"
+                                    alt="Plus Dento Care - Advanced Multi-speciality Implant Center in Surat Logo"
                                     className="h-7 sm:h-9 md:h-10 lg:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                    loading="eager"
+                                    decoding="async"
                                 />
                             </Link>
                         </div>
@@ -132,7 +134,7 @@ const Navbar = () => {
                 <div className={`absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-500 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`} onClick={toggleMenu} />
                 <div className={`absolute top-0 right-0 h-full w-[70%] max-w-[280px] bg-[#0B1120] p-5 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) shadow-2xl flex flex-col border-l border-white/5 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <div className="flex items-center justify-between mb-8">
-                        <img src={IMAGES.logo} alt="Dent O Care" className="h-7 w-auto" />
+                        <img src={IMAGES.logo} alt="Plus Dento Care Surat" className="h-7 w-auto" loading="eager" decoding="async" />
                         <button onClick={toggleMenu} className="p-1.5 text-white/40 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-colors"><X size={18} /></button>
                     </div>
                     <nav className="flex-grow">

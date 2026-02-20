@@ -94,8 +94,9 @@ const MeetTheDoctor = () => {
                             <div className="relative bg-[#1e293b] p-3 rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] border border-gray-800 ring-4 ring-gray-800/50 overflow-hidden group">
                                 <img
                                     src={IMAGES.doctor}
-                                    alt="Dr. Nimisha Modi"
+                                    alt="Dr. Nimisha Modi - Chief Dentist at Plus Dento Care Surat | Best Dental Clinic in Surat"
                                     loading="lazy"
+                                    decoding="async"
                                     className="w-full aspect-[4/5] object-cover rounded-[2.5rem] grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                                 />
                                 {/* Glass Overlay */}

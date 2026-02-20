@@ -151,9 +151,10 @@ const WhyChoose = () => {
                                     >
                                         <img
                                             src={src}
-                                            alt={`Clinic Environment ${idx + 1}`}
+                                            alt={`Plus Dento Care Clinic Environment ${idx + 1} Surat - Expert Care by Dr. Nimisha Modi`}
                                             className="w-full h-full object-cover"
-                                            loading="eager"
+                                            loading="lazy"
+                                            decoding="async"
                                             onError={(e) => {
                                                 e.target.onerror = null;
                                                 e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' fill='%231e293b'%3E%3Crect width='400' height='300'/%3E%3Ctext x='200' y='150' font-family='Arial' font-size='16' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EImage Unavailable%3C/text%3E%3C/svg%3E";

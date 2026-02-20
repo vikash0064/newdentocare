@@ -33,8 +33,8 @@ const DoctorDetails = () => {
     return (
         <main className="bg-[#0B1120] text-white selection:bg-blue-500 selection:text-white">
             <SEO
-                title="Meet Dr. Nimisha Modi | Clinical Director"
-                description="Dr. Nimisha Modi is a smile architect with 15+ years of clinical excellence in complex implantology and aesthetic design in Surat."
+                title="Dr. Nimisha Modi | Best Dentist in Surat | Plus Dento Care"
+                description="Meet Dr. Nimisha Modi, a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design at Plus Dento Care Surat."
             />
             {/* Profile Hero - Enhanced & Mobile Optimized */}
             <section ref={heroRef} className="relative pt-24 sm:pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden">
@@ -58,7 +58,9 @@ const DoctorDetails = () => {
                                 <div className="relative rounded-[2.5rem] overflow-hidden border-2 border-white/5 shadow-2xl z-10 group-hover:border-blue-500/20 transition-colors">
                                     <img
                                         src={IMAGES.doctor}
-                                        alt="Dr. Nimisha Modi"
+                                        alt="Dr. Nimisha Modi - Clinical Director at Plus Dento Care Surat | Best Dentist in Surat"
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full aspect-[4/5.5] object-cover transform transition-all duration-1000 group-hover:scale-[1.05]"
                                     />
                                     {/* Vignette */}

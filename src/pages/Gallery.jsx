@@ -56,8 +56,8 @@ const ClinicGallery = () => {
     return (
         <main ref={containerRef} className="pt-24 md:pt-36 pb-24 bg-[#0B1120] min-h-screen text-white overflow-hidden relative selection:bg-blue-500">
             <SEO
-                title="Clinical Gallery & Case Studies"
-                description="Explore our clinical cases, surgical protocols, and real patient stories through high-fidelity visual documentation at Dent O Care Surat."
+                title="Clinical Gallery | Plus Dento Care Surat | Dr. Nimisha Modi"
+                description="Explore our clinical cases, surgical protocols, and real patient smile transformations at Plus Dento Care Surat under Dr. Nimisha Modi."
             />
             {/* Background Glows */}
             <div className="absolute top-0 inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.08),transparent_50%)]"></div>
@@ -70,7 +70,7 @@ const ClinicGallery = () => {
                         <Camera size={12} className="animate-pulse md:w-3.5 md:h-3.5" /> Unified Visual Registry
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
-                        Gallery & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Media Hub</span>
+                        Clinical Gallery & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Smile Transformations in Surat</span>
                     </h1>
                     <p className="text-gray-400 font-medium text-xs md:text-lg leading-relaxed opacity-70 mb-8 md:mb-10 px-4">
                         Explore our clinical cases, surgical protocols, and real patient stories through high-fidelity visual documentation.
@@ -103,8 +103,9 @@ const ClinicGallery = () => {
                         >
                             <img
                                 src={img.url}
-                                alt={`Dent O Care Gallery - ${img.category} - ${index + 1} - Best Dental Clinic in Surat`}
+                                alt={`Plus Dento Care Gallery - ${img.category} - ${index + 1} - Best Dental Clinic in Surat by Dr. Nimisha Modi`}
                                 loading="lazy"
+                                decoding="async"
                                 className="w-full h-auto transform group-hover:scale-110 transition-all duration-[1.5s] ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-3 md:p-8">

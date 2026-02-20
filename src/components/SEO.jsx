@@ -7,15 +7,16 @@ const SEO = ({
     keywords,
     image = "https://www.plusdentocare.in/favicon-512x512.png",
     type = "website",
-    author = "Dr. Nimisha Modi"
+    author = "Dr. Nimisha Modi",
+    faqData = []
 }) => {
     const location = useLocation();
     const siteUrl = "https://www.plusdentocare.in";
     const fullUrl = `${siteUrl}${location.pathname}`;
 
-    const defaultTitle = "Best Dental Clinic in Surat | Dr Nimisha Modi – Plus Dento Care";
-    const defaultDescription = "Plus Dento Care: Best Dental Clinic in Surat by Dr. Nimisha Modi. Specializing in Implants, RCT, Braces & Cosmetic Dentistry. 366+ 5-star reviews.";
-    const defaultKeywords = "dental clinic surat, best dentist surat, dr nimisha modi, dental implants surat, root canal treatment surat, teeth whitening surat, braces surat, cosmetic dentistry surat, painless dentistry, kids dentist surat, emergency dental care surat";
+    const defaultTitle = "Plus Dento Care | Best Dentist in Surat | Dental Clinic Near Me";
+    const defaultDescription = "Plus Dento Care - Top-rated dental clinic in Surat. Expert dentists for dental implants, root canal, teeth whitening, braces & more. Book your appointment today! Painless treatment, affordable prices, 5-star facilities.";
+    const defaultKeywords = "dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces Surat, kids dentist Surat, emergency dentist Surat, affordable dental care, best dentist near me";
 
     const pageTitle = title ? `${title} | Plus Dento Care` : defaultTitle;
     const pageDescription = description || defaultDescription;
@@ -71,11 +72,14 @@ const SEO = ({
         setMetaTag('name', 'twitter:site', '@plusdentocare');
         setMetaTag('name', 'twitter:creator', '@plusdentocare');
 
-        // Geo Location Tags for Local SEO
+        // Local Business Optimization Tags
         setMetaTag('name', 'geo.region', 'IN-GJ');
         setMetaTag('name', 'geo.placename', 'Surat');
         setMetaTag('name', 'geo.position', '21.2032;72.7669');
         setMetaTag('name', 'ICBM', '21.2032, 72.7669');
+        setMetaTag('name', 'locality', 'Surat');
+        setMetaTag('name', 'region', 'Gujarat');
+        setMetaTag('name', 'country', 'India');
 
         // Business/Organization Tags
         setMetaTag('name', 'rating', '4.9');
@@ -94,21 +98,12 @@ const SEO = ({
         }
         canonical.setAttribute('href', fullUrl);
 
-        // Alternate for mobile
-        let alternateMobile = document.querySelector('link[rel="alternate"][media]');
-        if (!alternateMobile) {
-            alternateMobile = document.createElement('link');
-            alternateMobile.setAttribute('rel', 'alternate');
-            alternateMobile.setAttribute('media', 'only screen and (max-width: 640px)');
-            document.head.appendChild(alternateMobile);
-        }
-        alternateMobile.setAttribute('href', fullUrl);
-
         // Structured Data - Organization (JSON-LD)
         const organizationSchema = {
             "@context": "https://schema.org",
             "@type": "Dentist",
             "name": "Plus Dento Care",
+            "itemOffered": "Dental Services",
             "image": image,
             "url": siteUrl,
             "telephone": "+91-6352534650",
@@ -131,6 +126,13 @@ const SEO = ({
                     "addressCountry": "IN"
                 }
             ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-6352534650",
+                "contactType": "customer service",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi", "Gujarati"]
+            },
             "geo": [
                 {
                     "@type": "GeoCoordinates",
@@ -147,20 +149,8 @@ const SEO = ({
                 {
                     "@type": "OpeningHoursSpecification",
                     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                    "opens": "10:00",
-                    "closes": "13:30"
-                },
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                    "opens": "16:30",
+                    "opens": "09:00",
                     "closes": "20:00"
-                },
-                {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "Sunday",
-                    "opens": "11:00",
-                    "closes": "13:30"
                 }
             ],
             "aggregateRating": {
@@ -178,7 +168,8 @@ const SEO = ({
             "sameAs": [
                 "https://www.facebook.com/modi.nimisha.5",
                 "https://www.instagram.com/dentocare_dental",
-                "https://www.youtube.com/@dentocare_dental"
+                "https://www.youtube.com/@dentocare_dental",
+                "https://www.justdial.com/Surat/Dent-O-Care-Advance-Multi-Speciality-Implant-Center-Mashal-Circle-Palanpur/0261PX261-X261-120524103126-P2Q8_BZDET"
             ],
             "areaServed": {
                 "@type": "City",
@@ -190,6 +181,27 @@ const SEO = ({
                 "Cosmetic Dentistry",
                 "Orthodontics",
                 "Pediatric Dentistry"
+            ]
+        };
+
+        // Breadcrumb Schema
+        const pathSegments = location.pathname.split('/').filter(x => x);
+        const breadcrumbSchema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": siteUrl
+                },
+                ...pathSegments.map((segment, index) => ({
+                    "@type": "ListItem",
+                    "position": index + 2,
+                    "name": segment.charAt(0) ? segment.charAt(0).toUpperCase() + segment.slice(1) : segment,
+                    "item": `${siteUrl}/${pathSegments.slice(0, index + 1).join('/')}`
+                }))
             ]
         };
 
@@ -210,44 +222,45 @@ const SEO = ({
             }
         };
 
-        // BreadcrumbList Schema
-        const pathSegments = location.pathname.split('/').filter(Boolean);
-        const breadcrumbSchema = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": siteUrl
-                },
-                ...pathSegments.map((segment, index) => ({
-                    "@type": "ListItem",
-                    "position": index + 2,
-                    "name": segment.charAt(0).toUpperCase() + segment.slice(1),
-                    "item": `${siteUrl}/${pathSegments.slice(0, index + 1).join('/')}`
+        // FAQ Schema
+        let faqSchema = null;
+        if (faqData && faqData.length > 0) {
+            faqSchema = {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqData.map(item => ({
+                    "@type": "Question",
+                    "name": item.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": item.answer
+                    }
                 }))
-            ]
-        };
+            };
+        }
 
         // Insert or update JSON-LD scripts
         const updateJsonLd = (id, schema) => {
             let script = document.getElementById(id);
-            if (!script) {
-                script = document.createElement('script');
-                script.id = id;
-                script.type = 'application/ld+json';
-                document.head.appendChild(script);
+            if (schema) {
+                if (!script) {
+                    script = document.createElement('script');
+                    script.id = id;
+                    script.type = 'application/ld+json';
+                    document.head.appendChild(script);
+                }
+                script.textContent = JSON.stringify(schema);
+            } else if (script) {
+                script.remove();
             }
-            script.textContent = JSON.stringify(schema);
         };
 
         updateJsonLd('organization-schema', organizationSchema);
-        updateJsonLd('website-schema', websiteSchema);
         updateJsonLd('breadcrumb-schema', breadcrumbSchema);
+        updateJsonLd('website-schema', websiteSchema);
+        if (faqSchema) updateJsonLd('faq-schema', faqSchema);
 
-    }, [pageTitle, pageDescription, pageKeywords, fullUrl, image, type, author, location.pathname]);
+    }, [pageTitle, pageDescription, pageKeywords, fullUrl, image, type, author, location.pathname, faqData]);
 
     return null;
 };

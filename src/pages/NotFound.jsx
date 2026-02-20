@@ -7,8 +7,8 @@ const NotFound = () => {
     return (
         <main className="min-h-screen bg-[#0B1120] relative flex items-center justify-center overflow-hidden p-4">
             <SEO
-                title="Under Maintenance | Page Not Found"
-                description="The page you are looking for might be under maintenance or has been moved."
+                title="404 Page Not Found | Plus Dento Care"
+                description="The page you are looking for might have been moved or is under maintenance. Visit our home page for the best dental care in Surat."
             />
 
             {/* Premium Background Effects */}

@@ -110,7 +110,13 @@ const TreatmentGrid = () => {
 
                             {/* Background Image/Pattern */}
                             <div className="absolute inset-0 z-0 opacity-50 group-hover:opacity-70 transition-opacity duration-500">
-                                <img src={t.image} alt={t.name} className="w-full h-full object-cover object-center" loading="lazy" />
+                                <img
+                                    src={t.image}
+                                    alt={`${t.name} - ${t.subtitle} at Plus Dento Care Surat`}
+                                    className="w-full h-full object-cover object-center"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/60 to-transparent"></div>
                             </div>
 

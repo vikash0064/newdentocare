@@ -42,8 +42,8 @@ const Blog = () => {
     return (
         <div className="bg-[#0B1120] min-h-screen font-sans">
             <SEO
-                title="Dental Health Blog - Expert Tips & Insights"
-                description="Stay updated with the latest in dental care, cosmetic dentistry, and oral health tips from our expert dentists at Dent O Care."
+                title="Dental Health Blog | Plus Dento Care Surat | Dr. Nimisha Modi"
+                description="Stay updated with the latest in dental care, cosmetic dentistry, and oral health insights from Dr. Nimisha Modi at Plus Dento Care Surat."
             />
 
             {/* Hero Section */}
@@ -52,7 +52,7 @@ const Blog = () => {
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-3xl md:text-5xl font-black mb-3 tracking-tight">
-                        Dental <span className="text-blue-500">Insights</span>
+                        Dental Health Blog & <span className="text-blue-500">Insights in Surat</span>
                     </h1>
                     <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">
                         Expert advice, dental care tips, and the latest trends in modern dentistry to keep your smile healthy and bright.
@@ -104,7 +104,9 @@ const Blog = () => {
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
                                 <img
                                     src={filteredBlogs[0].image || "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"}
-                                    alt={filteredBlogs[0].title}
+                                    alt={`${filteredBlogs[0].title} - Dental Blog by Plus Dento Care Surat`}
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                                 />
                             </div>
@@ -171,7 +173,9 @@ const Blog = () => {
                                 <div className="relative h-56 overflow-hidden">
                                     <img
                                         src={blog.image || "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"}
-                                        alt={blog.title}
+                                        alt={`${blog.title} - Plus Dento Care Surat Dental Insight`}
+                                        loading="lazy"
+                                        decoding="async"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute top-4 left-4 bg-blue-600/90 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg border border-white/10">

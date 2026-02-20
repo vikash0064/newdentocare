@@ -92,21 +92,32 @@ const HomeSEO = () => {
                         </div>
                     </div>
 
-                    {/* Column 3: FAQs */}
                     <div className="bg-white/5 p-5 sm:p-6 rounded-2xl border border-white/10 sm:col-span-2 lg:col-span-1">
-                        <h3 className="text-xs sm:text-sm font-black text-white uppercase tracking-widest mb-2">Essential Guide</h3>
+                        <h3 className="text-xs sm:text-sm font-black text-white uppercase tracking-widest mb-2">Essential FAQ Guide</h3>
                         <div className="divide-y divide-white/5">
                             <FAQItem
-                                question="Best dentist in Surat for implants?"
-                                answer="Dr. Nimisha Modi is a top-rated implantologist in Surat with over 15 years of experience in complex full-mouth rehabs."
+                                question="How much do dental implants cost in Surat?"
+                                answer="Dental implants at Plus Dento Care start from ₹18,000. The final cost depends on individual requirements and the type of implant chosen. Book a free consultation for accurate pricing."
                             />
                             <FAQItem
-                                question="Where are your branches?"
-                                answer="We are at Tirupati Shopping Center (Simanagar) and Eden Square (Gaurav Path), both conveniently located for your dental needs."
+                                question="Is root canal treatment painful?"
+                                answer="No! Root canal treatment at Plus Dento Care is completely painless. We use advanced anesthesia and modern rotary techniques to ensure your complete comfort."
+                            />
+                            <FAQItem
+                                question="Where are your clinic branches in Surat?"
+                                answer="We are at Tirupati Shopping Center (Simanagar) and Eden Square (Gaurav Path), both conveniently located to serve patients across Surat."
+                            />
+                            <FAQItem
+                                question="Do you offer dental implants for seniors?"
+                                answer="Yes! We provide dental implants for patients of all ages, including seniors. Our experienced team assesses each patient's health before proceeding."
                             />
                             <FAQItem
                                 question="Do you treat children?"
-                                answer="Yes, we are a specialized kids dentist in Surat with a dedicated approach for pediatric dental comfort."
+                                answer="Yes, we are a specialized kids dentist in Surat with a dedicated approach for pediatric dental comfort and stress-free treatments."
+                            />
+                            <FAQItem
+                                question="Do you provide free consultation?"
+                                answer="Yes! We offer free consultation for all major dental treatments. Book your appointment today!"
                             />
                         </div>
                     </div>
