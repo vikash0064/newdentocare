@@ -143,7 +143,7 @@ const DentalReels = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-4 p-5 md:p-6">
                                 <div className="translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                                     <h3 className="text-white font-bold text-base sm:text-lg md:text-xl leading-tight mb-1.5 line-clamp-2">{reel.title}</h3>
-                                    <div className="flex items-center gap-1.5 text-white/80 text-[10px] sm:text-xs font-bold uppercase tracking-wider bg-black/40 backdrop-blur-md px-2.5 py-1 sm:py-1.5 rounded-full w-fit">
+                                    <div className="flex items-center gap-1.5 text-gray-200 text-[10px] sm:text-xs font-black uppercase tracking-wider bg-black/60 backdrop-blur-md px-2.5 py-1 sm:py-1.5 rounded-full w-fit">
                                         <Youtube size={11} className="sm:w-3 sm:h-3 text-red-500" />
                                         {reel.views || 'Dynamic'} views
                                     </div>

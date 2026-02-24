@@ -141,7 +141,7 @@ const TreatmentGrid = () => {
                                 </p>
 
                                 <div className="flex items-center gap-1 sm:gap-2 text-[9px] sm:text-[11px] font-semibold tracking-wide text-blue-400 group-hover:gap-3 transition-all duration-300">
-                                    View Details <ArrowRight size={10} className="sm:w-3 sm:h-3 mt-0.5" />
+                                    <span>{t.name} Details</span> <ArrowRight size={10} className="sm:w-3 sm:h-3 mt-0.5" />
                                 </div>
                             </div>
                         </Link>

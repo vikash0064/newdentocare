@@ -48,7 +48,7 @@ const ClinicPresence = () => {
                     <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
                         Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">Clinic</span>
                     </h2>
-                    <p className="text-gray-300 text-[10px] sm:text-xs mt-2 uppercase font-black tracking-widest opacity-60">Tap to flip the card</p>
+                    <p className="text-gray-300 text-[10px] sm:text-xs mt-2 uppercase font-black tracking-widest">Tap to flip the card</p>
                 </div>
 
                 {/* Flip Card Container */}

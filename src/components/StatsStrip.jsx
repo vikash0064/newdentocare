@@ -75,7 +75,7 @@ const StatsStrip = () => {
                             <span className="font-bold text-white text-lg lg:text-xl leading-none tracking-tight">
                                 {startCounter ? <AnimatedCounter target={stat.target} suffix={stat.suffix} duration={2} isDecimal={stat.isDecimal} /> : stat.value}
                             </span>
-                            <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wide mt-1.5">{stat.label}</span>
+                            <span className="text-[10px] font-bold text-gray-300 uppercase tracking-wide mt-1.5">{stat.label}</span>
                         </div>
                     </div>
                 ))}

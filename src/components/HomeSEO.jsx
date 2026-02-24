@@ -12,10 +12,10 @@ const FAQItem = ({ question, answer }) => {
                 <span className={`text-sm font-bold transition-colors ${isOpen ? 'text-blue-400' : 'text-gray-300 group-hover:text-white'}`}>
                     {question}
                 </span>
-                {isOpen ? <ChevronUp size={16} className="text-blue-400" /> : <ChevronDown size={16} className="text-gray-500" />}
+                {isOpen ? <ChevronUp size={16} className="text-blue-400" /> : <ChevronDown size={16} className="text-gray-400" />}
             </button>
             {isOpen && (
-                <div className="pb-4 text-xs leading-relaxed text-gray-500 animate-fade-in">
+                <div className="pb-4 text-[13px] leading-relaxed text-gray-300 animate-fade-in font-medium">
                     {answer}
                 </div>
             )}
@@ -32,9 +32,9 @@ const HomeSEO = () => {
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
                     <div className="max-w-2xl text-center lg:text-left">
                         <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3 sm:mb-4 tracking-tight">
-                            Best Dental Clinic <span className="text-blue-500">in Surat - Dentocare</span>
+                            Best Dental Clinic <span className="text-blue-500">in Surat – Dentocare Surat</span>
                         </h2>
-                        <p className="text-[11px] sm:text-xs lg:text-sm text-gray-400/60 leading-relaxed mx-auto lg:mx-0">
+                        <p className="text-[11px] sm:text-xs lg:text-sm text-gray-300 leading-relaxed mx-auto lg:mx-0">
                             Looking for the <strong>top dentist in Surat</strong>? Plus Dento Care (Dentocare), led by <strong>Dr. Nimisha Modi</strong>, is your trusted partner for a healthy smile.
                             Rated as the <strong>best dental hospital in Adajan and Palanpur</strong> for our ethical approach, we specialize in high-tech, <strong>painless dental treatments</strong>,
                             Root Canals, and Implants at Simanagar (Palanpur Road) and Gaurav Path. We are the most <strong>affordable dental clinic in Surat</strong> with 5-star facilities.
@@ -43,11 +43,11 @@ const HomeSEO = () => {
                     <div className="flex gap-3 sm:gap-4 justify-center lg:justify-end shrink-0">
                         <div className="px-3 sm:px-4 py-2 bg-white/5 rounded-xl border border-white/10 text-center min-w-[80px] sm:min-w-[100px]">
                             <div className="text-base sm:text-lg font-black text-white leading-none">366+</div>
-                            <div className="text-[7px] sm:text-[8px] uppercase tracking-tighter text-gray-500 mt-1">Google Reviews</div>
+                            <div className="text-[7px] sm:text-[8px] uppercase tracking-tighter text-gray-300 mt-1 font-bold">Google Reviews</div>
                         </div>
                         <div className="px-3 sm:px-4 py-2 bg-blue-600/10 rounded-xl border border-blue-500/20 text-center min-w-[80px] sm:min-w-[100px]">
                             <div className="text-base sm:text-lg font-black text-blue-400 leading-none">15+</div>
-                            <div className="text-[7px] sm:text-[8px] uppercase tracking-tighter text-blue-500/60 mt-1">Years Expert</div>
+                            <div className="text-[7px] sm:text-[8px] uppercase tracking-tighter text-blue-400 mt-1 font-bold">Years Expert</div>
                         </div>
                     </div>
                 </div>
@@ -63,11 +63,11 @@ const HomeSEO = () => {
                         <div className="space-y-4 text-center sm:text-left">
                             <div className="group">
                                 <h4 className="text-[11px] sm:text-xs font-bold text-gray-300 mb-1 group-hover:text-blue-400 transition-colors">Dental Implant Center in Surat</h4>
-                                <p className="text-[10px] sm:text-[11px] text-gray-500 leading-snug">Permanent tooth replacement using premium materials and digital mapping for 99% success rates.</p>
+                                <p className="text-[10px] sm:text-[11px] text-gray-300 leading-snug font-medium">Permanent tooth replacement using premium materials and digital mapping for 99% success rates.</p>
                             </div>
                             <div className="group">
-                                <h4 className="text-[11px] sm:text-xs font-bold text-gray-300 mb-1 group-hover:text-blue-400 transition-colors">Root Canal Treatment (RCT)</h4>
-                                <p className="text-[10px] sm:text-[11px] text-gray-500 leading-snug">Painless rotary endodontics to save natural teeth near Simanagar and Adajan area.</p>
+                                <h4 className="text-[11px] sm:text-xs font-bold text-gray-200 mb-1 group-hover:text-blue-400 transition-colors uppercase tracking-wide">Root Canal Treatment (RCT)</h4>
+                                <p className="text-[10px] sm:text-[11px] text-gray-300 leading-snug font-medium">Painless rotary endodontics to save natural teeth near Simanagar and Adajan area.</p>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ const HomeSEO = () => {
                                 "Invisalign & Clear Aligners",
                                 "Smile Makeovers & Veneers"
                             ].map((item, i) => (
-                                <div key={i} className="flex items-center gap-2 text-[10px] sm:text-[11px] text-gray-500 font-medium">
+                                <div key={i} className="flex items-center gap-2 text-[10px] sm:text-[11px] text-gray-200 font-bold">
                                     <CheckCircle2 size={12} className="text-emerald-500 shrink-0" />
                                     <span>{item}</span>
                                 </div>
@@ -125,12 +125,12 @@ const HomeSEO = () => {
                 </div>
 
                 {/* Ultra-compact Local Tag */}
-                <div className="mt-10 sm:mt-12 flex items-center justify-center gap-3 opacity-30">
-                    <div className="h-[1px] flex-grow max-w-[40px] bg-gray-600"></div>
-                    <p className="text-[7px] sm:text-[8px] text-gray-400 font-medium tracking-[0.15em] uppercase text-center">
+                <div className="mt-10 sm:mt-12 flex items-center justify-center gap-3">
+                    <div className="h-[1px] flex-grow max-w-[40px] bg-white/10"></div>
+                    <p className="text-[7px] sm:text-[8px] text-gray-300 font-black tracking-[0.2em] uppercase text-center opacity-70">
                         Serving Adajan • Palanpur • Gaurav Path • Surat
                     </p>
-                    <div className="h-[1px] flex-grow max-w-[40px] bg-gray-600"></div>
+                    <div className="h-[1px] flex-grow max-w-[40px] bg-white/10"></div>
                 </div>
             </div>
         </section>

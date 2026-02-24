@@ -51,26 +51,26 @@ const ReviewCTA = () => {
                             <div className="lg:w-1/2 p-5 md:p-12 bg-white/[0.01]">
                                 <form onSubmit={handleSubmit} className="space-y-3 md:space-y-5">
                                     <div className="space-y-1">
-                                        <label className="text-[9px] font-black text-gray-500 uppercase tracking-widest ml-1">Full Name</label>
+                                        <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-1">Full Name</label>
                                         <input
                                             type="text"
                                             placeholder="Rahul Sharma"
                                             required
                                             value={name}
                                             onChange={(e) => setName(e.target.value)}
-                                            className="w-full bg-[#1e293b]/50 border border-white/10 rounded-xl px-4 py-2.5 md:py-4 text-xs md:text-base text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 transition-all font-medium"
+                                            className="w-full bg-[#1e293b]/50 border border-white/10 rounded-xl px-4 py-2.5 md:py-4 text-xs md:text-base text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500/50 transition-all font-medium"
                                         />
                                     </div>
 
                                     <div className="space-y-1">
-                                        <label className="text-[9px] font-black text-gray-500 uppercase tracking-widest ml-1">Feedback</label>
+                                        <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-1">Feedback</label>
                                         <textarea
                                             placeholder="Your experience..."
                                             required
                                             value={review}
                                             onChange={(e) => setReview(e.target.value)}
                                             rows="2"
-                                            className="w-full bg-[#1e293b]/50 border border-white/10 rounded-xl px-4 py-2.5 md:py-4 text-xs md:text-base text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 transition-all resize-none font-medium"
+                                            className="w-full bg-[#1e293b]/50 border border-white/10 rounded-xl px-4 py-2.5 md:py-4 text-xs md:text-base text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500/50 transition-all resize-none font-medium"
                                         ></textarea>
                                     </div>
 
@@ -85,7 +85,7 @@ const ReviewCTA = () => {
                                         </button>
                                     </div>
 
-                                    <p className="text-center text-[8px] md:text-[10px] text-gray-500 font-bold uppercase tracking-widest opacity-60">
+                                    <p className="text-center text-[8px] md:text-[10px] text-gray-300 font-black uppercase tracking-widest">
                                         Opens Google Review Page
                                     </p>
                                 </form>

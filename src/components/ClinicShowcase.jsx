@@ -37,7 +37,7 @@ const ClinicShowcase = () => {
                 <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-none uppercase tracking-[-0.02em]">
                     Our World Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Clinic</span>
                 </h2>
-                <p className="text-gray-400 font-medium text-[11px] md:text-sm tracking-wide opacity-70">A state-of-the-art facility engineered for surgical precision.</p>
+                <p className="text-gray-300 font-bold text-[11px] md:text-sm tracking-wide opacity-90">A state-of-the-art facility engineered for surgical precision.</p>
             </div>
 
             <div className="relative w-full overflow-hidden mb-16 px-4">

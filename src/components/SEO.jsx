@@ -14,11 +14,11 @@ const SEO = ({
     const siteUrl = "https://www.plusdentocare.in";
     const fullUrl = `${siteUrl}${location.pathname}`;
 
-    const defaultTitle = "Plus Dento Care | Dr. Nimisha Modi | Best Dentist in Surat | Dental Clinic in Adajan & Palanpur";
-    const defaultDescription = "Plus Dento Care (Dentocare) - Top-rated dental clinic in Surat by Dr. Nimisha Modi. Expert dentist for dental implants, root canal, teeth whitening, braces & more in Adajan and Palanpur Road. Book your appointment today! Painless treatment, affordable prices, 5-star facilities.";
-    const defaultKeywords = "dentocare, Plus Dento Care Surat, Dr. Nimisha Modi, dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces Surat, kids dentist Surat, emergency dentist Surat, affordable dental care, best dentist near me, dentist in Adajan, dental hospital in Palanpur Surat, dental clinic near Mashal Circle";
+    const defaultTitle = "Dentocare Surat – Dr Nimisha Modi | Plus Dento Care Dental & Implant Centre";
+    const defaultDescription = "Dentocare Surat – Plus Dento Care (Dentocare), led by Dr. Nimisha Modi, is the best dental clinic in Surat specialized in painless treatments, dental implants, root canal, and braces. Top-rated dentist in Adajan and Palanpur Road with 5-star facilities. Book your free consultation today for revolutionary dental care!";
+    const defaultKeywords = "dentocare surat, Plus Dento Care Surat, Dr. Nimisha Modi, best dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces Surat, kids dentist Surat, emergency dentist Surat, affordable dental care Surat, dental hospital Adajan, dental clinic Palanpur Road";
 
-    const pageTitle = title ? `${title} | Dr. Nimisha Modi | Plus Dento Care Surat` : defaultTitle;
+    const pageTitle = title ? `${title} | Dentocare Surat` : defaultTitle;
     const pageDescription = description || defaultDescription;
     const pageKeywords = keywords || defaultKeywords;
 
@@ -41,7 +41,7 @@ const SEO = ({
         setMetaTag('name', 'description', pageDescription);
         setMetaTag('name', 'keywords', pageKeywords);
         setMetaTag('name', 'author', author);
-        setMetaTag('name', 'robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+        setMetaTag('name', 'robots', 'index, follow, max-image-preview:large');
         setMetaTag('name', 'googlebot', 'index, follow');
 
         // Language and Content Type
@@ -61,7 +61,7 @@ const SEO = ({
         setMetaTag('property', 'og:image', image);
         setMetaTag('property', 'og:image:width', '1200');
         setMetaTag('property', 'og:image:height', '630');
-        setMetaTag('property', 'og:site_name', 'Plus Dento Care');
+        setMetaTag('property', 'og:site_name', 'Dentocare & Implant Centre');
         setMetaTag('property', 'og:locale', 'en_IN');
 
         // Twitter Card Tags
@@ -102,7 +102,8 @@ const SEO = ({
         const organizationSchema = {
             "@context": "https://schema.org",
             "@type": "Dentist",
-            "name": "Plus Dento Care",
+            "name": "Dentocare & Implant Centre",
+            "legalName": "Dr. Nimisha Modi",
             "itemOffered": "Dental Services",
             "image": image,
             "url": siteUrl,
@@ -209,15 +210,12 @@ const SEO = ({
         const websiteSchema = {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "Plus Dento Care",
-            "alternateName": ["Plus Dento Care Surat", "PlusDentoCare", "Dentocare", "Dento Care"],
+            "@id": `${siteUrl}/#website`,
             "url": siteUrl,
+            "name": "Dentocare",
             "potentialAction": {
                 "@type": "SearchAction",
-                "target": {
-                    "@type": "EntryPoint",
-                    "urlTemplate": `${siteUrl}/treatments?q={search_term_string}`
-                },
+                "target": `${siteUrl}/?s={search_term_string}`,
                 "query-input": "required name=search_term_string"
             }
         };

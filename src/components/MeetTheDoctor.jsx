@@ -45,7 +45,7 @@ const MeetTheDoctor = () => {
 
                     {/* Left: Content */}
                     <div ref={contentRef} className="lg:w-1/2">
-                        <div className="inline-flex items-center gap-2 bg-[#1e293b] text-blue-400 px-3 py-1.5 rounded-lg text-[11px] font-semibold tracking-wide uppercase mb-6 border border-gray-800 shadow-xl">
+                        <div className="inline-flex items-center gap-2 bg-[#1e293b] text-blue-300 px-3 py-1.5 rounded-lg text-[11px] font-semibold tracking-wide uppercase mb-6 border border-gray-800 shadow-xl">
                             <Award size={14} /> Meet Our Lead Specialist at Dentocare
                         </div>
 
@@ -79,7 +79,7 @@ const MeetTheDoctor = () => {
                             <Link to="/doctors" className="bg-[#2563eb] text-white px-8 py-3.5 rounded-full font-bold text-sm shadow-xl shadow-blue-900/20 flex items-center gap-2 transform hover:-translate-y-1 transition-all">
                                 View Qualifications <ChevronRight size={18} />
                             </Link>
-                            <Link to="/contact" className="bg-transparent border border-gray-700 text-white px-8 py-3.5 rounded-full font-bold text-sm hover:bg-white/5 transition-all shadow-sm">
+                            <Link to="/contact" className="bg-transparent border border-white/20 text-white px-8 py-3.5 rounded-full font-bold text-sm hover:bg-white/5 transition-all shadow-sm">
                                 Contact Clinic
                             </Link>
                         </div>

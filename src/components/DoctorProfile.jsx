@@ -42,11 +42,11 @@ const DoctorProfile = () => {
                         <div className="grid grid-cols-2 gap-6 mb-8">
                             <div className="bg-white/5 p-4 rounded-xl border border-white/5 shadow-inner">
                                 <h3 className="text-3xl font-bold text-blue-400 mb-1">12+</h3>
-                                <p className="text-gray-400 text-xs uppercase font-bold tracking-widest">Experience</p>
+                                <p className="text-gray-300 text-xs uppercase font-black tracking-widest opacity-80">Experience</p>
                             </div>
                             <div className="bg-white/5 p-4 rounded-xl border border-white/5 shadow-inner">
                                 <h3 className="text-3xl font-bold text-blue-400 mb-1">10k+</h3>
-                                <p className="text-gray-400 text-xs uppercase font-bold tracking-widest">Patients</p>
+                                <p className="text-gray-300 text-xs uppercase font-black tracking-widest opacity-80">Patients</p>
                             </div>
                         </div>
 

@@ -75,7 +75,7 @@ const Navbar = () => {
                                     to={link.path}
                                     className={`px-4 xl:px-5 py-2 rounded-full text-[12px] xl:text-[13px] font-bold tracking-wide transition-all duration-300 flex items-center gap-1.5 ${location.pathname === link.path
                                         ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40'
-                                        : 'text-white/70 hover:text-white hover:bg-white/5'
+                                        : 'text-gray-300 hover:text-white hover:bg-white/5'
                                         }`}
                                 >
                                     {link.name}
@@ -140,7 +140,7 @@ const Navbar = () => {
                 <div className={`absolute top-0 right-0 h-full w-[70%] max-w-[280px] bg-[#0B1120] p-5 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) shadow-2xl flex flex-col border-l border-white/5 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <div className="flex items-center justify-between mb-8">
                         <img src={IMAGES.logo} alt="Plus Dento Care Surat" className="h-7 w-auto" width="120" height="35" loading="eager" decoding="async" />
-                        <button onClick={toggleMenu} className="p-1.5 text-white/40 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-colors"><X size={18} /></button>
+                        <button onClick={toggleMenu} className="p-1.5 text-gray-300 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-colors" aria-label="Close menu"><X size={18} /></button>
                     </div>
                     <nav className="flex-grow">
                         <ul className="space-y-1">
@@ -151,7 +151,7 @@ const Navbar = () => {
                                         onClick={toggleMenu}
                                         className={`flex items-center justify-between p-3.5 rounded-xl transition-all duration-300 ${location.pathname === link.path
                                             ? 'bg-blue-600/10 text-blue-400 font-black tracking-widest'
-                                            : 'text-white/60 font-bold uppercase tracking-wider hover:text-white hover:bg-white/5'
+                                            : 'text-gray-300 font-bold uppercase tracking-wider hover:text-white hover:bg-white/5'
                                             }`}
                                     >
                                         <span className="text-sm">{link.name}</span>

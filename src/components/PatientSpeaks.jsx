@@ -51,7 +51,7 @@ const PatientSpeaks = () => {
                         </div>
                     </div>
                     <div className="h-4 w-[1px] bg-white/10 hidden md:block"></div>
-                    <span className="text-gray-400 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
+                    <span className="text-gray-300 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                         Trusted Google Rating
                     </span>

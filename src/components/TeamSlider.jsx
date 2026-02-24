@@ -40,7 +40,7 @@ const TeamSlider = () => {
                         <span className="text-[9px] md:text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Our Collective Strength</span>
                     </div>
                     <h2 className="text-xl md:text-5xl font-black text-white mb-2 md:mb-4">The <span className="text-emerald-400">Dent O Care</span> Team</h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto font-medium text-xs md:text-base">Coming together is a beginning; keeping together is progress; working together is success.</p>
+                    <p className="text-gray-300 max-w-2xl mx-auto font-medium text-xs md:text-base">Coming together is a beginning; keeping together is progress; working together is success.</p>
                 </div>
 
                 <div className="relative max-w-6xl mx-auto aspect-[4/3] md:aspect-[21/9] rounded-2xl md:rounded-[2.5rem] overflow-hidden group shadow-2xl border border-white/5">
