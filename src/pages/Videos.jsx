@@ -130,8 +130,6 @@ const Videos = () => {
             document.head.appendChild(link);
         });
 
-        // Prevent body scroll when this component is mounted
-        document.body.style.overflow = 'hidden';
 
         const ctx = gsap.context(() => {
             gsap.from(".header-anim", { y: -20, opacity: 0, duration: 0.8, stagger: 0.1 });
@@ -147,7 +145,6 @@ const Videos = () => {
 
         return () => {
             ctx.revert();
-            document.body.style.overflow = 'auto'; // Restore scroll on unmount
             // No strict cleanup needed for preconnects
         };
     }, []);
@@ -158,7 +155,7 @@ const Videos = () => {
     };
 
     return (
-        <main className="bg-[#050811] h-screen w-full flex flex-col relative overflow-hidden">
+        <main className="bg-[#050811] min-h-screen w-full flex flex-col relative">
             <SEO
                 title="Patient Stories & Dental Reels | Plus Dento Care Surat"
                 description="Watch our latest dental transformations, patient testimonials, and clinical highlights by Dr. Nimisha Modi in our video gallery at Plus Dento Care Surat."
@@ -186,8 +183,8 @@ const Videos = () => {
                 </div>
             </div>
 
-            {/* Vertical Scrollable Content Grid - Two Column on Mobile */}
-            <div className="flex-1 w-full overflow-y-auto relative z-10 px-3 sm:px-6 pb-20 scrollbar-hide">
+            {/* Vertical Content Grid - Two Column on Mobile */}
+            <div className="w-full relative z-10 px-3 sm:px-6 pb-20">
                 <div className="container mx-auto">
                     {/* Changed grid-cols-1 to grid-cols-2 for mobile to make items smaller and more compact */}
                     {/* Niche niche layout preserved */}
