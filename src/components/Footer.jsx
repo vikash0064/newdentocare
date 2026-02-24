@@ -188,7 +188,7 @@ const Footer = () => {
                                 <div className="absolute inset-0 bg-blue-500/20 blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-full"></div>
 
                                 <div className="relative bg-[#0B1120]/80 backdrop-blur-xl border border-white/10 px-8 py-2.5 rounded-full flex items-center gap-4 transition-all duration-500 group-hover:border-blue-500/50 group-hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]">
-                                    <span className="text-[8px] font-black text-gray-500 uppercase tracking-[0.4em] mb-0.5">Designed By</span>
+                                    <span className="text-[8px] font-black text-gray-500 uppercase tracking-[0.4em] mb-0.5">Developed By</span>
                                     <div className="h-4 w-[1px] bg-white/10 group-hover:bg-blue-500/30 transition-colors"></div>
                                     <span className="text-xs font-black bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent uppercase tracking-tight group-hover:tracking-widest transition-all duration-700">
                                         webnginx
