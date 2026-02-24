@@ -31,22 +31,22 @@ const DoctorProfile = () => {
                     </div>
 
                     <div className="md:w-1/2">
-                        <h4 className="text-blue-400 font-bold uppercase tracking-wider mb-2">Meet Our Lead Specialist</h4>
+                        <div className="text-blue-400 font-bold uppercase tracking-wider mb-2 text-sm sm:text-base">Meet Our Lead Specialist</div>
                         <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">Dr. Nimisha Modi</h2>
-                        <p className="text-xl text-gray-400 mb-6 font-medium">B.D.S. | MDS (Oral Surgery) | Fellow in Implantology</p>
+                        <p className="text-xl text-gray-300 mb-6 font-medium">B.D.S. | MDS (Oral Surgery) | Fellow in Implantology</p>
 
-                        <p className="text-gray-400 mb-6 leading-relaxed">
+                        <p className="text-gray-300 mb-6 leading-relaxed">
                             With over 12 years of experience in advanced dentistry, Dr. Nimisha Modi has transformed thousands of smiles. Her expertise lies in painless dental implants and cosmetic makeovers.
                         </p>
 
                         <div className="grid grid-cols-2 gap-6 mb-8">
-                            <div className="bg-white/5 p-4 rounded-xl border border-white/5">
+                            <div className="bg-white/5 p-4 rounded-xl border border-white/5 shadow-inner">
                                 <h3 className="text-3xl font-bold text-blue-400 mb-1">12+</h3>
-                                <p className="text-gray-500 text-xs">Years Experience</p>
+                                <p className="text-gray-400 text-xs uppercase font-bold tracking-widest">Experience</p>
                             </div>
-                            <div className="bg-white/5 p-4 rounded-xl border border-white/5">
+                            <div className="bg-white/5 p-4 rounded-xl border border-white/5 shadow-inner">
                                 <h3 className="text-3xl font-bold text-blue-400 mb-1">10k+</h3>
-                                <p className="text-gray-500 text-xs">Happy Patients</p>
+                                <p className="text-gray-400 text-xs uppercase font-bold tracking-widest">Patients</p>
                             </div>
                         </div>
 

@@ -102,7 +102,7 @@ const WhyTrust = () => {
                             {/* Card 2 */}
                             <div className="trust-card bg-[#1e293b]/40 backdrop-blur-sm p-6 rounded-2xl border border-gray-800 hover:border-emerald-500/30 transition-all duration-500 shadow-xl">
                                 <h3 className="text-lg font-bold text-white mb-4 border-l-4 border-emerald-500 pl-3 tracking-wide">Patient Centric</h3>
-                                <ul className="space-y-3 text-gray-400">
+                                <ul className="space-y-3 text-gray-300">
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Direct Doctor Consultation</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Personalized Digital Planning</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Proactive Post-Care Support</span></li>
@@ -112,7 +112,7 @@ const WhyTrust = () => {
                             {/* Card 3 */}
                             <div className="trust-card bg-[#1e293b]/40 backdrop-blur-sm p-6 rounded-2xl border border-gray-800 hover:border-blue-500/30 transition-all duration-500 shadow-xl">
                                 <h3 className="text-lg font-bold text-white mb-4 border-l-4 border-blue-500 pl-3 tracking-wide">Legacy & Scale</h3>
-                                <ul className="space-y-3 text-gray-400">
+                                <ul className="space-y-3 text-gray-300">
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">10,000+ Successful Smiles</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Expertise in Complex Rehabs</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">5,000+ Dental Implants Placed</span></li>
@@ -122,7 +122,7 @@ const WhyTrust = () => {
                             {/* Card 4 */}
                             <div className="trust-card bg-[#1e293b]/40 backdrop-blur-sm p-6 rounded-2xl border border-gray-800 hover:border-emerald-500/30 transition-all duration-500 shadow-xl">
                                 <h3 className="text-lg font-bold text-white mb-4 border-l-4 border-emerald-500 pl-3 tracking-wide">Safety Unmatched</h3>
-                                <ul className="space-y-3 text-gray-400">
+                                <ul className="space-y-3 text-gray-300">
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">10X ISO Safety Protocols</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Multi-Step Sterilization Cycle</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Modern Hygienic Infrastructure</span></li>

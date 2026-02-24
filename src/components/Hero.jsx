@@ -119,8 +119,8 @@ const Hero = () => {
                         <div ref={statsContainerRef} className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                             {stats.map((stat, i) => (
                                 <div key={i} className="flex flex-col items-center sm:items-start p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors cursor-default">
-                                    <h4 className="text-2xl font-black text-white mb-1"><AnimatedCounter target={stat.target} suffix={stat.suffix} /></h4>
-                                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{stat.label}</span>
+                                    <div className="text-2xl font-black text-white mb-1"><AnimatedCounter target={stat.target} suffix={stat.suffix} /></div>
+                                    <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{stat.label}</span>
                                 </div>
                             ))}
                         </div>

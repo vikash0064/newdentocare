@@ -40,7 +40,7 @@ const LatestBlog = () => {
                             {latestBlog.title}
                         </h2>
 
-                        <div className="flex items-center gap-4 text-sm text-gray-400 font-medium">
+                        <div className="flex items-center gap-4 text-sm text-gray-200 font-bold">
                             <span className="flex items-center gap-1.5">
                                 <User size={16} className="text-blue-500" />
                                 {latestBlog.author || 'Dr. Nimisha Modi'}

@@ -105,14 +105,14 @@ const Footer = () => {
                         </p>
 
                         {/* Social Links */}
-                        <div className="flex gap-2.5">
+                        <div className="flex items-center gap-3">
                             {[
                                 { Icon: Facebook, label: "Facebook Page", href: "https://www.facebook.com/modi.nimisha.5", color: "hover:bg-blue-600 hover:border-blue-500" },
                                 { Icon: Instagram, label: "Instagram Profile", href: "https://www.instagram.com/dentocare_dental", color: "hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 hover:border-pink-500" },
                                 { Icon: Youtube, label: "Youtube Channel", href: "https://www.youtube.com/@dentocare_dental", color: "hover:bg-red-600 hover:border-red-500" }
                             ].map((social, i) => (
-                                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className={`group bg-white/5 p-2 rounded-xl transition-all border border-white/10 ${social.color}`}>
-                                    <social.Icon size={16} className="text-gray-300 group-hover:text-white transition-colors" />
+                                <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className={`group bg-white/5 p-3.5 rounded-xl transition-all border border-white/10 ${social.color} min-w-[44px] min-h-[44px] flex items-center justify-center`}>
+                                    <social.Icon size={18} className="text-gray-300 group-hover:text-white transition-colors" />
                                 </a>
                             ))}
                         </div>
@@ -173,7 +173,7 @@ const Footer = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
                         {/* Copyright - Left on Desktop */}
                         <div className="text-center lg:text-left order-2 lg:order-1">
-                            <p className="text-[10px] text-gray-400 font-medium flex items-center justify-center lg:justify-start gap-1.5 uppercase tracking-widest">
+                            <p className="text-[10px] text-gray-300 font-medium flex items-center justify-center lg:justify-start gap-1.5 uppercase tracking-widest">
                                 © {new Date().getFullYear()} Dent O Care SURAT. <Heart size={10} className="text-red-500 fill-current" />
                             </p>
                         </div>
@@ -200,10 +200,10 @@ const Footer = () => {
                         </div>
 
                         {/* Secondary Links - Right on Desktop */}
-                        <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 order-3 lg:order-3">
+                        <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-300 order-3 lg:order-3">
                             <Link to="#" className="hover:text-blue-400 transition-colors">Privacy</Link>
                             <Link to="#" className="hover:text-blue-400 transition-colors">Emergency</Link>
-                            <Link to="/admin" className="text-blue-500/60 hover:text-blue-400 transition-colors flex items-center gap-1 group/admin">
+                            <Link to="/admin" className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group/admin">
                                 <Lock size={10} className="group-hover/admin:scale-110 transition-transform" />
                                 Admin
                             </Link>
