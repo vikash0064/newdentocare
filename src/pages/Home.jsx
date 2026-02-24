@@ -10,6 +10,7 @@ const DentalReels = React.lazy(() => import('../components/DentalReels'));
 const PatientSpeaks = React.lazy(() => import('../components/PatientSpeaks'));
 const MeetTheDoctor = React.lazy(() => import('../components/MeetTheDoctor'));
 const LatestBlog = React.lazy(() => import('../components/LatestBlog'));
+const ReviewCTA = React.lazy(() => import('../components/ReviewCTA'));
 
 import { Link } from 'react-router-dom';
 
@@ -67,6 +68,7 @@ const Home = () => {
                 <ClinicPresence />
                 <LatestBlog />
                 <HomeSEO />
+                <ReviewCTA />
                 <PatientSpeaks />
             </React.Suspense>
         </main>
