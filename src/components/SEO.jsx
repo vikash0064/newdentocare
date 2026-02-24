@@ -14,11 +14,11 @@ const SEO = ({
     const siteUrl = "https://www.plusdentocare.in";
     const fullUrl = `${siteUrl}${location.pathname}`;
 
-    const defaultTitle = "Plus Dento Care | Dr. Nimisha Modi | Best Dentist in Surat | Dental Clinic Near Me";
-    const defaultDescription = "Plus Dento Care (Dentocare) - Top-rated dental clinic in Surat by Dr. Nimisha Modi. Expert dentist for dental implants, root canal, teeth whitening, braces & more. Book your appointment today! Painless treatment, affordable prices, 5-star facilities.";
-    const defaultKeywords = "dentocare, Plus Dento Care Surat, Dr. Nimisha Modi, dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces Surat, kids dentist Surat, emergency dentist Surat, affordable dental care, best dentist near me";
+    const defaultTitle = "Plus Dento Care | Dr. Nimisha Modi | Best Dentist in Surat | Dental Clinic in Adajan & Palanpur";
+    const defaultDescription = "Plus Dento Care (Dentocare) - Top-rated dental clinic in Surat by Dr. Nimisha Modi. Expert dentist for dental implants, root canal, teeth whitening, braces & more in Adajan and Palanpur Road. Book your appointment today! Painless treatment, affordable prices, 5-star facilities.";
+    const defaultKeywords = "dentocare, Plus Dento Care Surat, Dr. Nimisha Modi, dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces Surat, kids dentist Surat, emergency dentist Surat, affordable dental care, best dentist near me, dentist in Adajan, dental hospital in Palanpur Surat, dental clinic near Mashal Circle";
 
-    const pageTitle = title ? `${title} | Dr. Nimisha Modi | Plus Dento Care` : defaultTitle;
+    const pageTitle = title ? `${title} | Dr. Nimisha Modi | Plus Dento Care Surat` : defaultTitle;
     const pageDescription = description || defaultDescription;
     const pageKeywords = keywords || defaultKeywords;
 

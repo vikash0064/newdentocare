@@ -36,8 +36,8 @@ const HomeSEO = () => {
                         </h2>
                         <p className="text-[11px] sm:text-xs lg:text-sm text-gray-400/60 leading-relaxed mx-auto lg:mx-0">
                             Looking for the <strong>top dentist in Surat</strong>? Plus Dento Care (Dentocare), led by <strong>Dr. Nimisha Modi</strong>, is your trusted partner for a healthy smile.
-                            Rated as the <strong>best dental hospital in Surat</strong> for our ethical approach, we specialize in high-tech, <strong>painless dental treatments</strong>,
-                            Root Canals, and Implants at Simanagar (Palanpur Road) and Gaurav Path.
+                            Rated as the <strong>best dental hospital in Adajan and Palanpur</strong> for our ethical approach, we specialize in high-tech, <strong>painless dental treatments</strong>,
+                            Root Canals, and Implants at Simanagar (Palanpur Road) and Gaurav Path. We are the most <strong>affordable dental clinic in Surat</strong> with 5-star facilities.
                         </p>
                     </div>
                     <div className="flex gap-3 sm:gap-4 justify-center lg:justify-end shrink-0">
