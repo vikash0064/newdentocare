@@ -37,7 +37,7 @@ const ClinicShowcase = () => {
                 <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight leading-none uppercase tracking-[-0.02em]">
                     Our World Class <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Clinic</span>
                 </h2>
-                <p className="text-gray-500 font-medium text-[11px] md:text-sm tracking-wide opacity-70">A state-of-the-art facility engineered for surgical precision.</p>
+                <p className="text-gray-400 font-medium text-[11px] md:text-sm tracking-wide opacity-70">A state-of-the-art facility engineered for surgical precision.</p>
             </div>
 
             <div className="relative w-full overflow-hidden mb-16 px-4">
@@ -47,6 +47,8 @@ const ClinicShowcase = () => {
                             <img
                                 src={img}
                                 alt={`Plus Dento Care Clinic Interior View ${i + 1} - Best Dental Clinic in Surat Dr. Nimisha Modi`}
+                                width="450"
+                                height="300"
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"

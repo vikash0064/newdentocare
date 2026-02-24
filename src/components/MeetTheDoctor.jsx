@@ -67,11 +67,11 @@ const MeetTheDoctor = () => {
                         <div className="grid grid-cols-2 gap-6 mb-10">
                             <div className="bg-[#1e293b]/30 p-5 rounded-2xl border border-gray-800/50">
                                 <span className="block text-3xl lg:text-4xl font-black text-white mb-1">12+</span>
-                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Years Experience</span>
+                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-300 uppercase tracking-widest">Years Experience</span>
                             </div>
                             <div className="bg-[#1e293b]/30 p-5 rounded-2xl border border-gray-800/50">
                                 <span className="block text-3xl lg:text-4xl font-black text-blue-400 mb-1">10k+</span>
-                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Happy Patients</span>
+                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-300 uppercase tracking-widest">Happy Patients</span>
                             </div>
                         </div>
 
@@ -112,7 +112,7 @@ const MeetTheDoctor = () => {
                                 </div>
                                 <div>
                                     <p className="text-white font-bold text-sm">Patient's Choice</p>
-                                    <p className="text-[10px] text-gray-400 font-semibold uppercase tracking-wide">Trusted Leader</p>
+                                    <p className="text-[10px] text-gray-300 font-semibold uppercase tracking-wide">Trusted Leader</p>
                                 </div>
                             </div>
                         </div>

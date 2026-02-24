@@ -51,7 +51,7 @@ const DoctorTeam = () => {
                         Our Specialized <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Experts</span>
                     </h2>
 
-                    <p className="text-gray-400 max-w-xl mx-auto text-xs md:text-sm font-medium leading-relaxed opacity-80 italic">
+                    <p className="text-gray-300 max-w-xl mx-auto text-xs md:text-sm font-medium leading-relaxed opacity-80 italic">
                         Redefining dental excellence through collaborative expertise and international protocols.
                     </p>
                 </div>
@@ -75,6 +75,8 @@ const DoctorTeam = () => {
                                         <img
                                             src={doc.image}
                                             alt={`${doc.name} - ${doc.role} at Plus Dento Care Surat | Best Dental Clinic in Surat`}
+                                            width="400"
+                                            height="500"
                                             loading="lazy"
                                             decoding="async"
                                             className="w-full h-full object-cover transition-all duration-1000 grayscale-[20%] group-hover/card:grayscale-0"
@@ -99,7 +101,7 @@ const DoctorTeam = () => {
                                     <div>
                                         <div className="flex items-center gap-2 mb-3">
                                             <span className={`h-[2px] w-6 ${doc.color === 'blue' ? 'bg-blue-500' : 'bg-emerald-500'}`}></span>
-                                            <span className="text-[10px] font-black text-gray-500 uppercase tracking-widest">{doc.role}</span>
+                                            <span className="text-[10px] font-black text-gray-400 uppercase tracking-widest">{doc.role}</span>
                                         </div>
 
                                         <h3 className="text-2xl md:text-3xl font-black text-white mb-1.5 tracking-tight group-hover/card:text-blue-400 transition-colors">
@@ -111,7 +113,7 @@ const DoctorTeam = () => {
 
                                         <div className="space-y-3 mb-8">
                                             {doc.highlights.map((h, i) => (
-                                                <div key={i} className="flex items-center gap-2 text-gray-400 text-xs font-medium">
+                                                <div key={i} className="flex items-center gap-2 text-gray-300 text-xs font-medium">
                                                     <Sparkles size={12} className={doc.color === 'blue' ? 'text-blue-500' : 'text-emerald-500'} />
                                                     {h}
                                                 </div>
@@ -122,11 +124,11 @@ const DoctorTeam = () => {
                                     {/* Stats Grid - Fixed Layout */}
                                     <div className="grid grid-cols-2 gap-3 mb-6">
                                         <div className="bg-white/5 p-3 rounded-2xl border border-white/5">
-                                            <span className="block text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1">Qual</span>
+                                            <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-widest mb-1">Qual</span>
                                             <span className="text-xs font-black text-white">{doc.qualifications}</span>
                                         </div>
                                         <div className="bg-white/5 p-3 rounded-2xl border border-white/5">
-                                            <span className="block text-[8px] font-bold text-gray-500 uppercase tracking-widest mb-1">Reg No</span>
+                                            <span className="block text-[8px] font-bold text-gray-400 uppercase tracking-widest mb-1">Reg No</span>
                                             <span className="text-xs font-black text-white">{doc.regNo}</span>
                                         </div>
                                     </div>
@@ -137,7 +139,7 @@ const DoctorTeam = () => {
                                             <div className={`w-8 h-8 rounded-full ${doc.color === 'blue' ? 'bg-blue-500/10 text-blue-400' : 'bg-emerald-500/10 text-emerald-400'} flex items-center justify-center border border-white/5`}>
                                                 <Shield size={14} />
                                             </div>
-                                            <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.2em]">Verified Practitioner</span>
+                                            <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em]">Verified Practitioner</span>
                                         </div>
                                         <div className="flex gap-4 opacity-30">
                                             <Heart size={14} />

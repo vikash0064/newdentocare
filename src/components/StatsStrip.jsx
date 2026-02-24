@@ -32,7 +32,7 @@ const AnimatedCounter = ({ target, suffix, duration = 2, isDecimal = false }) =>
         });
     }, [target, duration, isDecimal]);
 
-    return <span>{count}{suffix}</span>;
+    return <span className="tabular-nums">{count}{suffix}</span>;
 };
 
 const StatsStrip = () => {
@@ -75,13 +75,14 @@ const StatsStrip = () => {
                             <span className="font-bold text-white text-lg lg:text-xl leading-none tracking-tight">
                                 {startCounter ? <AnimatedCounter target={stat.target} suffix={stat.suffix} duration={2} isDecimal={stat.isDecimal} /> : stat.value}
                             </span>
-                            <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide mt-1.5">{stat.label}</span>
+                            <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wide mt-1.5">{stat.label}</span>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <style>{`
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes marquee {
                     0% { transform: translateX(0); }
                     100% { transform: translateX(calc(-50%)); }
@@ -89,7 +90,7 @@ const StatsStrip = () => {
                 .animate-marquee {
                     animation: marquee 40s linear infinite;
                 }
-            `}</style>
+            ` }} />
         </div>
     );
 };

@@ -39,7 +39,7 @@ const WhyTrust = () => {
                     <h2 className="text-3xl md:text-5xl font-black mb-2 text-white tracking-tight leading-tight">
                         Why Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Dentocare?</span>
                     </h2>
-                    <p className="text-gray-400 text-sm font-medium max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-gray-300 text-sm font-medium max-w-4xl mx-auto leading-relaxed">
                         Experience expert dental care and clinical excellence. We are Surat's trusted choice for a healthy, beautiful smile.
                     </p>
                 </div>
@@ -53,6 +53,8 @@ const WhyTrust = () => {
                                     key={index}
                                     src={img}
                                     alt={`Plus Dento Care (Dentocare) Clinic Environment ${index + 1} Surat - Expert Dental Care by Dr. Nimisha Modi`}
+                                    width="600"
+                                    height="500"
                                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'
                                         }`}
                                     loading="lazy"
@@ -90,7 +92,7 @@ const WhyTrust = () => {
                             {/* Card 1 */}
                             <div className="trust-card bg-[#1e293b]/40 backdrop-blur-sm p-6 rounded-2xl border border-gray-800 hover:border-blue-500/30 transition-all duration-500 shadow-xl">
                                 <h3 className="text-lg font-bold text-white mb-4 border-l-4 border-blue-500 pl-3 tracking-wide">World Class Tech</h3>
-                                <ul className="space-y-3 text-gray-400">
+                                <ul className="space-y-3 text-gray-300">
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Advanced Laser Dental Tech</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">Globally certified materials</span></li>
                                     <li className="flex gap-2.5 items-start"><Check size={16} className="text-emerald-400 mt-0.5 shrink-0" /> <span className="text-xs font-medium">3D Intraoral Precision Scanning</span></li>

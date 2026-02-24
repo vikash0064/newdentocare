@@ -19,74 +19,74 @@ const ReviewCTA = () => {
     };
 
     return (
-        <section className="py-20 relative overflow-hidden bg-[#0B1120]">
+        <section className="py-6 md:py-20 relative overflow-hidden bg-[#0B1120]">
             {/* Background elements */}
-            <div className="absolute top-0 inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.1),transparent_70%)]"></div>
+            <div className="absolute top-0 inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.06),transparent_70%)]"></div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-white/5 backdrop-blur-xl rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
+                    <div className="bg-white/5 backdrop-blur-xl rounded-2xl md:rounded-[2.5rem] border border-white/10 overflow-hidden shadow-2xl">
                         <div className="flex flex-col lg:flex-row">
 
-                            {/* Left Side: Content */}
-                            <div className="lg:w-1/2 p-8 sm:p-12 lg:border-r border-white/10 bg-gradient-to-br from-blue-600/10 to-transparent">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6 border border-emerald-500/20">
-                                    <Star size={12} className="fill-current" /> Share Your Experience
+                            {/* Left Side: Content - Centered and Compact */}
+                            <div className="lg:w-1/2 p-5 md:p-12 lg:border-r border-white/10 bg-gradient-to-br from-blue-600/5 to-transparent flex flex-col justify-center">
+                                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-full text-[8px] md:text-[10px] font-black uppercase tracking-widest mb-3 md:mb-6 w-fit border border-emerald-500/20">
+                                    <Star size={9} className="fill-current" /> Share Experience
                                 </div>
-                                <h2 className="text-3xl sm:text-4xl font-black text-white mb-6 leading-tight">
-                                    Love Our Service? <br />
+                                <h2 className="text-xl md:text-3xl lg:text-4xl font-black text-white mb-2 md:mb-4 leading-tight tracking-tight">
+                                    Love Our Service? <br className="hidden md:block" />
                                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Leave a Review!</span>
                                 </h2>
-                                <p className="text-gray-300 text-base mb-8 leading-relaxed">
+                                <p className="hidden md:block text-gray-300 text-base mb-8 leading-relaxed opacity-80">
                                     Your feedback helps us grow and helps others find the best dental care in Surat. It only takes a minute!
                                 </p>
 
-                                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5 italic text-gray-300 text-sm">
+                                <div className="hidden lg:flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/5 italic text-gray-300 text-sm">
                                     <Quote size={20} className="text-blue-500 shrink-0" />
                                     "I had an amazing experience with Dr. Nimisha. Highly recommend!"
                                 </div>
                             </div>
 
-                            {/* Right Side: Form */}
-                            <div className="lg:w-1/2 p-8 sm:p-12 bg-white/[0.02]">
-                                <form onSubmit={handleSubmit} className="space-y-5">
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Your Full Name</label>
-                                        <div className="relative">
-                                            <input
-                                                type="text"
-                                                placeholder="e.g. Rahul Sharma"
-                                                required
-                                                value={name}
-                                                onChange={(e) => setName(e.target.value)}
-                                                className="w-full bg-[#1e293b]/50 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all"
-                                            />
-                                        </div>
+                            {/* Right Side: Form - Ultra Tight */}
+                            <div className="lg:w-1/2 p-5 md:p-12 bg-white/[0.01]">
+                                <form onSubmit={handleSubmit} className="space-y-3 md:space-y-5">
+                                    <div className="space-y-1">
+                                        <label className="text-[9px] font-black text-gray-500 uppercase tracking-widest ml-1">Full Name</label>
+                                        <input
+                                            type="text"
+                                            placeholder="Rahul Sharma"
+                                            required
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                            className="w-full bg-[#1e293b]/50 border border-white/10 rounded-xl px-4 py-2.5 md:py-4 text-xs md:text-base text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 transition-all font-medium"
+                                        />
                                     </div>
 
-                                    <div className="space-y-2">
-                                        <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Your Feedback</label>
+                                    <div className="space-y-1">
+                                        <label className="text-[9px] font-black text-gray-500 uppercase tracking-widest ml-1">Feedback</label>
                                         <textarea
-                                            placeholder="Tell us what you liked about your visit..."
+                                            placeholder="Your experience..."
                                             required
                                             value={review}
                                             onChange={(e) => setReview(e.target.value)}
-                                            rows="3"
-                                            className="w-full bg-[#1e293b]/50 border border-white/10 rounded-2xl px-5 py-4 text-white placeholder:text-gray-500 focus:outline-none focus:border-blue-500/50 focus:ring-4 focus:ring-blue-500/10 transition-all resize-none"
+                                            rows="2"
+                                            className="w-full bg-[#1e293b]/50 border border-white/10 rounded-xl px-4 py-2.5 md:py-4 text-xs md:text-base text-white placeholder:text-gray-600 focus:outline-none focus:border-blue-500/50 transition-all resize-none font-medium"
                                         ></textarea>
                                     </div>
 
-                                    <button
-                                        type="submit"
-                                        className="w-full bg-[#00a859] hover:bg-emerald-600 text-white font-black py-5 rounded-2xl shadow-xl shadow-emerald-900/20 flex items-center justify-center gap-3 group transition-all active:scale-95"
-                                    >
-                                        <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                        Submit on Google
-                                        <ExternalLink size={14} className="opacity-50" />
-                                    </button>
+                                    <div className="pt-1">
+                                        <button
+                                            type="submit"
+                                            className="w-full bg-[#00a859] hover:bg-emerald-600 text-white font-black py-3.5 md:py-5 rounded-xl md:rounded-2xl shadow-xl shadow-emerald-900/10 flex items-center justify-center gap-2 group transition-all active:scale-[0.98]"
+                                        >
+                                            <Send size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                            <span className="text-xs md:text-base">Submit Review</span>
+                                            <ExternalLink size={12} className="opacity-40" />
+                                        </button>
+                                    </div>
 
-                                    <p className="text-center text-[10px] text-gray-500 font-medium">
-                                        Clicking submit will open our official Google Review page.
+                                    <p className="text-center text-[8px] md:text-[10px] text-gray-500 font-bold uppercase tracking-widest opacity-60">
+                                        Opens Google Review Page
                                     </p>
                                 </form>
                             </div>

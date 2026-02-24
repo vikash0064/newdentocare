@@ -173,7 +173,7 @@ const Footer = () => {
                     <div className="grid grid-cols-1 lg:grid-cols-3 items-center gap-8">
                         {/* Copyright - Left on Desktop */}
                         <div className="text-center lg:text-left order-2 lg:order-1">
-                            <p className="text-[10px] text-gray-500 font-medium flex items-center justify-center lg:justify-start gap-1.5 uppercase tracking-widest">
+                            <p className="text-[10px] text-gray-400 font-medium flex items-center justify-center lg:justify-start gap-1.5 uppercase tracking-widest">
                                 © {new Date().getFullYear()} Dent O Care SURAT. <Heart size={10} className="text-red-500 fill-current" />
                             </p>
                         </div>
@@ -200,7 +200,7 @@ const Footer = () => {
                         </div>
 
                         {/* Secondary Links - Right on Desktop */}
-                        <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 order-3 lg:order-3">
+                        <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-400 order-3 lg:order-3">
                             <Link to="#" className="hover:text-blue-400 transition-colors">Privacy</Link>
                             <Link to="#" className="hover:text-blue-400 transition-colors">Emergency</Link>
                             <Link to="/admin" className="text-blue-500/60 hover:text-blue-400 transition-colors flex items-center gap-1 group/admin">

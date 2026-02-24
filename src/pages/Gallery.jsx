@@ -72,7 +72,7 @@ const ClinicGallery = () => {
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
                         Clinical Gallery & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Smile Transformations in Surat</span>
                     </h1>
-                    <p className="text-gray-400 font-medium text-xs md:text-lg leading-relaxed opacity-70 mb-8 md:mb-10 px-4">
+                    <p className="text-gray-300 font-medium text-xs md:text-lg leading-relaxed opacity-70 mb-8 md:mb-10 px-4">
                         Explore our clinical cases, surgical protocols, and real patient stories through high-fidelity visual documentation.
                     </p>
                 </div>

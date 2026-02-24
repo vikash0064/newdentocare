@@ -29,7 +29,7 @@ const AnimatedCounter = ({ target, suffix, duration = 2 }) => {
             onUpdate: () => setCount(Math.floor(obj.value))
         });
     }, [target, duration]);
-    return <span>{count}{suffix}</span>;
+    return <span className="tabular-nums">{count}{suffix}</span>;
 };
 
 const Hero = () => {
@@ -177,7 +177,7 @@ const Hero = () => {
                                     <Activity size={24} />
                                 </div>
                                 <div>
-                                    <p className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-1 leading-none">Featured</p>
+                                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 leading-none">Featured</p>
                                     <p className="text-white font-black text-base leading-none">Latest Tech</p>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@ const Hero = () => {
                                         <ShieldCheck size={16} className="sm:size-[20px]" />
                                     </div>
                                     <div className="min-w-0">
-                                        <p className="text-[8px] sm:text-[9px] font-black text-blue-500 uppercase tracking-widest mb-0.5 sm:mb-1 leading-none">Certified</p>
+                                        <p className="text-[8px] sm:text-[9px] font-black text-blue-400 uppercase tracking-widest mb-0.5 sm:mb-1 leading-none">Certified</p>
                                         <p className="text-white font-black text-[10px] sm:text-sm leading-none truncate">JCI Accredited</p>
                                     </div>
                                 </div>
