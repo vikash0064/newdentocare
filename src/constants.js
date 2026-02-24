@@ -1,30 +1,32 @@
-// Cloudinary Base URL
-const CLOUDINARY_BASE = "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/";
+// Cloudinary Base URL with SEO Suffix (Helps scrapers and indexers identify the brand in the URL)
+const SEO_SUFFIX = "dentocare-dr-nimisha-modi-surat-plusdentocare";
+const CLOUDINARY_BASE = `https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/`;
+const SEO_IMG = (url) => `${url}?seo=${SEO_SUFFIX}`;
 
 export const IMAGES = {
     // Brand
-    logo: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732052/logo_cgdtgo.png",
-    doctor: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732039/doctor_hi4dox.png",
+    logo: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732052/logo_cgdtgo.png"),
+    doctor: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732039/doctor_hi4dox.png"),
 
     // Core Backgrounds
-    hero: `${CLOUDINARY_BASE}v1768731991/dent3_vp24y8.png`,
+    hero: SEO_IMG(`${CLOUDINARY_BASE}v1768731991/dent3_vp24y8.png`),
     clinic: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
     safety: "https://images.unsplash.com/photo-1584036561566-b93a941cd64e?q=80&w=1974&auto=format&fit=crop",
 
     // Why Choose Section Images
     whyChoose: [
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg",
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg",
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif",
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif"
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg"),
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg"),
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif"),
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif")
     ],
 
     // Slides (Cloudinary)
     slides: {
-        slide1: `${CLOUDINARY_BASE}v1768734665/doctor_sr6xdx.png`,
-        slide2: `${CLOUDINARY_BASE}v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif`,
-        slide3: `${CLOUDINARY_BASE}v1768731991/dent3_vp24y8.png`,
-        slide4: `${CLOUDINARY_BASE}v1768732043/slide3_fvcvc2.png`
+        slide1: SEO_IMG(`${CLOUDINARY_BASE}v1768734665/doctor_sr6xdx.png`),
+        slide2: SEO_IMG(`${CLOUDINARY_BASE}v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif`),
+        slide3: SEO_IMG(`${CLOUDINARY_BASE}v1768731991/dent3_vp24y8.png`),
+        slide4: SEO_IMG(`${CLOUDINARY_BASE}v1768732043/slide3_fvcvc2.png`)
     },
 
     // Gallery / Showcase Defaults
@@ -36,40 +38,40 @@ export const IMAGES = {
     ],
 
     gallery: [
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736713/dr-nimisha-modi-palanpur-patia-surat-dentists-blgy5phmkk_jxcara.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000001_okocv7.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000009_mcjsma.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-e3jw4n1nbv_ecvyod.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-cftk0g49bx_ebwyx6.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-dent-o-care-palanpur-patia-surat-dentists-qvmx9lfhbx_cebqul.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736710/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_8_m0ijph.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_7_mlqum4.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_2_vkre09.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736708/-8931v5vy02-250_qggxhf.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732141/dr-nimisha-modi-palanpur-patia-surat-dentists-vgsxhlwarr_vsjlqo.avif", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732139/dr-nimisha-modi-palanpur-patia-surat-dentists-81n1221d3o_jf0lna.avif", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732043/slide3_fvcvc2.png", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731991/dr-nimisha-modi-palanpur-patia-surat-dentists-ox6ul8pgdp_kg38fo.avif", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731991/dent3_vp24y8.png", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731990/dr-nimisha-modi-palanpur-patia-surat-dentists-7spwiu6rfx_upb0bw.avif", category: "Clinic" },
-        { url: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731990/dr-nimisha-modi-palanpur-patia-surat-dentists-qxv5fbqyyn_tizivb.avif", category: "Clinic" }
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736713/dr-nimisha-modi-palanpur-patia-surat-dentists-blgy5phmkk_jxcara.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000001_okocv7.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000009_mcjsma.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-e3jw4n1nbv_ecvyod.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-cftk0g49bx_ebwyx6.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-dent-o-care-palanpur-patia-surat-dentists-qvmx9lfhbx_cebqul.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736710/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_8_m0ijph.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_7_mlqum4.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_2_vkre09.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736708/-8931v5vy02-250_qggxhf.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732141/dr-nimisha-modi-palanpur-patia-surat-dentists-vgsxhlwarr_vsjlqo.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732139/dr-nimisha-modi-palanpur-patia-surat-dentists-81n1221d3o_jf0lna.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732043/slide3_fvcvc2.png"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731991/dr-nimisha-modi-palanpur-patia-surat-dentists-ox6ul8pgdp_kg38fo.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731991/dent3_vp24y8.png"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731990/dr-nimisha-modi-palanpur-patia-surat-dentists-7spwiu6rfx_upb0bw.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768731990/dr-nimisha-modi-palanpur-patia-surat-dentists-qxv5fbqyyn_tizivb.avif"), category: "Clinic" }
     ],
 
     // Treatment Specific
     treatments: {
-        prosthetics: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732105/Denture_emjwhz.jpg",
-        restoration: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/Dental_crowns_pa3a3i.jpg",
-        extraction: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732111/wisdom_teeth_l2eg61.jpg",
-        rct: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732113/root_canal_kgicfn.jpg",
-        implants: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732107/implant_vxgxlc.jpg",
-        surgery: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732108/laser_Densitry_za7vep.jpg",
-        gum: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732082/laser_Densitry_qdhgas.jpg",
-        checkup: "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/clear_aligner_cu8n02.jpg"
+        prosthetics: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732105/Denture_emjwhz.jpg"),
+        restoration: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/Dental_crowns_pa3a3i.jpg"),
+        extraction: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732111/wisdom_teeth_l2eg61.jpg"),
+        rct: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732113/root_canal_kgicfn.jpg"),
+        implants: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732107/implant_vxgxlc.jpg"),
+        surgery: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732108/laser_Densitry_za7vep.jpg"),
+        gum: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732082/laser_Densitry_qdhgas.jpg"),
+        checkup: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/clear_aligner_cu8n02.jpg")
     },
 
     // Centralized Treatment Content
@@ -142,7 +144,7 @@ export const IMAGES = {
 
     // Testimonials
     avatars: [
-        `${CLOUDINARY_BASE}v1768734665/doctor_sr6xdx.png`,
+        SEO_IMG(`${CLOUDINARY_BASE}v1768734665/doctor_sr6xdx.png`),
         "https://images.unsplash.com/photo-1554151228-14d9def656ec?auto=format&fit=crop&w=600&q=80",
         "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80",
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",

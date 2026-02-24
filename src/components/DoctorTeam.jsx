@@ -9,7 +9,7 @@ const doctors = [
         qualifications: "B.D.S.",
         regNo: "A-23089",
         experience: "5 Years",
-        image: "/assets/team/dr-ruchita.png",
+        image: "/assets/team/dentocare-dr-ruchita-surat.png",
         specialty: "General Dentistry",
         color: "blue",
         highlights: ["Restorative Expert", "Advanced Diagnostics"]
@@ -20,7 +20,7 @@ const doctors = [
         qualifications: "B.D.S.",
         regNo: "A-25134",
         experience: "3 Years",
-        image: "/assets/team/dr-jessica.jpg",
+        image: "/assets/team/dentocare-dr-jessica-surat.jpg",
         specialty: "Dental Surgery",
         color: "emerald",
         highlights: ["Aesthetic Enhancements", "Painless Procedures"]

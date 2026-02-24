@@ -126,11 +126,15 @@ app.post('/api/testimonials', upload.single('media'), async (req, res) => {
         let mediaType = 'image';
 
         if (req.file) {
+            // SEO-friendly Public ID for Testimonials
+            const seoPublicId = `plusdentocare-testimonial-${patientName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${Date.now()}`;
+
             // Upload to Cloudinary
             const result = await new Promise((resolve, reject) => {
                 const uploadStream = cloudinary.uploader.upload_stream(
                     {
-                        folder: 'dentocare_gallery',
+                        folder: 'dentocare_testimonials',
+                        public_id: seoPublicId,
                         resource_type: 'auto'
                     },
                     (error, result) => {
@@ -186,9 +190,15 @@ app.post('/api/gallery', upload.single('image'), async (req, res) => {
     try {
         if (!req.file) return res.status(400).json({ error: 'No image provided' });
 
+        // SEO-friendly Public ID for Gallery
+        const seoPublicId = `plusdentocare-dentocare-surat-dr-nimisha-modi-${Date.now()}`;
+
         const result = await new Promise((resolve, reject) => {
             const uploadStream = cloudinary.uploader.upload_stream(
-                { folder: 'dentocare_gallery' },
+                {
+                    folder: 'dentocare_gallery',
+                    public_id: seoPublicId
+                },
                 (error, result) => {
                     if (error) reject(error);
                     else resolve(result);
@@ -268,9 +278,16 @@ app.post('/api/blogs', upload.single('image'), async (req, res) => {
         let imageUrl = '';
 
         if (req.file) {
+            // SEO-friendly Public ID for Blogs
+            const cleanTitle = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+            const seoPublicId = `plusdentocare-blog-dentocare-surat-dr-nimisha-modi-${cleanTitle}`;
+
             const result = await new Promise((resolve, reject) => {
                 const uploadStream = cloudinary.uploader.upload_stream(
-                    { folder: 'dentocare_blogs' },
+                    {
+                        folder: 'dentocare_blogs',
+                        public_id: seoPublicId
+                    },
                     (error, result) => {
                         if (error) reject(error);
                         else resolve(result);
@@ -286,7 +303,7 @@ app.post('/api/blogs', upload.single('image'), async (req, res) => {
             content,
             image: imageUrl,
             category: category || 'Dental Health',
-            author: author || 'Dr. Vikash',
+            author: author || 'Dr. Nimisha Modi',
             slug: slug || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, ''),
             date: new Date()
         });
