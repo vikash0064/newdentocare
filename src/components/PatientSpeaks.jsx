@@ -41,7 +41,7 @@ const PatientSpeaks = () => {
                 <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight">
                     What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Patients Say</span>
                 </h2>
-                <div className="flex items-center justify-center gap-3 mt-4 text-gray-400 text-sm font-bold">
+                <div className="flex items-center justify-center gap-3 mt-4 text-gray-300 text-sm font-bold">
                     <span className="bg-white/5 px-3 py-1 rounded-lg border border-white/5">4.9/5 Rating</span>
                     <div className="flex gap-1">
                         {[...Array(5)].map((_, i) => <Star key={i} size={14} fill="#FACC15" className="text-yellow-400" />)}
@@ -66,7 +66,7 @@ const PatientSpeaks = () => {
                                 <div className="flex justify-between items-start mb-3 md:mb-4">
                                     <div className="flex flex-col gap-0.5">
                                         <h3 className="text-white font-black text-sm md:text-base tracking-tight group-hover:text-blue-400 transition-colors uppercase leading-tight">{review.name}</h3>
-                                        <span className="text-[9px] md:text-[10px] text-gray-500 font-bold uppercase tracking-wider">{review.date}</span>
+                                        <span className="text-[9px] md:text-[10px] text-gray-400 font-bold uppercase tracking-wider">{review.date}</span>
                                     </div>
                                     <div className="bg-blue-600/20 p-2 md:p-2 rounded-xl md:rounded-2xl text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                         <Quote size={14} fill="currentColor" />
@@ -99,7 +99,7 @@ const PatientSpeaks = () => {
                                         <BadgeCheck size={10} className="text-emerald-400" />
                                         <span className="text-[8px] md:text-[9px] font-black text-emerald-400 uppercase tracking-widest">Verified</span>
                                     </div>
-                                    <span className="text-[8px] md:text-[9px] text-gray-600 font-bold italic tracking-wider">via {review.source}</span>
+                                    <span className="text-[8px] md:text-[9px] text-gray-500 font-bold italic tracking-wider">via {review.source}</span>
                                 </div>
                             </div>
                         </div>

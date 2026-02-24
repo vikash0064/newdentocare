@@ -101,7 +101,7 @@ const Hero = () => {
                         </div>
 
                         <div ref={descRef} className="bg-white/5 backdrop-blur-xl p-5 sm:p-6 rounded-[1.5rem] border border-white/5 mb-8 max-w-lg shadow-inner group transition-all hover:bg-white/[0.08]">
-                            <p className="text-gray-400 text-xs sm:text-base md:text-lg leading-relaxed font-medium">
+                            <p className="text-gray-300 text-xs sm:text-base md:text-lg leading-relaxed font-medium">
                                 Experience revolutionary dental care with our cutting-edge technology.
                                 From <span className="text-blue-400 font-bold">AI-smile design</span> to <span className="text-emerald-400 font-bold">pain-free laser</span>.
                             </p>
@@ -120,7 +120,7 @@ const Hero = () => {
                             {stats.map((stat, i) => (
                                 <div key={i} className="flex flex-col items-center sm:items-start p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors cursor-default">
                                     <h4 className="text-2xl font-black text-white mb-1"><AnimatedCounter target={stat.target} suffix={stat.suffix} /></h4>
-                                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">{stat.label}</span>
+                                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{stat.label}</span>
                                 </div>
                             ))}
                         </div>
@@ -135,9 +135,12 @@ const Hero = () => {
                                     <div key={idx} className={`absolute inset-0 transition-all duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}>
                                         <img
                                             src={img.src}
-                                            alt={`${img.label} at Plus Dento Care - Best Dental Clinic in Surat`}
+                                            alt={`${img.label} - ${img.sub} at Plus Dento Care Surat`}
                                             className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
+                                            width="800"
+                                            height="1000"
                                             loading={idx === 0 ? "eager" : "lazy"}
+                                            fetchpriority={idx === 0 ? "high" : "low"}
                                             decoding="async"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
@@ -145,7 +148,7 @@ const Hero = () => {
                                         {/* Bottom Label */}
                                         <div className="absolute bottom-10 left-10 right-10">
                                             <h3 className="text-3xl font-black text-white mb-2 tracking-tight">{img.label}</h3>
-                                            <p className="text-gray-400 font-bold text-sm tracking-wide">{img.sub}</p>
+                                            <p className="text-gray-300 font-bold text-sm tracking-wide">{img.sub}</p>
                                         </div>
                                     </div>
                                 ))}

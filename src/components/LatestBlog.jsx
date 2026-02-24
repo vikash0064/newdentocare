@@ -40,7 +40,7 @@ const LatestBlog = () => {
                             {latestBlog.title}
                         </h2>
 
-                        <div className="flex items-center gap-4 text-sm text-gray-500 font-medium">
+                        <div className="flex items-center gap-4 text-sm text-gray-400 font-medium">
                             <span className="flex items-center gap-1.5">
                                 <User size={16} className="text-blue-500" />
                                 {latestBlog.author || 'Dr. Nimisha Modi'}
@@ -52,7 +52,7 @@ const LatestBlog = () => {
                             </span>
                         </div>
 
-                        <p className="text-gray-400 text-lg leading-relaxed line-clamp-3">
+                        <p className="text-gray-300 text-lg leading-relaxed line-clamp-3">
                             {latestBlog.content.substring(0, 200)}...
                         </p>
 
@@ -74,6 +74,8 @@ const LatestBlog = () => {
                             <img
                                 src={latestBlog.image || "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"}
                                 alt={`${latestBlog.title} - Dental Health Article by Plus Dento Care Surat`}
+                                width="600"
+                                height="450"
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"

@@ -121,7 +121,7 @@ const WhyChoose = () => {
                     <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 tracking-tight leading-tight">
                         Why Choose <span className="text-blue-500">Dent O Care?</span>
                     </h2>
-                    <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium">
+                    <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
                         Experience expert dental care and clinical excellence. We are Surat's trusted choice for a healthy, beautiful smile.
                     </p>
                 </div>
@@ -153,6 +153,8 @@ const WhyChoose = () => {
                                             src={src}
                                             alt={`Plus Dento Care Clinic Environment ${idx + 1} Surat - Expert Care by Dr. Nimisha Modi`}
                                             className="w-full h-full object-cover"
+                                            width="600"
+                                            height="450"
                                             loading="lazy"
                                             decoding="async"
                                             onError={(e) => {
@@ -201,7 +203,7 @@ const WhyChoose = () => {
                                     {feature.items.map((item, i) => (
                                         <li key={i} className="flex items-start gap-2.5 sm:gap-3">
                                             <CheckCircle2 size={12} className="text-emerald-500 mt-1 shrink-0" />
-                                            <span className="text-xs sm:text-sm text-slate-400 font-medium leading-snug">{item}</span>
+                                            <span className="text-xs sm:text-sm text-slate-300 font-medium leading-snug">{item}</span>
                                         </li>
                                     ))}
                                 </ul>

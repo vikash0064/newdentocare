@@ -53,13 +53,13 @@ const MeetTheDoctor = () => {
                         <h2 className="text-4xl lg:text-5xl font-black text-white mb-3 leading-tight tracking-tight">
                             Dr. Nimisha <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Modi</span>
                         </h2>
-                        <h3 className="text-lg text-gray-400 mb-8 font-semibold tracking-wide">
+                        <h3 className="text-lg text-gray-300 mb-8 font-semibold tracking-wide">
                             B.D.S. | Implantologist | Cosmetic Dentist
                         </h3>
 
                         <div className="relative mb-8">
                             <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-emerald-500 rounded-full"></div>
-                            <p className="text-gray-400 text-base lg:text-lg leading-relaxed pl-6 italic">
+                            <p className="text-gray-300 text-base lg:text-lg leading-relaxed pl-6 italic">
                                 "With over 12 years of experience, my mission is to provide world-class dental care that is not only effective but also completely painless and comfortable for every patient."
                             </p>
                         </div>
@@ -67,11 +67,11 @@ const MeetTheDoctor = () => {
                         <div className="grid grid-cols-2 gap-6 mb-10">
                             <div className="bg-[#1e293b]/30 p-5 rounded-2xl border border-gray-800/50">
                                 <span className="block text-3xl lg:text-4xl font-black text-white mb-1">12+</span>
-                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-500 uppercase tracking-widest">Years Experience</span>
+                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Years Experience</span>
                             </div>
                             <div className="bg-[#1e293b]/30 p-5 rounded-2xl border border-gray-800/50">
                                 <span className="block text-3xl lg:text-4xl font-black text-blue-400 mb-1">10k+</span>
-                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-500 uppercase tracking-widest">Happy Patients</span>
+                                <span className="text-[10px] lg:text-[11px] font-semibold text-gray-400 uppercase tracking-widest">Happy Patients</span>
                             </div>
                         </div>
 
@@ -95,6 +95,8 @@ const MeetTheDoctor = () => {
                                 <img
                                     src={IMAGES.doctor}
                                     alt="Dr. Nimisha Modi - Chief Dentist at Plus Dento Care Surat | Best Dental Clinic in Surat"
+                                    width="450"
+                                    height="560"
                                     loading="lazy"
                                     decoding="async"
                                     className="w-full aspect-[4/5] object-cover rounded-[2.5rem] grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"

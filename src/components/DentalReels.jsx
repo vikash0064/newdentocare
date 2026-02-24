@@ -58,7 +58,7 @@ const DentalReels = () => {
                 <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-2 sm:mb-3 tracking-tight">
                     Dental <span className="text-red-500">Stories</span>
                 </h2>
-                <p className="text-gray-400 font-medium text-[11px] sm:text-xs md:text-sm italic mb-6 sm:mb-8 max-w-lg mx-auto px-4">
+                <p className="text-gray-300 font-medium text-[11px] sm:text-xs md:text-sm italic mb-6 sm:mb-8 max-w-lg mx-auto px-4">
                     "Patient Proof is the only Trust we Earn"
                 </p>
 
@@ -124,6 +124,8 @@ const DentalReels = () => {
                                     alt={`${reel.title} - Patient Transformation at Plus Dento Care Surat`}
                                     loading="lazy"
                                     decoding="async"
+                                    width="250"
+                                    height="440"
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                                     onError={(e) => {
                                         e.target.onerror = null;

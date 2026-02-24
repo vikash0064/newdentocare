@@ -90,7 +90,7 @@ const TreatmentGrid = () => {
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-2 tracking-tight">
                         Our <span className="text-blue-500">Treatments</span>
                     </h2>
-                    <p className="text-gray-400 text-xs sm:text-sm lg:text-base font-medium max-w-xl mx-auto leading-relaxed px-2 sm:px-4">
+                    <p className="text-gray-300 text-xs sm:text-sm lg:text-base font-medium max-w-xl mx-auto leading-relaxed px-2 sm:px-4">
                         Expert dental care for all your needs
                     </p>
                 </div>
@@ -114,6 +114,8 @@ const TreatmentGrid = () => {
                                     src={t.image}
                                     alt={`${t.name} - ${t.subtitle} at Plus Dento Care Surat`}
                                     className="w-full h-full object-cover object-center"
+                                    width="400"
+                                    height="300"
                                     loading="lazy"
                                     decoding="async"
                                 />
@@ -134,7 +136,7 @@ const TreatmentGrid = () => {
                             <div className="relative z-10 mt-2 sm:mt-4">
                                 <div className="text-[9px] sm:text-[11px] font-semibold text-blue-400 tracking-wide mb-0.5 sm:mb-1">{t.subtitle}</div>
                                 <h3 className="text-sm sm:text-lg font-bold text-white mb-0.5 sm:mb-1 leading-tight">{t.name}</h3>
-                                <p className="text-[8px] sm:text-[10px] text-gray-400 leading-relaxed font-medium mb-1.5 sm:mb-3 line-clamp-2">
+                                <p className="text-[8px] sm:text-[10px] text-gray-300 leading-relaxed font-medium mb-1.5 sm:mb-3 line-clamp-2">
                                     {t.description}
                                 </p>
 
@@ -158,7 +160,7 @@ const TreatmentGrid = () => {
                                 <div className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-0.5 sm:mb-1 tracking-tight">
                                     {startCounter ? <AnimatedCounter target={stat.target} suffix={stat.suffix} duration={2} isDecimal={stat.isDecimal} /> : stat.value}
                                 </div>
-                                <div className="text-[10px] sm:text-[11px] font-semibold text-gray-400 tracking-wide group-hover:text-blue-400 transition-colors uppercase">{stat.label}</div>
+                                <div className="text-[10px] sm:text-[11px] font-semibold text-gray-300 tracking-wide group-hover:text-blue-400 transition-colors uppercase">{stat.label}</div>
                             </div>
                         ))}
                     </div>
@@ -171,7 +173,7 @@ const TreatmentGrid = () => {
                             <h3 className="text-base sm:text-lg md:text-xl font-black text-white mb-1 tracking-tight">
                                 Need expert advice?
                             </h3>
-                            <p className="text-gray-400 text-[10px] sm:text-[11px] md:text-xs font-medium">
+                            <p className="text-gray-300 text-[10px] sm:text-[11px] md:text-xs font-medium">
                                 Contact us for clinical excellence and personalized dental care.
                             </p>
                         </div>

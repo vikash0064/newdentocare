@@ -94,11 +94,13 @@ const Footer = () => {
                                 src={IMAGES.logo}
                                 alt="Plus Dento Care (Dentocare) - Dr. Nimisha Modi - Best Dental Clinic in Surat Logo"
                                 className="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                                width="160"
+                                height="40"
                                 loading="lazy"
                                 decoding="async"
                             />
                         </div>
-                        <p className="leading-relaxed text-gray-400 text-xs sm:text-sm font-medium max-w-sm">
+                        <p className="leading-relaxed text-gray-300 text-xs sm:text-sm font-medium max-w-sm">
                             Revolutionary dental care with Surat's finest clinical excellence and personalized journeys.
                         </p>
 
@@ -110,7 +112,7 @@ const Footer = () => {
                                 { Icon: Youtube, label: "Youtube Channel", href: "https://www.youtube.com/@dentocare_dental", color: "hover:bg-red-600 hover:border-red-500" }
                             ].map((social, i) => (
                                 <a key={i} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label} className={`group bg-white/5 p-2 rounded-xl transition-all border border-white/10 ${social.color}`}>
-                                    <social.Icon size={16} className="text-gray-400 group-hover:text-white transition-colors" />
+                                    <social.Icon size={16} className="text-gray-300 group-hover:text-white transition-colors" />
                                 </a>
                             ))}
                         </div>
@@ -131,7 +133,7 @@ const Footer = () => {
                                 { to: "/contact", label: "Contact" }
                             ].map((link, idx) => (
                                 <li key={idx}>
-                                    <Link to={link.to} className="group flex items-center gap-1.5 text-gray-400 hover:text-blue-400 transition-all text-xs sm:text-sm font-bold tracking-tight">
+                                    <Link to={link.to} className="group flex items-center gap-1.5 text-gray-300 hover:text-blue-400 transition-all text-xs sm:text-sm font-bold tracking-tight">
                                         <ArrowRight size={10} className="text-blue-500/30 group-hover:text-blue-400" />
                                         <span className="group-hover:translate-x-1 transition-transform uppercase">{link.label}</span>
                                     </Link>
@@ -156,7 +158,7 @@ const Footer = () => {
                                 { to: "/treatments#surgery", label: "Surgery" }
                             ].map((link, idx) => (
                                 <li key={idx}>
-                                    <Link to={link.to} className="group flex items-center gap-1.5 text-gray-400 hover:text-emerald-400 transition-all text-xs sm:text-sm font-bold tracking-tight">
+                                    <Link to={link.to} className="group flex items-center gap-1.5 text-gray-300 hover:text-emerald-400 transition-all text-xs sm:text-sm font-bold tracking-tight">
                                         <ArrowRight size={10} className="text-emerald-500/30 group-hover:text-emerald-400" />
                                         <span className="group-hover:translate-x-1 transition-transform uppercase">{link.label}</span>
                                     </Link>
@@ -198,7 +200,7 @@ const Footer = () => {
                         </div>
 
                         {/* Secondary Links - Right on Desktop */}
-                        <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-600 order-3 lg:order-3">
+                        <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-500 order-3 lg:order-3">
                             <Link to="#" className="hover:text-blue-400 transition-colors">Privacy</Link>
                             <Link to="#" className="hover:text-blue-400 transition-colors">Emergency</Link>
                             <Link to="/admin" className="text-blue-500/60 hover:text-blue-400 transition-colors flex items-center gap-1 group/admin">
