@@ -56,16 +56,16 @@ const StatsStrip = () => {
         return () => ctx.revert();
     }, []);
 
-    // Duplicate stats for seamless looping
-    const extendedStats = [...stats, ...stats, ...stats, ...stats];
+    // Duplicate stats for seamless looping (2x is enough for a seamless loop if the width is set correctly)
+    const extendedStats = [...stats, ...stats];
 
     return (
-        <div ref={stripRef} className="bg-[#0f172a] border-y border-white/5 py-8 overflow-hidden relative mt-8">
+        <div ref={stripRef} className="bg-[#0f172a] border-y border-white/5 py-8 overflow-hidden relative mt-8 min-h-[100px]" style={{ contain: 'layout paint' }}>
             {/* Soft Edge Fades */}
             <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0f172a] to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0f172a] to-transparent z-10 pointer-events-none"></div>
 
-            <div className="flex items-center gap-12 sm:gap-24 animate-marquee hover:[animation-play-state:paused] w-max px-12">
+            <div className="flex items-center gap-12 sm:gap-24 animate-marquee hover:[animation-play-state:paused] w-max px-12" style={{ willChange: 'transform' }}>
                 {extendedStats.map((stat, i) => (
                     <div key={i} className="flex items-center gap-4 group cursor-pointer whitespace-nowrap">
                         <div className={`p-2.5 rounded-xl bg-gray-800/40 border border-white/5 shadow-lg group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 ${stat.color}`}>

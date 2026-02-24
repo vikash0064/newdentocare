@@ -72,18 +72,34 @@ const treatmentsList = [
 ];
 
 const Treatments = () => {
-    const { hash } = useLocation();
+    const { hash, pathname } = useLocation();
 
     useEffect(() => {
+        // Map paths to section IDs for automatic scrolling
+        const pathToSection = {
+            '/dental-implants': 'implants',
+            '/root-canal': 'rct',
+            '/teeth-whitening': 'restoration',
+            '/braces': 'straightening',
+            '/pediatric-dentistry': 'surgery' // Assuming surgery for now or generic
+        };
+
         if (hash) {
             const element = document.getElementById(hash.replace('#', ''));
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
+        } else if (pathToSection[pathname]) {
+            const element = document.getElementById(pathToSection[pathname]);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 500); // Small delay to ensure rendering is complete
+            }
         } else {
             window.scrollTo(0, 0);
         }
-    }, [hash]);
+    }, [hash, pathname]);
 
     return (
         <main className="bg-[#0B1120] min-h-screen text-white relative overflow-x-hidden">

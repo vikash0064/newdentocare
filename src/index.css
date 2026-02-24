@@ -59,15 +59,29 @@
 body {
   overflow-x: hidden;
   scroll-behavior: smooth;
-  background-color: #0B1120;
-  background-image: radial-gradient(#1e293b 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-color: #050810;
+  background-image: radial-gradient(#1e293b 0.5px, transparent 0.5px);
+  background-size: 30px 30px;
   color: #94a3b8;
   font-family: var(--font-sans);
   padding-top: env(safe-area-inset-top);
   padding-bottom: env(safe-area-inset-bottom);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+
+/* Exempt Hero from content-visibility to avoid FCP delay */
+section:first-of-type, .hero-section {
+  content-visibility: visible;
 }
 
 img {
   object-position: center;
+  font-style: italic;
+  shape-margin: 0.75rem;
 }

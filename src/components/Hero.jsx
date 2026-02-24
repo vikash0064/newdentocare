@@ -130,17 +130,19 @@ const Hero = () => {
                     <div ref={rightSectionRef} className="w-full lg:w-1/2 relative">
                         <div className="relative group perspective-1000">
                             {/* Main Frame */}
-                            <div className="relative rounded-[3rem] sm:rounded-[4rem] overflow-hidden border-[12px] border-[#1e293b] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] bg-[#1e293b] aspect-[4/5] sm:aspect-auto sm:h-[650px]">
+                            <div className="relative rounded-[3rem] sm:rounded-[4rem] overflow-hidden border-[12px] border-[#1e293b] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] bg-[#1e293b] aspect-[4/5] sm:aspect-[4/5] lg:h-[650px] w-full max-w-[500px] mx-auto lg:mx-0">
                                 {galleryImages.map((img, idx) => (
-                                    <div key={idx} className={`absolute inset-0 transition-all duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}>
+                                    <div key={idx}
+                                        className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                                        style={{ willChange: 'opacity' }}>
                                         <img
                                             src={img.src}
                                             alt={`${img.label} - ${img.sub} at Plus Dento Care Surat`}
                                             className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
-                                            width="800"
-                                            height="1000"
+                                            width="500"
+                                            height="625"
                                             loading={idx === 0 ? "eager" : "lazy"}
-                                            fetchPriority={idx === 0 ? "high" : "low"}
+                                            fetchpriority={idx === 0 ? "high" : "low"}
                                             decoding="async"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>

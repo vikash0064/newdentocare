@@ -53,8 +53,19 @@ const AppContent = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/videos" element={<Videos />} />
+            <Route path="/testimonials" element={<Videos />} />
             <Route path="/doctors" element={<DoctorDetails />} />
             <Route path="/treatments" element={<Treatments />} />
+
+            {/* Alias Routes for SEO Sitemap URLs */}
+            <Route path="/dental-implants" element={<Treatments />} />
+            <Route path="/root-canal" element={<Treatments />} />
+            <Route path="/teeth-whitening" element={<Treatments />} />
+            <Route path="/braces" element={<Treatments />} />
+            <Route path="/pediatric-dentistry" element={<Treatments />} />
+            <Route path="/faq" element={<Home />} />
+            <Route path="/about-us" element={<Home />} />
+
             <Route path="/admin" element={<Admin />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

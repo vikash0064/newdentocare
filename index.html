@@ -21,24 +21,20 @@
   <!-- Performance & Fonts Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800&family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800&family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet">
+  </noscript>
 
   <!-- Resource Hints & Preloads for PageSpeed -->
   <link rel="dns-prefetch" href="https://res.cloudinary.com">
-  <link rel="dns-prefetch" href="https://elfsightcdn.com">
-  <link rel="preconnect" href="https://elfsightcdn.com" crossorigin>
+
+  <!-- LCP Image Preload with High Priority -->
   <link rel="preload" as="image"
     href="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734665/doctor_sr6xdx.png?seo=dentocare-dr-nimisha-modi-surat-plusdentocare"
     fetchpriority="high">
-  <link rel="preload" as="image"
-    href="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732052/logo_cgdtgo.png?seo=dentocare-dr-nimisha-modi-surat-plusdentocare">
-
-  <link rel="preload" href="https://elfsightcdn.com/platform.js" as="script">
-
-  <!-- Elfsight Google Reviews -->
-  <script src="https://elfsightcdn.com/platform.js" async></script>
 
   <!-- OPEN GRAPH -->
   <meta property="og:title" content="Dentocare Surat – Dr Nimisha Modi | Plus Dento Care">
@@ -63,8 +59,8 @@
   <meta name="geo.position" content="21.2032;72.7669">
   <meta name="ICBM" content="21.2032, 72.7669">
 
-  <!-- VIEWPORT -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- VIEWPORT & Performance -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <link rel="amphtml" href="/best-dental-clinic-in-surat-amp.html" />
 
   <!-- FAVICON -->
@@ -93,12 +89,7 @@
      "@type": "GeoCoordinates",
      "latitude": 21.2032,
      "longitude": 72.7669
-   },
-   "sameAs": [
-     "https://www.facebook.com/modi.nimisha.5",
-     "https://www.instagram.com/dentocare_dental",
-     "https://www.youtube.com/@dentocare_dental"
-   ]
+   }
   }
   </script>
   <script type="application/ld+json">
@@ -114,6 +105,18 @@
      "query-input": "required name=search_term_string"
    }
   }
+  </script>
+
+  <!-- Defer Elfsight Execution -->
+  <script>
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var script = document.createElement('script');
+        script.src = "https://elfsightcdn.com/platform.js";
+        script.defer = true;
+        document.head.appendChild(script);
+      }, 3000);
+    });
   </script>
 </head>
 

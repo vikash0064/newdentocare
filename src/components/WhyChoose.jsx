@@ -27,27 +27,9 @@ const WhyChoose = () => {
         "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif"
     ];
 
-    // Preload images with a fail-safe timeout
+    // Simplified image hydration
     useEffect(() => {
-        const failSafe = setTimeout(() => setImagesLoaded(true), 3000);
-
-        const preloadImages = () => {
-            const promises = images.map(src => {
-                return new Promise((resolve) => {
-                    const img = new Image();
-                    img.src = src;
-                    img.onload = resolve;
-                    img.onerror = resolve;
-                });
-            });
-            Promise.all(promises).then(() => {
-                setImagesLoaded(true);
-                clearTimeout(failSafe);
-            });
-        };
-
-        preloadImages();
-        return () => clearTimeout(failSafe);
+        setImagesLoaded(true);
     }, []);
 
     useEffect(() => {
