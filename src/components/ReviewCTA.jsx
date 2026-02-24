@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Star, MessageSquareLabel, Send, ExternalLink, Quote } from 'lucide-react';
+import { Star, Send, ExternalLink, Quote } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const ReviewCTA = () => {
     const [name, setName] = useState('');
     const [review, setReview] = useState('');
 
-    const GOOGLE_REVIEW_LINK = "https://search.google.com/local/writereview?placeid=ChIJhYdRVsVN4DsRWaKFJuZkKtw"; // Placeholder Place ID for Dent O Care Surat
+    const GOOGLE_REVIEW_LINK = "https://g.page/r/CVyihSbmZCrcEBE/review";
 
     const handleSubmit = (e) => {
         e.preventDefault();

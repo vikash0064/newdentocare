@@ -140,7 +140,7 @@ const Hero = () => {
                                             width="800"
                                             height="1000"
                                             loading={idx === 0 ? "eager" : "lazy"}
-                                            fetchpriority={idx === 0 ? "high" : "low"}
+                                            fetchPriority={idx === 0 ? "high" : "low"}
                                             decoding="async"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>

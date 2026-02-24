@@ -194,7 +194,8 @@ const TreatmentGrid = () => {
                     </div>
                 </div>
             </div>
-            <style>{`
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes shine {
                     0% { transform: translateX(-150%) skewX(-12deg); }
                     100% { transform: translateX(150%) skewX(-12deg); }
@@ -202,7 +203,7 @@ const TreatmentGrid = () => {
                 .group:hover .animate-shine {
                     animation: shine 1s;
                 }
-            `}</style>
+            ` }} />
         </section>
     );
 };

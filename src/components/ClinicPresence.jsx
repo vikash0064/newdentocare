@@ -135,11 +135,12 @@ const ClinicPresence = () => {
             </div>
 
             {/* CSS for perspective */}
-            <style jsx>{`
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 .perspective-1000 {
                     perspective: 1000px;
                 }
-            `}</style>
+            ` }} />
         </section>
     );
 };

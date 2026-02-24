@@ -71,7 +71,8 @@ const NotFound = () => {
                 </div>
             </div>
 
-            <style jsx>{`
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes bounce-slow {
                     0%, 100% { transform: translateY(0); }
                     50% { transform: translateY(-10px); }
@@ -79,7 +80,7 @@ const NotFound = () => {
                 .animate-bounce-slow {
                     animation: bounce-slow 4s ease-in-out infinite;
                 }
-            `}</style>
+            ` }} />
         </main>
     );
 };

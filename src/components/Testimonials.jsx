@@ -123,7 +123,8 @@ const Testimonials = () => {
             </div>
 
             {/* Custom CSS for auto-scroll animation */}
-            <style jsx>{`
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes scroll-testimonials {
                     0% {
                         transform: translateX(0);
@@ -141,7 +142,7 @@ const Testimonials = () => {
                 .animate-scroll-testimonials:hover {
                     animation-play-state: paused;
                 }
-            `}</style>
+            ` }} />
         </section>
     );
 };

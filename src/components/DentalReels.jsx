@@ -175,7 +175,8 @@ const DentalReels = () => {
                 </div>
             )}
 
-            <style>{`
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes marquee {
                     0% { transform: translateX(0); }
                     100% { transform: translateX(-50%); }
@@ -186,7 +187,7 @@ const DentalReels = () => {
                 .marquee-container:hover .animate-marquee {
                     animation-play-state: paused;
                 }
-            `}</style>
+            ` }} />
         </section>
     );
 };
