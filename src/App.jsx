@@ -70,6 +70,9 @@ const AppContent = () => {
             <Route path="/admin" element={<Admin />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/assets/best-dental-clinic-in-surat-amp-BxEnCloJ.html" element={<Home />} />
+            <Route path="/assets/best%20dental%20clinic%20in%20surat%20amp%20BxEnCloJ.html" element={<Home />} />
+            <Route path="/best-dental-clinic-in-surat-amp.html" element={<Home />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

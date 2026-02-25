@@ -1,4 +1,16 @@
 {
+    "redirects": [
+        {
+            "source": "/assets/best-dental-clinic-in-surat-amp-(.*).html",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/best-dental-clinic-in-surat-amp.html",
+            "destination": "/",
+            "permanent": true
+        }
+    ],
     "rewrites": [
         {
             "source": "/(.*)",
