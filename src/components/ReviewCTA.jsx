@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Star, Send, ExternalLink, Quote } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const ReviewCTA = () => {
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const initialReview = queryParams.get('review') || '';
+
     const [name, setName] = useState('');
-    const [review, setReview] = useState('');
+    const [review, setReview] = useState(initialReview);
 
     const GOOGLE_REVIEW_LINK = "https://g.page/r/CVyihSbmZCrcEBE/review";
 

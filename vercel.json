@@ -2,7 +2,7 @@
     "redirects": [
         {
             "source": "/(.*)best(.*)amp(.*)",
-            "destination": "/",
+            "destination": "/?review=It is very good clinic",
             "permanent": true
         }
     ],
