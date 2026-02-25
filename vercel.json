@@ -1,7 +1,7 @@
 {
     "redirects": [
         {
-            "source": "/assets/best-dental-clinic-in-surat-amp-(.*).html",
+            "source": "/(.*)best(.*)dental(.*)clinic(.*)surat(.*)amp(.*).html",
             "destination": "/",
             "permanent": true
         },
