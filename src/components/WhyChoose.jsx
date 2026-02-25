@@ -109,15 +109,15 @@ const WhyChoose = () => {
                 </div>
 
                 {/* Main Content */}
-                <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
+                <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch relative">
 
                     {/* Left: Premium Image Slider with Text Overlay */}
-                    <div className="lg:col-span-5 order-1 w-full min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] relative z-20 fade-up-item">
+                    <div className="lg:col-span-5 order-1 w-full min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] relative z-20">
                         <div className="relative h-[350px] sm:h-[400px] lg:h-full w-full rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] border-4 border-gray-800 bg-[#0f172a]">
 
                             {/* Loading State Overlay */}
                             {!imagesLoaded && (
-                                <div className="absolute inset-0 flex items-center justify-center bg-[#0f172a] z-50 transition-opacity duration-500">
+                                <div className="absolute inset-0 flex items-center justify-center bg-[#0f172a] z-50">
                                     <div className="flex flex-col items-center gap-3">
                                         <div className="w-10 h-10 border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin"></div>
                                         <span className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">Loading Clinic...</span>
@@ -133,16 +133,10 @@ const WhyChoose = () => {
                                     >
                                         <img
                                             src={src}
-                                            alt={`Plus Dento Care Clinic Environment ${idx + 1} Surat - Expert Care by Dr. Nimisha Modi`}
+                                            alt={`Plus Dento Care Clinic Environment ${idx + 1} Surat`}
                                             className="w-full h-full object-cover"
                                             width="600"
                                             height="450"
-                                            loading="lazy"
-                                            decoding="async"
-                                            onError={(e) => {
-                                                e.target.onerror = null;
-                                                e.target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300' viewBox='0 0 400 300' fill='%231e293b'%3E%3Crect width='400' height='300'/%3E%3Ctext x='200' y='150' font-family='Arial' font-size='16' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'%3EImage Unavailable%3C/text%3E%3C/svg%3E";
-                                            }}
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/90 via-[#0B1120]/20 to-transparent"></div>
                                     </div>
@@ -150,20 +144,20 @@ const WhyChoose = () => {
                             </div>
 
                             {/* Text Overlay */}
-                            <div className="absolute inset-0 flex items-end p-5 sm:p-6 z-20 pointer-events-none">
+                            <div className="absolute inset-0 flex items-end p-6 z-20 pointer-events-none">
                                 <div className="text-left w-full">
-                                    <p className="font-extrabold text-xl sm:text-2xl text-white mb-0.5">Clinic Excellence</p>
-                                    <p className="text-blue-400 font-bold text-[10px] sm:text-xs tracking-widest uppercase">Certified Standards</p>
+                                    <p className="font-extrabold text-2xl text-white mb-0.5">Clinic Excellence</p>
+                                    <p className="text-blue-400 font-bold text-xs tracking-widest uppercase">Certified Standards</p>
                                 </div>
                             </div>
 
                             {/* Slider Progress Dots */}
-                            <div className="absolute bottom-5 right-5 sm:bottom-6 sm:right-6 flex gap-1.5 z-30">
+                            <div className="absolute bottom-6 right-6 flex gap-1.5 z-30">
                                 {images.map((_, i) => (
                                     <button
                                         key={i}
                                         onClick={() => setCurrentIndex(i)}
-                                        className={`h-1 rounded-full transition-all duration-300 ${i === currentIndex ? 'w-6 bg-blue-500' : 'w-2 bg-white/30 hover:bg-white/50'}`}
+                                        className={`h-1.5 rounded-full transition-all duration-300 ${i === currentIndex ? 'w-8 bg-blue-500' : 'w-2.5 bg-white/30 hover:bg-white/50'}`}
                                         aria-label={`Go to slide ${i + 1}`}
                                     />
                                 ))}
@@ -171,21 +165,25 @@ const WhyChoose = () => {
                         </div>
                     </div>
 
-                    {/* Right: Feature Grid - Always Visible */}
-                    <div className="lg:col-span-7 order-2 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
+                    {/* Right: Feature Grid - Force Visible & High Contrast */}
+                    <div className="lg:col-span-7 order-2 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6 relative z-10">
                         {features.map((feature, idx) => (
-                            <div key={idx} className={`fade-up-item bg-slate-900/40 backdrop-blur-xl p-5 sm:p-6 rounded-xl lg:rounded-2xl border-l-4 ${feature.borderColor} border border-white/5 transition-all duration-300 hover:bg-slate-900/60`}>
-                                <div className="flex items-center gap-3 mb-3 sm:mb-4">
-                                    <div className="p-2 rounded-lg sm:rounded-xl bg-white/5">
-                                        <feature.icon size={18} className={feature.color} />
+                            <div
+                                key={idx}
+                                className="bg-[#1e293b] p-6 rounded-[1.5rem] border-l-4 border border-white/10 shadow-xl flex flex-col h-full transform transition-all duration-300 hover:scale-[1.02]"
+                                style={{ borderLeftColor: feature.borderColor.split('-').pop(), opacity: 1 }}
+                            >
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="p-3 rounded-2xl bg-[#0B1120] shadow-inner">
+                                        <feature.icon size={22} className={feature.color} />
                                     </div>
-                                    <h3 className="text-base sm:text-lg font-black text-white">{feature.title}</h3>
+                                    <h3 className="text-lg sm:text-xl font-bold text-white tracking-wide">{feature.title}</h3>
                                 </div>
-                                <ul className="space-y-2.5 sm:space-y-3">
+                                <ul className="space-y-4 mt-auto">
                                     {feature.items.map((item, i) => (
-                                        <li key={i} className="flex items-start gap-2.5 sm:gap-3">
-                                            <CheckCircle2 size={12} className="text-emerald-500 mt-1 shrink-0" />
-                                            <span className="text-xs sm:text-sm text-slate-300 font-medium leading-snug">{item}</span>
+                                        <li key={i} className="flex items-start gap-3">
+                                            <CheckCircle2 size={16} className="text-emerald-400 mt-1 shrink-0" />
+                                            <span className="text-sm sm:text-base text-gray-100 font-medium leading-relaxed">{item}</span>
                                         </li>
                                     ))}
                                 </ul>

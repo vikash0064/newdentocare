@@ -50,7 +50,7 @@ const SEO = ({
 
         // Mobile Optimization
         setMetaTag('name', 'theme-color', '#0B1120');
-        setMetaTag('name', 'apple-mobile-web-app-capable', 'yes');
+        setMetaTag('name', 'mobile-web-app-capable', 'yes');
         setMetaTag('name', 'apple-mobile-web-app-status-bar-style', 'black-translucent');
 
         // Open Graph Tags (Facebook, LinkedIn)

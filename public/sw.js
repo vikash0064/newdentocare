@@ -10,9 +10,25 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    // Basic Passthrough for network-first/online-only
-    // Required for "Installable" status in Chrome/Lighthouse
-    event.respondWith(fetch(event.request).catch(() => {
-        return caches.match(event.request);
-    }));
+    const url = new URL(event.request.url);
+
+    // Skip intercepting Google Analytics and other 3rd party external scripts
+    // This avoids breaking analytics if the SW has issues or network is unstable
+    if (url.hostname.includes('google-analytics') || url.hostname.includes('googletagmanager')) {
+        return;
+    }
+
+    event.respondWith(
+        fetch(event.request).catch(async () => {
+            const cacheResponse = await caches.match(event.request);
+            if (cacheResponse) return cacheResponse;
+
+            // If it's a navigation request and we're offline, return index.html
+            if (event.request.mode === 'navigate') {
+                return caches.match('/index.html');
+            }
+
+            return null; // Let the browser handle the network error naturally
+        })
+    );
 });
