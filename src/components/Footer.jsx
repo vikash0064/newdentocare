@@ -32,7 +32,7 @@ const Footer = () => {
                                 <div className="space-y-1 pt-1.5 border-t border-white/5 text-[10px] text-gray-400">
                                     <div className="flex items-center justify-between">
                                         <span className="font-semibold text-white/40">Ph:</span>
-                                        <a href="tel:+916352534650" className="hover:text-blue-400 transition-colors">+91 63525 34650</a>
+                                        <a href="tel:+916352534650" className="hover:text-blue-400 transition-colors text-[11px]">+91 63525 34650</a>
                                     </div>
                                     <div className="flex items-start justify-between">
                                         <span className="font-semibold text-white/40 mt-0.5">Time:</span>
@@ -47,7 +47,7 @@ const Footer = () => {
                                     href="https://www.google.com/maps/place/Dent+O+Care+Advance+Multi-speciality+Implant+Center/@21.2110523,72.7875791,17z/data=!3m1!4b1!4m9!1m2!10m1!1e1!3m5!1s0x3be04dc957518685:0xdc2a64e62685a25c!8m2!3d21.2110523!4d72.790154!16s%2Fg%2F11vwgw6r6p?entry=ttu"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block text-center bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white text-[9px] font-bold py-1.5 rounded-lg transition-all mt-1.5 border border-blue-500/20 hover:border-transparent"
+                                    className="block text-center bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white text-[10px] font-bold py-2 rounded-lg transition-all mt-1.5 border border-blue-500/20 hover:border-transparent"
                                     aria-label="Get directions to Plus Dento Care Palanpur Road Branch"
                                 >
                                     Directions (Palanpur Road)
@@ -65,7 +65,7 @@ const Footer = () => {
                                 <div className="space-y-1 pt-1.5 border-t border-white/5 text-[10px] text-gray-400">
                                     <div className="flex items-center justify-between">
                                         <span className="font-semibold text-white/40">Ph:</span>
-                                        <a href="tel:+918849220932" className="hover:text-emerald-400 transition-colors">+91 88492 20932</a>
+                                        <a href="tel:+918849220932" className="hover:text-emerald-400 transition-colors text-[11px]">+91 88492 20932</a>
                                     </div>
                                     <div className="flex items-start justify-between">
                                         <span className="font-semibold text-white/40 mt-0.5">Time:</span>
@@ -80,7 +80,7 @@ const Footer = () => {
                                     href="https://www.google.com/maps/place/Dent+O+Care+Advance+Multi-speciality+Implant+Center/@21.2032023,72.7479348,15z/data=!4m10!1m2!2m1!1sDent+O+Care++Multi-speciality+Implant+Center!3m6!1s0x3be04d8a130a9c2f:0x7c07a48d5a66bf6e!8m2!3d21.2032023!4d72.7669892!15sCixEZW50IE8gQ2FyZSAgTXVsdGktc3BlY2lhbGl0eSBJbXBsYW50IENlbnRlclotIitkZW50IG8gY2FyZSBtdWx0aSBzcGVjaGFsaWx0eSBpbXBsYW50IGNlbnRlclkgEHZlbnRpc3RoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQydEdiVmR0Vmt4VU1XaGhUbmt4V0ZnelZscFJiV016VDFkYVNWb3lZeEFC4AEA-gEECAAQLQ!16s%2Fg%2F11yn3xzfz5?entry=ttu"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="block text-center bg-emerald-600/10 hover:bg-emerald-600 text-emerald-400 hover:text-white text-[9px] font-bold py-1.5 rounded-lg transition-all mt-1.5 border border-emerald-500/20 hover:border-transparent"
+                                    className="block text-center bg-emerald-600/10 hover:bg-emerald-600 text-emerald-400 hover:text-white text-[10px] font-bold py-2 rounded-lg transition-all mt-1.5 border border-emerald-500/20 hover:border-transparent"
                                     aria-label="Get directions to Plus Dento Care Gaurav Path Branch"
                                 >
                                     Directions (Gaurav Path)

@@ -68,13 +68,26 @@ const Home = () => {
             </div>
 
             {/* Lazy Load everything else with height reservations to prevent CLS */}
-            <div className="min-h-[2000px]">
-                <React.Suspense fallback={<LoadingSection height="h-[1000px]" />}>
+            {/* Top Priority Section (Lazy but usually above or near fold) */}
+            <div className="min-h-[600px]">
+                <React.Suspense fallback={<LoadingSection height="h-[600px]" />}>
                     <MeetTheDoctor />
                     <WhyChoose />
+                </React.Suspense>
+            </div>
+
+            {/* Content Mid-Section */}
+            <div className="min-h-[800px]">
+                <React.Suspense fallback={<LoadingSection height="h-[800px]" />}>
                     <DentalReels />
                     <ClinicPresence />
                     <LatestBlog />
+                </React.Suspense>
+            </div>
+
+            {/* Bottom Heavy Components (Reviews/SEO) */}
+            <div className="min-h-[1200px]">
+                <React.Suspense fallback={<LoadingSection height="h-[1000px]" />}>
                     <HomeSEO />
                     <ReviewCTA />
                     <PatientSpeaks />

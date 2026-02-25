@@ -104,8 +104,8 @@ const Hero = () => {
 
                         <div ref={descRef} className="bg-white/5 backdrop-blur-xl p-5 sm:p-6 rounded-[1.5rem] border border-white/5 mb-8 max-w-lg shadow-inner group transition-all hover:bg-white/[0.08]">
                             <p className="text-gray-300 text-xs sm:text-base md:text-lg leading-relaxed font-medium">
-                                Experience revolutionary dental care with our cutting-edge technology.
-                                From <span className="text-blue-400 font-bold">AI-smile design</span> to <span className="text-emerald-400 font-bold">pain-free laser</span>.
+                                Get professional dental care with the latest technology.
+                                From <span className="text-blue-400 font-bold">AI smile design</span> to <span className="text-emerald-400 font-bold">painless laser treatments</span>.
                             </p>
                         </div>
 

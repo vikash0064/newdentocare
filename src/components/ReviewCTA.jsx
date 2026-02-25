@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Star, Send, ExternalLink, Quote } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 const ReviewCTA = () => {
     const [name, setName] = useState('');
@@ -51,7 +50,7 @@ const ReviewCTA = () => {
                             <div className="lg:w-1/2 p-5 md:p-12 bg-white/[0.01]">
                                 <form onSubmit={handleSubmit} className="space-y-3 md:space-y-5">
                                     <div className="space-y-1">
-                                        <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-1">Full Name</label>
+                                        <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Full Name</label>
                                         <input
                                             type="text"
                                             placeholder="Rahul Sharma"
@@ -63,7 +62,7 @@ const ReviewCTA = () => {
                                     </div>
 
                                     <div className="space-y-1">
-                                        <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-1">Feedback</label>
+                                        <label className="text-[11px] font-black text-gray-400 uppercase tracking-widest ml-1">Feedback</label>
                                         <textarea
                                             placeholder="Your experience..."
                                             required

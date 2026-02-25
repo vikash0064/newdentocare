@@ -58,32 +58,32 @@ const WhyChoose = () => {
 
     const features = [
         {
-            title: "World Class Tech",
+            title: "Modern Tech",
             icon: Zap,
             color: "text-blue-400",
             borderColor: "border-l-blue-500",
-            items: ["Advanced Laser Dental Tech", "Globally certified materials", "3D Intraoral Precision Scanning"]
+            items: ["Painless Laser Dentistry", "Top quality materials used", "Fast 3D Digital Scanning"]
         },
         {
-            title: "Patient Centric",
+            title: "Patient Focused",
             icon: UserCheck,
             color: "text-emerald-400",
             borderColor: "border-l-emerald-500",
-            items: ["Direct Doctor Consultation", "Personalized Digital Planning", "Proactive Post-Care Support"]
+            items: ["Speak with our Expert Doctor", "Custom Treatment Planning", "Helpful Aftercare Support"]
         },
         {
-            title: "Legacy & Scale",
+            title: "Proven Results",
             icon: SmileIcon,
             color: "text-blue-400",
             borderColor: "border-l-blue-500",
-            items: ["10,000+ Successful Smiles", "Expertise in Complex Rehabs", "5,000+ Dental Implants Placed"]
+            items: ["10,000+ Successful Smiles", "Specialist in Smile Makeovers", "Trusted Implant Experts"]
         },
         {
-            title: "Safety Unmatched",
+            title: "Safe & Clean",
             icon: ShieldCheck,
             color: "text-emerald-400",
             borderColor: "border-l-emerald-500",
-            items: ["10X ISO Safety Protocols", "Multi-Step Sterilization Cycle", "Modern Hygienic Infrastructure"]
+            items: ["Strict Safety Rules followed", "Complete Tool Cleaning", "Clean & Modern Clinic"]
         }
     ];
 
@@ -104,7 +104,7 @@ const WhyChoose = () => {
                         Why Choose <span className="text-blue-500">Dent O Care?</span>
                     </h2>
                     <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
-                        Experience expert dental care and clinical excellence. We are Surat's trusted choice for a healthy, beautiful smile.
+                        Get expert dental care from our skilled staff. We are Surat's trusted choice for a healthy and beautiful smile.
                     </p>
                 </div>
 

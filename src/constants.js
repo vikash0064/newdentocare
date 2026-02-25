@@ -45,19 +45,19 @@ export const IMAGES = {
     ],
 
     gallery: [
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736713/dr-nimisha-modi-palanpur-patia-surat-dentists-blgy5phmkk_jxcara.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000001_okocv7.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000009_mcjsma.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-e3jw4n1nbv_ecvyod.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-cftk0g49bx_ebwyx6.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-dent-o-care-palanpur-patia-surat-dentists-qvmx9lfhbx_cebqul.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736710/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_8_m0ijph.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_7_mlqum4.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_2_vkre09.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736708/-8931v5vy02-250_qggxhf.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg"), category: "Clinic" },
-        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif"), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736713/dr-nimisha-modi-palanpur-patia-surat-dentists-blgy5phmkk_jxcara.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000001_okocv7.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736712/jd-Ott_720x540_Thumbnail.0000009_mcjsma.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-e3jw4n1nbv_ecvyod.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-palanpur-patia-surat-dentists-cftk0g49bx_ebwyx6.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736711/dr-nimisha-modi-dent-o-care-palanpur-patia-surat-dentists-qvmx9lfhbx_cebqul.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736710/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_8_m0ijph.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_7_mlqum4.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736709/dent-o-care-advanced-multispeciality-dental-clinic-and-implant_2_vkre09.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736708/-8931v5vy02-250_qggxhf.jpg", 400), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg", 400), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg", 800), category: "Clinic" },
+        { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif", 800), category: "Clinic" },
         { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732141/dr-nimisha-modi-palanpur-patia-surat-dentists-vgsxhlwarr_vsjlqo.avif"), category: "Clinic" },
         { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif"), category: "Clinic" },
         { url: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732139/dr-nimisha-modi-palanpur-patia-surat-dentists-81n1221d3o_jf0lna.avif"), category: "Clinic" },
@@ -71,14 +71,14 @@ export const IMAGES = {
 
     // Treatment Specific
     treatments: {
-        prosthetics: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732105/Denture_emjwhz.jpg"),
-        restoration: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/Dental_crowns_pa3a3i.jpg"),
-        extraction: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732111/wisdom_teeth_l2eg61.jpg"),
-        rct: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732113/root_canal_kgicfn.jpg"),
-        implants: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732107/implant_vxgxlc.jpg"),
-        surgery: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732108/laser_Densitry_za7vep.jpg"),
-        gum: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732082/laser_Densitry_qdhgas.jpg"),
-        checkup: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/clear_aligner_cu8n02.jpg")
+        prosthetics: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732105/Denture_emjwhz.jpg", 600),
+        restoration: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/Dental_crowns_pa3a3i.jpg", 600),
+        extraction: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732111/wisdom_teeth_l2eg61.jpg", 600),
+        rct: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732113/root_canal_kgicfn.jpg", 600),
+        implants: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732107/implant_vxgxlc.jpg", 600),
+        surgery: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732108/laser_Densitry_za7vep.jpg", 600),
+        gum: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732082/laser_Densitry_qdhgas.jpg", 600),
+        checkup: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732102/clear_aligner_cu8n02.jpg", 600)
     },
 
     // Centralized Treatment Content
@@ -87,7 +87,7 @@ export const IMAGES = {
             id: "prosthetics",
             name: "Prosthetics",
             subtitle: "Face & Jaw Reconstruction",
-            description: "Reconstructive solutions for face and jaw defects.",
+            description: "Fixed teeth and jaw repair solutions.",
             link: "/treatments#maxillofacial-prosthetics",
             imageKey: "prosthetics"
         },
@@ -127,7 +127,7 @@ export const IMAGES = {
             id: "surgery",
             name: "Dental Surgery",
             subtitle: "Advanced Care",
-            description: "Advanced surgical care protocols for complex cases.",
+            description: "Safe surgery for difficult dental cases.",
             link: "/treatments#surgery",
             imageKey: "surgery"
         },

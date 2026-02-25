@@ -11,14 +11,21 @@ export const DataProvider = ({ children }) => {
     const [blogList, setBlogList] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Fetch Data from MongoDB
+    // Fetch Data from MongoDB with Timeout protection
     const fetchData = async () => {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
         try {
+            const fetchOptions = { signal: controller.signal };
             const [reg, vres, bres] = await Promise.all([
-                fetch(`${API_URL}/api/gallery`),
-                fetch(`${API_URL}/api/videos`),
-                fetch(`${API_URL}/api/blogs`)
+                fetch(`${API_URL}/api/gallery`, fetchOptions),
+                fetch(`${API_URL}/api/videos`, fetchOptions),
+                fetch(`${API_URL}/api/blogs`, fetchOptions)
             ]);
+
+            clearTimeout(timeoutId);
+
             const gData = await reg.json();
             const vData = await vres.json();
             const bData = await bres.json();
@@ -27,9 +34,14 @@ export const DataProvider = ({ children }) => {
             setVideoList(Array.isArray(vData) ? vData : []);
             setBlogList(Array.isArray(bData) ? bData : []);
         } catch (err) {
-            console.error('Failed to fetch data:', err);
+            console.error('Data fetch timed out or failed:', err);
+            // Fallback to empty arrays so the app still renders
+            setGalleryImages([]);
+            setVideoList([]);
+            setBlogList([]);
         } finally {
             setLoading(false);
+            clearTimeout(timeoutId);
         }
     };
 
