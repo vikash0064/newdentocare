@@ -37,22 +37,11 @@ const WhyChoose = () => {
             setCurrentIndex((prev) => (prev + 1) % images.length);
         }, 4000);
 
-        const ctx = gsap.context(() => {
-            gsap.from(".fade-up-item", {
-                y: 20,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 85%",
-                }
-            });
-        }, sectionRef);
+        // GSAP animation removed to prevent invisibility issues
+
 
         return () => {
             clearInterval(timer);
-            ctx.revert();
         };
     }, [images.length]);
 
@@ -95,7 +84,7 @@ const WhyChoose = () => {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-16 relative z-20">
                 {/* Header - Always Visible & Positioned Safely */}
-                <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 px-2 fade-up-item">
+                <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 px-2">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4 group cursor-default">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
                         <span className="text-[9px] sm:text-[10px] font-bold text-blue-400 uppercase tracking-widest">Trusted by 10,000+ Families</span>
