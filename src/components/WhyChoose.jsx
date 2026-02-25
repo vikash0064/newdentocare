@@ -95,7 +95,7 @@ const WhyChoose = () => {
 
             <div className="container mx-auto px-4 sm:px-6 lg:px-16 relative z-20">
                 {/* Header - Always Visible & Positioned Safely */}
-                <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 px-2">
+                <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12 px-2 fade-up-item">
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-4 group cursor-default">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
                         <span className="text-[9px] sm:text-[10px] font-bold text-blue-400 uppercase tracking-widest">Trusted by 10,000+ Families</span>
@@ -112,7 +112,7 @@ const WhyChoose = () => {
                 <div className="flex flex-col lg:grid lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
 
                     {/* Left: Premium Image Slider with Text Overlay */}
-                    <div className="lg:col-span-5 order-1 w-full min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] relative z-20">
+                    <div className="lg:col-span-5 order-1 w-full min-h-[350px] sm:min-h-[400px] lg:min-h-[500px] relative z-20 fade-up-item">
                         <div className="relative h-[350px] sm:h-[400px] lg:h-full w-full rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.5)] border-4 border-gray-800 bg-[#0f172a]">
 
                             {/* Loading State Overlay */}
@@ -174,7 +174,7 @@ const WhyChoose = () => {
                     {/* Right: Feature Grid - Always Visible */}
                     <div className="lg:col-span-7 order-2 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                         {features.map((feature, idx) => (
-                            <div key={idx} className={`bg-slate-900/40 backdrop-blur-xl p-5 sm:p-6 rounded-xl lg:rounded-2xl border-l-4 ${feature.borderColor} border border-white/5 transition-all duration-300 hover:bg-slate-900/60`}>
+                            <div key={idx} className={`fade-up-item bg-slate-900/40 backdrop-blur-xl p-5 sm:p-6 rounded-xl lg:rounded-2xl border-l-4 ${feature.borderColor} border border-white/5 transition-all duration-300 hover:bg-slate-900/60`}>
                                 <div className="flex items-center gap-3 mb-3 sm:mb-4">
                                     <div className="p-2 rounded-lg sm:rounded-xl bg-white/5">
                                         <feature.icon size={18} className={feature.color} />

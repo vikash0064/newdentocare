@@ -14,15 +14,15 @@ const ReviewCTA = React.lazy(() => import('../components/ReviewCTA'));
 
 import { Link } from 'react-router-dom';
 
-const LoadingSection = () => (
-    <div className="h-40 flex items-center justify-center bg-[#0B1120]">
+const LoadingSection = ({ height = "h-screen" }) => (
+    <div className={`${height} flex items-center justify-center bg-[#0B1120]`}>
         <div className="w-8 h-8 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin"></div>
     </div>
 );
 
 const Home = () => {
     return (
-        <main className="bg-[#0B1120] text-white">
+        <main className="bg-[#0B1120] text-white overflow-x-hidden min-h-screen">
             <SEO
                 title="Dentocare Surat – Dr Nimisha Modi | Plus Dento Care Dental & Implant Centre"
                 description="Dentocare Surat – Best dental clinic in Surat by Dr. Nimisha Modi. Painless treatments, affordable prices, expert dentist for implants, RCT, and braces. Book your free consultation today!"
@@ -53,24 +53,33 @@ const Home = () => {
                     }
                 ]}
             />
-            <Hero loading="lazy" />
 
-            {/* Scrolling Stats Strip */}
+            {/* Critical Path Components (Not Lazy) */}
+            <div className="min-h-[700px]">
+                <Hero loading="eager" />
+            </div>
+
+            {/* Above the fold strip */}
             <StatsStrip />
 
-            {/* Treatment section moved up for better flow */}
-            <TreatmentGrid />
+            {/* Treatments: Main Service Area */}
+            <div className="min-h-[600px]">
+                <TreatmentGrid />
+            </div>
 
-            <React.Suspense fallback={<LoadingSection />}>
-                <MeetTheDoctor />
-                <WhyChoose />
-                <DentalReels />
-                <ClinicPresence />
-                <LatestBlog />
-                <HomeSEO />
-                <ReviewCTA />
-                <PatientSpeaks />
-            </React.Suspense>
+            {/* Lazy Load everything else with height reservations to prevent CLS */}
+            <div className="min-h-[2000px]">
+                <React.Suspense fallback={<LoadingSection height="h-[1000px]" />}>
+                    <MeetTheDoctor />
+                    <WhyChoose />
+                    <DentalReels />
+                    <ClinicPresence />
+                    <LatestBlog />
+                    <HomeSEO />
+                    <ReviewCTA />
+                    <PatientSpeaks />
+                </React.Suspense>
+            </div>
         </main>
     );
 };

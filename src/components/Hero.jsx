@@ -55,13 +55,15 @@ const Hero = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            const tl = gsap.timeline();
+            const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
+
             tl.fromTo(".status-badge", { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 })
                 .fromTo(headingRef.current.children, { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1, stagger: 0.1, ease: "power4.out" }, "-=0.4")
                 .fromTo(descRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, "-=0.6")
                 .fromTo(buttonsRef.current.children, { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, stagger: 0.1, ease: "back.out(1.7)" }, "-=0.6")
                 .fromTo(statsContainerRef.current.children, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 }, "-=0.5")
-                .fromTo(rightSectionRef.current, { x: 100, opacity: 0, rotateY: 20 }, { x: 0, opacity: 1, rotateY: 0, duration: 1.5, ease: "power3.out" }, "-=1.5");
+                // Start with right section already visible to avoid LCP delay if JS is slow
+                .from(rightSectionRef.current, { x: 60, opacity: 0.5, duration: 1.2, ease: "power3.out" }, "-=1.2");
 
             gsap.to(".floating-badge", { y: -15, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut", stagger: 0.5 });
         }, containerRef);
@@ -137,12 +139,12 @@ const Hero = () => {
                                         style={{ willChange: 'opacity' }}>
                                         <img
                                             src={img.src}
-                                            alt={`${img.label} - ${img.sub} at Plus Dento Care Surat`}
+                                            alt={`${img.label} at Dentocare Surat - ${img.sub} | Best Dental Clinic in Surat`}
                                             className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
                                             width="500"
                                             height="625"
                                             loading={idx === 0 ? "eager" : "lazy"}
-                                            fetchpriority={idx === 0 ? "high" : "low"}
+                                            fetchPriority={idx === 0 ? "high" : "low"}
                                             decoding="async"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>

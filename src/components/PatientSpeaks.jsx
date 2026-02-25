@@ -59,7 +59,7 @@ const PatientSpeaks = () => {
             </div>
 
             {/* Elfsight Google Reviews Widget - Fixed height container to prevent CLS */}
-            <div className="container mx-auto px-4 sm:px-6 relative z-10 min-h-[450px]">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 min-h-[600px]">
                 <div className="elfsight-app-06768bba-2f23-49e4-ae8c-af01f872fbd9"></div>
             </div>
 

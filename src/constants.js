@@ -1,15 +1,22 @@
 // Cloudinary Base URL with SEO Suffix (Helps scrapers and indexers identify the brand in the URL)
 const SEO_SUFFIX = "dentocare-dr-nimisha-modi-surat-plusdentocare";
-const CLOUDINARY_BASE = `https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/`;
-const SEO_IMG = (url) => `${url}?seo=${SEO_SUFFIX}`;
+const SEO_IMG = (url, width = 1200) => {
+    // Check if it's already a Cloudinary URL or a raw URL
+    if (url.includes('res.cloudinary.com')) {
+        // Replace /upload/ with /upload/w_{width},f_auto,q_auto/ if not already present
+        const transformed = url.replace('/upload/', `/upload/f_auto,q_auto,w_${width}/`);
+        return `${transformed}${transformed.includes('?') ? '&' : '?'}seo=${SEO_SUFFIX}`;
+    }
+    return `${url}?seo=${SEO_SUFFIX}`;
+};
 
 export const IMAGES = {
     // Brand
-    logo: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732052/logo_cgdtgo.png"),
-    doctor: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732039/doctor_hi4dox.png"),
+    logo: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732052/logo_cgdtgo.png", 300),
+    doctor: SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732039/doctor_hi4dox.png", 800),
 
     // Core Backgrounds
-    hero: SEO_IMG(`${CLOUDINARY_BASE}v1768731991/dent3_vp24y8.png`),
+    hero: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768731991/dent3_vp24y8.png`, 1200),
     clinic: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
     safety: "https://images.unsplash.com/photo-1584036561566-b93a941cd64e?q=80&w=1974&auto=format&fit=crop",
 
@@ -23,10 +30,10 @@ export const IMAGES = {
 
     // Slides (Cloudinary)
     slides: {
-        slide1: SEO_IMG(`${CLOUDINARY_BASE}v1768734665/doctor_sr6xdx.png`),
-        slide2: SEO_IMG(`${CLOUDINARY_BASE}v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif`),
-        slide3: SEO_IMG(`${CLOUDINARY_BASE}v1768731991/dent3_vp24y8.png`),
-        slide4: SEO_IMG(`${CLOUDINARY_BASE}v1768732043/slide3_fvcvc2.png`)
+        slide1: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768734665/doctor_sr6xdx.png`, 1200),
+        slide2: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif`, 800),
+        slide3: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768731991/dent3_vp24y8.png`, 800),
+        slide4: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732043/slide3_fvcvc2.png`, 800)
     },
 
     // Gallery / Showcase Defaults
@@ -144,7 +151,7 @@ export const IMAGES = {
 
     // Testimonials
     avatars: [
-        SEO_IMG(`${CLOUDINARY_BASE}v1768734665/doctor_sr6xdx.png`),
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/v1768734665/doctor_sr6xdx.png", 300),
         "https://images.unsplash.com/photo-1554151228-14d9def656ec?auto=format&fit=crop&w=600&q=80",
         "https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=600&q=80",
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80",
