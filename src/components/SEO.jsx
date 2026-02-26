@@ -8,7 +8,8 @@ const SEO = ({
     image = "https://www.plusdentocare.in/favicon-512x512.png",
     type = "website",
     author = "Dr. Nimisha Modi",
-    faqData = []
+    faqData = [],
+    videoData = []
 }) => {
     const location = useLocation();
     const siteUrl = "https://www.plusdentocare.in";
@@ -237,6 +238,91 @@ const SEO = ({
             };
         }
 
+        // Video Schema
+        const videoSchemas = (videoData && videoData.length > 0 ? videoData : [
+            {
+                title: "Smile Transformation at Dentocare Surat",
+                description: "Real patient smile transformation results at Plus Dento Care Surat.",
+                thumbnail: "https://i.ytimg.com/vi/JQct9JOXQ34/hq720.jpg",
+                uploadDate: "2024-01-01",
+                embedUrl: "https://www.youtube.com/embed/JQct9JOXQ34"
+            }
+        ]).map(video => ({
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": video.title,
+            "description": video.description,
+            "thumbnailUrl": [video.thumbnail],
+            "uploadDate": video.uploadDate || "2024-01-01",
+            "contentUrl": video.embedUrl,
+            "embedUrl": video.embedUrl,
+            "publisher": {
+                "@type": "Organization",
+                "name": "Dentocare & Implant Centre",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732052/logo_cgdtgo.png"
+                }
+            }
+        }));
+
+        // Image Schema
+        const imageSchema = {
+            "@context": "https://schema.org",
+            "@type": "ImageObject",
+            "contentUrl": image,
+            "license": "https://www.plusdentocare.in/",
+            "acquireLicensePage": "https://www.plusdentocare.in/contact",
+            "creator": {
+                "@type": "Person",
+                "name": "Dr. Nimisha Modi"
+            },
+            "copyrightNotice": "Plus Dento Care Surat"
+        };
+
+
+        // Service Schema for treatments
+        const serviceSchema = {
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Dental Care",
+            "provider": {
+                "@type": "Dentist",
+                "name": "Dentocare & Implant Centre"
+            },
+            "areaServed": {
+                "@type": "City",
+                "name": "Surat"
+            },
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Dental Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Dental Implants"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Root Canal Treatment"
+                        }
+                    },
+                    {
+                        "@type": "Offer",
+                        "itemOffered": {
+                            "@type": "Service",
+                            "name": "Braces & Orthodontics"
+                        }
+                    }
+                ]
+            }
+        };
+
         // Insert or update JSON-LD scripts
         const updateJsonLd = (id, schema) => {
             let script = document.getElementById(id);
@@ -256,6 +342,9 @@ const SEO = ({
         updateJsonLd('organization-schema', organizationSchema);
         updateJsonLd('breadcrumb-schema', breadcrumbSchema);
         updateJsonLd('website-schema', websiteSchema);
+        updateJsonLd('service-schema', serviceSchema);
+        updateJsonLd('image-schema', imageSchema);
+        videoSchemas.forEach((v, i) => updateJsonLd(`video-schema-${i}`, v));
         if (faqSchema) updateJsonLd('faq-schema', faqSchema);
 
     }, [pageTitle, pageDescription, pageKeywords, fullUrl, image, type, author, location.pathname, faqData]);

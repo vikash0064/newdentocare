@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Breadcrumbs from './components/Breadcrumbs';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import PageLoader from './components/PageLoader';
@@ -45,6 +46,7 @@ const AppContent = () => {
         Skip to main content
       </a>
       <Navbar />
+      <Breadcrumbs />
       <main id="main-content" className="flex-grow">
         <Suspense fallback={<PageLoader />}>
           <Routes>

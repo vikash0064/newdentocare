@@ -142,8 +142,12 @@ const Treatments = () => {
                                 <img
                                     src={treatment.image}
                                     alt={`${treatment.title} Treatment at Plus Dento Care Surat | Best Dental Clinic in Surat`}
+                                    title={`${treatment.title} - Plus Dento Care`}
+                                    itemProp="image"
                                     loading="lazy"
                                     decoding="async"
+                                    width="700" // Added width
+                                    height="500" // Added height
                                     className="w-full h-[200px] md:h-[500px] object-cover transition-all duration-1000 group-hover:scale-110 group-hover:rotate-2"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-transparent to-transparent opacity-60"></div>

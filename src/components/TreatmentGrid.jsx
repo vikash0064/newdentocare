@@ -113,6 +113,8 @@ const TreatmentGrid = () => {
                                 <img
                                     src={t.image}
                                     alt={`${t.name} - ${t.subtitle} at Plus Dento Care Surat`}
+                                    title={`${t.name} Treatment`}
+                                    itemProp="image"
                                     className="w-full h-full object-cover object-center"
                                     width="400"
                                     height="300"

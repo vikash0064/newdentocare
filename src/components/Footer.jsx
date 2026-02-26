@@ -5,7 +5,7 @@ import { ShieldCheck, Calendar, Phone, MapPin, Clock, Facebook, Instagram, Twitt
 
 const Footer = () => {
     return (
-        <footer className="relative bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0B1120] text-gray-400 py-4 sm:py-6 border-t border-white/5 overflow-hidden">
+        <footer className="relative bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0B1120] text-gray-400 py-4 sm:py-6 border-t border-white/5 overflow-hidden min-h-[500px]">
             {/* Enhanced Background Effects */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.1),transparent_50%)]"></div>
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.08),transparent_50%)]"></div>
@@ -95,9 +95,10 @@ const Footer = () => {
                             <img
                                 src={IMAGES.logo}
                                 alt="Plus Dento Care (Dentocare) - Dr. Nimisha Modi - Best Dental Clinic in Surat Logo"
-                                className="h-10 sm:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+                                title="Dentocare Surat & Implant Centre"
+                                className="h-10 sm:h-12 w-[130px] sm:w-[160px] object-contain transition-transform duration-500 group-hover:scale-110"
                                 width="160"
-                                height="40"
+                                height="48"
                                 loading="lazy"
                                 decoding="async"
                             />

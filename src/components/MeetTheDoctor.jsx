@@ -95,6 +95,8 @@ const MeetTheDoctor = () => {
                                 <img
                                     src={IMAGES.doctor}
                                     alt="Dr. Nimisha Modi - Chief Dentist at Plus Dento Care Surat | Best Dental Clinic in Surat"
+                                    title="Dr. Nimisha Modi - Best Dentist in Surat"
+                                    itemProp="image"
                                     width="450"
                                     height="560"
                                     loading="lazy"

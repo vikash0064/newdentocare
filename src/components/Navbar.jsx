@@ -58,7 +58,8 @@ const Navbar = () => {
                                 <img
                                     src={IMAGES.logo}
                                     alt="Plus Dento Care (Dentocare) - Dr. Nimisha Modi Logo"
-                                    className="h-9 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                                    title="Dentocare Surat & Implant Centre"
+                                    className="h-9 sm:h-12 w-[120px] sm:w-[160px] object-contain transition-transform duration-300 group-hover:scale-105"
                                     width="160"
                                     height="48"
                                     loading="eager"

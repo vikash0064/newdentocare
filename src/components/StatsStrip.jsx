@@ -15,24 +15,29 @@ const stats = [
 // Counter Animation Component
 const AnimatedCounter = ({ target, suffix, duration = 2, isDecimal = false }) => {
     const [count, setCount] = useState(0);
+    const counterRef = useRef(null);
 
     useEffect(() => {
         const obj = { value: 0 };
-        gsap.to(obj, {
-            value: target,
-            duration: duration,
-            ease: "power2.out",
-            onUpdate: () => {
-                if (isDecimal) {
-                    setCount(obj.value.toFixed(1));
-                } else {
-                    setCount(Math.floor(obj.value));
+        const ctx = gsap.context(() => {
+            gsap.to(obj, {
+                value: target,
+                duration: duration,
+                ease: "power2.out",
+                onUpdate: () => {
+                    if (isDecimal) {
+                        setCount(obj.value.toFixed(1));
+                    } else {
+                        setCount(Math.floor(obj.value));
+                    }
                 }
-            }
-        });
+            });
+        }, counterRef);
+
+        return () => ctx.revert();
     }, [target, duration, isDecimal]);
 
-    return <span className="tabular-nums">{count}{suffix}</span>;
+    return <span ref={counterRef} className="tabular-nums">{count}{suffix}</span>;
 };
 
 const StatsStrip = () => {

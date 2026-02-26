@@ -22,18 +22,18 @@ export const IMAGES = {
 
     // Why Choose Section Images
     whyChoose: [
-        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg"),
-        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg"),
-        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif"),
-        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif")
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg", 600),
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg", 400),
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif", 600),
+        SEO_IMG("https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif", 600)
     ],
 
     // Slides (Cloudinary)
     slides: {
-        slide1: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768734665/doctor_sr6xdx.png`, 1200),
-        slide2: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif`, 800),
-        slide3: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768731991/dent3_vp24y8.png`, 800),
-        slide4: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732043/slide3_fvcvc2.png`, 800)
+        slide1: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768734665/doctor_sr6xdx.png`, 800),
+        slide2: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732134/dr-nimisha-modi-palanpur-patia-surat-dentists-148265lk6v_ru0ksy.avif`, 600),
+        slide3: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768731991/dent3_vp24y8.png`, 600),
+        slide4: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732043/slide3_fvcvc2.png`, 600)
     },
 
     // Gallery / Showcase Defaults

@@ -140,6 +140,7 @@ const Hero = () => {
                                         <img
                                             src={img.src}
                                             alt={`${img.label} at Dentocare Surat - ${img.sub} | Best Dental Clinic in Surat`}
+                                            title={img.label}
                                             className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
                                             width="500"
                                             height="625"

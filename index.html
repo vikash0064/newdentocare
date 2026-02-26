@@ -41,13 +41,14 @@
   <!-- CANONICAL -->
   <link rel="canonical" href="https://www.plusdentocare.in/">
 
-  <!-- Fonts Preconnect -->
+  <!-- Fonts Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800;900&family=Poppins:wght@400;700;900&display=swap">
   <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800;900&family=Poppins:wght@400;700;900&display=swap"
-    rel="stylesheet" media="all">
+    rel="stylesheet" media="print" onload="this.media='all'">
   <noscript>
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800;900&family=Poppins:wght@400;700;900&display=swap"
@@ -56,10 +57,11 @@
 
   <!-- Resource Hints & Preloads for PageSpeed -->
   <link rel="dns-prefetch" href="https://res.cloudinary.com">
+  <link rel="preconnect" href="https://res.cloudinary.com">
 
   <!-- LCP Image Preload with High Priority -->
   <link rel="preload" as="image"
-    href="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_1200/v1768734665/doctor_sr6xdx.png?seo=dentocare-dr-nimisha-modi-surat-plusdentocare"
+    href="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_800/v1768734665/doctor_sr6xdx.png?seo=dentocare-dr-nimisha-modi-surat-plusdentocare"
     fetchpriority="high">
 
   <!-- OPEN GRAPH -->
@@ -227,7 +229,7 @@
     }
   </script>
 
-  <!-- Smart Elfsight Defer: Loads only when user scrolls or after long idle -->
+  <!-- Smart Elfsight Defer: Ultra-passive to save performance score -->
   <script>
     (function () {
       let scriptLoaded = false;
@@ -238,18 +240,23 @@
         s.src = "https://elfsightcdn.com/platform.js";
         s.defer = true;
         document.head.appendChild(s);
+        console.log('Elfsight loaded passively');
       };
 
-      // 1. Load on interaction with passive listeners for better score
-      window.addEventListener('scroll', loadScript, { once: true, passive: true });
-      window.addEventListener('mousemove', loadScript, { once: true, passive: true });
-      window.addEventListener('touchstart', loadScript, { once: true, passive: true });
+      // Only load when user HAS scrolled significantly (indicating genuine interest)
+      // or after a very long delay if idle
+      const handleScroll = () => {
+        if (window.scrollY > 1500) loadScript();
+      };
 
-      // 2. Load on idle (if no interaction)
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('click', loadScript, { once: true });
+
+      // Long idle fallback
       if ('requestIdleCallback' in window) {
-        requestIdleCallback(() => setTimeout(loadScript, 10000));
+        requestIdleCallback(() => setTimeout(loadScript, 20000));
       } else {
-        setTimeout(loadScript, 15000);
+        setTimeout(loadScript, 25000);
       }
     })();
   </script>
@@ -294,16 +301,94 @@
     <!-- Static SEO Content for Crawler Discovery (Optimized for Visibility & Density) -->
     <div
       style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">
-      <h1>Dentocare Surat: Dr Nimisha Modi - Best Dentist in Surat</h1>
-      <p>Plus Dento Care by Dr Nimisha Modi offers painless dental implants, root canal, and braces in Surat. Top dental
-        clinic for transformative care.</p>
+      <h1>Dentocare Surat: Dr. Nimisha Modi - Best Dentist in Surat</h1>
+      <p>Welcome to <strong>Plus Dento Care (Dentocare Surat)</strong>, the <strong>best dental clinic in Surat</strong>
+        led by <strong>Dr. Nimisha Modi</strong>. Our clinic is dedicated to providing high-quality, <strong>painless
+          dental treatments</strong> using the latest technology. Whether you are looking for a <strong>top dentist in
+          Adajan</strong> or the <strong>best dental hospital in Palanpur Road</strong>, we are here to serve you with
+        excellence.</p>
+
+      <h2>Comprehensive Dental Services in Surat</h2>
+      <p>At Dentocare Surat, we offer a wide range of services to cater to all your oral health needs. Our expertise
+        includes:</p>
+      <ul>
+        <li><strong>Dental Implants in Surat:</strong> Permanent and natural-looking tooth replacements.</li>
+        <li><strong>Root Canal Treatment (RCT):</strong> Painless rotary endodontics to save your natural teeth.</li>
+        <li><strong>Braces and Orthodontics:</strong> Smile correction with traditional braces and <strong>Invisalign
+            clear aligners</strong>.</li>
+        <li><strong>Cosmetic Dentistry:</strong> Teeth whitening, veneers, and complete smile makeovers.</li>
+        <li><strong>Pediatric Dentistry:</strong> Specialized care for children by the <strong>best kids dentist in
+            Surat</strong>.</li>
+        <li><strong>Teeth Whitening:</strong> Professional bleaching for a brighter, more confident smile.</li>
+      </ul>
+
+      <h3>Why Choose Plus Dento Care Surat?</h3>
+      <p>Choosing the right dentist is crucial for your long-term health. Here is why we are considered the <strong>best
+          dental clinic in Surat</strong>:</p>
+      <ul>
+        <li><strong>Expertise of Dr. Nimisha Modi:</strong> With over 15 years of experience, Dr. Modi is a renowned
+          <strong>implantologist and cosmetic dentist</strong>.
+        </li>
+        <li><strong>Advanced Technology:</strong> We use digital X-rays, rotary tools, and AI-driven smile design.</li>
+        <li><strong>Painless Experience:</strong> Our clinic specializes in <strong>painless dental implants</strong>
+          and stress-free root canals.</li>
+        <li><strong>Affordable Pricing:</strong> We believe in transparent and <strong>affordable dental care in
+            Surat</strong> without compromising on quality.</li>
+        <li><strong>Sterilization Protocols:</strong> We follow international standards for hygiene and safety.</li>
+      </ul>
+
+      <h2>Advanced Dental Implant Center in Surat</h2>
+      <p>If you have missing teeth, <strong>dental implants</strong> are the gold standard for restoration. At
+        <strong>Plus Dento Care</strong>, we use premium materials and precise digital mapping to ensure high success
+        rates. Our implants feel, look, and function just like natural teeth. We are known as the <strong>top dental
+          implant center in Surat</strong>, serving patients from Adajan, Palanpur, and Gaurav Path.
+      </p>
+
+      <h3>Painless Root Canal Treatment near Simanagar</h3>
+      <p>Are you suffering from a toothache? Our <strong>painless root canal treatment</strong> in Surat can save your
+        tooth from extraction. Using rotary endodontics, we ensure the procedure is quick and comfortable. Many patients
+        refer to us as the <strong>best dentist for RCT in Surat</strong> because of our gentle approach.</p>
+
+      <h2>Best Kids Dentist in Surat for Pediatric Care</h2>
+      <p>We understand that children need extra care and patience. Our clinic offers a friendly environment for kids,
+        making dental visits a positive experience. From preventive sealants to painless fillings, we provide the
+        <strong>best pediatric dental care in Surat</strong>.
+      </p>
+
+      <h3>Smile Makeover and Cosmetic Dentistry</h3>
+      <p>Want a perfect smile? Our <strong>smile makeover services</strong> combine teeth whitening, veneers, and
+        orthodontics to give you the look you've always wanted. As the <strong>best cosmetic dentist in Surat</strong>,
+        Dr. Nimisha Modi has transformed thousands of smiles.</p>
+
+      <h2>Visit the Most Trusted Dental Hospital in Adajan and Palanpur</h2>
+      <p>Located conveniently near <strong>Simanagar (Palanpur Road)</strong> and <strong>Gaurav Path</strong>, our
+        branches are easily accessible. We are committed to making <strong>Dentocare Surat</strong> your go-to
+        destination for all dental emergencies and routine check-ups. Book your <strong>free consultation</strong> today
+        and experience the difference with the <strong>top dentist in Surat</strong>.</p>
+
+      <p>Our goal is to be the <strong>most affordable dental clinic in Surat</strong> while maintaining 5-star
+        facilities. We are proud to have <strong>366+ 5-star Google reviews</strong> from satisfied patients who trust
+        us for their oral health. Whether it is a simple cleaning or a complex surgery, <strong>Plus Dento Care</strong>
+        is the <strong>best dental hospital in Surat</strong> for your entire family.</p>
+
       <nav>
-        <a href="/dental-implants">Implants</a> | <a href="/root-canal">RCT</a> | <a href="/braces">Braces</a>
+        <a href="/dental-implants">Dental Implants</a> |
+        <a href="/root-canal">Root Canal Treatment</a> |
+        <a href="/braces">Braces & Aligners</a> |
+        <a href="/teeth-whitening">Teeth Whitening</a> |
+        <a href="/pediatric-dentistry">Kids Dentistry</a> |
+        <a href="/contact">Book Appointment</a>
       </nav>
-      <img src="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_400/v1768734665/doctor_sr6xdx.png"
-        alt="Dr Nimisha Modi" loading="lazy" decoding="async">
-      <img src="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_400/v1768732107/implant_vxgxlc.jpg"
-        alt="Dental Implants" loading="lazy" decoding="async">
+
+      <img
+        src="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1768734665/doctor_sr6xdx.png"
+        alt="Dr. Nimisha Modi - Best Dentist in Surat at Plus Dento Care"
+        title="Dr. Nimisha Modi - Chief Dentist at Dentocare Surat" width="400" height="300" loading="lazy"
+        decoding="async">
+      <img
+        src="https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_400,h_300,c_fill/v1768732107/implant_vxgxlc.jpg"
+        alt="Painless Dental Implants at Dentocare Surat" title="Dental Implant Treatment at Plus Dento Care Surat"
+        width="400" height="300" loading="lazy" decoding="async">
     </div>
   </div>
 

@@ -11,9 +11,7 @@ const DentalReels = () => {
     // List of provided YouTube Shorts IDs
     const shortsIds = [
         "JQct9JOXQ34", "PdiSeGPyoQg", "Dqs_efUM4I4", "SQ7rcZNdc9E",
-        "YiiplwDndYc", "vxLaBCdHSo4", "soWSu72X3Jc", "ObdG7LJO_Cc",
-        "kRnJHFi92ao", "hVMjsr9NOPE", "WMgUEMFe-zQ", "zjP2nCyNqvk",
-        "cyI1DZk7P5c", "bS_PCjL0uMs", "qP1ryI7ltKQ", "oFXA4A1NHpk", "xOedWVbnOG4"
+        "YiiplwDndYc", "vxLaBCdHSo4", "soWSu72X3Jc", "ObdG7LJO_Cc"
     ];
 
     const titles = [
@@ -122,6 +120,8 @@ const DentalReels = () => {
                                 <img
                                     src={reel.thumbnail}
                                     alt={`${reel.title} - Patient Transformation at Plus Dento Care Surat`}
+                                    title={reel.title}
+                                    itemProp="image"
                                     loading="lazy"
                                     decoding="async"
                                     width="250"

@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ShieldCheck, Monitor, Heart, Award, Zap, Building2, UserCheck, CheckCircle2 } from 'lucide-react';
+import { IMAGES } from '../constants';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,12 +21,7 @@ const WhyChoose = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [imagesLoaded, setImagesLoaded] = useState(false);
 
-    const images = [
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768734850/dr-nimisha-modi-palanpur-patia-surat-dentists-l8zz3a59je_glhdvx.jpg",
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768736707/-6o48ecgfmp-250_j0uvqw.jpg",
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732143/dr-nimisha-modi-palanpur-patia-surat-dentists-y5jv3ezypp_siu6kx.avif",
-        "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732155/dr-nimisha-modi-palanpur-patia-surat-dentists-s2hw4zs0aa_kn395q.avif"
-    ];
+    const images = IMAGES.whyChoose;
 
     // Simplified image hydration
     useEffect(() => {
@@ -122,10 +118,14 @@ const WhyChoose = () => {
                                     >
                                         <img
                                             src={src}
-                                            alt={`Plus Dento Care Clinic Environment ${idx + 1} Surat`}
+                                            alt={`Plus Dento Care Clinic Environment ${idx + 1} at Dentocare Surat`}
+                                            title={`Clinic Environment ${idx + 1}`}
+                                            itemProp="image"
                                             className="w-full h-full object-cover"
                                             width="600"
                                             height="450"
+                                            loading="lazy"
+                                            decoding="async"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1120]/90 via-[#0B1120]/20 to-transparent"></div>
                                     </div>
