@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { useData } from '../context/DataContext';
-import { Upload, Video, Image as ImageIcon, Trash2, Link, Check, AlertCircle, Lock, Eye, EyeOff, Loader2, FileText, PenTool } from 'lucide-react';
+import { Upload, Video, Image as ImageIcon, Trash2, Link, Check, AlertCircle, Lock, Eye, EyeOff, Loader2, FileText, PenTool, Star } from 'lucide-react';
 import API_URL from '../config/api';
+import ReviewGenerator from '../components/ReviewGenerator';
 
 const AdminPanel = () => {
     const { addGalleryImage, addVideoItem, addBlogItem, galleryImages, videoList, blogList, removeGalleryImage, removeVideoItem, removeBlogItem, loading } = useData();
-    const [activeTab, setActiveTab] = useState('gallery'); // 'gallery' | 'videos' | 'blogs'
+    const [activeTab, setActiveTab] = useState('gallery'); // 'gallery' | 'videos' | 'blogs' | 'reviews'
 
     // Authentication States
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -275,7 +274,8 @@ const AdminPanel = () => {
                     {[
                         { id: 'gallery', label: 'Gallery', icon: ImageIcon, color: 'text-blue-400', border: 'bg-blue-500' },
                         { id: 'videos', label: 'Videos', icon: Video, color: 'text-red-400', border: 'bg-red-500' },
-                        { id: 'blogs', label: 'Blogs', icon: FileText, color: 'text-purple-400', border: 'bg-purple-500' }
+                        { id: 'blogs', label: 'Blogs', icon: FileText, color: 'text-purple-400', border: 'bg-purple-500' },
+                        { id: 'reviews', label: 'Reviews', icon: Star, color: 'text-yellow-400', border: 'bg-yellow-500' }
                     ].map((tab) => (
                         <button
                             key={tab.id}
@@ -374,6 +374,8 @@ const AdminPanel = () => {
                                         </button>
                                     </form>
                                 </div>
+                            ) : activeTab === 'reviews' ? (
+                                <ReviewGenerator />
                             ) : (
                                 <div className="space-y-6">
                                     <div className="text-center lg:text-left">
@@ -449,7 +451,7 @@ const AdminPanel = () => {
                             <h3 className="text-base sm:text-lg font-black text-white uppercase tracking-wider">Cloud Records</h3>
                             <div className="flex items-center gap-2">
                                 <span className="text-[10px] font-black px-3 py-1 bg-white/5 border border-white/5 rounded-full text-blue-400 uppercase tracking-widest">
-                                    {activeTab === 'gallery' ? `${galleryImages.length} Saved` : activeTab === 'videos' ? `${videoList.length} Linked` : `${blogList.length} Live`}
+                                    {activeTab === 'gallery' ? `${galleryImages.length} Saved` : activeTab === 'videos' ? `${videoList.length} Linked` : activeTab === 'blogs' ? `${blogList.length} Live` : '10 Generated'}
                                 </span>
                             </div>
                         </div>
@@ -522,6 +524,28 @@ const AdminPanel = () => {
                                         </div>
                                     ))
                                 )}
+                            </div>
+                        ) : activeTab === 'reviews' ? (
+                            <div className="bg-[#1e293b]/20 backdrop-blur-sm border border-white/5 rounded-3xl p-8 flex flex-col items-center justify-center text-center space-y-6">
+                                <div className="w-20 h-20 bg-yellow-500/10 rounded-full flex items-center justify-center border border-yellow-500/20">
+                                    <Star size={40} className="text-yellow-500" />
+                                </div>
+                                <div>
+                                    <h4 className="text-xl font-black text-white uppercase tracking-tighter mb-2">Review Management</h4>
+                                    <p className="text-gray-500 text-xs font-bold leading-relaxed max-w-sm mx-auto uppercase tracking-widest">
+                                        Select and copy these professional reviews from the left panel to use on your Google Business Profile.
+                                    </p>
+                                </div>
+                                <div className="grid grid-cols-2 gap-4 w-full max-w-xs">
+                                    <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
+                                        <p className="text-2xl font-black text-white">4.9</p>
+                                        <p className="text-[8px] font-black text-gray-600 uppercase tracking-widest">Avg Rating</p>
+                                    </div>
+                                    <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
+                                        <p className="text-2xl font-black text-white">10</p>
+                                        <p className="text-[8px] font-black text-gray-600 uppercase tracking-widest">Templates</p>
+                                    </div>
+                                </div>
                             </div>
                         ) : (
                             <div className="space-y-3">
