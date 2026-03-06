@@ -58,7 +58,7 @@ const DoctorDetails = () => {
                                 <div className="relative rounded-[2.5rem] overflow-hidden border-2 border-white/5 shadow-2xl z-10 group-hover:border-blue-500/20 transition-colors">
                                     <img
                                         src={IMAGES.doctor}
-                                        alt="Dr. Nimisha Modi - Clinical Director at Plus Dento Care Surat | Best Dentist in Surat"
+                                        alt="Best Dentist in Surat - Dr. Nimisha Modi - Chief Specialist at Plus Dento Care"
                                         loading="lazy"
                                         decoding="async"
                                         className="w-full aspect-[4/5.5] object-cover transform transition-all duration-1000 group-hover:scale-[1.05]"

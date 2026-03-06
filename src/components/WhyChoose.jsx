@@ -118,7 +118,7 @@ const WhyChoose = () => {
                                     >
                                         <img
                                             src={src}
-                                            alt={`Plus Dento Care Clinic Environment ${idx + 1} at Dentocare Surat`}
+                                            alt={`Best dentist clinic in Surat - Clinic environment at Plus Dento Care`}
                                             title={`Clinic Environment ${idx + 1}`}
                                             itemProp="image"
                                             className="w-full h-full object-cover"

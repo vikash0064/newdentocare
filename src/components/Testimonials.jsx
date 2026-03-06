@@ -73,7 +73,7 @@ const Testimonials = () => {
                                 <div className="flex items-center space-x-3 mb-4">
                                     <img
                                         src={t.avatar}
-                                        alt={`${t.name} - Plus Dento Care Patient in Surat`}
+                                        alt={`Best dentist clinic in Surat - review by ${t.name}`}
                                         className="w-12 h-12 rounded-full border-2 border-primary object-cover"
                                         loading="lazy"
                                         decoding="async"
@@ -101,7 +101,7 @@ const Testimonials = () => {
                             <div className="flex items-center space-x-4 mb-6">
                                 <img
                                     src={t.avatar}
-                                    alt={`${t.name} - Plus Dento Care Patient in Surat Review`}
+                                    alt={`Best dentist clinic in Surat - patient review from ${t.location}`}
                                     className="w-14 h-14 rounded-full border-2 border-primary object-cover hover:scale-110 transition-transform duration-300"
                                     loading="lazy"
                                     decoding="async"

@@ -17,8 +17,8 @@ export const IMAGES = {
 
     // Core Backgrounds
     hero: SEO_IMG(`https://res.cloudinary.com/dyc1drqpy/image/upload/v1768731991/dent3_vp24y8.png`, 1200),
-    clinic: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop",
-    safety: "https://images.unsplash.com/photo-1584036561566-b93a941cd64e?q=80&w=1974&auto=format&fit=crop",
+    clinic: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1200&auto=format&fit=crop",
+    safety: "https://images.unsplash.com/photo-1584036561566-b93a941cd64e?q=80&w=1000&auto=format&fit=crop",
 
     // Why Choose Section Images
     whyChoose: [

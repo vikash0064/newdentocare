@@ -141,7 +141,7 @@ const Treatments = () => {
                             <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-gray-800 transform transition-transform duration-700 hover:scale-[1.02]">
                                 <img
                                     src={treatment.image}
-                                    alt={`${treatment.title} Treatment at Plus Dento Care Surat | Best Dental Clinic in Surat`}
+                                    alt={`${treatment.title} treatment in Surat - Best Dentist at Plus Dento Care`}
                                     title={`${treatment.title} - Plus Dento Care`}
                                     itemProp="image"
                                     loading="lazy"
@@ -198,6 +198,22 @@ const Treatments = () => {
                                                 </li>
                                             ))}
                                         </ul>
+                                    </div>
+                                </div>
+
+                                {/* Internal Linking for SEO */}
+                                <div className="mt-8 pt-6 border-t border-gray-800">
+                                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-3">Related Services</p>
+                                    <div className="flex flex-wrap gap-2">
+                                        {treatmentsList.filter(t => t.id !== treatment.id).slice(0, 3).map(related => (
+                                            <a
+                                                key={related.id}
+                                                href={`#${related.id}`}
+                                                className="text-[10px] md:text-xs font-bold text-blue-400/60 hover:text-blue-400 transition-colors bg-blue-500/5 px-3 py-1 rounded-full border border-blue-500/10 hover:border-blue-500/30"
+                                            >
+                                                {related.title}
+                                            </a>
+                                        ))}
                                     </div>
                                 </div>
                             </div>

@@ -52,7 +52,7 @@ const WhyTrust = () => {
                                 <img
                                     key={index}
                                     src={img}
-                                    alt={`Plus Dento Care (Dentocare) Clinic Environment ${index + 1} Surat - Expert Dental Care by Dr. Nimisha Modi`}
+                                    alt={`Best dentist clinic in Surat - Clinic excellence at Plus Dento Care`}
                                     width="600"
                                     height="500"
                                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'

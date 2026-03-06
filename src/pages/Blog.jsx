@@ -104,7 +104,7 @@ const Blog = () => {
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
                                 <img
                                     src={filteredBlogs[0].image || "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"}
-                                    alt={`${filteredBlogs[0].title} - Dental Blog by Plus Dento Care Surat`}
+                                    alt={`Best dentist clinic in Surat - ${filteredBlogs[0].title} blog at Plus Dento Care`}
                                     loading="lazy"
                                     decoding="async"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
@@ -173,7 +173,7 @@ const Blog = () => {
                                 <div className="relative h-56 overflow-hidden">
                                     <img
                                         src={blog.image || "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"}
-                                        alt={`${blog.title} - Plus Dento Care Surat Dental Insight`}
+                                        alt={`Best dentist clinic in Surat - ${blog.title} article`}
                                         loading="lazy"
                                         decoding="async"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"

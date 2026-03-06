@@ -103,7 +103,7 @@ const ClinicGallery = () => {
                         >
                             <img
                                 src={img.url}
-                                alt={`Plus Dento Care Gallery - ${img.category} - ${index + 1} - Best Dental Clinic in Surat by Dr. Nimisha Modi`}
+                                alt={`Best dentist clinic in Surat - ${img.category} at Plus Dento Care`}
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full h-auto transform group-hover:scale-110 transition-all duration-[1.5s] ease-out"

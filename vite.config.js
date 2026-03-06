@@ -33,6 +33,7 @@ export default defineConfig({
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'gsap-vendor': ['gsap'],
+          'motion-vendor': ['framer-motion'],
           'icons-vendor': ['lucide-react']
         }
       }

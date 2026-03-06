@@ -111,7 +111,7 @@ const BlogPost = () => {
                         <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                             <img
                                 src={post.image}
-                                alt={post.title}
+                                alt={`Best dentist clinic in Surat - ${post.title} blog by Dr. Nimisha Modi`}
                                 className="w-full h-full object-cover"
                             />
                         </div>

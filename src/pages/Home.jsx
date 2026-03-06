@@ -1,7 +1,7 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import StatsStrip from '../components/StatsStrip';
-import TreatmentGrid from '../components/TreatmentGrid';
+const TreatmentGrid = React.lazy(() => import('../components/TreatmentGrid'));
+const StatsStrip = React.lazy(() => import('../components/StatsStrip'));
 import SEO from '../components/SEO';
 const ClinicPresence = React.lazy(() => import('../components/ClinicPresence'));
 const HomeSEO = React.lazy(() => import('../components/HomeSEO'));
@@ -24,8 +24,8 @@ const Home = () => {
     return (
         <main className="bg-[#0B1120] text-white overflow-x-hidden min-h-screen">
             <SEO
-                title="Dentocare Surat – Dr Nimisha Modi | Plus Dento Care Dental & Implant Centre"
-                description="Dentocare Surat – Best dental clinic in Surat by Dr. Nimisha Modi. Painless treatments, affordable prices, expert dentist for implants, RCT, and braces. Book your free consultation today!"
+                title="Best Dentist in Surat | Dental Implants & RCT | Plus Dento Care"
+                description="Looking for the best dentist in Surat? Plus Dento Care offers dental implants, painless root canal treatment, braces and cosmetic dentistry."
                 faqData={[
                     {
                         question: "How much do dental implants cost in Surat?",
@@ -59,40 +59,49 @@ const Home = () => {
                 <Hero loading="eager" />
             </div>
 
-            {/* Above the fold strip */}
-            <StatsStrip />
+            {/* Above the fold strip - Lazy with height reservation */}
+            <div className="min-h-[140px]">
+                <React.Suspense fallback={<LoadingSection height="h-[140px]" />}>
+                    <StatsStrip />
+                </React.Suspense>
+            </div>
 
             {/* Treatments: Main Service Area */}
             <div className="min-h-[600px]">
-                <TreatmentGrid />
+                <React.Suspense fallback={<LoadingSection height="h-[600px]" />}>
+                    <TreatmentGrid />
+                </React.Suspense>
             </div>
 
             {/* Lazy Load everything else with height reservations to prevent CLS */}
-            {/* Top Priority Section (Lazy but usually above or near fold) */}
-            <div className="min-h-[600px]">
-                <React.Suspense fallback={<LoadingSection height="h-[600px]" />}>
-                    <MeetTheDoctor />
-                    <WhyChoose />
-                </React.Suspense>
-            </div>
-
-            {/* Content Mid-Section */}
-            <div className="min-h-[800px]">
-                <React.Suspense fallback={<LoadingSection height="h-[800px]" />}>
-                    <DentalReels />
-                    <ClinicPresence />
-                    <LatestBlog />
-                </React.Suspense>
-            </div>
-
-            {/* Bottom Heavy Components (Reviews/SEO) */}
-            <div className="min-h-[1200px]">
-                <React.Suspense fallback={<LoadingSection height="h-[1000px]" />}>
-                    <HomeSEO />
-                    <ReviewCTA />
-                    <PatientSpeaks />
-                </React.Suspense>
-            </div>
+            <React.Suspense fallback={<LoadingSection height="h-[600px]" />}>
+                <div className="space-y-0">
+                    <div className="min-h-[600px]">
+                        <MeetTheDoctor />
+                    </div>
+                    <div className="min-h-[600px]">
+                        <WhyChoose />
+                    </div>
+                    <div className="min-h-[600px]">
+                        <PatientSpeaks />
+                    </div>
+                    <div className="min-h-[600px]">
+                        <LatestBlog />
+                    </div>
+                    <div className="min-h-[600px]">
+                        <DentalReels />
+                    </div>
+                    <div className="min-h-[400px]">
+                        <ReviewCTA />
+                    </div>
+                    <div className="min-h-[600px]">
+                        <ClinicPresence />
+                    </div>
+                    <div className="min-h-[600px]">
+                        <HomeSEO />
+                    </div>
+                </div>
+            </React.Suspense>
         </main>
     );
 };

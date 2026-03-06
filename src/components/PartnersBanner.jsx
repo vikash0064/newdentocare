@@ -11,9 +11,9 @@ const PartnersBanner = () => {
 
                 <div className="relative rounded-2xl overflow-hidden shadow-sm">
                     <img
-                        src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2000&auto=format&fit=crop"
-                        alt="Advanced Dental Products and Equipment at Plus Dento Care Surat - Dr. Nimisha Modi"
-                        className="w-full h-64 md:h-96 object-cover"
+                        src="https://images.unsplash.com/photo-1542618933-21997fdc1f62?auto=format&fit=crop&q=80&w=2000"
+                        alt="Best dentist clinic in Surat - Partner dental brands and surgical standards"
+                        className="w-full h-full object-cover grayscale opacity-20"
                         loading="lazy"
                         decoding="async"
                     />
