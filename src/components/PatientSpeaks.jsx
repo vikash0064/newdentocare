@@ -42,14 +42,19 @@ const PatientSpeaks = () => {
                     What Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Patients Say</span>
                 </h2>
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-6">
-                    <div className="flex items-center gap-2.5 px-4 py-1.5 bg-yellow-500/10 rounded-full transition-transform hover:scale-105 cursor-default">
+                    <a
+                        href="https://g.page/r/CVyihSbmZCrcEBE/review"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2.5 px-4 py-1.5 bg-yellow-500/10 rounded-full transition-all hover:scale-105 hover:bg-yellow-500/20 cursor-pointer border border-yellow-500/20"
+                    >
                         <span className="text-yellow-500 font-black text-base md:text-lg">4.9/5</span>
                         <div className="flex gap-1">
                             {[...Array(5)].map((_, i) => (
                                 <Star key={i} size={16} fill="currentColor" className="text-yellow-500 drop-shadow-[0_0_8px_rgba(234,179,8,0.4)]" />
                             ))}
                         </div>
-                    </div>
+                    </a>
                     <div className="h-4 w-[1px] bg-white/10 hidden md:block"></div>
                     <span className="text-gray-300 text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
@@ -58,16 +63,34 @@ const PatientSpeaks = () => {
                 </div>
             </div>
 
-            {/* Elfsight Google Reviews Widget - Fixed height container to prevent CLS */}
-            <div className="container mx-auto px-4 sm:px-6 relative z-10 min-h-[600px]">
+            {/* Elfsight Google Reviews Widget */}
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 min-h-[400px]">
                 <div className="elfsight-app-06768bba-2f23-49e4-ae8c-af01f872fbd9"></div>
+
+                {/* Secondary CTA for Google Reviews */}
+                <div className="mt-12 flex justify-center">
+                    <a
+                        href="https://g.page/r/CVyihSbmZCrcEBE/review"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative flex items-center gap-2 px-8 py-3.5 bg-white/5 hover:bg-emerald-500 rounded-2xl border border-white/10 transition-all font-bold text-sm text-white overflow-hidden active:scale-95 shadow-2xl"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        <Star size={18} className="text-yellow-500 group-hover:text-white" fill="currentColor" />
+                        Write your review on Google
+                    </a>
+                </div>
             </div>
 
             <style dangerouslySetInnerHTML={{
                 __html: `
                 .elfsight-app-06768bba-2f23-49e4-ae8c-af01f872fbd9 {
-                    border-radius: 1.5rem;
+                    border-radius: 2rem;
                     overflow: hidden;
+                    background: rgba(255,255,255,0.01);
+                }
+                [class*="Header__Container"], [class*="Header__Title"], .eapps-google-reviews-header {
+                    display: none !important;
                 }
             ` }} />
         </section>

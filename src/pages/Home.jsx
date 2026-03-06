@@ -53,47 +53,18 @@ const Home = () => {
                 ]}
             />
 
-            {/* Critical Path Components */}
-            <div className="min-h-[700px]">
-                <Hero loading="eager" />
-            </div>
-
-            {/* Above the fold strip */}
-            <div className="min-h-[140px]">
-                <StatsStrip />
-            </div>
-
-            {/* Treatments: Main Service Area */}
-            <div className="min-h-[600px] bg-[#0B1120]">
-                <TreatmentGrid />
-            </div>
-
-            <div className="space-y-0">
-                <div className="min-h-[600px]">
-                    <MeetTheDoctor />
-                </div>
-                <div className="min-h-[600px]">
-                    <WhyChoose />
-                </div>
-                <div className="min-h-[600px] bg-[#0B1120]">
-                    <PatientSpeaks />
-                </div>
-                <div className="min-h-[600px] bg-[#0B1120]">
-                    <LatestBlog />
-                </div>
-                <div className="min-h-[600px] bg-[#0B1120]">
-                    <DentalReels />
-                </div>
-                <div className="min-h-[400px]">
-                    <ReviewCTA />
-                </div>
-                <div className="min-h-[600px]">
-                    <ClinicPresence />
-                </div>
-                <div className="min-h-[600px] bg-[#0B1120]">
-                    <HomeSEO />
-                </div>
-            </div>
+            {/* Main Sections with natural height */}
+            <Hero loading="eager" />
+            <StatsStrip />
+            <TreatmentGrid />
+            <MeetTheDoctor />
+            <WhyChoose />
+            <PatientSpeaks />
+            <LatestBlog />
+            <DentalReels />
+            <ReviewCTA />
+            <ClinicPresence />
+            <HomeSEO />
         </main>
     );
 };

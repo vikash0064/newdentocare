@@ -104,8 +104,8 @@ const Treatments = () => {
     return (
         <main className="bg-[#0B1120] min-h-screen text-white relative overflow-x-hidden">
             <SEO
-                title="Best Dental Treatments in Surat | Dentocare Surat"
-                description="Expert dental treatments in Surat: Dental Implants, RCT, Orthodontics, Smile Design, and Oral Surgery by Dr. Nimisha Modi at Plus Dento Care Dental & Implant Centre."
+                title="Advanced Dental Treatments in Surat | Implant, RCT & Braces"
+                description="Expert dental solutions at Plus Dento Care Surat. Specialized in Painless Root Canal, Robotic Dental Implants, and Invisalign by Dr. Nimisha Modi."
             />
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -z-0 pointer-events-none opacity-50"></div>

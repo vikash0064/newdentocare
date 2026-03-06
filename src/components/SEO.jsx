@@ -70,8 +70,12 @@ const SEO = ({
         setMetaTag('name', 'twitter:title', pageTitle);
         setMetaTag('name', 'twitter:description', pageDescription);
         setMetaTag('name', 'twitter:image', image);
+        setMetaTag('name', 'twitter:image:alt', pageTitle);
         setMetaTag('name', 'twitter:site', '@plusdentocare');
         setMetaTag('name', 'twitter:creator', '@plusdentocare');
+
+        // Open Graph Tags Extra
+        setMetaTag('property', 'og:image:alt', pageTitle);
 
         // Local Business Optimization Tags
         setMetaTag('name', 'geo.region', 'IN-GJ');

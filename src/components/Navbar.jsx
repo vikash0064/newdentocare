@@ -32,13 +32,13 @@ const Navbar = () => {
     };
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'Treatments', path: '/treatments' },
-        { name: 'Doctors', path: '/doctors' },
-        { name: 'Videos', path: '/videos' },
-        { name: 'Gallery', path: '/gallery' },
-        { name: 'Blog', path: '/blog' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'Home', path: '/', label: 'Return to Home' },
+        { name: 'Treatments', path: '/treatments', label: 'Dental Treatments Surat' },
+        { name: 'Doctors', path: '/doctors', label: 'Dentist Specialist Surat' },
+        { name: 'Videos', path: '/videos', label: 'Dental Patient Stories' },
+        { name: 'Gallery', path: '/gallery', label: 'Smile Design Gallery' },
+        { name: 'Blog', path: '/blog', label: 'Dental Health Blog' },
+        { name: 'Contact', path: '/contact', label: 'Contact Dentist Surat' },
     ];
 
     return (
@@ -74,6 +74,7 @@ const Navbar = () => {
                                 <Link
                                     key={link.name}
                                     to={link.path}
+                                    aria-label={link.label}
                                     className={`px-4 xl:px-5 py-2 rounded-full text-[12px] xl:text-[13px] font-bold tracking-wide transition-all duration-300 flex items-center gap-1.5 ${location.pathname === link.path
                                         ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/40'
                                         : 'text-gray-300 hover:text-white hover:bg-white/5'
@@ -150,6 +151,7 @@ const Navbar = () => {
                                     <Link
                                         to={link.path}
                                         onClick={toggleMenu}
+                                        aria-label={link.label}
                                         className={`flex items-center justify-between p-3.5 rounded-xl transition-all duration-300 ${location.pathname === link.path
                                             ? 'bg-blue-600/10 text-blue-400 font-black tracking-widest'
                                             : 'text-gray-300 font-bold uppercase tracking-wider hover:text-white hover:bg-white/5'

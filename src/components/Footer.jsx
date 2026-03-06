@@ -124,16 +124,16 @@ const Footer = () => {
                     {/* Column 2: Patient Hub (Order 3, Half Width on Mobile) */}
                     <div className="order-3 col-span-1 lg:col-span-1 lg:order-2 space-y-4">
                         <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-widest relative inline-block">
-                            Patient Hub
+                            Our Clinic Hub
                             <span className="absolute -bottom-1 left-0 w-6 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"></span>
                         </h4>
                         <ul className="space-y-3 pt-1">
                             {[
-                                { to: "/", label: "Home" },
-                                { to: "/treatments", label: "Treatments" },
-                                { to: "/doctors", label: "Doctors" },
-                                { to: "/gallery", label: "Gallery" },
-                                { to: "/contact", label: "Contact" }
+                                { to: "/", label: "Home - Best Dentist in Surat" },
+                                { to: "/treatments", label: "Specialized Dental Treatments" },
+                                { to: "/doctors", label: "Meet Our Specialist Doctors" },
+                                { to: "/gallery", label: "Clinic Results & Gallery" },
+                                { to: "/contact", label: "Book Free Consultation" }
                             ].map((link, idx) => (
                                 <li key={idx}>
                                     <Link to={link.to} className="group flex items-center gap-1.5 text-gray-300 hover:text-blue-400 transition-all text-xs sm:text-sm font-bold tracking-tight">
@@ -148,17 +148,17 @@ const Footer = () => {
                     {/* Column 3: Expertise (Order 4, Half Width on Mobile) */}
                     <div className="order-4 col-span-1 lg:col-span-1 lg:order-3 space-y-4">
                         <h4 className="text-white font-semibold text-xs sm:text-sm uppercase tracking-widest relative inline-block">
-                            Expertise
+                            Treatments Expertise
                             <span className="absolute -bottom-1 left-0 w-6 h-0.5 bg-gradient-to-r from-blue-500 to-cyan-500"></span>
                         </h4>
                         <ul className="space-y-3 pt-1">
                             {[
-                                { to: "/treatments#implants", label: "Implants" },
-                                { to: "/treatments#rct", label: "Root Canal" },
-                                { to: "/treatments#straightening", label: "Braces" },
-                                { to: "/treatments#restoration", label: "Restoration" },
-                                { to: "/treatments#extraction", label: "Extraction" },
-                                { to: "/treatments#surgery", label: "Surgery" }
+                                { to: "/dental-implants", label: "Dental Implants Surat" },
+                                { to: "/root-canal", label: "Painless Root Canal (RCT)" },
+                                { to: "/braces", label: "Braces & Clear Aligners" },
+                                { to: "/teeth-whitening", label: "Teeth Restoration & Whitening" },
+                                { to: "/pediatric-dentistry", label: "Safe Kids Dentistry Surat" },
+                                { to: "/treatments#surgery", label: "Oral & Maxillofacial Surgery" }
                             ].map((link, idx) => (
                                 <li key={idx}>
                                     <Link to={link.to} className="group flex items-center gap-1.5 text-gray-300 hover:text-emerald-400 transition-all text-xs sm:text-sm font-bold tracking-tight">
@@ -204,8 +204,8 @@ const Footer = () => {
 
                         {/* Secondary Links - Right on Desktop */}
                         <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-300 order-3 lg:order-3">
-                            <Link to="#" className="hover:text-blue-400 transition-colors">Privacy</Link>
-                            <Link to="#" className="hover:text-blue-400 transition-colors">Emergency</Link>
+                            <Link to="/contact" className="hover:text-blue-400 transition-colors">Privacy</Link>
+                            <Link to="/contact" className="hover:text-blue-400 transition-colors">Emergency</Link>
                             <Link to="/admin" className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group/admin">
                                 <Lock size={10} className="group-hover/admin:scale-110 transition-transform" />
                                 Admin
