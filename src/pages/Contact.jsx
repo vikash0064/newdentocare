@@ -56,7 +56,7 @@ const Contact = () => {
                     </div>
 
                     <h1 className="text-2xl md:text-4xl lg:text-5xl font-black mb-3 tracking-tight">
-                        Contact Plus Dento Care | <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Dental Clinic in Surat</span>
+                        Contact Plus Dento Care Dental Clinic in Surat
                     </h1>
 
                     <p className="text-gray-400 text-xs md:text-sm max-w-xl mx-auto">
