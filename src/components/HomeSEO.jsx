@@ -31,9 +31,9 @@ const HomeSEO = () => {
                 {/* Header Section */}
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
                     <div className="max-w-3xl text-center lg:text-left">
-                        <h1 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3 sm:mb-4 tracking-tight">
-                            Best Dentist <span className="text-blue-500">in Surat | Plus Dento Care</span>
-                        </h1>
+                        <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3 sm:mb-4 tracking-tight">
+                            Best Dental Clinic <span className="text-blue-500">in Surat | Plus Dento Care</span>
+                        </h2>
                         <p className="text-[11px] sm:text-xs lg:text-sm text-gray-300 leading-relaxed mx-auto lg:mx-0">
                             Looking for the <strong>top dentist in Surat</strong>? Plus Dento Care (Dentocare), led by <strong>Dr. Nimisha Modi</strong>, is your trusted partner for a healthy smile.
                             Rated as the <strong>best dental hospital in Adajan and Palanpur</strong> for our ethical approach, we specialize in high-tech, <strong>painless dental treatments</strong>,

@@ -1,10 +1,10 @@
 import React from 'react';
 import Hero from '../components/Hero';
-const TreatmentGrid = React.lazy(() => import('../components/TreatmentGrid'));
+import TreatmentGrid from '../components/TreatmentGrid';
+import HomeSEO from '../components/HomeSEO';
 const StatsStrip = React.lazy(() => import('../components/StatsStrip'));
 import SEO from '../components/SEO';
 const ClinicPresence = React.lazy(() => import('../components/ClinicPresence'));
-const HomeSEO = React.lazy(() => import('../components/HomeSEO'));
 const WhyChoose = React.lazy(() => import('../components/WhyChoose'));
 const DentalReels = React.lazy(() => import('../components/DentalReels'));
 const PatientSpeaks = React.lazy(() => import('../components/PatientSpeaks'));
@@ -67,10 +67,8 @@ const Home = () => {
             </div>
 
             {/* Treatments: Main Service Area */}
-            <div className="min-h-[600px]">
-                <React.Suspense fallback={<LoadingSection height="h-[600px]" />}>
-                    <TreatmentGrid />
-                </React.Suspense>
+            <div className="min-h-[600px] bg-[#0B1120]">
+                <TreatmentGrid />
             </div>
 
             {/* Lazy Load everything else with height reservations to prevent CLS */}
@@ -97,7 +95,7 @@ const Home = () => {
                     <div className="min-h-[600px]">
                         <ClinicPresence />
                     </div>
-                    <div className="min-h-[600px]">
+                    <div className="min-h-[600px] bg-[#0B1120]">
                         <HomeSEO />
                     </div>
                 </div>
