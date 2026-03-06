@@ -177,7 +177,7 @@ const Videos = () => {
                         </div>
 
                         <h1 className="header-anim text-2xl sm:text-5xl font-black text-white leading-none tracking-tight uppercase">
-                            Patient Stories & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Dental Results in Surat</span>
+                            Patient Stories and Dental Results in Surat
                         </h1>
                     </div>
                 </div>

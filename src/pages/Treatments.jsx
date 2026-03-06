@@ -119,8 +119,7 @@ const Treatments = () => {
                         <span className="text-[10px] md:text-[11px] font-semibold text-blue-400 tracking-wide">Clinical Catalog</span>
                     </div>
                     <h1 className="text-3xl md:text-7xl font-black mb-4 tracking-tight leading-tight md:leading-none">
-                        Specialized <br className="hidden md:block" />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Dental Treatments in Surat</span>
+                        Specialized Dental Treatments in Surat
                     </h1>
                     <p className="text-gray-500 font-medium max-w-xl mx-auto tracking-wide text-[10px] md:text-sm leading-relaxed opacity-70">
                         Engineering advanced dental solutions with robotic precision and surgical excellence.

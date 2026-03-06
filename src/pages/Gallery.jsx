@@ -70,7 +70,7 @@ const ClinicGallery = () => {
                         <Camera size={12} className="animate-pulse md:w-3.5 md:h-3.5" /> Unified Visual Registry
                     </div>
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter leading-none mb-6">
-                        Clinical Gallery & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Smile Transformations in Surat</span>
+                        Clinical Gallery and Smile Transformations in Surat
                     </h1>
                     <p className="text-gray-300 font-medium text-xs md:text-lg leading-relaxed opacity-70 mb-8 md:mb-10 px-4">
                         Explore our clinical cases, surgical protocols, and real patient stories through high-fidelity visual documentation.
@@ -103,7 +103,7 @@ const ClinicGallery = () => {
                         >
                             <img
                                 src={img.url}
-                                alt={`Best dentist clinic in Surat - ${img.category} at Plus Dento Care`}
+                                alt={`Dental Treatment Result ${index + 1} - ${img.category} at Plus Dento Care Surat`}
                                 loading="lazy"
                                 decoding="async"
                                 className="w-full h-auto transform group-hover:scale-110 transition-all duration-[1.5s] ease-out"

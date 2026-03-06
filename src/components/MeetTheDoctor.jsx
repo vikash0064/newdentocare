@@ -51,7 +51,7 @@ const MeetTheDoctor = () => {
 
                         {/* Updated Name to Single Line */}
                         <h2 className="text-4xl lg:text-5xl font-black text-white mb-3 leading-tight tracking-tight">
-                            Dr. Nimisha <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">Modi</span>
+                            Dr. Nimisha Modi
                         </h2>
                         <h3 className="text-lg text-gray-300 mb-8 font-semibold tracking-wide">
                             B.D.S. | Implantologist | Cosmetic Dentist

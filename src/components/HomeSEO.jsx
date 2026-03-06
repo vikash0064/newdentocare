@@ -32,7 +32,7 @@ const HomeSEO = () => {
                 <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 sm:mb-12">
                     <div className="max-w-3xl text-center lg:text-left">
                         <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-white mb-3 sm:mb-4 tracking-tight">
-                            Best Dental Clinic <span className="text-blue-500">in Surat | Plus Dento Care</span>
+                            Best Dental Clinic in Surat Plus Dento Care
                         </h2>
                         <p className="text-[11px] sm:text-xs lg:text-sm text-gray-300 leading-relaxed mx-auto lg:mx-0">
                             Looking for the <strong>top dentist in Surat</strong>? Plus Dento Care (Dentocare), led by <strong>Dr. Nimisha Modi</strong>, is your trusted partner for a healthy smile.
@@ -47,9 +47,10 @@ const HomeSEO = () => {
 
                     {/* Column 1: Specialties */}
                     <div className="space-y-5 sm:space-y-6">
-                        <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-widest flex items-center gap-2">
-                            <Shield size={16} className="text-blue-500" /> Professional Dental Services
-                        </h2>
+                        <div className="flex items-center gap-2">
+                            <Shield size={16} className="text-blue-500" />
+                            <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-widest">Professional Dental Services</h2>
+                        </div>
                         <div className="space-y-4">
                             <div className="group">
                                 <h3 className="text-[12px] sm:text-sm font-bold text-blue-400 mb-1">Advanced Dental Implant Center in Surat</h3>
@@ -74,9 +75,10 @@ const HomeSEO = () => {
 
                     {/* Column 2: Trust Factors */}
                     <div className="space-y-5 sm:space-y-6">
-                        <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-widest flex items-center gap-2">
-                            <Award size={16} className="text-emerald-500" /> Why Choose Dentocare?
-                        </h2>
+                        <div className="flex items-center gap-2">
+                            <Award size={16} className="text-emerald-500" />
+                            <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-widest">Why Choose Dentocare?</h2>
+                        </div>
                         <div className="grid grid-cols-1 gap-3">
                             <p className="text-[11px] text-gray-300 mb-2">Our commitment to <strong>ethical dentistry</strong> and patient comfort makes us the <strong>best dentist in Surat</strong>.</p>
                             <ul className="space-y-2.5">
@@ -98,9 +100,10 @@ const HomeSEO = () => {
 
                     {/* Column 3: FAQ */}
                     <div className="bg-white/5 p-5 sm:p-6 rounded-2xl border border-white/10">
-                        <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-widest flex items-center gap-2 mb-4">
-                            <HelpCircle size={16} className="text-blue-500" /> Dental FAQ Guide
-                        </h2>
+                        <div className="flex items-center gap-2 mb-4">
+                            <HelpCircle size={16} className="text-blue-500" />
+                            <h2 className="text-sm sm:text-base font-black text-white uppercase tracking-widest">Dental FAQ Guide</h2>
+                        </div>
                         <div className="divide-y divide-white/5">
                             <FAQItem
                                 question="How much do dental implants cost in Surat?"

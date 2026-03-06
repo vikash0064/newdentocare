@@ -158,7 +158,7 @@ const BlogPost = () => {
                                 <Link key={related._id} to={`/blog/${related.slug}`} className="bg-[#1e293b]/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-lg hover:border-blue-500/40 hover:-translate-y-1 transition-all block group">
                                     <div className="h-40 bg-black/40 rounded-xl mb-4 overflow-hidden relative">
                                         {related.image ? (
-                                            <img src={related.image} alt={related.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                            <img src={related.image} alt={`Related Dental Article: ${related.title} - Plus Dento Care Surat`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                         ) : (
                                             <div className="w-full h-full flex items-center justify-center text-gray-600 bg-white/5">
                                                 No Image

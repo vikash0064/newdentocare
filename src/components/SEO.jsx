@@ -16,10 +16,10 @@ const SEO = ({
     const fullUrl = `${siteUrl}${location.pathname}`;
 
     const defaultTitle = "Best Dentist in Surat | Dental Implants & RCT | Plus Dento Care";
-    const defaultDescription = "Looking for the best dentist in Surat? Plus Dento Care offers dental implants, painless root canal treatment, braces and cosmetic dentistry.";
+    const defaultDescription = "Top dental clinic in Surat offering painless root canal, implants, and braces by Dr. Nimisha Modi. Advanced technology for a perfect smile.";
     const defaultKeywords = "best dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces price Surat, painless dentistry Surat, dental hospital Adajan, dental clinic Palanpur Road";
 
-    const pageTitle = title ? `${title} | Dentocare Surat` : defaultTitle;
+    const pageTitle = title ? title : defaultTitle;
     const pageDescription = description || defaultDescription;
     const pageKeywords = keywords || defaultKeywords;
 
@@ -39,7 +39,7 @@ const SEO = ({
         };
 
         // Basic Meta Tags
-        setMetaTag('name', 'description', pageDescription);
+        setMetaTag('name', 'description', pageDescription.substring(0, 155));
         setMetaTag('name', 'keywords', pageKeywords);
         setMetaTag('name', 'author', author);
         setMetaTag('name', 'robots', 'index, follow, max-image-preview:large');
