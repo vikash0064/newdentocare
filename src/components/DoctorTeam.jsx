@@ -137,7 +137,7 @@ const DoctorTeam = () => {
                                     <div className="flex items-center justify-between border-t border-white/5 pt-4">
                                         <div className="flex items-center gap-2">
                                             <div className={`w-8 h-8 rounded-full ${doc.color === 'blue' ? 'bg-blue-500/10 text-blue-400' : 'bg-emerald-500/10 text-emerald-400'} flex items-center justify-center border border-white/5`}>
-                                                <Shield size={14} />
+                                                <Shield size={14} title="Verified Practitioner Certificate" />
                                             </div>
                                             <span className="text-[10px] font-black text-gray-300 uppercase tracking-[0.2em]">Verified Practitioner</span>
                                         </div>

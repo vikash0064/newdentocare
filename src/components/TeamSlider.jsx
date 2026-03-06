@@ -4,12 +4,12 @@ import { ChevronLeft, ChevronRight, Users } from 'lucide-react';
 
 const teamSlides = [
     {
-        url: "/assets/team/team-1.jpg",
+        url: "/assets/team/plus-dentocare-team-surat.jpg",
         title: "Our Clinical Experts",
         description: "A team dedicated to providing compassionate and professional dental care."
     },
     {
-        url: "/assets/team/team-2.jpg",
+        url: "/assets/team/dentocare-clinic-surat.jpg",
         title: "Excellence in Action",
         description: "Ongoing training and advanced technology ensure the best results for our patients."
     }

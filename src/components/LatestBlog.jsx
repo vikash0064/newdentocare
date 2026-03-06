@@ -13,6 +13,16 @@ const LatestBlog = () => {
             // Sort by date descending and pick the first one
             const sortedBlogs = [...blogList].sort((a, b) => new Date(b.date) - new Date(a.date));
             setLatestBlog(sortedBlogs[0]);
+        } else {
+            // Fallback for SEO and UI consistency when API is empty
+            setLatestBlog({
+                title: "Advanced & Painless Dental Treatments at Plus Dento Care Surat",
+                author: "Dr. Nimisha Modi",
+                date: new Date().toISOString(),
+                content: "Discover how we use the latest technology to provide stress-free, painless dental treatments for patients of all ages in Surat. Our clinic in Adajan and Palanpur area is committed to your comfort and oral health.",
+                slug: "advanced-painless-dental-treatments-surat",
+                category: "Modern Dentistry"
+            });
         }
     }, [blogList]);
 
