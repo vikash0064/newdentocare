@@ -25,7 +25,7 @@ const WhatsAppButton = () => {
     const containerRef = useRef(null);
 
     const phoneNumber = "916352534650";
-    const message = "Hi Dent O Care, I have a query regarding dental treatments.";
+    const message = "Hi Dentocare, I have a query regarding dental treatments.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     const actions = [

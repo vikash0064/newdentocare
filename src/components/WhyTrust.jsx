@@ -52,7 +52,7 @@ const WhyTrust = () => {
                                 <img
                                     key={index}
                                     src={img}
-                                    alt={`Best dentist clinic in Surat - Clinic excellence at Plus Dento Care`}
+                                    alt={`Best dentist clinic in Surat - Clinic excellence at Dentocare`}
                                     width="600"
                                     height="500"
                                     className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'

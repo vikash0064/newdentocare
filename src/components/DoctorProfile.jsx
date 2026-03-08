@@ -11,7 +11,7 @@ const DoctorProfile = () => {
                         <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/5">
                             <img
                                 src={IMAGES.doctor}
-                                alt="Dr. Nimisha Modi - Chief Dentist and Implantologist at Plus Dento Care Surat"
+                                alt="Dr. Nimisha Modi - Chief Dentist and Implantologist at Dentocare Surat"
                                 className="w-full h-auto object-cover"
                                 loading="lazy"
                                 decoding="async"

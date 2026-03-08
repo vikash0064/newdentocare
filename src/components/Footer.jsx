@@ -48,7 +48,7 @@ const Footer = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block text-center bg-blue-600/10 hover:bg-blue-600 text-blue-400 hover:text-white text-[10px] font-bold py-2 rounded-lg transition-all mt-1.5 border border-blue-500/20 hover:border-transparent"
-                                    aria-label="Get directions to Plus Dento Care Palanpur Road Branch"
+                                    aria-label="Get directions to Dentocare Palanpur Road Branch"
                                 >
                                     Directions (Palanpur Road)
                                 </a>
@@ -81,7 +81,7 @@ const Footer = () => {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="block text-center bg-emerald-600/10 hover:bg-emerald-600 text-emerald-400 hover:text-white text-[10px] font-bold py-2 rounded-lg transition-all mt-1.5 border border-emerald-500/20 hover:border-transparent"
-                                    aria-label="Get directions to Plus Dento Care Gaurav Path Branch"
+                                    aria-label="Get directions to Dentocare Gaurav Path Branch"
                                 >
                                     Directions (Gaurav Path)
                                 </a>
@@ -94,7 +94,7 @@ const Footer = () => {
                         <div className="flex items-center gap-2 group">
                             <img
                                 src={IMAGES.logo}
-                                alt="Best dentist clinic in Surat - Plus Dento Care Logo"
+                                alt="Best dentist clinic in Surat - Dentocare Logo"
                                 title="Dentocare Surat & Implant Centre"
                                 className="h-10 sm:h-12 w-[130px] sm:w-[160px] object-contain transition-transform duration-500 group-hover:scale-110"
                                 width="160"
@@ -177,7 +177,7 @@ const Footer = () => {
                         {/* Copyright - Left on Desktop */}
                         <div className="text-center lg:text-left order-2 lg:order-1">
                             <p className="text-[10px] text-gray-300 font-medium flex items-center justify-center lg:justify-start gap-1.5 uppercase tracking-widest">
-                                © {new Date().getFullYear()} Dent O Care SURAT. <Heart size={10} className="text-red-500 fill-current" />
+                                © {new Date().getFullYear()} Dentocare SURAT. <Heart size={10} className="text-red-500 fill-current" />
                             </p>
                         </div>
 

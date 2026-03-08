@@ -3,5 +3,15 @@ Allow: /
 Disallow: /admin
 Disallow: /wp-admin/
 Disallow: /cgi-bin/
+Disallow: /api/
 
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+Host: https://www.plusdentocare.in
 Sitemap: https://www.plusdentocare.in/sitemap.xml

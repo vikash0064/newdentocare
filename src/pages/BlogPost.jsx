@@ -59,12 +59,16 @@ const BlogPost = () => {
     return (
         <div className="bg-[#0B1120] min-h-screen font-sans text-gray-300">
             <SEO
-                title={`${post.title} - Dent O Care Blog`}
-                description={post.content.substring(0, 160)}
+                title={`${post.title} | Dentocare Surat Blog`}
+                description={post.content.substring(0, 155)}
                 image={post.image}
+                type="article"
             />
 
-            <article className="pt-32 pb-20">
+            <article className="pt-32 pb-20" itemScope itemType="https://schema.org/Article">
+                <meta itemProp="author" content={post.author || 'Dr. Nimisha Modi'} />
+                <meta itemProp="datePublished" content={post.date} />
+                <meta itemProp="publisher" content="Dentocare" />
                 {/* Header */}
                 <div className="container mx-auto px-4 max-w-4xl mb-12">
                     <Link to="/blog" className="inline-flex items-center gap-2 text-gray-500 hover:text-blue-400 transition-colors mb-8 font-medium">
@@ -76,14 +80,14 @@ const BlogPost = () => {
                             <Tag size={14} /> {post.category || 'Dental Health'}
                         </span>
                         <span className="flex items-center gap-1">
-                            <Calendar size={16} /> {formatDate(post.date)}
+                            <Calendar size={16} /> <time dateTime={post.date}>{formatDate(post.date)}</time>
                         </span>
                         <span className="flex items-center gap-1">
                             <Clock size={16} /> {calculateReadTime(post.content)} min read
                         </span>
                     </div>
 
-                    <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8">
+                    <h1 className="text-3xl md:text-5xl font-black text-white leading-tight mb-8" itemProp="headline">
                         {post.title}
                     </h1>
 
@@ -98,7 +102,7 @@ const BlogPost = () => {
                             </div>
                         </div>
                         <div className="flex gap-2">
-                            <button className="p-2 rounded-full bg-white/5 hover:bg-blue-600 hover:text-white text-gray-400 transition-all">
+                            <button className="p-2 rounded-full bg-white/5 hover:bg-blue-600 hover:text-white text-gray-400 transition-all" aria-label="Share this article">
                                 <Share2 size={20} />
                             </button>
                         </div>
@@ -111,8 +115,13 @@ const BlogPost = () => {
                         <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                             <img
                                 src={post.image}
-                                alt={`Best dentist clinic in Surat - ${post.title} blog by Dr. Nimisha Modi`}
+                                alt={`${post.title} - Dental health article by Dr. Nimisha Modi at Dentocare Surat`}
                                 className="w-full h-full object-cover"
+                                loading="lazy"
+                                decoding="async"
+                                width="1200"
+                                height="675"
+                                itemProp="image"
                             />
                         </div>
                     </div>
@@ -158,7 +167,7 @@ const BlogPost = () => {
                                 <Link key={related._id} to={`/blog/${related.slug}`} className="bg-[#1e293b]/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 shadow-lg hover:border-blue-500/40 hover:-translate-y-1 transition-all block group">
                                     <div className="h-40 bg-black/40 rounded-xl mb-4 overflow-hidden relative">
                                         {related.image ? (
-                                            <img src={related.image} alt={`Related Dental Article: ${related.title} - Plus Dento Care Surat`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                                            <img src={related.image} alt={`Related Dental Article: ${related.title} - Dentocare Surat`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                                         ) : (
                                             <div className="w-full h-full flex items-center justify-center text-gray-600 bg-white/5">
                                                 No Image

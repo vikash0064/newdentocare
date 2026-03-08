@@ -42,8 +42,8 @@ const Blog = () => {
     return (
         <div className="bg-[#0B1120] min-h-screen font-sans">
             <SEO
-                title="Dental Health Blog | Plus Dento Care Surat | Dr. Nimisha Modi"
-                description="Stay updated with the latest in dental care, cosmetic dentistry, and oral health insights from Dr. Nimisha Modi at Plus Dento Care Surat."
+                title="Dental Health Blog | Dentocare Surat | Dr. Nimisha Modi"
+                description="Stay updated with the latest in dental care, cosmetic dentistry, and oral health insights from Dr. Nimisha Modi at Dentocare Surat."
             />
 
             {/* Hero Section */}
@@ -104,7 +104,7 @@ const Blog = () => {
                                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors z-10"></div>
                                 <img
                                     src={filteredBlogs[0].image || "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"}
-                                    alt={`Best dentist clinic in Surat - ${filteredBlogs[0].title} blog at Plus Dento Care`}
+                                    alt={`Best dentist clinic in Surat - ${filteredBlogs[0].title} blog at Dentocare`}
                                     loading="lazy"
                                     decoding="async"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"

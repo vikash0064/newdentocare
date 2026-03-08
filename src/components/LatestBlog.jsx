@@ -16,7 +16,7 @@ const LatestBlog = () => {
         } else {
             // Fallback for SEO and UI consistency when API is empty
             setLatestBlog({
-                title: "Advanced & Painless Dental Treatments at Plus Dento Care Surat",
+                title: "Advanced & Painless Dental Treatments at Dentocare Surat",
                 author: "Dr. Nimisha Modi",
                 date: new Date().toISOString(),
                 content: "Discover how we use the latest technology to provide stress-free, painless dental treatments for patients of all ages in Surat. Our clinic in Adajan and Palanpur area is committed to your comfort and oral health.",
@@ -83,7 +83,7 @@ const LatestBlog = () => {
                             <div className="absolute inset-0 bg-blue-600/10 group-hover:bg-blue-600/0 transition-colors z-10"></div>
                             <img
                                 src={latestBlog.image || "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"}
-                                alt={`${latestBlog.title} - Dental Health Article by Plus Dento Care Surat`}
+                                alt={`${latestBlog.title} - Dental Health Article by Dentocare Surat`}
                                 width="600"
                                 height="450"
                                 loading="lazy"

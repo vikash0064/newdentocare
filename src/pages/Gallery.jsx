@@ -57,7 +57,7 @@ const ClinicGallery = () => {
         <main ref={containerRef} className="pt-24 md:pt-36 pb-24 bg-[#0B1120] min-h-screen text-white overflow-hidden relative selection:bg-blue-500">
             <SEO
                 title="Smile Gallery: Dental Results & Transformations | Dentocare Surat"
-                description="View real patient transformations and results at Plus Dento Care Surat. See our clinical success stories in dental implants, smile design, and braces by Dr. Nimisha Modi."
+                description="View real patient transformations and results at Dentocare Surat. See our clinical success stories in dental implants, smile design, and braces by Dr. Nimisha Modi."
             />
             {/* Background Glows */}
             <div className="absolute top-0 inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.08),transparent_50%)]"></div>
@@ -103,9 +103,12 @@ const ClinicGallery = () => {
                         >
                             <img
                                 src={img.url}
-                                alt={`Dental Treatment Result ${index + 1} - ${img.category} at Plus Dento Care Surat`}
+                                alt={`${img.category || 'Dental'} treatment result at Dentocare Surat - Case ${index + 1} by Dr. Nimisha Modi`}
+                                title={`${img.category} - Dentocare Clinical Result`}
                                 loading="lazy"
                                 decoding="async"
+                                width="600"
+                                height="400"
                                 className="w-full h-auto transform group-hover:scale-110 transition-all duration-[1.5s] ease-out"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-end p-3 md:p-8">

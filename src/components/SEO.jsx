@@ -15,7 +15,7 @@ const SEO = ({
     const siteUrl = "https://www.plusdentocare.in";
     const fullUrl = `${siteUrl}${location.pathname}`;
 
-    const defaultTitle = "Best Dentist in Surat | Dental Implants & RCT | Plus Dento Care";
+    const defaultTitle = "Best Dentist in Surat | Dental Implants & RCT | Dentocare";
     const defaultDescription = "Top dental clinic in Surat offering painless root canal, implants, and braces by Dr. Nimisha Modi. Advanced technology for a perfect smile.";
     const defaultKeywords = "best dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces price Surat, painless dentistry Surat, dental hospital Adajan, dental clinic Palanpur Road";
 
@@ -103,17 +103,40 @@ const SEO = ({
         }
         canonical.setAttribute('href', fullUrl);
 
+        // Hreflang link tags for language targeting
+        let hreflangIN = document.querySelector('link[hreflang="en-IN"]');
+        if (!hreflangIN) {
+            hreflangIN = document.createElement('link');
+            hreflangIN.setAttribute('rel', 'alternate');
+            hreflangIN.setAttribute('hreflang', 'en-IN');
+            document.head.appendChild(hreflangIN);
+        }
+        hreflangIN.setAttribute('href', fullUrl);
+
+        let hreflangDefault = document.querySelector('link[hreflang="x-default"]');
+        if (!hreflangDefault) {
+            hreflangDefault = document.createElement('link');
+            hreflangDefault.setAttribute('rel', 'alternate');
+            hreflangDefault.setAttribute('hreflang', 'x-default');
+            document.head.appendChild(hreflangDefault);
+        }
+        hreflangDefault.setAttribute('href', fullUrl);
+
         // Structured Data - Organization (JSON-LD)
         const organizationSchema = {
             "@context": "https://schema.org",
             "@type": "Dentist",
+            "@id": `${siteUrl}/#dentist`,
             "name": "Dentocare & Implant Centre",
-            "legalName": "Dr. Nimisha Modi",
+            "legalName": "Dentocare",
+            "alternateName": "Dentocare Surat",
             "itemOffered": "Dental Services",
             "image": image,
             "url": siteUrl,
             "telephone": "+91-6352534650",
             "priceRange": "₹₹",
+            "currenciesAccepted": "INR",
+            "paymentAccepted": "Cash, UPI, Credit Card, Debit Card",
             "address": [
                 {
                     "@type": "PostalAddress",
@@ -246,7 +269,7 @@ const SEO = ({
         const videoSchemas = (videoData && videoData.length > 0 ? videoData : [
             {
                 title: "Smile Transformation at Dentocare Surat",
-                description: "Real patient smile transformation results at Plus Dento Care Surat.",
+                description: "Real patient smile transformation results at Dentocare Surat.",
                 thumbnail: "https://i.ytimg.com/vi/JQct9JOXQ34/hq720.jpg",
                 uploadDate: "2024-01-01",
                 embedUrl: "https://www.youtube.com/embed/JQct9JOXQ34"
@@ -281,7 +304,7 @@ const SEO = ({
                 "@type": "Person",
                 "name": "Dr. Nimisha Modi"
             },
-            "copyrightNotice": "Plus Dento Care Surat"
+            "copyrightNotice": "Dentocare Surat"
         };
 
 
@@ -327,6 +350,90 @@ const SEO = ({
             }
         };
 
+        // Person Schema for Dr. Nimisha Modi
+        const personSchema = {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "@id": `${siteUrl}/#doctor`,
+            "name": "Dr. Nimisha Modi",
+            "jobTitle": "Chief Dentist & Implantologist",
+            "description": "Dr. Nimisha Modi is a leading dentist in Surat with 12+ years of experience in dental implants, root canal treatment, and cosmetic dentistry.",
+            "image": "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_800/v1768734665/doctor_sr6xdx.png",
+            "url": `${siteUrl}/doctors`,
+            "telephone": "+91-6352534650",
+            "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Dental College"
+            },
+            "knowsAbout": ["Dental Implants", "Root Canal Treatment", "Cosmetic Dentistry", "Orthodontics", "Oral Surgery", "Pediatric Dentistry"],
+            "worksFor": {
+                "@type": "Dentist",
+                "name": "Dentocare & Implant Centre",
+                "url": siteUrl
+            },
+            "sameAs": [
+                "https://www.facebook.com/modi.nimisha.5",
+                "https://www.instagram.com/dentocare_dental"
+            ]
+        };
+
+        // MedicalBusiness Schema
+        const medicalBusinessSchema = {
+            "@context": "https://schema.org",
+            "@type": "MedicalBusiness",
+            "@id": `${siteUrl}/#medical`,
+            "name": "Dentocare & Implant Centre",
+            "url": siteUrl,
+            "telephone": "+91-6352534650",
+            "medicalSpecialty": "Dentistry",
+            "isAcceptingNewPatients": true,
+            "availableService": [
+                {
+                    "@type": "MedicalProcedure",
+                    "name": "Dental Implant Surgery",
+                    "procedureType": "Surgical"
+                },
+                {
+                    "@type": "MedicalProcedure",
+                    "name": "Root Canal Treatment",
+                    "procedureType": "Noninvasive"
+                },
+                {
+                    "@type": "MedicalProcedure",
+                    "name": "Orthodontic Treatment (Braces & Aligners)",
+                    "procedureType": "Noninvasive"
+                },
+                {
+                    "@type": "MedicalProcedure",
+                    "name": "Teeth Whitening",
+                    "procedureType": "Noninvasive"
+                },
+                {
+                    "@type": "MedicalProcedure",
+                    "name": "Pediatric Dental Care",
+                    "procedureType": "Noninvasive"
+                },
+                {
+                    "@type": "MedicalProcedure",
+                    "name": "Oral & Maxillofacial Surgery",
+                    "procedureType": "Surgical"
+                }
+            ],
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "2nd Floor, Tirupati Shopping Center, Simanagar-2, Palanpur Road",
+                "addressLocality": "Surat",
+                "addressRegion": "Gujarat",
+                "postalCode": "395009",
+                "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 21.2032023,
+                "longitude": 72.7669892
+            }
+        };
+
         // Insert or update JSON-LD scripts
         const updateJsonLd = (id, schema) => {
             let script = document.getElementById(id);
@@ -348,6 +455,8 @@ const SEO = ({
         updateJsonLd('website-schema', websiteSchema);
         updateJsonLd('service-schema', serviceSchema);
         updateJsonLd('image-schema', imageSchema);
+        updateJsonLd('person-schema', personSchema);
+        updateJsonLd('medical-business-schema', medicalBusinessSchema);
         videoSchemas.forEach((v, i) => updateJsonLd(`video-schema-${i}`, v));
         if (faqSchema) updateJsonLd('faq-schema', faqSchema);
 

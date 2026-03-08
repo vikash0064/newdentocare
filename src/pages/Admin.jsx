@@ -194,7 +194,7 @@ const AdminPanel = () => {
                             <h1 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tighter">
                                 Restricted <span className="text-blue-500">Access</span>
                             </h1>
-                            <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.3em] mt-2">Plus Dento Care Admin</p>
+                            <p className="text-gray-500 text-[10px] font-black uppercase tracking-[0.3em] mt-2">Dentocare Admin</p>
                         </div>
 
                         <form onSubmit={handleLogin} className="space-y-5">

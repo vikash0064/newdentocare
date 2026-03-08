@@ -157,8 +157,8 @@ const Videos = () => {
     return (
         <main className="bg-[#050811] min-h-screen w-full flex flex-col relative">
             <SEO
-                title="Patient Stories & Dental Reels | Plus Dento Care Surat"
-                description="Watch our latest dental transformations, patient testimonials, and clinical highlights by Dr. Nimisha Modi in our video gallery at Plus Dento Care Surat."
+                title="Patient Stories & Dental Reels | Dentocare Surat"
+                description="Watch our latest dental transformations, patient testimonials, and clinical highlights by Dr. Nimisha Modi in our video gallery at Dentocare Surat."
             />
             {/* Solid Fixed Background */}
             <div className="absolute inset-0 bg-[#050811] -z-20"></div>

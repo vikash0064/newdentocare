@@ -72,7 +72,7 @@ const ClinicPresence = () => {
                             >
                                 <img
                                     src="/business-card-1.jpeg"
-                                    alt="Best Dentist in Surat - Dr. Nimisha Modi Business Card at Plus Dento Care"
+                                    alt="Best Dentist in Surat - Dr. Nimisha Modi Business Card at Dentocare"
                                     title="Dr. Nimisha Modi Business Card"
                                     itemProp="image"
                                     className="w-full h-full object-cover"
@@ -95,8 +95,8 @@ const ClinicPresence = () => {
                             >
                                 <img
                                     src="/business-card-2.jpg"
-                                    alt="Best dentist clinic in Surat - Plus Dento Care Branch Details and Timings"
-                                    title="Plus Dento Care Branch Details"
+                                    alt="Best dentist clinic in Surat - Dentocare Branch Details and Timings"
+                                    title="Dentocare Branch Details"
                                     itemProp="image"
                                     className="w-full h-full object-cover"
                                     width="600"

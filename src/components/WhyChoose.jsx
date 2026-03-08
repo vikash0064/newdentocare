@@ -86,7 +86,7 @@ const WhyChoose = () => {
                         <span className="text-[9px] sm:text-[10px] font-bold text-blue-400 uppercase tracking-widest">Trusted by 10,000+ Families</span>
                     </div>
                     <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 tracking-tight leading-tight">
-                        Why Choose Dent O Care?
+                        Why Choose Dentocare?
                     </h2>
                     <p className="text-sm sm:text-base text-slate-200 leading-relaxed font-medium">
                         Get expert dental care from our skilled staff. We are Surat's trusted choice for a healthy and beautiful smile.
@@ -118,7 +118,7 @@ const WhyChoose = () => {
                                     >
                                         <img
                                             src={src}
-                                            alt={`Modern dental clinic environment at Plus Dento Care Surat - Interior View ${idx + 1}`}
+                                            alt={`Modern dental clinic environment at Dentocare Surat - Interior View ${idx + 1}`}
                                             title={`Clinic Environment ${idx + 1}`}
                                             itemProp="image"
                                             className="w-full h-full object-cover"

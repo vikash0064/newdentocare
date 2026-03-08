@@ -42,7 +42,7 @@ const Hero = () => {
     const statsContainerRef = useRef(null);
 
     const whatsappNumber = "916352534650";
-    const whatsappMessage = "Hi Dent O Care, I have a query regarding dental treatments.";
+    const whatsappMessage = "Hi Dentocare, I have a query regarding dental treatments.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
     const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
@@ -133,7 +133,7 @@ const Hero = () => {
                                         style={{ willChange: 'opacity' }}>
                                         <img
                                             src={img.src}
-                                            alt={idx === 0 ? "Dr. Nimisha Modi treating a patient at Plus Dento Care Surat" :
+                                            alt={idx === 0 ? "Dr. Nimisha Modi treating a patient at Dentocare Surat" :
                                                 idx === 1 ? "Sterile surgical suite with advanced dental equipment in Surat" :
                                                     idx === 2 ? "Modern dental consultation room at Dentocare Surat" :
                                                         "Digital X-ray and AI-guided dental mapping workstation"}

@@ -39,7 +39,7 @@ const TeamSlider = () => {
                         <Users size={12} className="text-emerald-400" />
                         <span className="text-[9px] md:text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Our Collective Strength</span>
                     </div>
-                    <h2 className="text-xl md:text-5xl font-black text-white mb-2 md:mb-4">The <span className="text-emerald-400">Dent O Care</span> Team</h2>
+                    <h2 className="text-xl md:text-5xl font-black text-white mb-2 md:mb-4">The <span className="text-emerald-400">Dentocare</span> Team</h2>
                     <p className="text-gray-300 max-w-2xl mx-auto font-medium text-xs md:text-base">Coming together is a beginning; keeping together is progress; working together is success.</p>
                 </div>
 
@@ -55,7 +55,7 @@ const TeamSlider = () => {
                         >
                             <img
                                 src={teamSlides[currentIndex].url}
-                                alt={`${teamSlides[currentIndex].title} - Plus Dento Care Surat Dental Experts`}
+                                alt={`${teamSlides[currentIndex].title} - Dentocare Surat Dental Experts`}
                                 className="w-full h-full object-cover"
                                 loading="lazy"
                                 decoding="async"

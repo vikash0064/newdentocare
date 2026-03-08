@@ -94,7 +94,7 @@ const MeetTheDoctor = () => {
                             <div className="relative bg-[#1e293b] p-3 rounded-[3rem] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] border border-gray-800 ring-4 ring-gray-800/50 overflow-hidden group">
                                 <img
                                     src={IMAGES.doctor}
-                                    alt="Best Dentist in Surat - Dr. Nimisha Modi at Plus Dento Care"
+                                    alt="Best Dentist in Surat - Dr. Nimisha Modi at Dentocare"
                                     title="Dr. Nimisha Modi - Best Dentist in Surat"
                                     itemProp="image"
                                     width="450"

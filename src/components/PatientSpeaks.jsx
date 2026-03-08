@@ -9,7 +9,7 @@ const PatientSpeaks = () => {
             name: "Patel Chiragkumar Vishnubhai",
             date: "12 Apr 2024",
             rating: 5,
-            text: "I had an excellent experience with Dr. Nimisha Modi at Dent O Care. The treatment I received was top-notch, and the care and attention to detail were exceptional. Dr. Modi is a skilled professional who made me feel comfortable throughout the entire process. I highly recommend her for anyone in need of dental care.",
+            text: "I had an excellent experience with Dr. Nimisha Modi at Dentocare. The treatment I received was top-notch, and the care and attention to detail were exceptional. Dr. Modi is a skilled professional who made me feel comfortable throughout the entire process. I highly recommend her for anyone in need of dental care.",
             source: "Justdial",
             verified: true
         },

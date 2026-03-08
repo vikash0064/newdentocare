@@ -101,11 +101,40 @@ const Treatments = () => {
         }
     }, [hash, pathname]);
 
+    // Dynamic SEO based on route
+    const seoDataByPath = {
+        '/dental-implants': {
+            title: 'Dental Implants in Surat | Permanent Tooth Replacement | Dentocare',
+            description: 'Get premium dental implants in Surat at Dentocare. Dr. Nimisha Modi offers 3D-guided implant placement with 99% success rate. Korean, Swiss & German implant options from ₹18,000.'
+        },
+        '/root-canal': {
+            title: 'Painless Root Canal Treatment in Surat | Single-Visit RCT | Dentocare',
+            description: 'Save your natural teeth with painless root canal at Dentocare Surat. Advanced rotary endodontics, laser disinfection, and single-sitting convenience by Dr. Nimisha Modi.'
+        },
+        '/teeth-whitening': {
+            title: 'Professional Teeth Whitening in Surat | Cosmetic Dentistry | Dentocare',
+            description: 'Get a brighter smile with professional teeth whitening and cosmetic restoration at Dentocare Surat. Safe, effective procedures by Dr. Nimisha Modi.'
+        },
+        '/braces': {
+            title: 'Braces & Invisalign Clear Aligners in Surat | Orthodontics | Dentocare',
+            description: 'Straighten your teeth with metal braces, ceramic braces, or Invisalign clear aligners at Dentocare Surat. Customized orthodontic treatment plans by Dr. Nimisha Modi.'
+        },
+        '/pediatric-dentistry': {
+            title: 'Kids Dentist in Surat | Child-Friendly Dental Care | Dentocare',
+            description: 'Best pediatric dentist in Surat at Dentocare. Stress-free, gentle dental care for children including preventive treatments, fluoride therapy, and cavity management.'
+        }
+    };
+
+    const currentSeo = seoDataByPath[pathname] || {
+        title: 'Advanced Dental Treatments in Surat | Implants, RCT & Braces | Dentocare',
+        description: 'Explore specialized dental treatments at Dentocare Surat. Dr. Nimisha Modi provides dental implants, painless root canal, orthodontics, and cosmetic dentistry.'
+    };
+
     return (
         <main className="bg-[#0B1120] min-h-screen text-white relative overflow-x-hidden">
             <SEO
-                title="Advanced Dental Treatments in Surat | Implant, RCT & Braces"
-                description="Expert dental solutions at Plus Dento Care Surat. Specialized in Painless Root Canal, Robotic Dental Implants, and Invisalign by Dr. Nimisha Modi."
+                title={currentSeo.title}
+                description={currentSeo.description}
             />
             {/* Background Decorative Elements */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[120px] -z-0 pointer-events-none opacity-50"></div>
@@ -140,8 +169,8 @@ const Treatments = () => {
                             <div className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border border-gray-800 transform transition-transform duration-700 hover:scale-[1.02]">
                                 <img
                                     src={treatment.image}
-                                    alt={`${treatment.title} treatment in Surat - Best Dentist at Plus Dento Care`}
-                                    title={`${treatment.title} - Plus Dento Care`}
+                                    alt={`${treatment.title} treatment in Surat - Best Dentist at Dentocare`}
+                                    title={`${treatment.title} - Dentocare`}
                                     itemProp="image"
                                     loading="lazy"
                                     decoding="async"
@@ -169,10 +198,10 @@ const Treatments = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-10">
                                     {/* Pros */}
                                     <div>
-                                        <h4 className="flex items-center gap-3 font-semibold text-emerald-400 mb-4 md:mb-6 text-[10px] md:text-[13px] tracking-wide uppercase">
+                                        <h3 className="flex items-center gap-3 font-semibold text-emerald-400 mb-4 md:mb-6 text-[10px] md:text-[13px] tracking-wide uppercase">
                                             <span className="bg-emerald-500/20 p-1.5 rounded-lg border border-emerald-500/20"><Check size={16} /></span>
                                             Scientific Advantages
-                                        </h4>
+                                        </h3>
                                         <ul className="space-y-3 md:space-y-4">
                                             {treatment.pros.map((pro, i) => (
                                                 <li key={i} className="text-gray-400 text-[12px] md:text-sm font-medium flex items-start gap-2 md:gap-3">
@@ -185,10 +214,10 @@ const Treatments = () => {
 
                                     {/* Highlights */}
                                     <div>
-                                        <h4 className="flex items-center gap-3 font-semibold text-blue-400 mb-4 md:mb-6 text-[10px] md:text-[13px] tracking-wide uppercase">
+                                        <h3 className="flex items-center gap-3 font-semibold text-blue-400 mb-4 md:mb-6 text-[10px] md:text-[13px] tracking-wide uppercase">
                                             <span className="bg-blue-500/20 p-1.5 rounded-lg border border-blue-500/20"><Shield size={16} /></span>
                                             Patient Highlights
-                                        </h4>
+                                        </h3>
                                         <ul className="space-y-3 md:space-y-4">
                                             {treatment.highlights.map((highlight, i) => (
                                                 <li key={i} className="text-gray-400 text-[12px] md:text-sm font-medium flex items-start gap-2 md:gap-3">

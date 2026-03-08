@@ -74,7 +74,7 @@ const DoctorTeam = () => {
                                     <div className="relative aspect-[4/5] md:aspect-[4.5/6] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl z-10 transition-transform duration-500 group-hover/card:scale-[1.03]">
                                         <img
                                             src={doc.image}
-                                            alt={`Best dentist clinic in Surat - ${doc.name} at Plus Dento Care`}
+                                            alt={`Best dentist clinic in Surat - ${doc.name} at Dentocare`}
                                             width="400"
                                             height="500"
                                             loading="lazy"

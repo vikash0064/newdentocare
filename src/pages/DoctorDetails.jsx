@@ -27,14 +27,14 @@ const DoctorDetails = () => {
     }, []);
 
     const whatsappNumber = "916352534650";
-    const whatsappMessage = "Hi Dent O Care, I have a query regarding dental treatments.";
+    const whatsappMessage = "Hi Dentocare, I have a query regarding dental treatments.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
     return (
         <main className="bg-[#0B1120] text-white selection:bg-blue-500 selection:text-white">
             <SEO
-                title="Dr. Nimisha Modi | Best Dentist in Surat | Plus Dento Care"
-                description="Meet Dr. Nimisha Modi, a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design at Plus Dento Care Surat."
+                title="Dr. Nimisha Modi | Best Dentist in Surat | Dentocare"
+                description="Meet Dr. Nimisha Modi, a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design at Dentocare Surat."
             />
             {/* Profile Hero - Enhanced & Mobile Optimized */}
             <section ref={heroRef} className="relative pt-24 sm:pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden">
@@ -58,9 +58,12 @@ const DoctorDetails = () => {
                                 <div className="relative rounded-[2.5rem] overflow-hidden border-2 border-white/5 shadow-2xl z-10 group-hover:border-blue-500/20 transition-colors">
                                     <img
                                         src={IMAGES.doctor}
-                                        alt="Best Dentist in Surat - Dr. Nimisha Modi - Chief Specialist at Plus Dento Care"
+                                        alt="Dr. Nimisha Modi - Chief Dental Surgeon and Implantologist at Dentocare Surat"
+                                        title="Dr. Nimisha Modi - Best Dentist in Surat"
                                         loading="lazy"
                                         decoding="async"
+                                        width="400"
+                                        height="550"
                                         className="w-full aspect-[4/5.5] object-cover transform transition-all duration-1000 group-hover:scale-[1.05]"
                                     />
                                     {/* Vignette */}
@@ -197,7 +200,7 @@ const DoctorDetails = () => {
                             <div className="bg-[#111827]/60 backdrop-blur-xl rounded-3xl md:rounded-[2.5rem] p-6 md:p-12 border border-white/5 shadow-2xl">
                                 <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
                                     <div className="p-2 md:p-3 bg-emerald-500/10 rounded-xl text-emerald-400"><Award size={20} className="md:w-6 md:h-6" /></div>
-                                    <h2 className="text-xl md:text-2xl font-black text-white tracking-tight">Expert Narrative</h2>
+                                    <h2 className="text-xl md:text-2xl font-black text-white tracking-tight">Professional Background</h2>
                                 </div>
                                 <div className="space-y-3 md:space-y-4 text-gray-400 font-medium leading-relaxed text-xs md:text-base">
                                     <p>Dr. Nimisha Modi is a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design.</p>

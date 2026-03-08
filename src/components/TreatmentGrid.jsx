@@ -112,7 +112,7 @@ const TreatmentGrid = () => {
                             <div className="absolute inset-0 z-0 opacity-50 group-hover:opacity-70 transition-opacity duration-500">
                                 <img
                                     src={t.image}
-                                    alt={`${t.name} treatment in Surat - Best Dentist at Plus Dento Care`}
+                                    alt={`${t.name} treatment in Surat - Best Dentist at Dentocare`}
                                     title={`${t.name} Treatment`}
                                     itemProp="image"
                                     className="w-full h-full object-cover object-center"

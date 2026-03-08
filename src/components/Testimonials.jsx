@@ -15,7 +15,7 @@ const testimonials = [
         name: "Priya Patel",
         location: "Vesu, Surat",
         avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-        text: "Best dental clinic in Surat for implants. My mother got full mouth implants here and she can eat everything now. Thank you Dent O Care team for the excellent service.",
+        text: "Best dental clinic in Surat for implants. My mother got full mouth implants here and she can eat everything now. Thank you Dentocare team for the excellent service.",
         rating: 5
     },
     {

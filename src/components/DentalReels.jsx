@@ -121,7 +121,7 @@ const DentalReels = () => {
                             ) : (
                                 <img
                                     src={reel.thumbnail}
-                                    alt={`Best dentist clinic in Surat - ${reel.title} result at Plus Dento Care`}
+                                    alt={`Best dentist clinic in Surat - ${reel.title} result at Dentocare`}
                                     title={reel.title}
                                     itemProp="image"
                                     loading="lazy"

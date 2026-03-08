@@ -9,7 +9,7 @@ const Navbar = () => {
     const location = useLocation();
 
     const whatsappNumber = "916352534650";
-    const whatsappMessage = "Hi Dent O Care, I have a query regarding dental treatments.";
+    const whatsappMessage = "Hi Dentocare, I have a query regarding dental treatments.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
     useEffect(() => {
@@ -54,10 +54,10 @@ const Navbar = () => {
 
                         {/* 1. Logo Section */}
                         <div className="flex-shrink-0 z-20">
-                            <Link to="/" className="flex items-center group" aria-label="Dent O Care Home">
+                            <Link to="/" className="flex items-center group" aria-label="Dentocare Home">
                                 <img
                                     src={IMAGES.logo}
-                                    alt="Best dentist clinic in Surat - Plus Dento Care Logo"
+                                    alt="Best dentist clinic in Surat - Dentocare Logo"
                                     title="Dentocare Surat & Implant Centre"
                                     className="h-9 sm:h-11 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
                                     width="140"
@@ -93,7 +93,7 @@ const Navbar = () => {
                                 href={whatsappUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                aria-label="Chat with Dent O Care on WhatsApp for dental queries"
+                                aria-label="Chat with Dentocare on WhatsApp for dental queries"
                                 className="relative hidden xl:flex items-center gap-3 bg-emerald-500/10 hover:bg-emerald-500/20 px-6 py-2.5 rounded-full group transition-all duration-500 border border-emerald-500/30 overflow-hidden active:scale-95"
                             >
                                 <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-emerald-400/20 to-transparent -translate-x-full group-hover:animate-shimmer-fast pointer-events-none"></div>
@@ -141,7 +141,7 @@ const Navbar = () => {
                 <div className={`absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-500 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`} onClick={toggleMenu} />
                 <div className={`absolute top-0 right-0 h-full w-[70%] max-w-[280px] bg-[#0B1120] p-5 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) shadow-2xl flex flex-col border-l border-white/5 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <div className="flex items-center justify-between mb-8">
-                        <img src={IMAGES.logo} alt="Plus Dento Care Surat" className="h-7 w-auto" width="120" height="35" loading="eager" decoding="async" />
+                        <img src={IMAGES.logo} alt="Dentocare Surat" className="h-7 w-auto" width="120" height="35" loading="eager" decoding="async" />
                         <button onClick={toggleMenu} className="p-1.5 text-gray-300 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-colors" aria-label="Close menu"><X size={18} /></button>
                     </div>
                     <nav className="flex-grow">
