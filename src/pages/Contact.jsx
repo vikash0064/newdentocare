@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation, CheckCircle, Award, Star } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Contact = () => {
@@ -159,11 +159,66 @@ const Contact = () => {
                     ))}
                 </div>
 
+                {/* Merged Trust & SEO Section from Locations */}
+                <div className="mt-16 max-w-6xl mx-auto">
+                    <div className="bg-[#111827]/40 backdrop-blur-xl rounded-[2rem] p-8 md:p-12 border border-white/5 relative overflow-hidden mb-16">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+                            <div className="md:col-span-2">
+                                <h2 className="text-xl md:text-3xl font-black mb-6 uppercase tracking-tight">Trusted by Patients in Adajan, Pal & Vesu</h2>
+                                <p className="text-gray-400 mb-8 leading-relaxed font-medium text-xs md:text-sm">
+                                    With over 366+ five-star reviews, Dentocare has established itself as the leading multi-speciality dental implants and RCT center in Surat.
+                                    Our clinics are strategically located to be accessible for residents of Simanagar, Palanpur Road, Palanpur Patia, and New Adajan.
+                                </p>
+
+                                <div className="flex flex-wrap gap-4 md:gap-8">
+                                    <div className="flex items-center gap-3">
+                                        <CheckCircle className="text-emerald-400 w-5 h-5" />
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-300">Safe & Sterilized</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <Award className="text-blue-400 w-5 h-5" />
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-300">12+ Years Exp.</span>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <Star className="text-amber-400 w-5 h-5 fill-amber-400" />
+                                        <span className="text-[10px] font-black uppercase tracking-widest text-gray-300">Top Rated</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="relative group hidden md:block">
+                                <div className="absolute inset-0 bg-blue-600/20 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700"></div>
+                                <div className="relative aspect-square rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                                    <img
+                                        src="https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732107/dent3_vp24y8.png"
+                                        alt="Professional Clinic Environment at Dentocare Surat"
+                                        className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Areas We Serve List (Local SEO) */}
+                    <div className="mb-16">
+                        <h3 className="text-center text-[10px] font-black text-gray-500 uppercase tracking-[0.3em] mb-8">Serving These Major Areas in Surat</h3>
+                        <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
+                            {["Adajan", "Palanpur Road", "Simanagar", "Gaurav Path", "Pal", "Vesu", "Palanpur Patia", "City Light", "Piplod"].map((area, i) => (
+                                <span key={i} className="text-gray-500 font-bold hover:text-white transition-colors cursor-default text-xs md:text-sm">
+                                    {area}
+                                </span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
                 {/* Bottom CTA */}
-                <div className="mt-12 text-center max-w-2xl mx-auto">
+                <div className="mt-8 text-center max-w-2xl mx-auto">
                     <div className="bg-[#111827]/40 backdrop-blur-xl rounded-2xl p-6 md:p-8 border border-white/5">
-                        <h3 className="text-lg md:text-xl font-black text-white mb-3">Need Assistance?</h3>
-                        <p className="text-gray-400 text-xs md:text-sm mb-5">
+                        <h3 className="text-lg md:text-xl font-black text-white mb-3 text-center">Need Assistance?</h3>
+                        <p className="text-gray-400 text-xs md:text-sm mb-5 text-center px-4">
                             Call us and we'll guide you to the nearest branch
                         </p>
                         <div className="flex flex-wrap justify-center gap-3">

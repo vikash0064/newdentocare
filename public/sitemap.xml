@@ -146,4 +146,28 @@
     <priority>0.7</priority>
   </url>
   
+  <!-- Locations Page -->
+  <url>
+    <loc>https://www.plusdentocare.in/locations</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Dentist near Adajan (Location Alias) -->
+  <url>
+    <loc>https://www.plusdentocare.in/dentist-near-adajan</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Dental Clinic Simanagar (Location Alias) -->
+  <url>
+    <loc>https://www.plusdentocare.in/dental-clinic-simanagar-surat</loc>
+    <lastmod>2026-03-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

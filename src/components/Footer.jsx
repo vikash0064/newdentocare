@@ -130,6 +130,8 @@ const Footer = () => {
                         <ul className="space-y-3 pt-1">
                             {[
                                 { to: "/", label: "Home - Best Dentist in Surat" },
+                                { to: "/locations", label: "Branch Locations" },
+                                { to: "/blog", label: "Dental Health Blog" },
                                 { to: "/treatments", label: "Specialized Dental Treatments" },
                                 { to: "/doctors", label: "Meet Our Specialist Doctors" },
                                 { to: "/gallery", label: "Clinic Results & Gallery" },

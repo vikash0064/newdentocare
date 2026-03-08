@@ -46,22 +46,15 @@ const SEO = ({
         setMetaTag('name', 'googlebot', 'index, follow');
 
         // Language and Content Type
-        setMetaTag('http-equiv', 'content-language', 'en');
+        setMetaTag('http-equiv', 'content-language', 'en-IN');
         setMetaTag('name', 'language', 'English');
 
-        // Mobile Optimization
-        setMetaTag('name', 'theme-color', '#0B1120');
-        setMetaTag('name', 'mobile-web-app-capable', 'yes');
-        setMetaTag('name', 'apple-mobile-web-app-status-bar-style', 'black-translucent');
-
-        // Open Graph Tags (Facebook, LinkedIn)
+        // Open Graph Tags
         setMetaTag('property', 'og:title', pageTitle);
         setMetaTag('property', 'og:description', pageDescription);
         setMetaTag('property', 'og:url', fullUrl);
         setMetaTag('property', 'og:type', type);
         setMetaTag('property', 'og:image', image);
-        setMetaTag('property', 'og:image:width', '1200');
-        setMetaTag('property', 'og:image:height', '630');
         setMetaTag('property', 'og:site_name', 'Dentocare & Implant Centre');
         setMetaTag('property', 'og:locale', 'en_IN');
 
@@ -70,29 +63,6 @@ const SEO = ({
         setMetaTag('name', 'twitter:title', pageTitle);
         setMetaTag('name', 'twitter:description', pageDescription);
         setMetaTag('name', 'twitter:image', image);
-        setMetaTag('name', 'twitter:image:alt', pageTitle);
-        setMetaTag('name', 'twitter:site', '@plusdentocare');
-        setMetaTag('name', 'twitter:creator', '@plusdentocare');
-
-        // Open Graph Tags Extra
-        setMetaTag('property', 'og:image:alt', pageTitle);
-
-        // Local Business Optimization Tags
-        setMetaTag('name', 'geo.region', 'IN-GJ');
-        setMetaTag('name', 'geo.placename', 'Surat');
-        setMetaTag('name', 'geo.position', '21.2032;72.7669');
-        setMetaTag('name', 'ICBM', '21.2032, 72.7669');
-        setMetaTag('name', 'locality', 'Surat');
-        setMetaTag('name', 'region', 'Gujarat');
-        setMetaTag('name', 'country', 'India');
-
-        // Business/Organization Tags
-        setMetaTag('name', 'rating', '4.9');
-        setMetaTag('name', 'coverage', 'Worldwide');
-        setMetaTag('name', 'distribution', 'Global');
-        setMetaTag('name', 'target', 'all');
-        setMetaTag('name', 'HandheldFriendly', 'True');
-        setMetaTag('name', 'MobileOptimized', '320');
 
         // Canonical Link
         let canonical = document.querySelector('link[rel="canonical"]');
@@ -103,82 +73,63 @@ const SEO = ({
         }
         canonical.setAttribute('href', fullUrl);
 
-        // Hreflang link tags for language targeting
-        let hreflangIN = document.querySelector('link[hreflang="en-IN"]');
-        if (!hreflangIN) {
-            hreflangIN = document.createElement('link');
-            hreflangIN.setAttribute('rel', 'alternate');
-            hreflangIN.setAttribute('hreflang', 'en-IN');
-            document.head.appendChild(hreflangIN);
-        }
-        hreflangIN.setAttribute('href', fullUrl);
+        // Hreflang tags
+        const setHreflang = (lang, url) => {
+            let link = document.querySelector(`link[hreflang="${lang}"]`);
+            if (!link) {
+                link = document.createElement('link');
+                link.setAttribute('rel', 'alternate');
+                link.setAttribute('hreflang', lang);
+                document.head.appendChild(link);
+            }
+            link.setAttribute('href', url);
+        };
+        setHreflang('en-IN', fullUrl);
+        setHreflang('x-default', fullUrl);
 
-        let hreflangDefault = document.querySelector('link[hreflang="x-default"]');
-        if (!hreflangDefault) {
-            hreflangDefault = document.createElement('link');
-            hreflangDefault.setAttribute('rel', 'alternate');
-            hreflangDefault.setAttribute('hreflang', 'x-default');
-            document.head.appendChild(hreflangDefault);
-        }
-        hreflangDefault.setAttribute('href', fullUrl);
+        // --- STRUCTURED DATA (JSON-LD) ---
 
-        // Structured Data - Organization (JSON-LD)
-        const organizationSchema = {
+        // 1. DentalClinic Schema (Advanced LocalBusiness)
+        const clinicSchema = {
             "@context": "https://schema.org",
-            "@type": "Dentist",
-            "@id": `${siteUrl}/#dentist`,
+            "@type": "DentalClinic",
+            "@id": `${siteUrl}/#clinic`,
             "name": "Dentocare & Implant Centre",
-            "legalName": "Dentocare",
             "alternateName": "Dentocare Surat",
-            "itemOffered": "Dental Services",
-            "image": image,
             "url": siteUrl,
-            "telephone": "+91-6352534650",
+            "logo": "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732052/logo_cgdtgo.png",
+            "image": "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732052/logo_cgdtgo.png",
+            "description": pageDescription,
+            "telephone": "+916352534650",
             "priceRange": "₹₹",
-            "currenciesAccepted": "INR",
-            "paymentAccepted": "Cash, UPI, Credit Card, Debit Card",
             "address": [
                 {
                     "@type": "PostalAddress",
-                    "streetAddress": "2nd Floor, Tirupati Shopping Center, Beside Tapteshwar Mahadev Temple, Simanagar-2, Mashal Circle, Palanpur Road",
-                    "addressLocality": "Surat",
+                    "streetAddress": "Shop No. 7-8, Tirupati Shopping Center, Near Mashal Circle, Palanpur Road",
+                    "addressLocality": "Simanagar, Adajan",
                     "addressRegion": "Gujarat",
                     "postalCode": "395009",
                     "addressCountry": "IN"
                 },
                 {
                     "@type": "PostalAddress",
-                    "streetAddress": "122, First Floor, Eden Square, Gaurav Path Road, Opp. Fire Station",
-                    "addressLocality": "Palanpur, Surat",
+                    "streetAddress": "104, 1st Floor, Eden Square, Near Star Bazaar, Gaurav Path",
+                    "addressLocality": "Adajan, Pal",
                     "addressRegion": "Gujarat",
                     "postalCode": "395009",
                     "addressCountry": "IN"
                 }
             ],
-            "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-6352534650",
-                "contactType": "customer service",
-                "areaServed": "IN",
-                "availableLanguage": ["English", "Hindi", "Gujarati"]
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "21.2110523",
+                "longitude": "72.790154"
             },
-            "geo": [
-                {
-                    "@type": "GeoCoordinates",
-                    "latitude": 21.2032023,
-                    "longitude": 72.7669892
-                },
-                {
-                    "@type": "GeoCoordinates",
-                    "latitude": 21.2110523,
-                    "longitude": 72.790154
-                }
-            ],
             "openingHoursSpecification": [
                 {
                     "@type": "OpeningHoursSpecification",
                     "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                    "opens": "09:00",
+                    "opens": "10:00",
                     "closes": "20:00"
                 }
             ],
@@ -189,31 +140,37 @@ const SEO = ({
                 "bestRating": "5",
                 "worstRating": "1"
             },
-            "founder": {
-                "@type": "Person",
-                "name": "Dr. Nimisha Modi",
-                "jobTitle": "Chief Dentist & Implantologist"
-            },
-            "sameAs": [
-                "https://www.facebook.com/modi.nimisha.5",
-                "https://www.instagram.com/dentocare_dental",
-                "https://www.youtube.com/@dentocare_dental",
-                "https://www.justdial.com/Surat/Dent-O-Care-Advance-Multi-Speciality-Implant-Center-Mashal-Circle-Palanpur/0261PX261-X261-120524103126-P2Q8_BZDET"
+            "review": [
+                {
+                    "@type": "Review",
+                    "author": { "@type": "Person", "name": "Rajesh Kumar" },
+                    "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+                    "reviewBody": "Best dentist in Surat for implants. Dr. Nimisha is very professional."
+                }
             ],
-            "areaServed": {
-                "@type": "City",
-                "name": "Surat"
-            },
-            "medicalSpecialty": [
-                "Dental Implants",
-                "Root Canal Treatment",
-                "Cosmetic Dentistry",
-                "Orthodontics",
-                "Pediatric Dentistry"
+            "sameAs": [
+                "https://www.facebook.com/plusdentocare/",
+                "https://www.instagram.com/plusdentocare_surat/"
             ]
         };
 
-        // Breadcrumb Schema
+        // 2. Physician Schema (Dr. Nimisha Modi)
+        const physicianSchema = {
+            "@context": "https://schema.org",
+            "@type": "Physician",
+            "@id": `${siteUrl}/#doctor`,
+            "name": "Dr. Nimisha Modi",
+            "image": "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_400/v1768734665/doctor_sr6xdx.png",
+            "medicalSpecialty": ["Dentistry", "Implantology", "Orthodontics"],
+            "description": "Chief Dental Surgeon and Implantologist with 12+ years experience in Surat.",
+            "memberOf": { "@id": `${siteUrl}/#clinic` },
+            "alumniOf": {
+                "@type": "EducationalOrganization",
+                "name": "Dental College"
+            }
+        };
+
+        // 3. Breadcrumb Schema
         const pathSegments = location.pathname.split('/').filter(x => x);
         const breadcrumbSchema = {
             "@context": "https://schema.org",
@@ -228,27 +185,13 @@ const SEO = ({
                 ...pathSegments.map((segment, index) => ({
                     "@type": "ListItem",
                     "position": index + 2,
-                    "name": segment.charAt(0) ? segment.charAt(0).toUpperCase() + segment.slice(1) : segment,
+                    "name": segment.charAt(0).toUpperCase() + segment.slice(1).replace(/-/g, ' '),
                     "item": `${siteUrl}/${pathSegments.slice(0, index + 1).join('/')}`
                 }))
             ]
         };
 
-        // WebSite Schema for Search Box
-        const websiteSchema = {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "@id": `${siteUrl}/#website`,
-            "url": siteUrl,
-            "name": "Dentocare",
-            "potentialAction": {
-                "@type": "SearchAction",
-                "target": `${siteUrl}/?s={search_term_string}`,
-                "query-input": "required name=search_term_string"
-            }
-        };
-
-        // FAQ Schema
+        // 4. FAQ Schema
         let faqSchema = null;
         if (faqData && faqData.length > 0) {
             faqSchema = {
@@ -265,176 +208,7 @@ const SEO = ({
             };
         }
 
-        // Video Schema
-        const videoSchemas = (videoData && videoData.length > 0 ? videoData : [
-            {
-                title: "Smile Transformation at Dentocare Surat",
-                description: "Real patient smile transformation results at Dentocare Surat.",
-                thumbnail: "https://i.ytimg.com/vi/JQct9JOXQ34/hq720.jpg",
-                uploadDate: "2024-01-01",
-                embedUrl: "https://www.youtube.com/embed/JQct9JOXQ34"
-            }
-        ]).map(video => ({
-            "@context": "https://schema.org",
-            "@type": "VideoObject",
-            "name": video.title,
-            "description": video.description,
-            "thumbnailUrl": [video.thumbnail],
-            "uploadDate": video.uploadDate || "2024-01-01",
-            "contentUrl": video.embedUrl,
-            "embedUrl": video.embedUrl,
-            "publisher": {
-                "@type": "Organization",
-                "name": "Dentocare & Implant Centre",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732052/logo_cgdtgo.png"
-                }
-            }
-        }));
-
-        // Image Schema
-        const imageSchema = {
-            "@context": "https://schema.org",
-            "@type": "ImageObject",
-            "contentUrl": image,
-            "license": "https://www.plusdentocare.in/",
-            "acquireLicensePage": "https://www.plusdentocare.in/contact",
-            "creator": {
-                "@type": "Person",
-                "name": "Dr. Nimisha Modi"
-            },
-            "copyrightNotice": "Dentocare Surat"
-        };
-
-
-        // Service Schema for treatments
-        const serviceSchema = {
-            "@context": "https://schema.org",
-            "@type": "Service",
-            "serviceType": "Dental Care",
-            "provider": {
-                "@type": "Dentist",
-                "name": "Dentocare & Implant Centre"
-            },
-            "areaServed": {
-                "@type": "City",
-                "name": "Surat"
-            },
-            "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Dental Services",
-                "itemListElement": [
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Dental Implants"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Root Canal Treatment"
-                        }
-                    },
-                    {
-                        "@type": "Offer",
-                        "itemOffered": {
-                            "@type": "Service",
-                            "name": "Braces & Orthodontics"
-                        }
-                    }
-                ]
-            }
-        };
-
-        // Person Schema for Dr. Nimisha Modi
-        const personSchema = {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "@id": `${siteUrl}/#doctor`,
-            "name": "Dr. Nimisha Modi",
-            "jobTitle": "Chief Dentist & Implantologist",
-            "description": "Dr. Nimisha Modi is a leading dentist in Surat with 12+ years of experience in dental implants, root canal treatment, and cosmetic dentistry.",
-            "image": "https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto,w_800/v1768734665/doctor_sr6xdx.png",
-            "url": `${siteUrl}/doctors`,
-            "telephone": "+91-6352534650",
-            "alumniOf": {
-                "@type": "EducationalOrganization",
-                "name": "Dental College"
-            },
-            "knowsAbout": ["Dental Implants", "Root Canal Treatment", "Cosmetic Dentistry", "Orthodontics", "Oral Surgery", "Pediatric Dentistry"],
-            "worksFor": {
-                "@type": "Dentist",
-                "name": "Dentocare & Implant Centre",
-                "url": siteUrl
-            },
-            "sameAs": [
-                "https://www.facebook.com/modi.nimisha.5",
-                "https://www.instagram.com/dentocare_dental"
-            ]
-        };
-
-        // MedicalBusiness Schema
-        const medicalBusinessSchema = {
-            "@context": "https://schema.org",
-            "@type": "MedicalBusiness",
-            "@id": `${siteUrl}/#medical`,
-            "name": "Dentocare & Implant Centre",
-            "url": siteUrl,
-            "telephone": "+91-6352534650",
-            "medicalSpecialty": "Dentistry",
-            "isAcceptingNewPatients": true,
-            "availableService": [
-                {
-                    "@type": "MedicalProcedure",
-                    "name": "Dental Implant Surgery",
-                    "procedureType": "Surgical"
-                },
-                {
-                    "@type": "MedicalProcedure",
-                    "name": "Root Canal Treatment",
-                    "procedureType": "Noninvasive"
-                },
-                {
-                    "@type": "MedicalProcedure",
-                    "name": "Orthodontic Treatment (Braces & Aligners)",
-                    "procedureType": "Noninvasive"
-                },
-                {
-                    "@type": "MedicalProcedure",
-                    "name": "Teeth Whitening",
-                    "procedureType": "Noninvasive"
-                },
-                {
-                    "@type": "MedicalProcedure",
-                    "name": "Pediatric Dental Care",
-                    "procedureType": "Noninvasive"
-                },
-                {
-                    "@type": "MedicalProcedure",
-                    "name": "Oral & Maxillofacial Surgery",
-                    "procedureType": "Surgical"
-                }
-            ],
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "2nd Floor, Tirupati Shopping Center, Simanagar-2, Palanpur Road",
-                "addressLocality": "Surat",
-                "addressRegion": "Gujarat",
-                "postalCode": "395009",
-                "addressCountry": "IN"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 21.2032023,
-                "longitude": 72.7669892
-            }
-        };
-
-        // Insert or update JSON-LD scripts
+        // Helper to update JSON-LD
         const updateJsonLd = (id, schema) => {
             let script = document.getElementById(id);
             if (schema) {
@@ -450,15 +224,18 @@ const SEO = ({
             }
         };
 
-        updateJsonLd('organization-schema', organizationSchema);
+        updateJsonLd('clinic-schema', clinicSchema);
+        updateJsonLd('doctor-schema', physicianSchema);
         updateJsonLd('breadcrumb-schema', breadcrumbSchema);
-        updateJsonLd('website-schema', websiteSchema);
-        updateJsonLd('service-schema', serviceSchema);
-        updateJsonLd('image-schema', imageSchema);
-        updateJsonLd('person-schema', personSchema);
-        updateJsonLd('medical-business-schema', medicalBusinessSchema);
-        videoSchemas.forEach((v, i) => updateJsonLd(`video-schema-${i}`, v));
         if (faqSchema) updateJsonLd('faq-schema', faqSchema);
+
+        // Cleanup on unmount
+        return () => {
+            ['clinic-schema', 'doctor-schema', 'breadcrumb-schema', 'faq-schema'].forEach(id => {
+                const script = document.getElementById(id);
+                if (script) script.remove();
+            });
+        };
 
     }, [pageTitle, pageDescription, pageKeywords, fullUrl, image, type, author, location.pathname, faqData]);
 

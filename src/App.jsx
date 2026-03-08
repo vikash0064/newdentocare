@@ -68,6 +68,9 @@ const AppContent = () => {
             <Route path="/pediatric-dentistry" element={<Treatments />} />
             <Route path="/faq" element={<Home />} />
             <Route path="/about-us" element={<Home />} />
+            <Route path="/locations" element={<Contact />} />
+            <Route path="/dentist-near-adajan" element={<Contact />} />
+            <Route path="/dental-clinic-simanagar-surat" element={<Contact />} />
 
             <Route path="/admin" element={<Admin />} />
             <Route path="/blog" element={<Blog />} />

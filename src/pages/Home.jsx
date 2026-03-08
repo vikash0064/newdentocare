@@ -11,6 +11,7 @@ import ReviewCTA from '../components/ReviewCTA';
 import DentalReels from '../components/DentalReels';
 import PatientSpeaks from '../components/PatientSpeaks';
 import LatestBlog from '../components/LatestBlog';
+import TrustStrip from '../components/TrustStrip';
 import { Link } from 'react-router-dom';
 
 const LoadingSection = ({ height = "h-screen" }) => (
@@ -63,6 +64,7 @@ const Home = () => {
 
             {/* Main Sections with natural height */}
             <Hero loading="eager" />
+            <TrustStrip />
             <StatsStrip />
             <TreatmentGrid />
             <MeetTheDoctor />
