@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import gsap from 'gsap';
-import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Activity, Award, Heart, ShieldCheck, Star, Users, Clock, Calendar, MousePointer2, MessageCircle, Sparkles, Video } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Activity, Award, Heart, ShieldCheck, Star, Users, Clock, Video, ArrowRight } from 'lucide-react';
 import { IMAGES } from '../constants';
 
 import { useData } from '../context/DataContext';
@@ -40,7 +40,6 @@ const Hero = () => {
     const context = useData();
     const { galleryImages = [] } = context || {};
     
-    // Filter dynamic slides and map them to the same structure as DEFAULT_SLIDES
     const dynamicSlides = galleryImages
         .filter(img => img.category === 'Hero')
         .map(img => ({
@@ -49,7 +48,6 @@ const Hero = () => {
             sub: img.author || "Advanced Dental Care"
         }));
 
-    // Use dynamic slides if they exist, otherwise use defaults
     const activeGallery = dynamicSlides.length > 0 ? dynamicSlides : DEFAULT_SLIDES;
 
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -60,17 +58,13 @@ const Hero = () => {
     const buttonsRef = useRef(null);
     const statsContainerRef = useRef(null);
 
-    const whatsappNumber = "916352534650";
-    const whatsappMessage = "Hi Dentocare, I have a query regarding dental treatments.";
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-
     const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % activeGallery.length);
     const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + activeGallery.length) % activeGallery.length);
 
     useEffect(() => {
         const interval = setInterval(nextImage, 6000);
         return () => clearInterval(interval);
-    }, []);
+    }, [activeGallery.length]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -81,8 +75,7 @@ const Hero = () => {
                 .fromTo(descRef.current, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8 }, "-=0.6")
                 .fromTo(buttonsRef.current.children, { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, stagger: 0.1, ease: "back.out(1.7)" }, "-=0.6")
                 .fromTo(statsContainerRef.current.children, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.1 }, "-=0.5")
-                // Start with right section already visible to avoid LCP delay if JS is slow
-                .from(rightSectionRef.current, { x: 60, opacity: 0.5, duration: 1.2, ease: "power3.out" }, "-=1.2");
+                .from(rightSectionRef.current, { x: 60, opacity: 0, duration: 1.2, ease: "power3.out" }, "-=1.2");
 
             gsap.to(".floating-badge", { y: -15, duration: 2, repeat: -1, yoyo: true, ease: "sine.inOut", stagger: 0.5 });
         }, containerRef);
@@ -91,17 +84,14 @@ const Hero = () => {
 
     return (
         <section ref={containerRef} className="relative min-h-screen bg-[#0B1120] pt-20 sm:pt-28 lg:pt-32 pb-20 overflow-hidden flex items-center">
-            {/* Background elements */}
             <div className="absolute top-0 inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(37,99,235,0.05),transparent_50%)]"></div>
             <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-blue-600/[0.02] rounded-full blur-[150px]"></div>
 
-            {/* Fine Grid Pattern */}
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
 
             <div className="container mx-auto px-6 lg:px-16 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
-                    {/* LEFT CONTENT */}
                     <div className="w-full lg:w-1/2 text-left">
                         <div className="status-badge inline-flex items-center gap-2 px-3 py-1.5 bg-white/5 backdrop-blur-md rounded-full mb-6 border border-white/10 shadow-2xl">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
@@ -123,17 +113,17 @@ const Hero = () => {
                         </div>
 
                         <div ref={buttonsRef} className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 mb-10 w-full px-2 sm:px-0">
-                            <Link href="/gallery" aria-label="Open clinical results and photo gallery" className="w-full sm:w-auto bg-[#2563eb] hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide shadow-[0_15px_30px_-10px_rgba(37,99,235,0.4)] transition-all flex items-center justify-center gap-2.5 active:scale-95 group" style={{ fontFamily: 'var(--font-outfit)' }}>
+                            <Link href="/gallery" aria-label="Open clinic gallery" className="w-full sm:w-auto bg-[#2563eb] hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide shadow-[0_15px_30px_-10px_rgba(37,99,235,0.4)] transition-all flex items-center justify-center gap-2.5 group">
                                 <Video size={16} className="text-blue-200" /> View Gallery
                             </Link>
-                            <Link href="/treatments" aria-label="Explore dental treatments and services" className="w-full sm:w-auto bg-[#1e293b]/50 hover:bg-[#1e293b] text-white border border-white/10 px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all flex items-center justify-center gap-2.5 active:scale-95 hover:border-white/30 group" style={{ fontFamily: 'var(--font-outfit)' }}>
+                            <Link href="/treatments" aria-label="Explore dental treatments" className="w-full sm:w-auto bg-[#1e293b]/50 hover:bg-[#1e293b] text-white border border-white/10 px-8 py-4 rounded-full font-bold text-xs sm:text-sm tracking-wide transition-all flex items-center justify-center gap-2.5 group">
                                 Explore Services <ArrowRight size={16} className="group-hover:translate-x-1.5 transition-transform" />
                             </Link>
                         </div>
 
                         <div ref={statsContainerRef} className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                             {stats.map((stat, i) => (
-                                <div key={i} className="flex flex-col items-center sm:items-start p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors cursor-default">
+                                <div key={i} className="flex flex-col items-center sm:items-start p-4 bg-white/5 rounded-2xl border border-white/5 hover:bg-white/10 transition-colors">
                                     <div className="text-2xl font-black text-white mb-1"><AnimatedCounter target={stat.target} suffix={stat.suffix} /></div>
                                     <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{stat.label}</span>
                                 </div>
@@ -141,28 +131,25 @@ const Hero = () => {
                         </div>
                     </div>
 
-                    {/* RIGHT VISUAL - MATCHING SCREENSHOT */}
                     <div ref={rightSectionRef} className="w-full lg:w-1/2 relative">
                         <div className="relative group perspective-1000">
-                            {/* Main Frame */}
                             <div className="relative rounded-[3rem] sm:rounded-[4rem] overflow-hidden border-[12px] border-[#1e293b] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] bg-[#1e293b] aspect-[4/5] sm:aspect-[4/5] lg:h-[650px] w-full max-w-[500px] mx-auto lg:mx-0">
                                 {activeGallery.map((img, idx) => (
                                      <div key={idx}
                                          className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
                                          style={{ willChange: 'opacity' }}>
-                                         <img
+                                         <Image
                                              src={img.src}
                                              alt={img.label}
                                              title={img.label}
                                              className="w-full h-full object-cover object-center"
-                                             width="500"
-                                             height="625"
-                                             loading={idx === 0 ? "eager" : "lazy"}
-                                             decoding="async"
+                                             width={500}
+                                             height={625}
+                                             priority={idx === 0}
+                                             loading={idx === 0 ? undefined : "lazy"}
                                          />
                                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
 
-                                         {/* Bottom Label */}
                                          <div className="absolute bottom-10 left-10 right-10">
                                              <h3 className="text-3xl font-black text-white mb-2 tracking-tight">{img.label}</h3>
                                              <p className="text-gray-300 font-bold text-sm tracking-wide">{img.sub}</p>
@@ -170,25 +157,22 @@ const Hero = () => {
                                      </div>
                                  ))}
 
-                                 {/* Arrows */}
                                  <div className="absolute top-1/2 -translate-y-1/2 left-6">
-                                     <button onClick={prevImage} aria-label="Previous clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
+                                     <button onClick={prevImage} aria-label="Previous image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10">
                                          <ChevronLeft size={24} />
                                      </button>
                                  </div>
                                  <div className="absolute top-1/2 -translate-y-1/2 right-6">
-                                     <button onClick={nextImage} aria-label="Next clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
+                                     <button onClick={nextImage} aria-label="Next image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10">
                                          <ChevronRight size={24} />
                                      </button>
                                  </div>
 
-                                 {/* Slide Indicator */}
                                  <div className="absolute bottom-10 right-10 bg-black/40 backdrop-blur-xl px-4 py-2 rounded-xl border border-white/10">
                                      <span className="text-white font-black tracking-widest text-sm">{currentImageIndex + 1} / {activeGallery.length}</span>
                                  </div>
                             </div>
 
-                            {/* Floating Badges */}
                             <div className="floating-badge absolute -top-8 -right-8 z-20 bg-[#1e293b] p-5 rounded-3xl border border-white/10 shadow-3xl hidden md:flex items-center gap-4">
                                 <div className="w-12 h-12 rounded-2xl bg-blue-600/20 flex items-center justify-center text-blue-400">
                                     <Activity size={24} />
@@ -198,36 +182,8 @@ const Hero = () => {
                                     <p className="text-white font-black text-base leading-none">Latest Tech</p>
                                 </div>
                             </div>
-
-                            <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 flex flex-row gap-2 sm:gap-4 w-[95%] sm:w-[85%] z-20">
-                                <div className="floating-badge flex-1 bg-[#1e293b]/90 backdrop-blur-xl p-3 sm:p-5 rounded-2xl sm:rounded-3xl border border-white/10 shadow-3xl flex items-center gap-2 sm:gap-4">
-                                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-600/20 flex items-center justify-center text-blue-400 shrink-0">
-                                        <ShieldCheck size={16} className="sm:size-[20px]" />
-                                    </div>
-                                    <div className="min-w-0">
-                                        <p className="text-[8px] sm:text-[9px] font-black text-blue-400 uppercase tracking-widest mb-0.5 sm:mb-1 leading-none">Certified</p>
-                                        <p className="text-white font-black text-[10px] sm:text-sm leading-none truncate">JCI Accredited</p>
-                                    </div>
-                                </div>
-                                <div className="floating-badge flex-1 bg-[#1e293b]/90 backdrop-blur-xl p-3 sm:p-5 rounded-2xl sm:rounded-3xl border border-white/10 shadow-3xl flex items-center gap-2 sm:gap-4">
-                                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-500 shrink-0">
-                                        <Star size={16} className="sm:size-[20px]" fill="currentColor" />
-                                    </div>
-                                    <div className="min-w-0">
-                                        <p className="text-[8px] sm:text-[9px] font-black text-amber-500 uppercase tracking-widest mb-0.5 sm:mb-1 leading-none">Top Rated</p>
-                                        <p className="text-white font-black text-[10px] sm:text-sm leading-none truncate">4.9/5 Reviews</p>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            {/* Bottom Mouse Indicator */}
-            <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-3 opacity-30">
-                <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
-                    <div className="w-1 h-2 bg-white rounded-full animate-bounce"></div>
                 </div>
             </div>
         </section>

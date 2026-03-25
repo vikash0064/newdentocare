@@ -42,10 +42,7 @@ const Blog = () => {
 
     return (
         <div className="bg-[#0B1120] min-h-screen font-sans">
-            <SEO
-                title="Dental Health Blog | Dentocare Surat | Dr. Nimisha Modi"
-                description="Stay updated with the latest in dental care, cosmetic dentistry, and oral health insights from Dr. Nimisha Modi at Dentocare Surat."
-            />
+            <SEO description="Stay updated with the latest in dental care, cosmetic dentistry, and oral health insights from Dr. Nimisha Modi at Dentocare Surat." />
 
             {/* Hero Section */}
             {/* Hero Section */}

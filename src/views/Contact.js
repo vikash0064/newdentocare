@@ -39,10 +39,7 @@ const Contact = () => {
 
     return (
         <main className="bg-[#0B1120] min-h-screen relative overflow-hidden text-white">
-            <SEO
-                title="Contact Us | Best Dentist in Surat | Dr. Nimisha Modi"
-                description="Visit Dentocare at our Palanpur Road (Simanagar) or Gaurav Path branches in Surat. Contact Dr. Nimisha Modi for expert dental care."
-            />
+            <SEO description="Visit Dentocare at our Palanpur Road (Simanagar) or Gaurav Path branches in Surat. Contact Dr. Nimisha Modi for expert dental care." />
 
             {/* Background Elements */}
             <div className="absolute top-0 left-0 w-full h-[400px] bg-blue-600/5 rounded-full blur-[100px] -z-0"></div>

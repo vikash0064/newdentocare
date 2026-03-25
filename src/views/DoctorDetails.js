@@ -33,10 +33,7 @@ const DoctorDetails = () => {
 
     return (
         <main className="bg-[#0B1120] text-white selection:bg-blue-500 selection:text-white">
-            <SEO
-                title="Dr. Nimisha Modi | Best Dentist in Surat | Dentocare"
-                description="Meet Dr. Nimisha Modi, a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design at Dentocare Surat."
-            />
+            <SEO description="Meet Dr. Nimisha Modi, a smile architect with 12+ years of clinical excellence in complex implantology and aesthetic design at Dentocare Surat." />
             {/* Profile Hero - Enhanced & Mobile Optimized */}
             <section ref={heroRef} className="relative pt-24 sm:pt-28 pb-16 md:pt-32 md:pb-24 overflow-hidden">
                 {/* Subtle Background Glows */}

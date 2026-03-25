@@ -135,7 +135,6 @@ const Treatments = () => {
     return (
         <main className="bg-[#0B1120] min-h-screen text-white relative overflow-x-hidden">
             <SEO
-                title={currentSeo.title}
                 description={currentSeo.description}
             />
             {/* Background Decorative Elements */}

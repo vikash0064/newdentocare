@@ -56,10 +56,7 @@ const ClinicGallery = () => {
 
     return (
         <main ref={containerRef} className="pt-24 md:pt-36 pb-24 bg-[#0B1120] min-h-screen text-white overflow-hidden relative selection:bg-blue-500">
-            <SEO
-                title="Smile Gallery: Dental Results & Transformations | Dentocare Surat"
-                description="View real patient transformations and results at Dentocare Surat. See our clinical success stories in dental implants, smile design, and braces by Dr. Nimisha Modi."
-            />
+            <SEO description="View real patient transformations and results at Dentocare Surat. See our clinical success stories in dental implants, smile design, and braces by Dr. Nimisha Modi." />
             {/* Background Glows */}
             <div className="absolute top-0 inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(37,99,235,0.08),transparent_50%)]"></div>
 

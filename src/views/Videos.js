@@ -145,10 +145,7 @@ const Videos = () => {
 
     return (
         <main className="bg-[#050811] min-h-screen w-full flex flex-col relative">
-            <SEO
-                title="Patient Stories & Dental Reels | Dentocare Surat"
-                description="Watch our latest dental transformations, patient testimonials, and clinical highlights by Dr. Nimisha Modi in our video gallery at Dentocare Surat."
-            />
+            <SEO description="Watch our latest dental transformations, patient testimonials, and clinical highlights by Dr. Nimisha Modi in our video gallery at Dentocare Surat." />
             <div className="absolute inset-0 bg-[#050811] -z-20"></div>
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_10%,rgba(37,99,235,0.08),transparent_50%)] pointer-events-none -z-10"></div>
             <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_90%,rgba(239,68,68,0.05),transparent_50%)] pointer-events-none -z-10"></div>

@@ -62,10 +62,8 @@ const BlogPost = () => {
     return (
         <div className="bg-[#0B1120] min-h-screen font-sans text-gray-300">
             <SEO
-                title={`${post.title} | Dentocare Surat Blog`}
                 description={post.content.substring(0, 155)}
                 image={post.image}
-                type="article"
             />
 
             <article className="pt-32 pb-20" itemScope itemType="https://schema.org/Article">

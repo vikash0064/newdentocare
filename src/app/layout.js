@@ -1,8 +1,23 @@
+import { Outfit, Poppins } from 'next/font/google';
 import '../index.css';
 import Script from 'next/script';
 import { DataProvider } from '../context/DataContext';
 import { ConditionalBreadcrumbs, ConditionalFooter, ConditionalNavbar } from '../components/ConditionalLayout';
 import WhatsAppButton from '../components/WhatsAppButton';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['500', '800', '900'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '700', '900'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 export const viewport = {
   themeColor: '#0B1120',
@@ -77,7 +92,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" className={`${outfit.variable} ${poppins.variable}`}>
       <head>
         <meta name="geo.region" content="IN-GJ" />
         <meta name="geo.placename" content="Surat" />
@@ -87,7 +102,7 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="true" />
         <link rel="dns-prefetch" href="https://elfsightcdn.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;800;900&family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+        
         <Script id="structured-data-business" type="application/ld+json" strategy="afterInteractive">
           {`
             {
@@ -156,8 +171,8 @@ export default function RootLayout({ children }) {
             }
           `}
         </Script>
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-97CH0NSLY4" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-97CH0NSLY4" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -168,7 +183,7 @@ export default function RootLayout({ children }) {
         <Script 
           id="elfsight-platform"
           src="https://elfsightcdn.com/platform.js" 
-          strategy="afterInteractive" 
+          strategy="lazyOnload" 
           defer 
         />
       </head>
@@ -191,4 +206,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-

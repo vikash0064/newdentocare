@@ -12,16 +12,12 @@ const DentalReels = () => {
     // List of provided YouTube Shorts IDs
     const shortsIds = [
         "JQct9JOXQ34", "PdiSeGPyoQg", "Dqs_efUM4I4", "SQ7rcZNdc9E",
-        "YiiplwDndYc", "vxLaBCdHSo4", "soWSu72X3Jc", "ObdG7LJO_Cc",
-        "kRnJHFi92ao", "hVMjsr9NOPE", "WMgUEMFe-zQ", "zjP2nCyNqvk",
-        "cyI1DZk7P5c", "bS_PCjL0uMs", "qP1ryI7ltKQ", "oFXA4A1NHpk", "xOedWVbnOG4"
+        "YiiplwDndYc", "vxLaBCdHSo4", "soWSu72X3Jc", "ObdG7LJO_Cc"
     ];
 
     const titles = [
         "Smile Transformation", "Happy Patient", "Dental Implants", "Root Canal Success",
-        "Teeth Whitening", "Clinic Tour", "Patient Story", "Expert Care",
-        "Pain Free Dentistry", "Kids Dental Care", "Orthodontic Result", "Smile Design",
-        "Full Mouth Rehab", "Emergency Care", "Advanced Tech", "Hygiene Standards", "Happy Smiles"
+        "Teeth Whitening", "Clinic Tour", "Patient Story", "Expert Care"
     ];
 
     const staticReels = shortsIds.map((id, index) => ({
