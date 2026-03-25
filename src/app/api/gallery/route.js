@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import connectToDatabase from '../../../lib/mongodb';
-import GalleryImage from '../../../models/GalleryImage';
+import connectToDatabase from '@/lib/mongodb';
+import GalleryImage from '@/models/GalleryImage';
 import cloudinary from '../../../lib/cloudinary';
 
 export async function GET() {

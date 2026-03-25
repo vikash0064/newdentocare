@@ -70,34 +70,44 @@ If you are looking for a kids dentist in Surat near Palanpur Road, visit Dentoca
     ]);
     const [loading, setLoading] = useState(true);
 
+    // Safe fetch helper — never throws, always returns fallback on any failure
+    const safeFetch = async (url, options) => {
+        try {
+            const res = await fetch(url, options);
+            if (res.ok && res.headers.get('content-type')?.includes('application/json')) {
+                const data = await res.json();
+                return Array.isArray(data) ? data : [];
+            }
+            return [];
+        } catch {
+            // Silently return empty array on ANY error (network, abort, parse, etc.)
+            return [];
+        }
+    };
+
     // Fetch Data from MongoDB with Timeout protection
     const fetchData = async (signal) => {
         try {
             const fetchOptions = { signal };
-            const [reg, vres, bres, tres] = await Promise.all([
-                fetch(`${API_URL}/api/gallery`, fetchOptions),
-                fetch(`${API_URL}/api/videos`, fetchOptions),
-                fetch(`${API_URL}/api/blogs`, fetchOptions),
-                fetch(`${API_URL}/api/testimonials`, fetchOptions)
+
+            // Each fetch is independent — one failing won't affect others
+            const [gData, vData, bData, tData] = await Promise.allSettled([
+                safeFetch(`${API_URL}/api/gallery`, fetchOptions),
+                safeFetch(`${API_URL}/api/videos`, fetchOptions),
+                safeFetch(`${API_URL}/api/blogs`, fetchOptions),
+                safeFetch(`${API_URL}/api/testimonials`, fetchOptions)
             ]);
 
-            const gData = reg.ok && reg.headers.get('content-type')?.includes('application/json') ? await reg.json() : [];
-            const vData = vres.ok && vres.headers.get('content-type')?.includes('application/json') ? await vres.json() : [];
-            const bData = bres.ok && bres.headers.get('content-type')?.includes('application/json') ? await bres.json() : [];
-            const tData = tres.ok && tres.headers.get('content-type')?.includes('application/json') ? await tres.json() : [];
-
-            setGalleryImages(Array.isArray(gData) ? gData : []);
-            setVideoList(Array.isArray(vData) ? vData : []);
-            setBlogList(Array.isArray(bData) ? bData : []);
-            setTestimonialList(Array.isArray(tData) ? tData : []);
-        } catch (err) {
-            if (err.name === 'AbortError') return;
-            console.error('Data fetch failed:', err);
-            // Fallback to empty arrays so the app still renders
-            setGalleryImages([]);
-            setVideoList([]);
-            setBlogList([]);
-            setTestimonialList([]);
+            setGalleryImages(gData.status === 'fulfilled' ? gData.value : []);
+            setVideoList(vData.status === 'fulfilled' ? vData.value : []);
+            setBlogList(prev => {
+                const fetched = bData.status === 'fulfilled' ? bData.value : [];
+                // Keep initial blogs if API returns nothing
+                return fetched.length > 0 ? fetched : prev;
+            });
+            setTestimonialList(tData.status === 'fulfilled' ? tData.value : []);
+        } catch {
+            // Silently ignore — app will use initial/fallback state
         } finally {
             setLoading(false);
         }

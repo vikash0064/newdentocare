@@ -12,10 +12,27 @@ if (!cached) cached = global.mongoose = { conn: null, promise: null };
 async function connectToDatabase() {
   if (cached.conn) return cached.conn;
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false }).then(mongoose => mongoose);
+    cached.promise = mongoose
+      .connect(MONGODB_URI, {
+        bufferCommands: false,
+        serverSelectionTimeoutMS: 10000, // 10s timeout instead of hanging forever
+        connectTimeoutMS: 10000,
+      })
+      .then((m) => m)
+      .catch((err) => {
+        // Reset cached promise so next call retries instead of reusing failed promise
+        cached.promise = null;
+        throw err;
+      });
   }
-  cached.conn = await cached.promise;
-  return cached.conn;
+  try {
+    cached.conn = await cached.promise;
+    return cached.conn;
+  } catch (err) {
+    cached.promise = null;
+    throw err;
+  }
 }
 
 export default connectToDatabase;
+
