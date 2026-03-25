@@ -209,15 +209,15 @@ const Footer = () => {
                         <div className="flex justify-center lg:justify-end gap-6 text-[9px] font-black uppercase tracking-[0.2em] text-gray-300 order-3 lg:order-3">
                             <Link href="/contact" className="hover:text-blue-400 transition-colors">Privacy</Link>
                             <Link href="/contact" className="hover:text-blue-400 transition-colors">Emergency</Link>
-                            <Link href="/admin" className="text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-1 group/admin">
-                                <Lock size={10} className="group-hover/admin:scale-110 transition-transform" />
-                                Admin
+                            <Link href="/admin" className="text-blue-500/60 hover:text-blue-400 transition-all flex items-center gap-1 group/admin">
+                                <Lock size={10} className="group-hover/admin:scale-110 transition-transform group-hover/admin:text-blue-400 opacity-50 group-hover/admin:opacity-100" />
+                                <span className="group-hover/admin:underline decoration-blue-500/30 underline-offset-4">Admin Portal</span>
                             </Link>
                         </div>
                     </div>
                 </div>
-            </div >
-        </footer >
+            </div>
+        </footer>
     );
 };
 

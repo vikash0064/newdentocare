@@ -10,9 +10,20 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://www.plusdentocare.in'),
-  title: 'Best Dentist in Surat | Dental Implants & RCT | Dentocare | Dr Nimisha Modi',
-  description: 'Looking for the best dentist in Surat? Dentocare offers dental implants, painless root canal treatment, braces and cosmetic dentistry.',
-  keywords: 'best dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces price Surat, painless dentistry Surat, dental hospital Adajan, dental clinic Palanpur Road',
+  title: {
+    default: 'Best Dentist in Surat | Dental Implants & RCT | DentoCare',
+    template: '%s | Dentocare Surat'
+  },
+  description: 'Looking for the best dentist in Surat? Dentocare offers professional dental implants, painless root canal treatment (RCT), braces and cosmetic dentistry by Dr Nimisha Modi.',
+  keywords: ['best dentist in Surat', 'dental clinic Surat', 'dental implants Surat', 'root canal treatment Surat', 'teeth whitening Surat', 'braces price Surat', 'painless dentistry Surat', 'dental hospital Adajan', 'dental clinic Palanpur Road'],
+  authors: [{ name: 'Dr. Nimisha Modi' }],
+  creator: 'Dr. Nimisha Modi',
+  publisher: 'Dentocare & Implant Centre',
+  formatDetection: {
+    email: false,
+    address: true,
+    telephone: true,
+  },
   manifest: '/site.webmanifest',
   icons: {
     icon: [
@@ -20,37 +31,48 @@ export const metadata = {
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
     ],
-    shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://www.plusdentocare.in/',
+    canonical: '/',
     languages: {
-      'en-IN': 'https://www.plusdentocare.in/',
-      'x-default': 'https://www.plusdentocare.in/'
+      'en-IN': '/',
+      'x-default': '/'
     }
   },
   openGraph: {
     title: 'Best Dentist in Surat | Dentocare & Implant Centre | Dr Nimisha Modi',
-    description: 'Best dental clinic in Surat by Dr Nimisha Modi at Dentocare. Specializing in painless treatments, dental implants, RCT, and braces.',
+    description: 'Surat\'s premier dental clinic specializing in painless treatments and high-success dental implants. Visit Dr. Nimisha Modi today.',
     url: 'https://www.plusdentocare.in/',
     siteName: 'Dentocare & Implant Centre',
     images: [
       {
-        url: '/favicon-512x512.png',
-        width: 512,
-        height: 512,
-        alt: 'Dentocare Surat Logo',
+        url: 'https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732052/logo_cgdtgo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Dentocare Surat - Best Dentist Clinic',
       }
     ],
+    locale: 'en_IN',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Dentist in Surat | Dentocare & Implant Centre | Dr Nimisha Modi',
-    description: 'Expert dental care by Dr Nimisha Modi at Dentocare Surat.',
-    images: ['/favicon-512x512.png'],
-  }
+    title: 'Best Dentist in Surat | Dentocare & Implant Centre',
+    description: 'Expert dental care by Dr Nimisha Modi at Dentocare Surat. Implants, RCT, Braces.',
+    images: ['https://res.cloudinary.com/dyc1drqpy/image/upload/v1768732052/logo_cgdtgo.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
