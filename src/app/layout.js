@@ -63,31 +63,12 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-97CH0NSLY4');
           `}
         </Script>
-        <Script id="elfsight-loader" strategy="lazyOnload">
-          {`
-            (function () {
-              var scriptLoaded = false;
-              var loadScript = function() {
-                if (scriptLoaded) return;
-                scriptLoaded = true;
-                var s = document.createElement('script');
-                s.src = "https://elfsightcdn.com/platform.js";
-                s.defer = true;
-                document.head.appendChild(s);
-              };
-              var handleScroll = function() {
-                if (window.scrollY > 500) loadScript();
-              };
-              window.addEventListener('scroll', handleScroll, { passive: true });
-              window.addEventListener('click', loadScript, { once: true });
-              if ('requestIdleCallback' in window) {
-                requestIdleCallback(function() { setTimeout(loadScript, 5000); });
-              } else {
-                setTimeout(loadScript, 8000);
-              }
-            })();
-          `}
-        </Script>
+        <Script 
+          id="elfsight-platform"
+          src="https://elfsightcdn.com/platform.js" 
+          strategy="afterInteractive" 
+          defer 
+        />
       </head>
       <body className="antialiased font-outfit">
         <DataProvider>

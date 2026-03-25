@@ -1,4 +1,4 @@
-import BlogPost from '../../../pages/BlogPost';
+import BlogPost from '../../../views/BlogPost';
 
 export const metadata = {
   title: 'Dental Health Article | Dentocare Blog',
