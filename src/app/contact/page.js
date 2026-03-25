@@ -1,4 +1,4 @@
-import Contact from '../../pages/Contact';
+import Contact from '../../views/Contact';
 
 export const metadata = {
   title: 'Contact Dentocare | Book Free Dental Consultation | Surat',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Contact />;
 }
+

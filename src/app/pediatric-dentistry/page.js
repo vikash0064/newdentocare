@@ -1,4 +1,4 @@
-import Treatments from '../../pages/Treatments';
+import Treatments from '../../views/Treatments';
 
 export const metadata = {
   title: 'Best Pediatric Dentist in Surat | Kids Dental Care | Dentocare',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Treatments />;
 }
+

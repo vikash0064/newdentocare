@@ -1,4 +1,4 @@
-import DoctorDetails from '../../pages/DoctorDetails';
+import DoctorDetails from '../../views/DoctorDetails';
 
 export const metadata = {
   title: 'Dr Nimisha Modi | Best Dentist in Surat | BDS MDS | Dentocare',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <DoctorDetails />;
 }
+

@@ -1,4 +1,4 @@
-import Videos from '../../pages/Videos';
+import Videos from '../../views/Videos';
 
 export const metadata = {
   title: 'Dental Treatment Videos | Patient Stories & Reels | Dentocare Surat',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Videos />;
 }
+

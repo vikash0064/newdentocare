@@ -1,4 +1,4 @@
-import Videos from '../../pages/Videos';
+import Videos from '../../views/Videos';
 
 export const metadata = {
   title: 'Patient Testimonials & Reviews | Dentocare Surat | 5-Star Rated',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Videos />;
 }
+

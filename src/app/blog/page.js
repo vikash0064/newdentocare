@@ -1,4 +1,4 @@
-import Blog from '../../pages/Blog';
+import Blog from '../../views/Blog';
 
 export const metadata = {
   title: 'Dental Health Blog | Tips & Articles | Dentocare Surat',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Blog />;
 }
+

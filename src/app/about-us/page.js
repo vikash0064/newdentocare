@@ -1,4 +1,4 @@
-import Home from '../../pages/Home';
+import Home from '../../views/Home';
 
 export const metadata = {
   title: 'About Dentocare & Implant Centre | Dr Nimisha Modi | Best Dental Clinic Surat',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Home />;
 }
+

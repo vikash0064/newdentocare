@@ -1,4 +1,4 @@
-import Contact from '../../pages/Contact';
+import Contact from '../../views/Contact';
 
 export const metadata = {
   title: 'Dentist Near Adajan Surat | Dentocare Dental Clinic | Dr Nimisha Modi',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Contact />;
 }
+

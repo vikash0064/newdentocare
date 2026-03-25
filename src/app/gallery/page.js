@@ -1,4 +1,4 @@
-import Gallery from '../../pages/Gallery';
+import Gallery from '../../views/Gallery';
 
 export const metadata = {
   title: 'Dental Treatment Gallery | Before & After Results | Dentocare Surat',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Gallery />;
 }
+

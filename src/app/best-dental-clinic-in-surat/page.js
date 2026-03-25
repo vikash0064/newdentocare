@@ -1,4 +1,4 @@
-import Home from '../../pages/Home';
+import Home from '../../views/Home';
 
 export const metadata = {
   title: 'Best Dental Clinic in Surat | Top Rated Dentist | Dentocare',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Home />;
 }
+

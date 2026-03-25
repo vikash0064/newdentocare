@@ -1,4 +1,4 @@
-import Admin from '../../pages/Admin';
+import Admin from '../../views/Admin';
 
 export const metadata = {
   robots: 'noindex, nofollow',
@@ -8,3 +8,4 @@ export const metadata = {
 export default function Page() {
   return <Admin />;
 }
+

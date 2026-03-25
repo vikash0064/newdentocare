@@ -1,4 +1,4 @@
-import Home from '../../pages/Home';
+import Home from '../../views/Home';
 
 export const metadata = {
   title: 'Dental FAQ | Common Questions Answered | Dentocare Surat',
@@ -10,3 +10,4 @@ export const metadata = {
 export default function Page() {
   return <Home />;
 }
+
