@@ -1,3 +1,4 @@
+"use client";
 // Cloudinary Base URL with SEO Suffix (Helps scrapers and indexers identify the brand in the URL)
 const SEO_SUFFIX = "dentocare-dr-nimisha-modi-surat-plusdentocare";
 const SEO_IMG = (url, width = 1200) => {
