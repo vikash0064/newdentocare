@@ -272,24 +272,37 @@ const AdminPanel = () => {
             {/* Main Content Pane */}
             <main className="lg:ml-72 min-h-screen pt-16 lg:pt-0">
                 <div className="max-w-5xl mx-auto p-6 sm:p-10 pt-10 sm:pt-20 space-y-8">
-                    {/* Hero Section */}
-                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-                        <div>
-                            <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tighter">Manage <span className={colors.text}>{activeTab === 'hero' ? 'Home Slides' : activeTab}</span></h2>
-                            <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest mt-1">Surat's Premium Clinic Panel</p>
+                    {/* Header Section */}
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-8">
+                        <div className="flex-1 w-full sm:w-auto">
+                            <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tighter shrink-0">Manage <span className={colors.text}>{activeTab === 'hero' ? 'Home Slides' : activeTab}</span></h2>
+                            <div className="flex items-center gap-3 mt-1">
+                                <p className="text-[10px] text-gray-500 font-black uppercase tracking-widest leading-none">Surat's Premium Clinic Panel</p>
+                                <span className="text-gray-800 text-[10px] sm:hidden">•</span>
+                                <button onClick={handleLogout} className="sm:hidden text-[9px] font-black uppercase text-red-500 hover:text-red-400 flex items-center gap-1 transition-colors">
+                                    <LogOut size={10} strokeWidth={3} /> Logout
+                                </button>
+                            </div>
                         </div>
-                        {(activeTab === 'gallery' || activeTab === 'videos' || activeTab === 'blogs' || activeTab === 'hero') && (
-                            <button 
-                                onClick={() => {
-                                    setImageCategory(activeTab === 'hero' ? 'Hero' : 'Gallery');
-                                    setShowUploadModal(true);
-                                }}
-                                className={`flex items-center gap-3 px-6 py-4 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] shadow-lg transition-all active:scale-95 ${colors.bg}`}
-                            >
-                                <PlusCircle size={18} />
-                                <span>Add New {activeTab === 'gallery' ? 'Image' : activeTab === 'hero' ? 'Slide' : activeTab.slice(0, -1)}</span>
+                        
+                        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+                            <button onClick={handleLogout} className="hidden sm:flex items-center gap-2 px-4 py-2 bg-white/5 border border-white/5 rounded-xl text-gray-400 hover:text-red-400 hover:bg-red-500/10 transition-all text-[10px] font-black uppercase tracking-widest whitespace-nowrap">
+                                <LogOut size={14} /> Logout
                             </button>
-                        )}
+                            
+                            {(activeTab === 'gallery' || activeTab === 'videos' || activeTab === 'blogs' || activeTab === 'hero') && (
+                                <button 
+                                    onClick={() => {
+                                        setImageCategory(activeTab === 'hero' ? 'Hero' : 'Gallery');
+                                        setShowUploadModal(true);
+                                    }}
+                                    className={`flex items-center justify-center gap-3 px-6 py-4 rounded-2xl text-white font-black uppercase tracking-widest text-[10px] shadow-lg transition-all active:scale-95 ${colors.bg}`}
+                                >
+                                    <PlusCircle size={18} />
+                                    <span>Add New {activeTab === 'gallery' ? 'Image' : activeTab === 'hero' ? 'Slide' : activeTab.slice(0, -1)}</span>
+                                </button>
+                            )}
+                        </div>
                     </div>
 
                     {/* Content View */}
@@ -437,15 +450,6 @@ const AdminPanel = () => {
                         </button>
                     );
                 })}
-                <button
-                    onClick={handleLogout}
-                    className="flex flex-col items-center gap-1 transition-all min-w-[50px] text-gray-500 hover:text-red-400"
-                >
-                    <div className="p-2.5 rounded-2xl bg-transparent">
-                        <LogOut size={18} />
-                    </div>
-                    <span className="text-[7px] font-black uppercase tracking-widest whitespace-nowrap">Logout</span>
-                </button>
             </nav>
 
             {/* Upload Modal */}

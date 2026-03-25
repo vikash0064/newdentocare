@@ -3,18 +3,24 @@ import connectToDatabase from '@/lib/mongodb';
 import GalleryImage from '@/models/GalleryImage';
 import cloudinary from '../../../lib/cloudinary';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
     try {
+        console.log('GET /api/gallery - Connecting to DB...');
         await connectToDatabase();
+        console.log('GET /api/gallery - Fetching images...');
         const images = await GalleryImage.find().sort({ createdAt: -1 }).lean();
         return NextResponse.json(images);
     } catch (error) {
+        console.error('GET /api/gallery ERROR:', error);
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
 
 export async function POST(request) {
     try {
+        console.log('POST /api/gallery - Connecting to DB...');
         await connectToDatabase();
         const formData = await request.formData();
         const category = formData.get('category') || 'General';
