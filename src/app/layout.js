@@ -14,6 +14,10 @@ export const metadata = {
   description: 'Looking for the best dentist in Surat? Dentocare offers dental implants, painless root canal treatment, braces and cosmetic dentistry.',
   keywords: 'best dentist in Surat, dental clinic Surat, dental implants Surat, root canal treatment Surat, teeth whitening Surat, braces price Surat, painless dentistry Surat, dental hospital Adajan, dental clinic Palanpur Road',
   manifest: '/site.webmanifest',
+  icons: {
+    icon: 'https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732052/logo_cgdtgo.png',
+    apple: 'https://res.cloudinary.com/dyc1drqpy/image/upload/f_auto,q_auto/v1768732052/logo_cgdtgo.png',
+  },
   alternates: {
     canonical: 'https://www.plusdentocare.in/',
     languages: {
