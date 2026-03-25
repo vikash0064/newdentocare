@@ -219,6 +219,29 @@ app.post('/api/gallery', upload.single('image'), async (req, res) => {
     }
 });
 
+app.put('/api/gallery/:id', upload.single('image'), async (req, res) => {
+    try {
+        const { title, author, category } = req.body;
+        const updateData = { title, author, category };
+        
+        if (req.file) {
+            const seoPublicId = `plusdentocare-gallery-update-${Date.now()}`;
+            const result = await new Promise((resolve, reject) => {
+                const uploadStream = cloudinary.uploader.upload_stream(
+                    { folder: 'dentocare_gallery', public_id: seoPublicId },
+                    (error, result) => { if (error) reject(error); else resolve(result); }
+                );
+                uploadStream.end(req.file.buffer);
+            });
+            updateData.url = result.secure_url;
+            updateData.public_id = result.public_id;
+        }
+
+        const updatedImage = await GalleryImage.findByIdAndUpdate(req.params.id, updateData, { new: true });
+        res.json(updatedImage);
+    } catch (err) { res.status(500).json({ error: err.message }); }
+});
+
 app.delete('/api/gallery/:id', async (req, res) => {
     try {
         const image = await GalleryImage.findById(req.params.id);

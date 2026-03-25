@@ -86,41 +86,48 @@ If you are looking for a kids dentist in Surat near Palanpur Road, visit Dentoca
     };
 
     // Fetch Data from MongoDB with Timeout protection
-    const fetchData = async (signal) => {
+    const fetchData = async (signal, isMountedRef = { current: true }) => {
         try {
             const fetchOptions = { signal };
 
-            // Each fetch is independent — one failing won't affect others
-            const [gData, vData, bData, tData] = await Promise.allSettled([
+            const results = await Promise.allSettled([
                 safeFetch(`${API_URL}/api/gallery`, fetchOptions),
                 safeFetch(`${API_URL}/api/videos`, fetchOptions),
                 safeFetch(`${API_URL}/api/blogs`, fetchOptions),
                 safeFetch(`${API_URL}/api/testimonials`, fetchOptions)
             ]);
 
-            setGalleryImages(gData.status === 'fulfilled' ? gData.value : []);
-            setVideoList(vData.status === 'fulfilled' ? vData.value : []);
+            if (!isMountedRef.current) return;
+
+            setGalleryImages(results[0].status === 'fulfilled' ? results[0].value : []);
+            setVideoList(results[1].status === 'fulfilled' ? results[1].value : []);
             setBlogList(prev => {
-                const fetched = bData.status === 'fulfilled' ? bData.value : [];
-                // Keep initial blogs if API returns nothing
+                const fetched = results[2].status === 'fulfilled' ? results[2].value : [];
                 return fetched.length > 0 ? fetched : prev;
             });
-            setTestimonialList(tData.status === 'fulfilled' ? tData.value : []);
-        } catch {
-            // Silently ignore — app will use initial/fallback state
+            setTestimonialList(results[3].status === 'fulfilled' ? results[3].value : []);
+        } catch (err) {
+            // Silently ignore
         } finally {
-            setLoading(false);
+            if (isMountedRef.current) {
+                setLoading(false);
+            }
         }
     };
 
     useEffect(() => {
+        const isMounted = { current: true };
         const controller = new AbortController();
-        fetchData(controller.signal);
+        
+        fetchData(controller.signal, isMounted);
         
         // Timeout protection
-        const timeoutId = setTimeout(() => controller.abort(), 15000); 
+        const timeoutId = setTimeout(() => {
+            if (isMounted.current) controller.abort();
+        }, 15000); 
 
         return () => {
+            isMounted.current = false;
             clearTimeout(timeoutId);
             controller.abort();
         };

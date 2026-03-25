@@ -6,7 +6,9 @@ import gsap from 'gsap';
 import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Activity, Award, Heart, ShieldCheck, Star, Users, Clock, Calendar, MousePointer2, MessageCircle, Sparkles, Video } from 'lucide-react';
 import { IMAGES } from '../constants';
 
-const galleryImages = [
+import { useData } from '../context/DataContext';
+
+const DEFAULT_SLIDES = [
     { src: IMAGES.slides.slide1, label: "Modern Clinic View", sub: "Advanced facilities for all treatments" },
     { src: IMAGES.slides.slide2, label: "Surgical Suite", sub: "Sterile & high-tech environment" },
     { src: IMAGES.slides.slide3, label: "Consultation Hub", sub: "Where your transformation begins" },
@@ -35,6 +37,21 @@ const AnimatedCounter = ({ target, suffix, duration = 2 }) => {
 };
 
 const Hero = () => {
+    const context = useData();
+    const { galleryImages = [] } = context || {};
+    
+    // Filter dynamic slides and map them to the same structure as DEFAULT_SLIDES
+    const dynamicSlides = galleryImages
+        .filter(img => img.category === 'Hero')
+        .map(img => ({
+            src: img.url,
+            label: img.title || "Dentocare Excellence",
+            sub: img.author || "Advanced Dental Care"
+        }));
+
+    // Use dynamic slides if they exist, otherwise use defaults
+    const activeGallery = dynamicSlides.length > 0 ? dynamicSlides : DEFAULT_SLIDES;
+
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const containerRef = useRef(null);
     const rightSectionRef = useRef(null);
@@ -47,8 +64,8 @@ const Hero = () => {
     const whatsappMessage = "Hi Dentocare, I have a query regarding dental treatments.";
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % galleryImages.length);
-    const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+    const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % activeGallery.length);
+    const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + activeGallery.length) % activeGallery.length);
 
     useEffect(() => {
         const interval = setInterval(nextImage, 6000);
@@ -129,50 +146,46 @@ const Hero = () => {
                         <div className="relative group perspective-1000">
                             {/* Main Frame */}
                             <div className="relative rounded-[3rem] sm:rounded-[4rem] overflow-hidden border-[12px] border-[#1e293b] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.7)] bg-[#1e293b] aspect-[4/5] sm:aspect-[4/5] lg:h-[650px] w-full max-w-[500px] mx-auto lg:mx-0">
-                                {galleryImages.map((img, idx) => (
-                                    <div key={idx}
-                                        className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
-                                        style={{ willChange: 'opacity' }}>
-                                        <img
-                                            src={img.src}
-                                            alt={idx === 0 ? "Dr. Nimisha Modi treating a patient at Dentocare Surat" :
-                                                idx === 1 ? "Sterile surgical suite with advanced dental equipment in Surat" :
-                                                    idx === 2 ? "Modern dental consultation room at Dentocare Surat" :
-                                                        "Digital X-ray and AI-guided dental mapping workstation"}
-                                            title={img.label}
-                                            className={`w-full h-full ${idx === 3 ? 'object-contain p-6 sm:p-12 bg-[#1e293b]' : 'object-cover object-[center_20%]'}`}
-                                            width="500"
-                                            height="625"
-                                            loading={idx === 0 ? "eager" : "lazy"}
-                                            fetchPriority={idx === 0 ? "high" : "low"}
-                                            decoding="async"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+                                {activeGallery.map((img, idx) => (
+                                     <div key={idx}
+                                         className={`absolute inset-0 transition-opacity duration-1000 ${idx === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+                                         style={{ willChange: 'opacity' }}>
+                                         <img
+                                             src={img.src}
+                                             alt={img.label}
+                                             title={img.label}
+                                             className="w-full h-full object-cover object-center"
+                                             width="500"
+                                             height="625"
+                                             loading={idx === 0 ? "eager" : "lazy"}
+                                             decoding="async"
+                                         />
+                                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
 
-                                        {/* Bottom Label */}
-                                        <div className="absolute bottom-10 left-10 right-10">
-                                            <h3 className="text-3xl font-black text-white mb-2 tracking-tight">{img.label}</h3>
-                                            <p className="text-gray-300 font-bold text-sm tracking-wide">{img.sub}</p>
-                                        </div>
-                                    </div>
-                                ))}
+                                         {/* Bottom Label */}
+                                         <div className="absolute bottom-10 left-10 right-10">
+                                             <h3 className="text-3xl font-black text-white mb-2 tracking-tight">{img.label}</h3>
+                                             <p className="text-gray-300 font-bold text-sm tracking-wide">{img.sub}</p>
+                                         </div>
+                                     </div>
+                                 ))}
 
-                                {/* Arrows */}
-                                <div className="absolute top-1/2 -translate-y-1/2 left-6">
-                                    <button onClick={prevImage} aria-label="Previous clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
-                                        <ChevronLeft size={24} />
-                                    </button>
-                                </div>
-                                <div className="absolute top-1/2 -translate-y-1/2 right-6">
-                                    <button onClick={nextImage} aria-label="Next clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
-                                        <ChevronRight size={24} />
-                                    </button>
-                                </div>
+                                 {/* Arrows */}
+                                 <div className="absolute top-1/2 -translate-y-1/2 left-6">
+                                     <button onClick={prevImage} aria-label="Previous clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
+                                         <ChevronLeft size={24} />
+                                     </button>
+                                 </div>
+                                 <div className="absolute top-1/2 -translate-y-1/2 right-6">
+                                     <button onClick={nextImage} aria-label="Next clinic image" className="w-12 h-12 bg-black/40 backdrop-blur-xl rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-all border border-white/10 active:scale-90 shadow-2xl">
+                                         <ChevronRight size={24} />
+                                     </button>
+                                 </div>
 
-                                {/* Slide Indicator */}
-                                <div className="absolute bottom-10 right-10 bg-black/40 backdrop-blur-xl px-4 py-2 rounded-xl border border-white/10">
-                                    <span className="text-white font-black tracking-widest text-sm">{currentImageIndex + 1} / {galleryImages.length}</span>
-                                </div>
+                                 {/* Slide Indicator */}
+                                 <div className="absolute bottom-10 right-10 bg-black/40 backdrop-blur-xl px-4 py-2 rounded-xl border border-white/10">
+                                     <span className="text-white font-black tracking-widest text-sm">{currentImageIndex + 1} / {activeGallery.length}</span>
+                                 </div>
                             </div>
 
                             {/* Floating Badges */}

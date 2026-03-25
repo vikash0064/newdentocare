@@ -42,22 +42,38 @@ const PatientSpeaks = () => {
                 {/* THE SPECIFIC OVERLAY DIV REQUESTED BY USER */}
                 <div className="Background__Overlay-sc-fd94690c-2 jtZZdl es-background-overlay" style={{ display: 'block', backgroundColor: 'rgba(255, 255, 255, 0)' }}></div>
 
-                {/* Elfsight Widget */}
-                <div className="elfsight-app-06768bba-2f23-49e4-ae8c-af01f872fbd9"></div>
+                {/* Elfsight Google Reviews | Untitled Google Reviews */}
+                <div className="elfsight-app-06768bba-2f23-49e4-ae8c-af01f872fbd9" data-elfsight-app-lazy></div>
 
-                <div className="mt-16 flex flex-col items-center gap-6">
+                <div className="mt-20 flex flex-col items-center gap-8">
                     <a
                         href="https://g.page/r/CVyihSbmZCrcEBE/review"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group relative flex items-center gap-3 px-10 py-4 bg-blue-600 hover:bg-emerald-500 text-white rounded-2xl transition-all font-black text-xs uppercase tracking-[0.2em] shadow-[0_20px_40px_-15px_rgba(37,99,235,0.3)] active:scale-95 overflow-hidden"
+                        className="group relative w-full max-w-lg flex items-center justify-between gap-4 px-6 sm:px-12 py-6 sm:py-8 bg-blue-600 hover:bg-blue-500 text-white rounded-[2rem] transition-all overflow-hidden shadow-[0_25px_50px_-12px_rgba(37,99,235,0.5)] active:scale-[0.98]"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                        <Star size={16} fill="currentColor" />
-                        Write your review on Google
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                        
+                        <div className="p-3 bg-white/10 rounded-xl">
+                            <Star size={24} fill="white" className="text-white" />
+                        </div>
+
+                        <div className="flex-1 text-center">
+                            <span className="block text-sm sm:text-lg font-black uppercase tracking-[0.2em] leading-tight">Write your review on</span>
+                            <span className="block text-xl sm:text-2xl font-black uppercase tracking-[0.25em] leading-tight mt-1">Google</span>
+                        </div>
+
+                        <div className="p-3 bg-white/10 rounded-xl group-hover:translate-x-1 transition-transform">
+                            <ArrowRight size={24} strokeWidth={3} />
+                        </div>
                     </a>
-                    <p className="text-gray-600 text-[9px] font-black uppercase tracking-widest">Verification Status: Verified by Google Business Profiles</p>
+                    
+                    <div className="flex flex-col items-center gap-2">
+                         <p className="text-emerald-400 text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] flex items-center gap-2">
+                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                             Verification Status: Verified by Google Business
+                         </p>
+                    </div>
                 </div>
             </div>
 
