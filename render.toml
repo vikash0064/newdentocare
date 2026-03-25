@@ -1,8 +1,13 @@
-[staticSites]
-name = "newdentocare-frontend"
-buildCommand = "npm run build"
-publish = "dist"
-
-[[staticSites.routes]]
-source = "/*"
-destination = "/index.html"
+# Render.com configuration for Next.js Web Service (Frontend + Backend Merged)
+services:
+  - type: web
+    name: newdentocare
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: PORT
+        value: 5000

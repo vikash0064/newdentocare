@@ -2,13 +2,14 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import API_URL from '../config/api';
 
-const DataContext = createContext({ galleryImages: [], videoList: [], blogList: [], loading: false });
+const DataContext = createContext({ galleryImages: [], videoList: [], blogList: [], testimonialList: [], loading: false });
 
 export const useData = () => useContext(DataContext);
 
 export const DataProvider = ({ children }) => {
     const [galleryImages, setGalleryImages] = useState([]);
     const [videoList, setVideoList] = useState([]);
+    const [testimonialList, setTestimonialList] = useState([]);
     const [blogList, setBlogList] = useState([
         {
             _id: 'initial-blog-1',
@@ -70,41 +71,49 @@ If you are looking for a kids dentist in Surat near Palanpur Road, visit Dentoca
     const [loading, setLoading] = useState(true);
 
     // Fetch Data from MongoDB with Timeout protection
-    const fetchData = async () => {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
-
+    const fetchData = async (signal) => {
         try {
-            const fetchOptions = { signal: controller.signal };
-            const [reg, vres, bres] = await Promise.all([
+            const fetchOptions = { signal };
+            const [reg, vres, bres, tres] = await Promise.all([
                 fetch(`${API_URL}/api/gallery`, fetchOptions),
                 fetch(`${API_URL}/api/videos`, fetchOptions),
-                fetch(`${API_URL}/api/blogs`, fetchOptions)
+                fetch(`${API_URL}/api/blogs`, fetchOptions),
+                fetch(`${API_URL}/api/testimonials`, fetchOptions)
             ]);
 
-            clearTimeout(timeoutId);
-
-            const gData = await reg.json();
-            const vData = await vres.json();
-            const bData = await bres.json();
+            const gData = reg.ok && reg.headers.get('content-type')?.includes('application/json') ? await reg.json() : [];
+            const vData = vres.ok && vres.headers.get('content-type')?.includes('application/json') ? await vres.json() : [];
+            const bData = bres.ok && bres.headers.get('content-type')?.includes('application/json') ? await bres.json() : [];
+            const tData = tres.ok && tres.headers.get('content-type')?.includes('application/json') ? await tres.json() : [];
 
             setGalleryImages(Array.isArray(gData) ? gData : []);
             setVideoList(Array.isArray(vData) ? vData : []);
             setBlogList(Array.isArray(bData) ? bData : []);
+            setTestimonialList(Array.isArray(tData) ? tData : []);
         } catch (err) {
-            console.error('Data fetch timed out or failed:', err);
+            if (err.name === 'AbortError') return;
+            console.error('Data fetch failed:', err);
             // Fallback to empty arrays so the app still renders
             setGalleryImages([]);
             setVideoList([]);
             setBlogList([]);
+            setTestimonialList([]);
         } finally {
             setLoading(false);
-            clearTimeout(timeoutId);
         }
     };
 
     useEffect(() => {
-        fetchData();
+        const controller = new AbortController();
+        fetchData(controller.signal);
+        
+        // Timeout protection
+        const timeoutId = setTimeout(() => controller.abort(), 15000); 
+
+        return () => {
+            clearTimeout(timeoutId);
+            controller.abort();
+        };
     }, []);
 
     const addGalleryImage = (image) => {
@@ -117,6 +126,10 @@ If you are looking for a kids dentist in Surat near Palanpur Road, visit Dentoca
 
     const addBlogItem = (blog) => {
         setBlogList(prev => [blog, ...prev]);
+    };
+
+    const addTestimonial = (testimonial) => {
+        setTestimonialList(prev => [testimonial, ...prev]);
     };
 
     const removeGalleryImage = async (id) => {
@@ -146,17 +159,29 @@ If you are looking for a kids dentist in Surat near Palanpur Road, visit Dentoca
         }
     };
 
+    const removeTestimonial = async (id) => {
+        try {
+            await fetch(`${API_URL}/api/testimonials/${id}`, { method: 'DELETE' });
+            setTestimonialList(prev => prev.filter(item => item._id !== id));
+        } catch (err) {
+            console.error('Delete failed:', err);
+        }
+    };
+
     return (
         <DataContext.Provider value={{
             galleryImages,
             videoList,
             blogList,
+            testimonialList,
             addGalleryImage,
             addVideoItem,
             addBlogItem,
+            addTestimonial,
             removeGalleryImage,
             removeVideoItem,
             removeBlogItem,
+            removeTestimonial,
             refreshData: fetchData,
             loading
         }}>

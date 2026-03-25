@@ -79,7 +79,9 @@ section {
 
 /* Exempt Hero from content-visibility to avoid FCP delay */
 section:first-of-type,
-.hero-section {
+.hero-section,
+.reviews-section,
+.reviews-section + section {
   content-visibility: visible;
 }
 
