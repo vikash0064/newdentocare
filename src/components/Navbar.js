@@ -4,8 +4,11 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown, MessageCircle, ArrowRight, Zap, Video } from 'lucide-react';
 import { IMAGES } from '../constants';
+import { useData } from '../context/DataContext';
 
 const Navbar = () => {
+    const { galleryImages = [] } = useData ? useData() : {};
+    const logoImg = galleryImages.find(i => i.category === 'Logo');
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
@@ -58,7 +61,7 @@ const Navbar = () => {
                         <div className="flex-shrink-0 z-20">
                             <Link href="/" className="flex items-center group" aria-label="Dentocare Home">
                                 <img
-                                    src={IMAGES.logo}
+                                    src={logoImg ? logoImg.url : IMAGES.logo}
                                     alt="Best dentist clinic in Surat - Dentocare Logo"
                                     title="Dentocare Surat & Implant Centre"
                                     className="h-9 sm:h-11 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
@@ -143,7 +146,7 @@ const Navbar = () => {
                 <div className={`absolute inset-0 bg-black/80 backdrop-blur-md transition-opacity duration-500 ${isMenuOpen ? 'opacity-100' : 'opacity-0'}`} onClick={toggleMenu} />
                 <div className={`absolute top-0 right-0 h-full w-[70%] max-w-[280px] bg-[#0B1120] p-5 transition-transform duration-500 cubic-bezier(0.16, 1, 0.3, 1) shadow-2xl flex flex-col border-l border-white/5 ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     <div className="flex items-center justify-between mb-8">
-                        <img src={IMAGES.logo} alt="Dentocare Surat" className="h-7 w-auto" width="120" height="35" loading="eager" decoding="async" />
+                        <img src={logoImg ? logoImg.url : IMAGES.logo} alt="Dentocare Surat" className="h-7 w-auto" width="120" height="35" loading="eager" decoding="async" />
                         <button onClick={toggleMenu} className="p-1.5 text-gray-300 bg-white/5 rounded-full hover:bg-white/10 hover:text-white transition-colors" aria-label="Close menu"><X size={18} /></button>
                     </div>
                     <nav className="flex-grow">

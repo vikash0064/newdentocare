@@ -2,9 +2,12 @@
 import React from 'react';
 import Link from 'next/link';
 import { IMAGES } from '../constants';
+import { useData } from '../context/DataContext';
 import { ShieldCheck, Calendar, Phone, MapPin, Clock, Facebook, Instagram, Twitter, Linkedin, Youtube, ArrowRight, Heart, Lock } from 'lucide-react';
 
 const Footer = () => {
+    const { galleryImages = [] } = useData ? useData() : {};
+    const logoImg = galleryImages.find(i => i.category === 'Logo');
     return (
         <footer className="relative bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0B1120] text-gray-400 py-4 sm:py-6 border-t border-white/5 overflow-hidden min-h-[500px]">
             {/* Enhanced Background Effects */}
@@ -94,7 +97,7 @@ const Footer = () => {
                     <div className="order-2 col-span-2 lg:col-span-1 lg:order-1 space-y-4">
                         <div className="flex items-center gap-2 group">
                             <img
-                                src={IMAGES.logo}
+                                src={logoImg ? logoImg.url : IMAGES.logo}
                                 alt="Best dentist clinic in Surat - Dentocare Logo"
                                 title="Dentocare Surat & Implant Centre"
                                 className="h-10 sm:h-12 w-[130px] sm:w-[160px] object-contain transition-transform duration-500 group-hover:scale-110"
