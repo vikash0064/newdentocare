@@ -55,7 +55,9 @@ const MeetTheDoctor = () => {
                             Dr. Nimisha Modi
                         </h2>
                         <h3 className="text-lg text-gray-300 mb-8 font-semibold tracking-wide">
-                            B.D.S. | Implantologist | Cosmetic Dentist
+                            B.D.S. | Dental Sergeon | Followship in implantology
+
+
                         </h3>
 
                         <div className="relative mb-8">
