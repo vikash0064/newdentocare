@@ -106,7 +106,7 @@ const DoctorDetails = () => {
                                 </h1>
 
                                 <p className="text-sm md:text-lg text-gray-400 font-semibold tracking-wide uppercase">
-                                    B.D.S. | MDS (Oral Surgery) | Fellow in Implantology
+                                    B.D.S. | Dental Sergeon | Followship in implantology
                                 </p>
                             </div>
 
