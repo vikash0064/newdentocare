@@ -1,0 +1,21 @@
+name: Keep Render Server Alive
+
+on:
+  schedule:
+    # Runs every 12 minutes (Render free tier spins down after 15 mins of inactivity)
+    - cron: '*/12 * * * *'
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Backend
+        run: |
+          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 60 https://newdentocare.onrender.com/api/health)
+          echo "Render Health Endpoint Status: $HTTP_STATUS"
+          if [ "$HTTP_STATUS" -eq 200 ]; then
+            echo "SUCCESS: Server is awake and active!"
+          else
+            echo "Notice: Response code was $HTTP_STATUS"
+          fi
