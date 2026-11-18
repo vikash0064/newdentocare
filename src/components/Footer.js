@@ -190,7 +190,7 @@ const Footer = () => {
                         {/* Centered & Eye-Catching Credit - Center */}
                         <div className="flex justify-center order-1 lg:order-2">
                             <a
-                                href="https://webnginx.com"
+                                href="https://www.webingix.dev/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="group relative"
